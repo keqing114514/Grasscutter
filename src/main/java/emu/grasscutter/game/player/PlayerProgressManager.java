@@ -20,6 +20,7 @@ import lombok.val;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import static emu.grasscutter.game.quest.enums.QuestCond.QUEST_COND_OPEN_STATE_EQUAL;
 import static emu.grasscutter.scripts.constants.EventType.EVENT_UNLOCK_TRANS_POINT;
 
 // @Entity
@@ -35,8 +36,6 @@ public class PlayerProgressManager extends BasePlayerDataManager {
         // Try unlocking open states on player login. This handles accounts where unlock conditions were
         // already met before certain open state unlocks were implemented.
         this.tryUnlockOpenStates(false);
-
-        // Send notify to the client.
         player.getSession().send(new PacketOpenStateUpdateNotify(this.player));
     }
 
@@ -76,6 +75,8 @@ public class PlayerProgressManager extends BasePlayerDataManager {
 
         if (value != previousValue) {
             this.player.getOpenStates().put(openState, value);
+
+            this.player.getQuestManager().queueEvent(QUEST_COND_OPEN_STATE_EQUAL, openState, value);
 
             if (sendNotify) {
                 player.getSession().send(new PacketOpenStateChangeNotify(openState, value));
@@ -214,5 +215,18 @@ public class PlayerProgressManager extends BasePlayerDataManager {
         // Send packet.
         this.player.sendPacket(new PacketSceneAreaUnlockNotify(sceneId, areaId));
         this.player.getQuestManager().queueEvent(QuestContent.QUEST_CONTENT_UNLOCK_AREA, sceneId, areaId);
+    }
+
+
+    /**
+     * Quest progress
+     */
+
+    public void addQuestProgress(int id, int count){
+        // if quest key do not exists, put param[1] as value
+        // otherwise sum 1 to the value linked to key
+        val newCount = player.getQuestProgressCountMap().merge(id, count, Integer::sum);
+        player.save();
+        player.getQuestManager().queueEvent(QuestContent.QUEST_CONTENT_ADD_QUEST_PROGRESS, id, newCount);
     }
 }

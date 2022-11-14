@@ -42,8 +42,8 @@ public class GameMainQuest {
     @Getter private ParentQuestState state;
     @Getter private boolean isFinished;
     @Getter List<QuestGroupSuite> questGroupSuites;
-    // used to track already added group suites, so that it 
-    // doesnt keep incrementing on every rewind, 
+    // used to track already added group suites, so that it
+    // doesnt keep incrementing on every rewind,
     // TODO probably change group suites to hash map for better organisation
     @Getter Set<Integer> groupSuitesTracker;
 
@@ -166,11 +166,11 @@ public class GameMainQuest {
             }
         }
 
-        // handoff main quest
-        if (mainQuestData.getSuggestTrackMainQuestList() != null) {
+        // handoff main quest TODO check if still needed with independent condition checks
+        /*if (mainQuestData.getSuggestTrackMainQuestList() != null) {
             Arrays.stream(mainQuestData.getSuggestTrackMainQuestList())
                 .forEach((mainQuestId) -> {getQuestManager().startMainQuest(true, mainQuestId, false, "", 0);});
-        }
+        }*/
     }
     //TODO
     public void fail() {}
@@ -185,6 +185,8 @@ public class GameMainQuest {
         /*if(rewindPositions.isEmpty()){
             addRewindPoints();
         }*/
+
+        tryAcceptSubQuests();
 
         List<Position> posAndRot = new ArrayList<>();
         if(hasRewindPosition(targetQuest.getSubQuestId(), posAndRot)){
@@ -305,28 +307,15 @@ public class GameMainQuest {
         }
     }
 
-    public void tryAcceptSubQuests(QuestCond condType, String paramStr, int... params) {
+    public void tryAcceptSubQuests() {
         try {
-            List<GameQuest> subQuestsWithCond = getChildQuests().values().stream()
-                .filter(p -> p.getState() == QuestState.QUEST_STATE_UNSTARTED || p.getState() == QuestState.UNFINISHED)
-                .filter(p -> p.getQuestData().getAcceptCond().stream().anyMatch(q -> condType == QuestCond.QUEST_COND_NONE || q.getType() == condType))
+            //TODO check if param index exists
+            val subQuestsWithCond = getChildQuests().values().stream()
+                .filter(p -> p.getState() == QuestState.QUEST_STATE_UNSTARTED || p.getState() == QuestState.QUEST_STATE_NONE)
+                .map(GameQuest::getQuestData)
                 .toList();
 
-            for (GameQuest subQuestWithCond : subQuestsWithCond) {
-                val acceptCond = subQuestWithCond.getQuestData().getAcceptCond();
-                int[] accept = new int[acceptCond.size()];
-
-                for (int i = 0; i < subQuestWithCond.getQuestData().getAcceptCond().size(); i++) {
-                    val condition = acceptCond.get(i);
-                    boolean result = this.getOwner().getServer().getQuestSystem().triggerCondition(subQuestWithCond, condition, paramStr, params);
-                    accept[i] = result ? 1 : 0;
-                }
-
-                boolean shouldAccept = LogicType.calculate(subQuestWithCond.getQuestData().getAcceptCondComb(), accept);
-
-                if (shouldAccept)
-                    subQuestWithCond.start();
-            }
+            owner.getQuestManager().tryAcceptingSubQuests(subQuestsWithCond, "", 0);
             this.save();
         } catch (Exception e) {
             Grasscutter.getLogger().error("An error occurred while trying to accept quest.", e);
@@ -336,31 +325,10 @@ public class GameMainQuest {
 
     public void tryFailSubQuests(QuestContent condType, String paramStr, int... params) {
         try {
-            List<GameQuest> subQuestsWithCond = getChildQuests().values().stream()
+            getChildQuests().values().stream()
                 .filter(p -> p.getState() == QuestState.QUEST_STATE_UNFINISHED)
                 .filter(p -> p.getQuestData().getFailCond().stream().anyMatch(q -> q.getType() == condType))
-                .toList();
-
-            for (GameQuest subQuestWithCond : subQuestsWithCond) {
-                val failCond = subQuestWithCond.getQuestData().getFailCond();
-
-                for (int i = 0; i < subQuestWithCond.getQuestData().getFailCond().size(); i++) {
-                    val condition = failCond.get(i);
-                    if (condition.getType() == condType) {
-                        boolean result = this.getOwner().getServer().getQuestSystem().triggerContent(subQuestWithCond, condition, paramStr, params);
-                        subQuestWithCond.getFailProgressList()[i] = result ? 1 : 0;
-                        if (result) {
-                            getOwner().getSession().send(new PacketQuestProgressUpdateNotify(subQuestWithCond));
-                        }
-                    }
-                }
-
-                boolean shouldFail = LogicType.calculate(subQuestWithCond.getQuestData().getFailCondComb(), subQuestWithCond.getFailProgressList());
-
-                if (shouldFail)
-                    subQuestWithCond.fail();
-            }
-
+                .forEach(quest -> quest.tryFail(condType, paramStr, params));
         } catch (Exception e) {
             Grasscutter.getLogger().error("An error occurred while trying to fail quest.", e);
         }
@@ -368,32 +336,12 @@ public class GameMainQuest {
 
     public void tryFinishSubQuests(QuestContent condType, String paramStr, int... params) {
         try {
-            List<GameQuest> subQuestsWithCond = getChildQuests().values().stream()
-                //There are subQuests with no acceptCond, but can be finished (example: 35104)
+            getChildQuests().values().stream()
+                //There are subQuests with no acceptCond, but can be finished (example: 35104) // todo why relevant?
                 .filter(p -> p.getState() == QuestState.QUEST_STATE_UNFINISHED && p.getQuestData().getAcceptCond() != null)
                 .filter(p -> p.getQuestData().getFinishCond().stream().anyMatch(q -> q.getType() == condType))
-                .toList();
+                .forEach(quest -> quest.tryFinish(condType, paramStr, params));
 
-            for (GameQuest subQuestWithCond : subQuestsWithCond) {
-                val finishCond = subQuestWithCond.getQuestData().getFinishCond();
-
-                for (int i = 0; i < finishCond.size(); i++) {
-                    val condition = finishCond.get(i);
-                    if (condition.getType() == condType) {
-                        boolean result = this.getOwner().getServer().getQuestSystem().triggerContent(subQuestWithCond, condition, paramStr, params);
-                        subQuestWithCond.getFinishProgressList()[i] = result ? 1 : 0;
-                        if (result) {
-                            getOwner().getSession().send(new PacketQuestProgressUpdateNotify(subQuestWithCond));
-                        }
-                    }
-                }
-
-                boolean shouldFinish = LogicType.calculate(subQuestWithCond.getQuestData().getFinishCondComb(), subQuestWithCond.getFinishProgressList());
-
-                if (shouldFinish)
-                    subQuestWithCond.finish();
-                    getOwner().getProgressManager().tryUnlockOpenStates();
-            }
         } catch (Exception e) {
             Grasscutter.getLogger().debug("An error occurred while trying to finish quest.", e);
         }
