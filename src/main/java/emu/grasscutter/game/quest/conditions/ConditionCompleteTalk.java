@@ -18,7 +18,7 @@ public class ConditionCompleteTalk extends BaseCondition {
     @Override
     public boolean execute(Player owner, QuestData questData, QuestData.QuestAcceptCondition condition, String paramStr, int... params) {
         val talkId = condition.getParam()[0];
-        GameMainQuest checkMainQuest = owner.getQuestManager().getMainQuestById(talkId/100);
+        GameMainQuest checkMainQuest = owner.getQuestManager().getMainQuestByTalkId(talkId);
         if (checkMainQuest == null || GameData.getMainQuestDataMap().get(checkMainQuest.getParentQuestId()).getTalks() == null) {
             Grasscutter.getLogger().debug("Warning: mainQuest {} hasn't been started yet, or has no talks", condition.getParam()[0]/100);
             return false;

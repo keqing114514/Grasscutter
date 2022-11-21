@@ -145,6 +145,7 @@ public class GameData {
     protected static Int2IntMap proudSkillGroupMaxLevels = new Int2IntOpenHashMap();
     protected static Int2ObjectMap<IntSet> avatarSkillLevels = new Int2ObjectOpenHashMap<>();
     @Getter private static final Map<String, List<QuestData>> beginCondQuestMap = new HashMap<>();
+    @Getter private static final Map<Integer, Integer> questTalkMap = new HashMap<>();
     @Getter private static final Set<Integer> trackQuests= new TreeSet<>(); // tracking quests
 
     // Getters with wrong names, remove later

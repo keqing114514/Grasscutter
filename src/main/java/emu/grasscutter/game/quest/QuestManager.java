@@ -184,6 +184,14 @@ public class QuestManager extends BasePlayerManager {
     public GameMainQuest getMainQuestById(int mainQuestId) {
         return getMainQuests().get(mainQuestId);
     }
+    public GameMainQuest getMainQuestByTalkId(int talkId) {
+        int mainQuestId = GameData.getQuestTalkMap().getOrDefault(talkId, talkId / 100);
+        return getMainQuests().get(mainQuestId);
+    }
+    public GameMainQuest getMainQuestBySubQuestId(int subQuestId) {
+        val questData = GameData.getQuestDataMap().get(subQuestId);
+        return getMainQuests().get(questData!= null ? questData.getMainId() : subQuestId/100);
+    }
 
     public GameQuest getQuestById(int questId) {
         QuestData questConfig = GameData.getQuestDataMap().get(questId);
