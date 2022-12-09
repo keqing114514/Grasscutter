@@ -329,6 +329,18 @@ public final class RegionInfoOuterClass {
      * <code>.ResVersionConfig next_res_version_config = 35;</code>
      */
     emu.grasscutter.net.proto.ResVersionConfigOuterClass.ResVersionConfigOrBuilder getNextResVersionConfigOrBuilder();
+
+    /**
+     * <code>string game_biz = 36;</code>
+     * @return The gameBiz.
+     */
+    java.lang.String getGameBiz();
+    /**
+     * <code>string game_biz = 36;</code>
+     * @return The bytes for gameBiz.
+     */
+    com.google.protobuf.ByteString
+        getGameBizBytes();
   }
   /**
    * Protobuf type {@code RegionInfo}
@@ -365,6 +377,7 @@ public final class RegionInfoOuterClass {
       cdkeyUrl_ = "";
       privacyPolicyUrl_ = "";
       nextResourceUrl_ = "";
+      gameBiz_ = "";
     }
 
     @java.lang.Override
@@ -378,220 +391,6 @@ public final class RegionInfoOuterClass {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private RegionInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              gateserverIp_ = s;
-              break;
-            }
-            case 16: {
-
-              gateserverPort_ = input.readUInt32();
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              payCallbackUrl_ = s;
-              break;
-            }
-            case 58: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              areaType_ = s;
-              break;
-            }
-            case 66: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              resourceUrl_ = s;
-              break;
-            }
-            case 74: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              dataUrl_ = s;
-              break;
-            }
-            case 82: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              feedbackUrl_ = s;
-              break;
-            }
-            case 90: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              bulletinUrl_ = s;
-              break;
-            }
-            case 98: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              resourceUrlBak_ = s;
-              break;
-            }
-            case 106: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              dataUrlBak_ = s;
-              break;
-            }
-            case 112: {
-
-              clientDataVersion_ = input.readUInt32();
-              break;
-            }
-            case 130: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              handbookUrl_ = s;
-              break;
-            }
-            case 144: {
-
-              clientSilenceDataVersion_ = input.readUInt32();
-              break;
-            }
-            case 154: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              clientDataMd5_ = s;
-              break;
-            }
-            case 162: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              clientSilenceDataMd5_ = s;
-              break;
-            }
-            case 178: {
-              emu.grasscutter.net.proto.ResVersionConfigOuterClass.ResVersionConfig.Builder subBuilder = null;
-              if (resVersionConfig_ != null) {
-                subBuilder = resVersionConfig_.toBuilder();
-              }
-              resVersionConfig_ = input.readMessage(emu.grasscutter.net.proto.ResVersionConfigOuterClass.ResVersionConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(resVersionConfig_);
-                resVersionConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 186: {
-
-              secretKey_ = input.readBytes();
-              break;
-            }
-            case 194: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              officialCommunityUrl_ = s;
-              break;
-            }
-            case 210: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              clientVersionSuffix_ = s;
-              break;
-            }
-            case 218: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              clientSilenceVersionSuffix_ = s;
-              break;
-            }
-            case 224: {
-
-              useGateserverDomainName_ = input.readBool();
-              break;
-            }
-            case 234: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              gateserverDomainName_ = s;
-              break;
-            }
-            case 242: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              userCenterUrl_ = s;
-              break;
-            }
-            case 250: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              accountBindUrl_ = s;
-              break;
-            }
-            case 258: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              cdkeyUrl_ = s;
-              break;
-            }
-            case 266: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              privacyPolicyUrl_ = s;
-              break;
-            }
-            case 274: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              nextResourceUrl_ = s;
-              break;
-            }
-            case 282: {
-              emu.grasscutter.net.proto.ResVersionConfigOuterClass.ResVersionConfig.Builder subBuilder = null;
-              if (nextResVersionConfig_ != null) {
-                subBuilder = nextResVersionConfig_.toBuilder();
-              }
-              nextResVersionConfig_ = input.readMessage(emu.grasscutter.net.proto.ResVersionConfigOuterClass.ResVersionConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(nextResVersionConfig_);
-                nextResVersionConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -607,7 +406,8 @@ public final class RegionInfoOuterClass {
     }
 
     public static final int GATESERVER_IP_FIELD_NUMBER = 1;
-    private volatile java.lang.Object gateserverIp_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object gateserverIp_ = "";
     /**
      * <code>string gateserver_ip = 1;</code>
      * @return The gateserverIp.
@@ -645,7 +445,7 @@ public final class RegionInfoOuterClass {
     }
 
     public static final int GATESERVER_PORT_FIELD_NUMBER = 2;
-    private int gateserverPort_;
+    private int gateserverPort_ = 0;
     /**
      * <code>uint32 gateserver_port = 2;</code>
      * @return The gateserverPort.
@@ -656,7 +456,8 @@ public final class RegionInfoOuterClass {
     }
 
     public static final int PAY_CALLBACK_URL_FIELD_NUMBER = 3;
-    private volatile java.lang.Object payCallbackUrl_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object payCallbackUrl_ = "";
     /**
      * <code>string pay_callback_url = 3;</code>
      * @return The payCallbackUrl.
@@ -694,7 +495,8 @@ public final class RegionInfoOuterClass {
     }
 
     public static final int AREA_TYPE_FIELD_NUMBER = 7;
-    private volatile java.lang.Object areaType_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object areaType_ = "";
     /**
      * <code>string area_type = 7;</code>
      * @return The areaType.
@@ -732,7 +534,8 @@ public final class RegionInfoOuterClass {
     }
 
     public static final int RESOURCE_URL_FIELD_NUMBER = 8;
-    private volatile java.lang.Object resourceUrl_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object resourceUrl_ = "";
     /**
      * <code>string resource_url = 8;</code>
      * @return The resourceUrl.
@@ -770,7 +573,8 @@ public final class RegionInfoOuterClass {
     }
 
     public static final int DATA_URL_FIELD_NUMBER = 9;
-    private volatile java.lang.Object dataUrl_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object dataUrl_ = "";
     /**
      * <code>string data_url = 9;</code>
      * @return The dataUrl.
@@ -808,7 +612,8 @@ public final class RegionInfoOuterClass {
     }
 
     public static final int FEEDBACK_URL_FIELD_NUMBER = 10;
-    private volatile java.lang.Object feedbackUrl_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object feedbackUrl_ = "";
     /**
      * <code>string feedback_url = 10;</code>
      * @return The feedbackUrl.
@@ -846,7 +651,8 @@ public final class RegionInfoOuterClass {
     }
 
     public static final int BULLETIN_URL_FIELD_NUMBER = 11;
-    private volatile java.lang.Object bulletinUrl_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object bulletinUrl_ = "";
     /**
      * <code>string bulletin_url = 11;</code>
      * @return The bulletinUrl.
@@ -884,7 +690,8 @@ public final class RegionInfoOuterClass {
     }
 
     public static final int RESOURCE_URL_BAK_FIELD_NUMBER = 12;
-    private volatile java.lang.Object resourceUrlBak_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object resourceUrlBak_ = "";
     /**
      * <code>string resource_url_bak = 12;</code>
      * @return The resourceUrlBak.
@@ -922,7 +729,8 @@ public final class RegionInfoOuterClass {
     }
 
     public static final int DATA_URL_BAK_FIELD_NUMBER = 13;
-    private volatile java.lang.Object dataUrlBak_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object dataUrlBak_ = "";
     /**
      * <code>string data_url_bak = 13;</code>
      * @return The dataUrlBak.
@@ -960,7 +768,7 @@ public final class RegionInfoOuterClass {
     }
 
     public static final int CLIENT_DATA_VERSION_FIELD_NUMBER = 14;
-    private int clientDataVersion_;
+    private int clientDataVersion_ = 0;
     /**
      * <code>uint32 client_data_version = 14;</code>
      * @return The clientDataVersion.
@@ -971,7 +779,8 @@ public final class RegionInfoOuterClass {
     }
 
     public static final int HANDBOOK_URL_FIELD_NUMBER = 16;
-    private volatile java.lang.Object handbookUrl_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object handbookUrl_ = "";
     /**
      * <code>string handbook_url = 16;</code>
      * @return The handbookUrl.
@@ -1009,7 +818,7 @@ public final class RegionInfoOuterClass {
     }
 
     public static final int CLIENT_SILENCE_DATA_VERSION_FIELD_NUMBER = 18;
-    private int clientSilenceDataVersion_;
+    private int clientSilenceDataVersion_ = 0;
     /**
      * <code>uint32 client_silence_data_version = 18;</code>
      * @return The clientSilenceDataVersion.
@@ -1020,7 +829,8 @@ public final class RegionInfoOuterClass {
     }
 
     public static final int CLIENT_DATA_MD5_FIELD_NUMBER = 19;
-    private volatile java.lang.Object clientDataMd5_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object clientDataMd5_ = "";
     /**
      * <code>string client_data_md5 = 19;</code>
      * @return The clientDataMd5.
@@ -1058,7 +868,8 @@ public final class RegionInfoOuterClass {
     }
 
     public static final int CLIENT_SILENCE_DATA_MD5_FIELD_NUMBER = 20;
-    private volatile java.lang.Object clientSilenceDataMd5_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object clientSilenceDataMd5_ = "";
     /**
      * <code>string client_silence_data_md5 = 20;</code>
      * @return The clientSilenceDataMd5.
@@ -1118,11 +929,11 @@ public final class RegionInfoOuterClass {
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ResVersionConfigOuterClass.ResVersionConfigOrBuilder getResVersionConfigOrBuilder() {
-      return getResVersionConfig();
+      return resVersionConfig_ == null ? emu.grasscutter.net.proto.ResVersionConfigOuterClass.ResVersionConfig.getDefaultInstance() : resVersionConfig_;
     }
 
     public static final int SECRET_KEY_FIELD_NUMBER = 23;
-    private com.google.protobuf.ByteString secretKey_;
+    private com.google.protobuf.ByteString secretKey_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <code>bytes secret_key = 23;</code>
      * @return The secretKey.
@@ -1133,7 +944,8 @@ public final class RegionInfoOuterClass {
     }
 
     public static final int OFFICIAL_COMMUNITY_URL_FIELD_NUMBER = 24;
-    private volatile java.lang.Object officialCommunityUrl_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object officialCommunityUrl_ = "";
     /**
      * <code>string official_community_url = 24;</code>
      * @return The officialCommunityUrl.
@@ -1171,7 +983,8 @@ public final class RegionInfoOuterClass {
     }
 
     public static final int CLIENT_VERSION_SUFFIX_FIELD_NUMBER = 26;
-    private volatile java.lang.Object clientVersionSuffix_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object clientVersionSuffix_ = "";
     /**
      * <code>string client_version_suffix = 26;</code>
      * @return The clientVersionSuffix.
@@ -1209,7 +1022,8 @@ public final class RegionInfoOuterClass {
     }
 
     public static final int CLIENT_SILENCE_VERSION_SUFFIX_FIELD_NUMBER = 27;
-    private volatile java.lang.Object clientSilenceVersionSuffix_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object clientSilenceVersionSuffix_ = "";
     /**
      * <code>string client_silence_version_suffix = 27;</code>
      * @return The clientSilenceVersionSuffix.
@@ -1247,7 +1061,7 @@ public final class RegionInfoOuterClass {
     }
 
     public static final int USE_GATESERVER_DOMAIN_NAME_FIELD_NUMBER = 28;
-    private boolean useGateserverDomainName_;
+    private boolean useGateserverDomainName_ = false;
     /**
      * <code>bool use_gateserver_domain_name = 28;</code>
      * @return The useGateserverDomainName.
@@ -1258,7 +1072,8 @@ public final class RegionInfoOuterClass {
     }
 
     public static final int GATESERVER_DOMAIN_NAME_FIELD_NUMBER = 29;
-    private volatile java.lang.Object gateserverDomainName_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object gateserverDomainName_ = "";
     /**
      * <code>string gateserver_domain_name = 29;</code>
      * @return The gateserverDomainName.
@@ -1296,7 +1111,8 @@ public final class RegionInfoOuterClass {
     }
 
     public static final int USER_CENTER_URL_FIELD_NUMBER = 30;
-    private volatile java.lang.Object userCenterUrl_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object userCenterUrl_ = "";
     /**
      * <code>string user_center_url = 30;</code>
      * @return The userCenterUrl.
@@ -1334,7 +1150,8 @@ public final class RegionInfoOuterClass {
     }
 
     public static final int ACCOUNT_BIND_URL_FIELD_NUMBER = 31;
-    private volatile java.lang.Object accountBindUrl_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object accountBindUrl_ = "";
     /**
      * <code>string account_bind_url = 31;</code>
      * @return The accountBindUrl.
@@ -1372,7 +1189,8 @@ public final class RegionInfoOuterClass {
     }
 
     public static final int CDKEY_URL_FIELD_NUMBER = 32;
-    private volatile java.lang.Object cdkeyUrl_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object cdkeyUrl_ = "";
     /**
      * <code>string cdkey_url = 32;</code>
      * @return The cdkeyUrl.
@@ -1410,7 +1228,8 @@ public final class RegionInfoOuterClass {
     }
 
     public static final int PRIVACY_POLICY_URL_FIELD_NUMBER = 33;
-    private volatile java.lang.Object privacyPolicyUrl_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object privacyPolicyUrl_ = "";
     /**
      * <code>string privacy_policy_url = 33;</code>
      * @return The privacyPolicyUrl.
@@ -1448,7 +1267,8 @@ public final class RegionInfoOuterClass {
     }
 
     public static final int NEXT_RESOURCE_URL_FIELD_NUMBER = 34;
-    private volatile java.lang.Object nextResourceUrl_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object nextResourceUrl_ = "";
     /**
      * <code>string next_resource_url = 34;</code>
      * @return The nextResourceUrl.
@@ -1508,7 +1328,46 @@ public final class RegionInfoOuterClass {
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ResVersionConfigOuterClass.ResVersionConfigOrBuilder getNextResVersionConfigOrBuilder() {
-      return getNextResVersionConfig();
+      return nextResVersionConfig_ == null ? emu.grasscutter.net.proto.ResVersionConfigOuterClass.ResVersionConfig.getDefaultInstance() : nextResVersionConfig_;
+    }
+
+    public static final int GAME_BIZ_FIELD_NUMBER = 36;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object gameBiz_ = "";
+    /**
+     * <code>string game_biz = 36;</code>
+     * @return The gameBiz.
+     */
+    @java.lang.Override
+    public java.lang.String getGameBiz() {
+      java.lang.Object ref = gameBiz_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        gameBiz_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string game_biz = 36;</code>
+     * @return The bytes for gameBiz.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getGameBizBytes() {
+      java.lang.Object ref = gameBiz_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        gameBiz_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1609,7 +1468,10 @@ public final class RegionInfoOuterClass {
       if (nextResVersionConfig_ != null) {
         output.writeMessage(35, getNextResVersionConfig());
       }
-      unknownFields.writeTo(output);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gameBiz_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 36, gameBiz_);
+      }
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1709,7 +1571,10 @@ public final class RegionInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(35, getNextResVersionConfig());
       }
-      size += unknownFields.getSerializedSize();
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gameBiz_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(36, gameBiz_);
+      }
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1786,7 +1651,9 @@ public final class RegionInfoOuterClass {
         if (!getNextResVersionConfig()
             .equals(other.getNextResVersionConfig())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getGameBiz()
+          .equals(other.getGameBiz())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1858,7 +1725,9 @@ public final class RegionInfoOuterClass {
         hash = (37 * hash) + NEXT_RES_VERSION_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getNextResVersionConfig().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (37 * hash) + GAME_BIZ_FIELD_NUMBER;
+      hash = (53 * hash) + getGameBiz().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1975,86 +1844,55 @@ public final class RegionInfoOuterClass {
 
       // Construct using emu.grasscutter.net.proto.RegionInfoOuterClass.RegionInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         gateserverIp_ = "";
-
         gateserverPort_ = 0;
-
         payCallbackUrl_ = "";
-
         areaType_ = "";
-
         resourceUrl_ = "";
-
         dataUrl_ = "";
-
         feedbackUrl_ = "";
-
         bulletinUrl_ = "";
-
         resourceUrlBak_ = "";
-
         dataUrlBak_ = "";
-
         clientDataVersion_ = 0;
-
         handbookUrl_ = "";
-
         clientSilenceDataVersion_ = 0;
-
         clientDataMd5_ = "";
-
         clientSilenceDataMd5_ = "";
-
-        if (resVersionConfigBuilder_ == null) {
-          resVersionConfig_ = null;
-        } else {
-          resVersionConfig_ = null;
+        resVersionConfig_ = null;
+        if (resVersionConfigBuilder_ != null) {
+          resVersionConfigBuilder_.dispose();
           resVersionConfigBuilder_ = null;
         }
         secretKey_ = com.google.protobuf.ByteString.EMPTY;
-
         officialCommunityUrl_ = "";
-
         clientVersionSuffix_ = "";
-
         clientSilenceVersionSuffix_ = "";
-
         useGateserverDomainName_ = false;
-
         gateserverDomainName_ = "";
-
         userCenterUrl_ = "";
-
         accountBindUrl_ = "";
-
         cdkeyUrl_ = "";
-
         privacyPolicyUrl_ = "";
-
         nextResourceUrl_ = "";
-
-        if (nextResVersionConfigBuilder_ == null) {
-          nextResVersionConfig_ = null;
-        } else {
-          nextResVersionConfig_ = null;
+        nextResVersionConfig_ = null;
+        if (nextResVersionConfigBuilder_ != null) {
+          nextResVersionConfigBuilder_.dispose();
           nextResVersionConfigBuilder_ = null;
         }
+        gameBiz_ = "";
         return this;
       }
 
@@ -2081,44 +1919,104 @@ public final class RegionInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.RegionInfoOuterClass.RegionInfo buildPartial() {
         emu.grasscutter.net.proto.RegionInfoOuterClass.RegionInfo result = new emu.grasscutter.net.proto.RegionInfoOuterClass.RegionInfo(this);
-        result.gateserverIp_ = gateserverIp_;
-        result.gateserverPort_ = gateserverPort_;
-        result.payCallbackUrl_ = payCallbackUrl_;
-        result.areaType_ = areaType_;
-        result.resourceUrl_ = resourceUrl_;
-        result.dataUrl_ = dataUrl_;
-        result.feedbackUrl_ = feedbackUrl_;
-        result.bulletinUrl_ = bulletinUrl_;
-        result.resourceUrlBak_ = resourceUrlBak_;
-        result.dataUrlBak_ = dataUrlBak_;
-        result.clientDataVersion_ = clientDataVersion_;
-        result.handbookUrl_ = handbookUrl_;
-        result.clientSilenceDataVersion_ = clientSilenceDataVersion_;
-        result.clientDataMd5_ = clientDataMd5_;
-        result.clientSilenceDataMd5_ = clientSilenceDataMd5_;
-        if (resVersionConfigBuilder_ == null) {
-          result.resVersionConfig_ = resVersionConfig_;
-        } else {
-          result.resVersionConfig_ = resVersionConfigBuilder_.build();
-        }
-        result.secretKey_ = secretKey_;
-        result.officialCommunityUrl_ = officialCommunityUrl_;
-        result.clientVersionSuffix_ = clientVersionSuffix_;
-        result.clientSilenceVersionSuffix_ = clientSilenceVersionSuffix_;
-        result.useGateserverDomainName_ = useGateserverDomainName_;
-        result.gateserverDomainName_ = gateserverDomainName_;
-        result.userCenterUrl_ = userCenterUrl_;
-        result.accountBindUrl_ = accountBindUrl_;
-        result.cdkeyUrl_ = cdkeyUrl_;
-        result.privacyPolicyUrl_ = privacyPolicyUrl_;
-        result.nextResourceUrl_ = nextResourceUrl_;
-        if (nextResVersionConfigBuilder_ == null) {
-          result.nextResVersionConfig_ = nextResVersionConfig_;
-        } else {
-          result.nextResVersionConfig_ = nextResVersionConfigBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.grasscutter.net.proto.RegionInfoOuterClass.RegionInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.gateserverIp_ = gateserverIp_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.gateserverPort_ = gateserverPort_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.payCallbackUrl_ = payCallbackUrl_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.areaType_ = areaType_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.resourceUrl_ = resourceUrl_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.dataUrl_ = dataUrl_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.feedbackUrl_ = feedbackUrl_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.bulletinUrl_ = bulletinUrl_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.resourceUrlBak_ = resourceUrlBak_;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.dataUrlBak_ = dataUrlBak_;
+        }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.clientDataVersion_ = clientDataVersion_;
+        }
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.handbookUrl_ = handbookUrl_;
+        }
+        if (((from_bitField0_ & 0x00001000) != 0)) {
+          result.clientSilenceDataVersion_ = clientSilenceDataVersion_;
+        }
+        if (((from_bitField0_ & 0x00002000) != 0)) {
+          result.clientDataMd5_ = clientDataMd5_;
+        }
+        if (((from_bitField0_ & 0x00004000) != 0)) {
+          result.clientSilenceDataMd5_ = clientSilenceDataMd5_;
+        }
+        if (((from_bitField0_ & 0x00008000) != 0)) {
+          result.resVersionConfig_ = resVersionConfigBuilder_ == null
+              ? resVersionConfig_
+              : resVersionConfigBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00010000) != 0)) {
+          result.secretKey_ = secretKey_;
+        }
+        if (((from_bitField0_ & 0x00020000) != 0)) {
+          result.officialCommunityUrl_ = officialCommunityUrl_;
+        }
+        if (((from_bitField0_ & 0x00040000) != 0)) {
+          result.clientVersionSuffix_ = clientVersionSuffix_;
+        }
+        if (((from_bitField0_ & 0x00080000) != 0)) {
+          result.clientSilenceVersionSuffix_ = clientSilenceVersionSuffix_;
+        }
+        if (((from_bitField0_ & 0x00100000) != 0)) {
+          result.useGateserverDomainName_ = useGateserverDomainName_;
+        }
+        if (((from_bitField0_ & 0x00200000) != 0)) {
+          result.gateserverDomainName_ = gateserverDomainName_;
+        }
+        if (((from_bitField0_ & 0x00400000) != 0)) {
+          result.userCenterUrl_ = userCenterUrl_;
+        }
+        if (((from_bitField0_ & 0x00800000) != 0)) {
+          result.accountBindUrl_ = accountBindUrl_;
+        }
+        if (((from_bitField0_ & 0x01000000) != 0)) {
+          result.cdkeyUrl_ = cdkeyUrl_;
+        }
+        if (((from_bitField0_ & 0x02000000) != 0)) {
+          result.privacyPolicyUrl_ = privacyPolicyUrl_;
+        }
+        if (((from_bitField0_ & 0x04000000) != 0)) {
+          result.nextResourceUrl_ = nextResourceUrl_;
+        }
+        if (((from_bitField0_ & 0x08000000) != 0)) {
+          result.nextResVersionConfig_ = nextResVersionConfigBuilder_ == null
+              ? nextResVersionConfig_
+              : nextResVersionConfigBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x10000000) != 0)) {
+          result.gameBiz_ = gameBiz_;
+        }
       }
 
       @java.lang.Override
@@ -2167,6 +2065,7 @@ public final class RegionInfoOuterClass {
         if (other == emu.grasscutter.net.proto.RegionInfoOuterClass.RegionInfo.getDefaultInstance()) return this;
         if (!other.getGateserverIp().isEmpty()) {
           gateserverIp_ = other.gateserverIp_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.getGateserverPort() != 0) {
@@ -2174,34 +2073,42 @@ public final class RegionInfoOuterClass {
         }
         if (!other.getPayCallbackUrl().isEmpty()) {
           payCallbackUrl_ = other.payCallbackUrl_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (!other.getAreaType().isEmpty()) {
           areaType_ = other.areaType_;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         if (!other.getResourceUrl().isEmpty()) {
           resourceUrl_ = other.resourceUrl_;
+          bitField0_ |= 0x00000010;
           onChanged();
         }
         if (!other.getDataUrl().isEmpty()) {
           dataUrl_ = other.dataUrl_;
+          bitField0_ |= 0x00000020;
           onChanged();
         }
         if (!other.getFeedbackUrl().isEmpty()) {
           feedbackUrl_ = other.feedbackUrl_;
+          bitField0_ |= 0x00000040;
           onChanged();
         }
         if (!other.getBulletinUrl().isEmpty()) {
           bulletinUrl_ = other.bulletinUrl_;
+          bitField0_ |= 0x00000080;
           onChanged();
         }
         if (!other.getResourceUrlBak().isEmpty()) {
           resourceUrlBak_ = other.resourceUrlBak_;
+          bitField0_ |= 0x00000100;
           onChanged();
         }
         if (!other.getDataUrlBak().isEmpty()) {
           dataUrlBak_ = other.dataUrlBak_;
+          bitField0_ |= 0x00000200;
           onChanged();
         }
         if (other.getClientDataVersion() != 0) {
@@ -2209,6 +2116,7 @@ public final class RegionInfoOuterClass {
         }
         if (!other.getHandbookUrl().isEmpty()) {
           handbookUrl_ = other.handbookUrl_;
+          bitField0_ |= 0x00000800;
           onChanged();
         }
         if (other.getClientSilenceDataVersion() != 0) {
@@ -2216,10 +2124,12 @@ public final class RegionInfoOuterClass {
         }
         if (!other.getClientDataMd5().isEmpty()) {
           clientDataMd5_ = other.clientDataMd5_;
+          bitField0_ |= 0x00002000;
           onChanged();
         }
         if (!other.getClientSilenceDataMd5().isEmpty()) {
           clientSilenceDataMd5_ = other.clientSilenceDataMd5_;
+          bitField0_ |= 0x00004000;
           onChanged();
         }
         if (other.hasResVersionConfig()) {
@@ -2230,14 +2140,17 @@ public final class RegionInfoOuterClass {
         }
         if (!other.getOfficialCommunityUrl().isEmpty()) {
           officialCommunityUrl_ = other.officialCommunityUrl_;
+          bitField0_ |= 0x00020000;
           onChanged();
         }
         if (!other.getClientVersionSuffix().isEmpty()) {
           clientVersionSuffix_ = other.clientVersionSuffix_;
+          bitField0_ |= 0x00040000;
           onChanged();
         }
         if (!other.getClientSilenceVersionSuffix().isEmpty()) {
           clientSilenceVersionSuffix_ = other.clientSilenceVersionSuffix_;
+          bitField0_ |= 0x00080000;
           onChanged();
         }
         if (other.getUseGateserverDomainName() != false) {
@@ -2245,32 +2158,43 @@ public final class RegionInfoOuterClass {
         }
         if (!other.getGateserverDomainName().isEmpty()) {
           gateserverDomainName_ = other.gateserverDomainName_;
+          bitField0_ |= 0x00200000;
           onChanged();
         }
         if (!other.getUserCenterUrl().isEmpty()) {
           userCenterUrl_ = other.userCenterUrl_;
+          bitField0_ |= 0x00400000;
           onChanged();
         }
         if (!other.getAccountBindUrl().isEmpty()) {
           accountBindUrl_ = other.accountBindUrl_;
+          bitField0_ |= 0x00800000;
           onChanged();
         }
         if (!other.getCdkeyUrl().isEmpty()) {
           cdkeyUrl_ = other.cdkeyUrl_;
+          bitField0_ |= 0x01000000;
           onChanged();
         }
         if (!other.getPrivacyPolicyUrl().isEmpty()) {
           privacyPolicyUrl_ = other.privacyPolicyUrl_;
+          bitField0_ |= 0x02000000;
           onChanged();
         }
         if (!other.getNextResourceUrl().isEmpty()) {
           nextResourceUrl_ = other.nextResourceUrl_;
+          bitField0_ |= 0x04000000;
           onChanged();
         }
         if (other.hasNextResVersionConfig()) {
           mergeNextResVersionConfig(other.getNextResVersionConfig());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        if (!other.getGameBiz().isEmpty()) {
+          gameBiz_ = other.gameBiz_;
+          bitField0_ |= 0x10000000;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -2285,19 +2209,182 @@ public final class RegionInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.RegionInfoOuterClass.RegionInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                gateserverIp_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 16: {
+                gateserverPort_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 26: {
+                payCallbackUrl_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 58: {
+                areaType_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 58
+              case 66: {
+                resourceUrl_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 66
+              case 74: {
+                dataUrl_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 74
+              case 82: {
+                feedbackUrl_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 82
+              case 90: {
+                bulletinUrl_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 90
+              case 98: {
+                resourceUrlBak_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 98
+              case 106: {
+                dataUrlBak_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 106
+              case 112: {
+                clientDataVersion_ = input.readUInt32();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 112
+              case 130: {
+                handbookUrl_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 130
+              case 144: {
+                clientSilenceDataVersion_ = input.readUInt32();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 144
+              case 154: {
+                clientDataMd5_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 154
+              case 162: {
+                clientSilenceDataMd5_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 162
+              case 178: {
+                input.readMessage(
+                    getResVersionConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 178
+              case 186: {
+                secretKey_ = input.readBytes();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 186
+              case 194: {
+                officialCommunityUrl_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 194
+              case 210: {
+                clientVersionSuffix_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 210
+              case 218: {
+                clientSilenceVersionSuffix_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 218
+              case 224: {
+                useGateserverDomainName_ = input.readBool();
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 224
+              case 234: {
+                gateserverDomainName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00200000;
+                break;
+              } // case 234
+              case 242: {
+                userCenterUrl_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00400000;
+                break;
+              } // case 242
+              case 250: {
+                accountBindUrl_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00800000;
+                break;
+              } // case 250
+              case 258: {
+                cdkeyUrl_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x01000000;
+                break;
+              } // case 258
+              case 266: {
+                privacyPolicyUrl_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x02000000;
+                break;
+              } // case 266
+              case 274: {
+                nextResourceUrl_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x04000000;
+                break;
+              } // case 274
+              case 282: {
+                input.readMessage(
+                    getNextResVersionConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x08000000;
+                break;
+              } // case 282
+              case 290: {
+                gameBiz_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x10000000;
+                break;
+              } // case 290
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.RegionInfoOuterClass.RegionInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object gateserverIp_ = "";
       /**
@@ -2340,11 +2427,9 @@ public final class RegionInfoOuterClass {
        */
       public Builder setGateserverIp(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         gateserverIp_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2353,8 +2438,8 @@ public final class RegionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGateserverIp() {
-        
         gateserverIp_ = getDefaultInstance().getGateserverIp();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -2365,12 +2450,10 @@ public final class RegionInfoOuterClass {
        */
       public Builder setGateserverIpBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         gateserverIp_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2392,6 +2475,7 @@ public final class RegionInfoOuterClass {
       public Builder setGateserverPort(int value) {
         
         gateserverPort_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2400,7 +2484,7 @@ public final class RegionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGateserverPort() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         gateserverPort_ = 0;
         onChanged();
         return this;
@@ -2447,11 +2531,9 @@ public final class RegionInfoOuterClass {
        */
       public Builder setPayCallbackUrl(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         payCallbackUrl_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -2460,8 +2542,8 @@ public final class RegionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPayCallbackUrl() {
-        
         payCallbackUrl_ = getDefaultInstance().getPayCallbackUrl();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -2472,12 +2554,10 @@ public final class RegionInfoOuterClass {
        */
       public Builder setPayCallbackUrlBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         payCallbackUrl_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -2523,11 +2603,9 @@ public final class RegionInfoOuterClass {
        */
       public Builder setAreaType(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         areaType_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -2536,8 +2614,8 @@ public final class RegionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAreaType() {
-        
         areaType_ = getDefaultInstance().getAreaType();
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -2548,12 +2626,10 @@ public final class RegionInfoOuterClass {
        */
       public Builder setAreaTypeBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         areaType_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -2599,11 +2675,9 @@ public final class RegionInfoOuterClass {
        */
       public Builder setResourceUrl(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         resourceUrl_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -2612,8 +2686,8 @@ public final class RegionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearResourceUrl() {
-        
         resourceUrl_ = getDefaultInstance().getResourceUrl();
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -2624,12 +2698,10 @@ public final class RegionInfoOuterClass {
        */
       public Builder setResourceUrlBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         resourceUrl_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -2675,11 +2747,9 @@ public final class RegionInfoOuterClass {
        */
       public Builder setDataUrl(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         dataUrl_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -2688,8 +2758,8 @@ public final class RegionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDataUrl() {
-        
         dataUrl_ = getDefaultInstance().getDataUrl();
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
@@ -2700,12 +2770,10 @@ public final class RegionInfoOuterClass {
        */
       public Builder setDataUrlBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         dataUrl_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -2751,11 +2819,9 @@ public final class RegionInfoOuterClass {
        */
       public Builder setFeedbackUrl(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         feedbackUrl_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -2764,8 +2830,8 @@ public final class RegionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFeedbackUrl() {
-        
         feedbackUrl_ = getDefaultInstance().getFeedbackUrl();
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
         return this;
       }
@@ -2776,12 +2842,10 @@ public final class RegionInfoOuterClass {
        */
       public Builder setFeedbackUrlBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         feedbackUrl_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -2827,11 +2891,9 @@ public final class RegionInfoOuterClass {
        */
       public Builder setBulletinUrl(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         bulletinUrl_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -2840,8 +2902,8 @@ public final class RegionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBulletinUrl() {
-        
         bulletinUrl_ = getDefaultInstance().getBulletinUrl();
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
         return this;
       }
@@ -2852,12 +2914,10 @@ public final class RegionInfoOuterClass {
        */
       public Builder setBulletinUrlBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         bulletinUrl_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -2903,11 +2963,9 @@ public final class RegionInfoOuterClass {
        */
       public Builder setResourceUrlBak(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         resourceUrlBak_ = value;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -2916,8 +2974,8 @@ public final class RegionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearResourceUrlBak() {
-        
         resourceUrlBak_ = getDefaultInstance().getResourceUrlBak();
+        bitField0_ = (bitField0_ & ~0x00000100);
         onChanged();
         return this;
       }
@@ -2928,12 +2986,10 @@ public final class RegionInfoOuterClass {
        */
       public Builder setResourceUrlBakBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         resourceUrlBak_ = value;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -2979,11 +3035,9 @@ public final class RegionInfoOuterClass {
        */
       public Builder setDataUrlBak(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         dataUrlBak_ = value;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -2992,8 +3046,8 @@ public final class RegionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDataUrlBak() {
-        
         dataUrlBak_ = getDefaultInstance().getDataUrlBak();
+        bitField0_ = (bitField0_ & ~0x00000200);
         onChanged();
         return this;
       }
@@ -3004,12 +3058,10 @@ public final class RegionInfoOuterClass {
        */
       public Builder setDataUrlBakBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         dataUrlBak_ = value;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -3031,6 +3083,7 @@ public final class RegionInfoOuterClass {
       public Builder setClientDataVersion(int value) {
         
         clientDataVersion_ = value;
+        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -3039,7 +3092,7 @@ public final class RegionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearClientDataVersion() {
-        
+        bitField0_ = (bitField0_ & ~0x00000400);
         clientDataVersion_ = 0;
         onChanged();
         return this;
@@ -3086,11 +3139,9 @@ public final class RegionInfoOuterClass {
        */
       public Builder setHandbookUrl(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         handbookUrl_ = value;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -3099,8 +3150,8 @@ public final class RegionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearHandbookUrl() {
-        
         handbookUrl_ = getDefaultInstance().getHandbookUrl();
+        bitField0_ = (bitField0_ & ~0x00000800);
         onChanged();
         return this;
       }
@@ -3111,12 +3162,10 @@ public final class RegionInfoOuterClass {
        */
       public Builder setHandbookUrlBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         handbookUrl_ = value;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -3138,6 +3187,7 @@ public final class RegionInfoOuterClass {
       public Builder setClientSilenceDataVersion(int value) {
         
         clientSilenceDataVersion_ = value;
+        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -3146,7 +3196,7 @@ public final class RegionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearClientSilenceDataVersion() {
-        
+        bitField0_ = (bitField0_ & ~0x00001000);
         clientSilenceDataVersion_ = 0;
         onChanged();
         return this;
@@ -3193,11 +3243,9 @@ public final class RegionInfoOuterClass {
        */
       public Builder setClientDataMd5(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         clientDataMd5_ = value;
+        bitField0_ |= 0x00002000;
         onChanged();
         return this;
       }
@@ -3206,8 +3254,8 @@ public final class RegionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearClientDataMd5() {
-        
         clientDataMd5_ = getDefaultInstance().getClientDataMd5();
+        bitField0_ = (bitField0_ & ~0x00002000);
         onChanged();
         return this;
       }
@@ -3218,12 +3266,10 @@ public final class RegionInfoOuterClass {
        */
       public Builder setClientDataMd5Bytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         clientDataMd5_ = value;
+        bitField0_ |= 0x00002000;
         onChanged();
         return this;
       }
@@ -3269,11 +3315,9 @@ public final class RegionInfoOuterClass {
        */
       public Builder setClientSilenceDataMd5(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         clientSilenceDataMd5_ = value;
+        bitField0_ |= 0x00004000;
         onChanged();
         return this;
       }
@@ -3282,8 +3326,8 @@ public final class RegionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearClientSilenceDataMd5() {
-        
         clientSilenceDataMd5_ = getDefaultInstance().getClientSilenceDataMd5();
+        bitField0_ = (bitField0_ & ~0x00004000);
         onChanged();
         return this;
       }
@@ -3294,12 +3338,10 @@ public final class RegionInfoOuterClass {
        */
       public Builder setClientSilenceDataMd5Bytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         clientSilenceDataMd5_ = value;
+        bitField0_ |= 0x00004000;
         onChanged();
         return this;
       }
@@ -3312,7 +3354,7 @@ public final class RegionInfoOuterClass {
        * @return Whether the resVersionConfig field is set.
        */
       public boolean hasResVersionConfig() {
-        return resVersionConfigBuilder_ != null || resVersionConfig_ != null;
+        return ((bitField0_ & 0x00008000) != 0);
       }
       /**
        * <code>.ResVersionConfig res_version_config = 22;</code>
@@ -3334,11 +3376,11 @@ public final class RegionInfoOuterClass {
             throw new NullPointerException();
           }
           resVersionConfig_ = value;
-          onChanged();
         } else {
           resVersionConfigBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00008000;
+        onChanged();
         return this;
       }
       /**
@@ -3348,11 +3390,11 @@ public final class RegionInfoOuterClass {
           emu.grasscutter.net.proto.ResVersionConfigOuterClass.ResVersionConfig.Builder builderForValue) {
         if (resVersionConfigBuilder_ == null) {
           resVersionConfig_ = builderForValue.build();
-          onChanged();
         } else {
           resVersionConfigBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00008000;
+        onChanged();
         return this;
       }
       /**
@@ -3360,38 +3402,38 @@ public final class RegionInfoOuterClass {
        */
       public Builder mergeResVersionConfig(emu.grasscutter.net.proto.ResVersionConfigOuterClass.ResVersionConfig value) {
         if (resVersionConfigBuilder_ == null) {
-          if (resVersionConfig_ != null) {
-            resVersionConfig_ =
-              emu.grasscutter.net.proto.ResVersionConfigOuterClass.ResVersionConfig.newBuilder(resVersionConfig_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00008000) != 0) &&
+            resVersionConfig_ != null &&
+            resVersionConfig_ != emu.grasscutter.net.proto.ResVersionConfigOuterClass.ResVersionConfig.getDefaultInstance()) {
+            getResVersionConfigBuilder().mergeFrom(value);
           } else {
             resVersionConfig_ = value;
           }
-          onChanged();
         } else {
           resVersionConfigBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00008000;
+        onChanged();
         return this;
       }
       /**
        * <code>.ResVersionConfig res_version_config = 22;</code>
        */
       public Builder clearResVersionConfig() {
-        if (resVersionConfigBuilder_ == null) {
-          resVersionConfig_ = null;
-          onChanged();
-        } else {
-          resVersionConfig_ = null;
+        bitField0_ = (bitField0_ & ~0x00008000);
+        resVersionConfig_ = null;
+        if (resVersionConfigBuilder_ != null) {
+          resVersionConfigBuilder_.dispose();
           resVersionConfigBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.ResVersionConfig res_version_config = 22;</code>
        */
       public emu.grasscutter.net.proto.ResVersionConfigOuterClass.ResVersionConfig.Builder getResVersionConfigBuilder() {
-        
+        bitField0_ |= 0x00008000;
         onChanged();
         return getResVersionConfigFieldBuilder().getBuilder();
       }
@@ -3438,11 +3480,9 @@ public final class RegionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder setSecretKey(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         secretKey_ = value;
+        bitField0_ |= 0x00010000;
         onChanged();
         return this;
       }
@@ -3451,7 +3491,7 @@ public final class RegionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSecretKey() {
-        
+        bitField0_ = (bitField0_ & ~0x00010000);
         secretKey_ = getDefaultInstance().getSecretKey();
         onChanged();
         return this;
@@ -3498,11 +3538,9 @@ public final class RegionInfoOuterClass {
        */
       public Builder setOfficialCommunityUrl(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         officialCommunityUrl_ = value;
+        bitField0_ |= 0x00020000;
         onChanged();
         return this;
       }
@@ -3511,8 +3549,8 @@ public final class RegionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOfficialCommunityUrl() {
-        
         officialCommunityUrl_ = getDefaultInstance().getOfficialCommunityUrl();
+        bitField0_ = (bitField0_ & ~0x00020000);
         onChanged();
         return this;
       }
@@ -3523,12 +3561,10 @@ public final class RegionInfoOuterClass {
        */
       public Builder setOfficialCommunityUrlBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         officialCommunityUrl_ = value;
+        bitField0_ |= 0x00020000;
         onChanged();
         return this;
       }
@@ -3574,11 +3610,9 @@ public final class RegionInfoOuterClass {
        */
       public Builder setClientVersionSuffix(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         clientVersionSuffix_ = value;
+        bitField0_ |= 0x00040000;
         onChanged();
         return this;
       }
@@ -3587,8 +3621,8 @@ public final class RegionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearClientVersionSuffix() {
-        
         clientVersionSuffix_ = getDefaultInstance().getClientVersionSuffix();
+        bitField0_ = (bitField0_ & ~0x00040000);
         onChanged();
         return this;
       }
@@ -3599,12 +3633,10 @@ public final class RegionInfoOuterClass {
        */
       public Builder setClientVersionSuffixBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         clientVersionSuffix_ = value;
+        bitField0_ |= 0x00040000;
         onChanged();
         return this;
       }
@@ -3650,11 +3682,9 @@ public final class RegionInfoOuterClass {
        */
       public Builder setClientSilenceVersionSuffix(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         clientSilenceVersionSuffix_ = value;
+        bitField0_ |= 0x00080000;
         onChanged();
         return this;
       }
@@ -3663,8 +3693,8 @@ public final class RegionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearClientSilenceVersionSuffix() {
-        
         clientSilenceVersionSuffix_ = getDefaultInstance().getClientSilenceVersionSuffix();
+        bitField0_ = (bitField0_ & ~0x00080000);
         onChanged();
         return this;
       }
@@ -3675,12 +3705,10 @@ public final class RegionInfoOuterClass {
        */
       public Builder setClientSilenceVersionSuffixBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         clientSilenceVersionSuffix_ = value;
+        bitField0_ |= 0x00080000;
         onChanged();
         return this;
       }
@@ -3702,6 +3730,7 @@ public final class RegionInfoOuterClass {
       public Builder setUseGateserverDomainName(boolean value) {
         
         useGateserverDomainName_ = value;
+        bitField0_ |= 0x00100000;
         onChanged();
         return this;
       }
@@ -3710,7 +3739,7 @@ public final class RegionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUseGateserverDomainName() {
-        
+        bitField0_ = (bitField0_ & ~0x00100000);
         useGateserverDomainName_ = false;
         onChanged();
         return this;
@@ -3757,11 +3786,9 @@ public final class RegionInfoOuterClass {
        */
       public Builder setGateserverDomainName(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         gateserverDomainName_ = value;
+        bitField0_ |= 0x00200000;
         onChanged();
         return this;
       }
@@ -3770,8 +3797,8 @@ public final class RegionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGateserverDomainName() {
-        
         gateserverDomainName_ = getDefaultInstance().getGateserverDomainName();
+        bitField0_ = (bitField0_ & ~0x00200000);
         onChanged();
         return this;
       }
@@ -3782,12 +3809,10 @@ public final class RegionInfoOuterClass {
        */
       public Builder setGateserverDomainNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         gateserverDomainName_ = value;
+        bitField0_ |= 0x00200000;
         onChanged();
         return this;
       }
@@ -3833,11 +3858,9 @@ public final class RegionInfoOuterClass {
        */
       public Builder setUserCenterUrl(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         userCenterUrl_ = value;
+        bitField0_ |= 0x00400000;
         onChanged();
         return this;
       }
@@ -3846,8 +3869,8 @@ public final class RegionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUserCenterUrl() {
-        
         userCenterUrl_ = getDefaultInstance().getUserCenterUrl();
+        bitField0_ = (bitField0_ & ~0x00400000);
         onChanged();
         return this;
       }
@@ -3858,12 +3881,10 @@ public final class RegionInfoOuterClass {
        */
       public Builder setUserCenterUrlBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         userCenterUrl_ = value;
+        bitField0_ |= 0x00400000;
         onChanged();
         return this;
       }
@@ -3909,11 +3930,9 @@ public final class RegionInfoOuterClass {
        */
       public Builder setAccountBindUrl(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         accountBindUrl_ = value;
+        bitField0_ |= 0x00800000;
         onChanged();
         return this;
       }
@@ -3922,8 +3941,8 @@ public final class RegionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAccountBindUrl() {
-        
         accountBindUrl_ = getDefaultInstance().getAccountBindUrl();
+        bitField0_ = (bitField0_ & ~0x00800000);
         onChanged();
         return this;
       }
@@ -3934,12 +3953,10 @@ public final class RegionInfoOuterClass {
        */
       public Builder setAccountBindUrlBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         accountBindUrl_ = value;
+        bitField0_ |= 0x00800000;
         onChanged();
         return this;
       }
@@ -3985,11 +4002,9 @@ public final class RegionInfoOuterClass {
        */
       public Builder setCdkeyUrl(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         cdkeyUrl_ = value;
+        bitField0_ |= 0x01000000;
         onChanged();
         return this;
       }
@@ -3998,8 +4013,8 @@ public final class RegionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCdkeyUrl() {
-        
         cdkeyUrl_ = getDefaultInstance().getCdkeyUrl();
+        bitField0_ = (bitField0_ & ~0x01000000);
         onChanged();
         return this;
       }
@@ -4010,12 +4025,10 @@ public final class RegionInfoOuterClass {
        */
       public Builder setCdkeyUrlBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         cdkeyUrl_ = value;
+        bitField0_ |= 0x01000000;
         onChanged();
         return this;
       }
@@ -4061,11 +4074,9 @@ public final class RegionInfoOuterClass {
        */
       public Builder setPrivacyPolicyUrl(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         privacyPolicyUrl_ = value;
+        bitField0_ |= 0x02000000;
         onChanged();
         return this;
       }
@@ -4074,8 +4085,8 @@ public final class RegionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPrivacyPolicyUrl() {
-        
         privacyPolicyUrl_ = getDefaultInstance().getPrivacyPolicyUrl();
+        bitField0_ = (bitField0_ & ~0x02000000);
         onChanged();
         return this;
       }
@@ -4086,12 +4097,10 @@ public final class RegionInfoOuterClass {
        */
       public Builder setPrivacyPolicyUrlBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         privacyPolicyUrl_ = value;
+        bitField0_ |= 0x02000000;
         onChanged();
         return this;
       }
@@ -4137,11 +4146,9 @@ public final class RegionInfoOuterClass {
        */
       public Builder setNextResourceUrl(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         nextResourceUrl_ = value;
+        bitField0_ |= 0x04000000;
         onChanged();
         return this;
       }
@@ -4150,8 +4157,8 @@ public final class RegionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNextResourceUrl() {
-        
         nextResourceUrl_ = getDefaultInstance().getNextResourceUrl();
+        bitField0_ = (bitField0_ & ~0x04000000);
         onChanged();
         return this;
       }
@@ -4162,12 +4169,10 @@ public final class RegionInfoOuterClass {
        */
       public Builder setNextResourceUrlBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         nextResourceUrl_ = value;
+        bitField0_ |= 0x04000000;
         onChanged();
         return this;
       }
@@ -4180,7 +4185,7 @@ public final class RegionInfoOuterClass {
        * @return Whether the nextResVersionConfig field is set.
        */
       public boolean hasNextResVersionConfig() {
-        return nextResVersionConfigBuilder_ != null || nextResVersionConfig_ != null;
+        return ((bitField0_ & 0x08000000) != 0);
       }
       /**
        * <code>.ResVersionConfig next_res_version_config = 35;</code>
@@ -4202,11 +4207,11 @@ public final class RegionInfoOuterClass {
             throw new NullPointerException();
           }
           nextResVersionConfig_ = value;
-          onChanged();
         } else {
           nextResVersionConfigBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x08000000;
+        onChanged();
         return this;
       }
       /**
@@ -4216,11 +4221,11 @@ public final class RegionInfoOuterClass {
           emu.grasscutter.net.proto.ResVersionConfigOuterClass.ResVersionConfig.Builder builderForValue) {
         if (nextResVersionConfigBuilder_ == null) {
           nextResVersionConfig_ = builderForValue.build();
-          onChanged();
         } else {
           nextResVersionConfigBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x08000000;
+        onChanged();
         return this;
       }
       /**
@@ -4228,38 +4233,38 @@ public final class RegionInfoOuterClass {
        */
       public Builder mergeNextResVersionConfig(emu.grasscutter.net.proto.ResVersionConfigOuterClass.ResVersionConfig value) {
         if (nextResVersionConfigBuilder_ == null) {
-          if (nextResVersionConfig_ != null) {
-            nextResVersionConfig_ =
-              emu.grasscutter.net.proto.ResVersionConfigOuterClass.ResVersionConfig.newBuilder(nextResVersionConfig_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x08000000) != 0) &&
+            nextResVersionConfig_ != null &&
+            nextResVersionConfig_ != emu.grasscutter.net.proto.ResVersionConfigOuterClass.ResVersionConfig.getDefaultInstance()) {
+            getNextResVersionConfigBuilder().mergeFrom(value);
           } else {
             nextResVersionConfig_ = value;
           }
-          onChanged();
         } else {
           nextResVersionConfigBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x08000000;
+        onChanged();
         return this;
       }
       /**
        * <code>.ResVersionConfig next_res_version_config = 35;</code>
        */
       public Builder clearNextResVersionConfig() {
-        if (nextResVersionConfigBuilder_ == null) {
-          nextResVersionConfig_ = null;
-          onChanged();
-        } else {
-          nextResVersionConfig_ = null;
+        bitField0_ = (bitField0_ & ~0x08000000);
+        nextResVersionConfig_ = null;
+        if (nextResVersionConfigBuilder_ != null) {
+          nextResVersionConfigBuilder_.dispose();
           nextResVersionConfigBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.ResVersionConfig next_res_version_config = 35;</code>
        */
       public emu.grasscutter.net.proto.ResVersionConfigOuterClass.ResVersionConfig.Builder getNextResVersionConfigBuilder() {
-        
+        bitField0_ |= 0x08000000;
         onChanged();
         return getNextResVersionConfigFieldBuilder().getBuilder();
       }
@@ -4289,6 +4294,78 @@ public final class RegionInfoOuterClass {
           nextResVersionConfig_ = null;
         }
         return nextResVersionConfigBuilder_;
+      }
+
+      private java.lang.Object gameBiz_ = "";
+      /**
+       * <code>string game_biz = 36;</code>
+       * @return The gameBiz.
+       */
+      public java.lang.String getGameBiz() {
+        java.lang.Object ref = gameBiz_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          gameBiz_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string game_biz = 36;</code>
+       * @return The bytes for gameBiz.
+       */
+      public com.google.protobuf.ByteString
+          getGameBizBytes() {
+        java.lang.Object ref = gameBiz_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          gameBiz_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string game_biz = 36;</code>
+       * @param value The gameBiz to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGameBiz(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        gameBiz_ = value;
+        bitField0_ |= 0x10000000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string game_biz = 36;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGameBiz() {
+        gameBiz_ = getDefaultInstance().getGameBiz();
+        bitField0_ = (bitField0_ & ~0x10000000);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string game_biz = 36;</code>
+       * @param value The bytes for gameBiz to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGameBizBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        gameBiz_ = value;
+        bitField0_ |= 0x10000000;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -4323,7 +4400,18 @@ public final class RegionInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new RegionInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -4358,7 +4446,7 @@ public final class RegionInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\020RegionInfo.proto\032\026ResVersionConfig.pro" +
-      "to\"\235\006\n\nRegionInfo\022\025\n\rgateserver_ip\030\001 \001(\t" +
+      "to\"\257\006\n\nRegionInfo\022\025\n\rgateserver_ip\030\001 \001(\t" +
       "\022\027\n\017gateserver_port\030\002 \001(\r\022\030\n\020pay_callbac" +
       "k_url\030\003 \001(\t\022\021\n\tarea_type\030\007 \001(\t\022\024\n\014resour" +
       "ce_url\030\010 \001(\t\022\020\n\010data_url\030\t \001(\t\022\024\n\014feedba" +
@@ -4378,7 +4466,8 @@ public final class RegionInfoOuterClass {
       "cdkey_url\030  \001(\t\022\032\n\022privacy_policy_url\030! " +
       "\001(\t\022\031\n\021next_resource_url\030\" \001(\t\0222\n\027next_r" +
       "es_version_config\030# \001(\0132\021.ResVersionConf" +
-      "igB\033\n\031emu.grasscutter.net.protob\006proto3"
+      "ig\022\020\n\010game_biz\030$ \001(\tB\033\n\031emu.grasscutter." +
+      "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4390,7 +4479,7 @@ public final class RegionInfoOuterClass {
     internal_static_RegionInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_RegionInfo_descriptor,
-        new java.lang.String[] { "GateserverIp", "GateserverPort", "PayCallbackUrl", "AreaType", "ResourceUrl", "DataUrl", "FeedbackUrl", "BulletinUrl", "ResourceUrlBak", "DataUrlBak", "ClientDataVersion", "HandbookUrl", "ClientSilenceDataVersion", "ClientDataMd5", "ClientSilenceDataMd5", "ResVersionConfig", "SecretKey", "OfficialCommunityUrl", "ClientVersionSuffix", "ClientSilenceVersionSuffix", "UseGateserverDomainName", "GateserverDomainName", "UserCenterUrl", "AccountBindUrl", "CdkeyUrl", "PrivacyPolicyUrl", "NextResourceUrl", "NextResVersionConfig", });
+        new java.lang.String[] { "GateserverIp", "GateserverPort", "PayCallbackUrl", "AreaType", "ResourceUrl", "DataUrl", "FeedbackUrl", "BulletinUrl", "ResourceUrlBak", "DataUrlBak", "ClientDataVersion", "HandbookUrl", "ClientSilenceDataVersion", "ClientDataMd5", "ClientSilenceDataMd5", "ResVersionConfig", "SecretKey", "OfficialCommunityUrl", "ClientVersionSuffix", "ClientSilenceVersionSuffix", "UseGateserverDomainName", "GateserverDomainName", "UserCenterUrl", "AccountBindUrl", "CdkeyUrl", "PrivacyPolicyUrl", "NextResourceUrl", "NextResVersionConfig", "GameBiz", });
     emu.grasscutter.net.proto.ResVersionConfigOuterClass.getDescriptor();
   }
 

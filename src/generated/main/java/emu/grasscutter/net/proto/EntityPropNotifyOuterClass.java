@@ -19,11 +19,17 @@ public final class EntityPropNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>map&lt;uint32, .PropValue&gt; prop_map = 1;</code>
+     * <code>uint32 entity_id = 13;</code>
+     * @return The entityId.
+     */
+    int getEntityId();
+
+    /**
+     * <code>map&lt;uint32, .PropValue&gt; prop_map = 9;</code>
      */
     int getPropMapCount();
     /**
-     * <code>map&lt;uint32, .PropValue&gt; prop_map = 1;</code>
+     * <code>map&lt;uint32, .PropValue&gt; prop_map = 9;</code>
      */
     boolean containsPropMap(
         int key);
@@ -34,36 +40,33 @@ public final class EntityPropNotifyOuterClass {
     java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.PropValueOuterClass.PropValue>
     getPropMap();
     /**
-     * <code>map&lt;uint32, .PropValue&gt; prop_map = 1;</code>
+     * <code>map&lt;uint32, .PropValue&gt; prop_map = 9;</code>
      */
     java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.PropValueOuterClass.PropValue>
     getPropMapMap();
     /**
-     * <code>map&lt;uint32, .PropValue&gt; prop_map = 1;</code>
+     * <code>map&lt;uint32, .PropValue&gt; prop_map = 9;</code>
      */
-
-    emu.grasscutter.net.proto.PropValueOuterClass.PropValue getPropMapOrDefault(
+    /* nullable */
+emu.grasscutter.net.proto.PropValueOuterClass.PropValue getPropMapOrDefault(
         int key,
-        emu.grasscutter.net.proto.PropValueOuterClass.PropValue defaultValue);
+        /* nullable */
+emu.grasscutter.net.proto.PropValueOuterClass.PropValue defaultValue);
     /**
-     * <code>map&lt;uint32, .PropValue&gt; prop_map = 1;</code>
+     * <code>map&lt;uint32, .PropValue&gt; prop_map = 9;</code>
      */
-
     emu.grasscutter.net.proto.PropValueOuterClass.PropValue getPropMapOrThrow(
         int key);
-
-    /**
-     * <code>uint32 entity_id = 14;</code>
-     * @return The entityId.
-     */
-    int getEntityId();
   }
   /**
    * <pre>
-   * CmdId: 1272
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 1279;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code EntityPropNotify}
@@ -92,62 +95,6 @@ public final class EntityPropNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private EntityPropNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                propMap_ = com.google.protobuf.MapField.newMapField(
-                    PropMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, emu.grasscutter.net.proto.PropValueOuterClass.PropValue>
-              propMap__ = input.readMessage(
-                  PropMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              propMap_.getMutableMap().put(
-                  propMap__.getKey(), propMap__.getValue());
-              break;
-            }
-            case 112: {
-
-              entityId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.grasscutter.net.proto.EntityPropNotifyOuterClass.internal_static_EntityPropNotify_descriptor;
@@ -158,7 +105,7 @@ public final class EntityPropNotifyOuterClass {
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 1:
+        case 9:
           return internalGetPropMap();
         default:
           throw new RuntimeException(
@@ -173,7 +120,18 @@ public final class EntityPropNotifyOuterClass {
               emu.grasscutter.net.proto.EntityPropNotifyOuterClass.EntityPropNotify.class, emu.grasscutter.net.proto.EntityPropNotifyOuterClass.EntityPropNotify.Builder.class);
     }
 
-    public static final int PROP_MAP_FIELD_NUMBER = 1;
+    public static final int ENTITY_ID_FIELD_NUMBER = 13;
+    private int entityId_ = 0;
+    /**
+     * <code>uint32 entity_id = 13;</code>
+     * @return The entityId.
+     */
+    @java.lang.Override
+    public int getEntityId() {
+      return entityId_;
+    }
+
+    public static final int PROP_MAP_FIELD_NUMBER = 9;
     private static final class PropMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, emu.grasscutter.net.proto.PropValueOuterClass.PropValue> defaultEntry =
@@ -185,6 +143,7 @@ public final class EntityPropNotifyOuterClass {
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   emu.grasscutter.net.proto.PropValueOuterClass.PropValue.getDefaultInstance());
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, emu.grasscutter.net.proto.PropValueOuterClass.PropValue> propMap_;
     private com.google.protobuf.MapField<java.lang.Integer, emu.grasscutter.net.proto.PropValueOuterClass.PropValue>
@@ -195,14 +154,12 @@ public final class EntityPropNotifyOuterClass {
       }
       return propMap_;
     }
-
     public int getPropMapCount() {
       return internalGetPropMap().getMap().size();
     }
     /**
-     * <code>map&lt;uint32, .PropValue&gt; prop_map = 1;</code>
+     * <code>map&lt;uint32, .PropValue&gt; prop_map = 9;</code>
      */
-
     @java.lang.Override
     public boolean containsPropMap(
         int key) {
@@ -218,31 +175,30 @@ public final class EntityPropNotifyOuterClass {
       return getPropMapMap();
     }
     /**
-     * <code>map&lt;uint32, .PropValue&gt; prop_map = 1;</code>
+     * <code>map&lt;uint32, .PropValue&gt; prop_map = 9;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.PropValueOuterClass.PropValue> getPropMapMap() {
       return internalGetPropMap().getMap();
     }
     /**
-     * <code>map&lt;uint32, .PropValue&gt; prop_map = 1;</code>
+     * <code>map&lt;uint32, .PropValue&gt; prop_map = 9;</code>
      */
     @java.lang.Override
-
-    public emu.grasscutter.net.proto.PropValueOuterClass.PropValue getPropMapOrDefault(
+    public /* nullable */
+emu.grasscutter.net.proto.PropValueOuterClass.PropValue getPropMapOrDefault(
         int key,
-        emu.grasscutter.net.proto.PropValueOuterClass.PropValue defaultValue) {
+        /* nullable */
+emu.grasscutter.net.proto.PropValueOuterClass.PropValue defaultValue) {
       
       java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.PropValueOuterClass.PropValue> map =
           internalGetPropMap().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;uint32, .PropValue&gt; prop_map = 1;</code>
+     * <code>map&lt;uint32, .PropValue&gt; prop_map = 9;</code>
      */
     @java.lang.Override
-
     public emu.grasscutter.net.proto.PropValueOuterClass.PropValue getPropMapOrThrow(
         int key) {
       
@@ -252,17 +208,6 @@ public final class EntityPropNotifyOuterClass {
         throw new java.lang.IllegalArgumentException();
       }
       return map.get(key);
-    }
-
-    public static final int ENTITY_ID_FIELD_NUMBER = 14;
-    private int entityId_;
-    /**
-     * <code>uint32 entity_id = 14;</code>
-     * @return The entityId.
-     */
-    @java.lang.Override
-    public int getEntityId() {
-      return entityId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -284,11 +229,11 @@ public final class EntityPropNotifyOuterClass {
           output,
           internalGetPropMap(),
           PropMapDefaultEntryHolder.defaultEntry,
-          1);
+          9);
       if (entityId_ != 0) {
-        output.writeUInt32(14, entityId_);
+        output.writeUInt32(13, entityId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -305,13 +250,13 @@ public final class EntityPropNotifyOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(1, propMap__);
+            .computeMessageSize(9, propMap__);
       }
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, entityId_);
+          .computeUInt32Size(13, entityId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -326,11 +271,11 @@ public final class EntityPropNotifyOuterClass {
       }
       emu.grasscutter.net.proto.EntityPropNotifyOuterClass.EntityPropNotify other = (emu.grasscutter.net.proto.EntityPropNotifyOuterClass.EntityPropNotify) obj;
 
-      if (!internalGetPropMap().equals(
-          other.internalGetPropMap())) return false;
       if (getEntityId()
           != other.getEntityId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!internalGetPropMap().equals(
+          other.internalGetPropMap())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -341,13 +286,13 @@ public final class EntityPropNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getEntityId();
       if (!internalGetPropMap().getMap().isEmpty()) {
         hash = (37 * hash) + PROP_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetPropMap().hashCode();
       }
-      hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getEntityId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -444,10 +389,13 @@ public final class EntityPropNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1272
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 1279;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code EntityPropNotify}
@@ -465,7 +413,7 @@ public final class EntityPropNotifyOuterClass {
       protected com.google.protobuf.MapField internalGetMapField(
           int number) {
         switch (number) {
-          case 1:
+          case 9:
             return internalGetPropMap();
           default:
             throw new RuntimeException(
@@ -476,7 +424,7 @@ public final class EntityPropNotifyOuterClass {
       protected com.google.protobuf.MapField internalGetMutableMapField(
           int number) {
         switch (number) {
-          case 1:
+          case 9:
             return internalGetMutablePropMap();
           default:
             throw new RuntimeException(
@@ -493,25 +441,20 @@ public final class EntityPropNotifyOuterClass {
 
       // Construct using emu.grasscutter.net.proto.EntityPropNotifyOuterClass.EntityPropNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        internalGetMutablePropMap().clear();
+        bitField0_ = 0;
         entityId_ = 0;
-
+        internalGetMutablePropMap().clear();
         return this;
       }
 
@@ -538,12 +481,20 @@ public final class EntityPropNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.EntityPropNotifyOuterClass.EntityPropNotify buildPartial() {
         emu.grasscutter.net.proto.EntityPropNotifyOuterClass.EntityPropNotify result = new emu.grasscutter.net.proto.EntityPropNotifyOuterClass.EntityPropNotify(this);
-        int from_bitField0_ = bitField0_;
-        result.propMap_ = internalGetPropMap();
-        result.propMap_.makeImmutable();
-        result.entityId_ = entityId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.grasscutter.net.proto.EntityPropNotifyOuterClass.EntityPropNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.entityId_ = entityId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.propMap_ = internalGetPropMap();
+          result.propMap_.makeImmutable();
+        }
       }
 
       @java.lang.Override
@@ -590,12 +541,13 @@ public final class EntityPropNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.EntityPropNotifyOuterClass.EntityPropNotify other) {
         if (other == emu.grasscutter.net.proto.EntityPropNotifyOuterClass.EntityPropNotify.getDefaultInstance()) return this;
-        internalGetMutablePropMap().mergeFrom(
-            other.internalGetPropMap());
         if (other.getEntityId() != 0) {
           setEntityId(other.getEntityId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        internalGetMutablePropMap().mergeFrom(
+            other.internalGetPropMap());
+        bitField0_ |= 0x00000002;
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -610,25 +562,84 @@ public final class EntityPropNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.EntityPropNotifyOuterClass.EntityPropNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 74: {
+                com.google.protobuf.MapEntry<java.lang.Integer, emu.grasscutter.net.proto.PropValueOuterClass.PropValue>
+                propMap__ = input.readMessage(
+                    PropMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutablePropMap().getMutableMap().put(
+                    propMap__.getKey(), propMap__.getValue());
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 74
+              case 104: {
+                entityId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 104
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.EntityPropNotifyOuterClass.EntityPropNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
 
+      private int entityId_ ;
+      /**
+       * <code>uint32 entity_id = 13;</code>
+       * @return The entityId.
+       */
+      @java.lang.Override
+      public int getEntityId() {
+        return entityId_;
+      }
+      /**
+       * <code>uint32 entity_id = 13;</code>
+       * @param value The entityId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEntityId(int value) {
+        
+        entityId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 entity_id = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEntityId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        entityId_ = 0;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.MapField<
           java.lang.Integer, emu.grasscutter.net.proto.PropValueOuterClass.PropValue> propMap_;
       private com.google.protobuf.MapField<java.lang.Integer, emu.grasscutter.net.proto.PropValueOuterClass.PropValue>
-      internalGetPropMap() {
+          internalGetPropMap() {
         if (propMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               PropMapDefaultEntryHolder.defaultEntry);
@@ -636,8 +647,7 @@ public final class EntityPropNotifyOuterClass {
         return propMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, emu.grasscutter.net.proto.PropValueOuterClass.PropValue>
-      internalGetMutablePropMap() {
-        onChanged();;
+          internalGetMutablePropMap() {
         if (propMap_ == null) {
           propMap_ = com.google.protobuf.MapField.newMapField(
               PropMapDefaultEntryHolder.defaultEntry);
@@ -645,16 +655,16 @@ public final class EntityPropNotifyOuterClass {
         if (!propMap_.isMutable()) {
           propMap_ = propMap_.copy();
         }
+        bitField0_ |= 0x00000002;
+        onChanged();
         return propMap_;
       }
-
       public int getPropMapCount() {
         return internalGetPropMap().getMap().size();
       }
       /**
-       * <code>map&lt;uint32, .PropValue&gt; prop_map = 1;</code>
+       * <code>map&lt;uint32, .PropValue&gt; prop_map = 9;</code>
        */
-
       @java.lang.Override
       public boolean containsPropMap(
           int key) {
@@ -670,31 +680,30 @@ public final class EntityPropNotifyOuterClass {
         return getPropMapMap();
       }
       /**
-       * <code>map&lt;uint32, .PropValue&gt; prop_map = 1;</code>
+       * <code>map&lt;uint32, .PropValue&gt; prop_map = 9;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.PropValueOuterClass.PropValue> getPropMapMap() {
         return internalGetPropMap().getMap();
       }
       /**
-       * <code>map&lt;uint32, .PropValue&gt; prop_map = 1;</code>
+       * <code>map&lt;uint32, .PropValue&gt; prop_map = 9;</code>
        */
       @java.lang.Override
-
-      public emu.grasscutter.net.proto.PropValueOuterClass.PropValue getPropMapOrDefault(
+      public /* nullable */
+emu.grasscutter.net.proto.PropValueOuterClass.PropValue getPropMapOrDefault(
           int key,
-          emu.grasscutter.net.proto.PropValueOuterClass.PropValue defaultValue) {
+          /* nullable */
+emu.grasscutter.net.proto.PropValueOuterClass.PropValue defaultValue) {
         
         java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.PropValueOuterClass.PropValue> map =
             internalGetPropMap().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;uint32, .PropValue&gt; prop_map = 1;</code>
+       * <code>map&lt;uint32, .PropValue&gt; prop_map = 9;</code>
        */
       @java.lang.Override
-
       public emu.grasscutter.net.proto.PropValueOuterClass.PropValue getPropMapOrThrow(
           int key) {
         
@@ -705,16 +714,15 @@ public final class EntityPropNotifyOuterClass {
         }
         return map.get(key);
       }
-
       public Builder clearPropMap() {
+        bitField0_ = (bitField0_ & ~0x00000002);
         internalGetMutablePropMap().getMutableMap()
             .clear();
         return this;
       }
       /**
-       * <code>map&lt;uint32, .PropValue&gt; prop_map = 1;</code>
+       * <code>map&lt;uint32, .PropValue&gt; prop_map = 9;</code>
        */
-
       public Builder removePropMap(
           int key) {
         
@@ -727,60 +735,31 @@ public final class EntityPropNotifyOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.PropValueOuterClass.PropValue>
-      getMutablePropMap() {
+          getMutablePropMap() {
+        bitField0_ |= 0x00000002;
         return internalGetMutablePropMap().getMutableMap();
       }
       /**
-       * <code>map&lt;uint32, .PropValue&gt; prop_map = 1;</code>
+       * <code>map&lt;uint32, .PropValue&gt; prop_map = 9;</code>
        */
       public Builder putPropMap(
           int key,
           emu.grasscutter.net.proto.PropValueOuterClass.PropValue value) {
         
-        if (value == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new NullPointerException("map value"); }
         internalGetMutablePropMap().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00000002;
         return this;
       }
       /**
-       * <code>map&lt;uint32, .PropValue&gt; prop_map = 1;</code>
+       * <code>map&lt;uint32, .PropValue&gt; prop_map = 9;</code>
        */
-
       public Builder putAllPropMap(
           java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.PropValueOuterClass.PropValue> values) {
         internalGetMutablePropMap().getMutableMap()
             .putAll(values);
-        return this;
-      }
-
-      private int entityId_ ;
-      /**
-       * <code>uint32 entity_id = 14;</code>
-       * @return The entityId.
-       */
-      @java.lang.Override
-      public int getEntityId() {
-        return entityId_;
-      }
-      /**
-       * <code>uint32 entity_id = 14;</code>
-       * @param value The entityId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEntityId(int value) {
-        
-        entityId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 entity_id = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEntityId() {
-        
-        entityId_ = 0;
-        onChanged();
+        bitField0_ |= 0x00000002;
         return this;
       }
       @java.lang.Override
@@ -816,7 +795,18 @@ public final class EntityPropNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new EntityPropNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -856,9 +846,9 @@ public final class EntityPropNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\026EntityPropNotify.proto\032\017PropValue.prot" +
-      "o\"\223\001\n\020EntityPropNotify\0220\n\010prop_map\030\001 \003(\013" +
-      "2\036.EntityPropNotify.PropMapEntry\022\021\n\tenti" +
-      "ty_id\030\016 \001(\r\032:\n\014PropMapEntry\022\013\n\003key\030\001 \001(\r" +
+      "o\"\223\001\n\020EntityPropNotify\022\021\n\tentity_id\030\r \001(" +
+      "\r\0220\n\010prop_map\030\t \003(\0132\036.EntityPropNotify.P" +
+      "ropMapEntry\032:\n\014PropMapEntry\022\013\n\003key\030\001 \001(\r" +
       "\022\031\n\005value\030\002 \001(\0132\n.PropValue:\0028\001B\033\n\031emu.g" +
       "rasscutter.net.protob\006proto3"
     };
@@ -872,7 +862,7 @@ public final class EntityPropNotifyOuterClass {
     internal_static_EntityPropNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_EntityPropNotify_descriptor,
-        new java.lang.String[] { "PropMap", "EntityId", });
+        new java.lang.String[] { "EntityId", "PropMap", });
     internal_static_EntityPropNotify_PropMapEntry_descriptor =
       internal_static_EntityPropNotify_descriptor.getNestedTypes().get(0);
     internal_static_EntityPropNotify_PropMapEntry_fieldAccessorTable = new

@@ -76,61 +76,6 @@ public final class Unk3000HKHFFDEMNKN {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private Unk3000_HKHFFDEMNKN(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 106: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                slotList_ = new java.util.ArrayList<emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              slotList_.add(
-                  input.readMessage(emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData.parser(), extensionRegistry));
-              break;
-            }
-            case 112: {
-
-              uid_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          slotList_ = java.util.Collections.unmodifiableList(slotList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.internal_static_Unk3000_HKHFFDEMNKN_descriptor;
@@ -145,7 +90,7 @@ public final class Unk3000HKHFFDEMNKN {
     }
 
     public static final int UID_FIELD_NUMBER = 14;
-    private int uid_;
+    private int uid_ = 0;
     /**
      * <code>uint32 uid = 14;</code>
      * @return The uid.
@@ -156,6 +101,7 @@ public final class Unk3000HKHFFDEMNKN {
     }
 
     public static final int SLOT_LIST_FIELD_NUMBER = 13;
+    @SuppressWarnings("serial")
     private java.util.List<emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData> slotList_;
     /**
      * <code>repeated .WidgetSlotData slot_list = 13;</code>
@@ -215,7 +161,7 @@ public final class Unk3000HKHFFDEMNKN {
       if (uid_ != 0) {
         output.writeUInt32(14, uid_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -232,7 +178,7 @@ public final class Unk3000HKHFFDEMNKN {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, uid_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -251,7 +197,7 @@ public final class Unk3000HKHFFDEMNKN {
           != other.getUid()) return false;
       if (!getSlotListList()
           .equals(other.getSlotListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -268,7 +214,7 @@ public final class Unk3000HKHFFDEMNKN {
         hash = (37 * hash) + SLOT_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getSlotListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -385,31 +331,26 @@ public final class Unk3000HKHFFDEMNKN {
 
       // Construct using emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKN.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getSlotListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         uid_ = 0;
-
         if (slotListBuilder_ == null) {
           slotList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          slotList_ = null;
           slotListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -436,19 +377,29 @@ public final class Unk3000HKHFFDEMNKN {
       @java.lang.Override
       public emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKN buildPartial() {
         emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKN result = new emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKN(this);
-        int from_bitField0_ = bitField0_;
-        result.uid_ = uid_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKN result) {
         if (slotListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             slotList_ = java.util.Collections.unmodifiableList(slotList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.slotList_ = slotList_;
         } else {
           result.slotList_ = slotListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKN result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.uid_ = uid_;
+        }
       }
 
       @java.lang.Override
@@ -502,7 +453,7 @@ public final class Unk3000HKHFFDEMNKN {
           if (!other.slotList_.isEmpty()) {
             if (slotList_.isEmpty()) {
               slotList_ = other.slotList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureSlotListIsMutable();
               slotList_.addAll(other.slotList_);
@@ -515,7 +466,7 @@ public final class Unk3000HKHFFDEMNKN {
               slotListBuilder_.dispose();
               slotListBuilder_ = null;
               slotList_ = other.slotList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               slotListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getSlotListFieldBuilder() : null;
@@ -524,7 +475,7 @@ public final class Unk3000HKHFFDEMNKN {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -539,17 +490,48 @@ public final class Unk3000HKHFFDEMNKN {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKN parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 106: {
+                emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData m =
+                    input.readMessage(
+                        emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData.parser(),
+                        extensionRegistry);
+                if (slotListBuilder_ == null) {
+                  ensureSlotListIsMutable();
+                  slotList_.add(m);
+                } else {
+                  slotListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 106
+              case 112: {
+                uid_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKN) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -571,6 +553,7 @@ public final class Unk3000HKHFFDEMNKN {
       public Builder setUid(int value) {
         
         uid_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -579,7 +562,7 @@ public final class Unk3000HKHFFDEMNKN {
        * @return This builder for chaining.
        */
       public Builder clearUid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         uid_ = 0;
         onChanged();
         return this;
@@ -588,9 +571,9 @@ public final class Unk3000HKHFFDEMNKN {
       private java.util.List<emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData> slotList_ =
         java.util.Collections.emptyList();
       private void ensureSlotListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           slotList_ = new java.util.ArrayList<emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData>(slotList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -740,7 +723,7 @@ public final class Unk3000HKHFFDEMNKN {
       public Builder clearSlotList() {
         if (slotListBuilder_ == null) {
           slotList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           slotListBuilder_.clear();
@@ -817,7 +800,7 @@ public final class Unk3000HKHFFDEMNKN {
           slotListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData, emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData.Builder, emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotDataOrBuilder>(
                   slotList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           slotList_ = null;
@@ -857,7 +840,18 @@ public final class Unk3000HKHFFDEMNKN {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Unk3000_HKHFFDEMNKN(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 

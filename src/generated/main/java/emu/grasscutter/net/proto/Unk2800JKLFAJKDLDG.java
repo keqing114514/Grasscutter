@@ -57,53 +57,6 @@ public final class Unk2800JKLFAJKDLDG {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private Unk2800_JKLFAJKDLDG(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 48: {
-
-              pointId_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              questId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.grasscutter.net.proto.Unk2800JKLFAJKDLDG.internal_static_Unk2800_JKLFAJKDLDG_descriptor;
@@ -118,7 +71,7 @@ public final class Unk2800JKLFAJKDLDG {
     }
 
     public static final int QUEST_ID_FIELD_NUMBER = 13;
-    private int questId_;
+    private int questId_ = 0;
     /**
      * <code>uint32 quest_id = 13;</code>
      * @return The questId.
@@ -129,7 +82,7 @@ public final class Unk2800JKLFAJKDLDG {
     }
 
     public static final int POINT_ID_FIELD_NUMBER = 6;
-    private int pointId_;
+    private int pointId_ = 0;
     /**
      * <code>uint32 point_id = 6;</code>
      * @return The pointId.
@@ -159,7 +112,7 @@ public final class Unk2800JKLFAJKDLDG {
       if (questId_ != 0) {
         output.writeUInt32(13, questId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -176,7 +129,7 @@ public final class Unk2800JKLFAJKDLDG {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, questId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -195,7 +148,7 @@ public final class Unk2800JKLFAJKDLDG {
           != other.getQuestId()) return false;
       if (getPointId()
           != other.getPointId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -210,7 +163,7 @@ public final class Unk2800JKLFAJKDLDG {
       hash = (53 * hash) + getQuestId();
       hash = (37 * hash) + POINT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getPointId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -327,26 +280,20 @@ public final class Unk2800JKLFAJKDLDG {
 
       // Construct using emu.grasscutter.net.proto.Unk2800JKLFAJKDLDG.Unk2800_JKLFAJKDLDG.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         questId_ = 0;
-
         pointId_ = 0;
-
         return this;
       }
 
@@ -373,10 +320,19 @@ public final class Unk2800JKLFAJKDLDG {
       @java.lang.Override
       public emu.grasscutter.net.proto.Unk2800JKLFAJKDLDG.Unk2800_JKLFAJKDLDG buildPartial() {
         emu.grasscutter.net.proto.Unk2800JKLFAJKDLDG.Unk2800_JKLFAJKDLDG result = new emu.grasscutter.net.proto.Unk2800JKLFAJKDLDG.Unk2800_JKLFAJKDLDG(this);
-        result.questId_ = questId_;
-        result.pointId_ = pointId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.grasscutter.net.proto.Unk2800JKLFAJKDLDG.Unk2800_JKLFAJKDLDG result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.questId_ = questId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.pointId_ = pointId_;
+        }
       }
 
       @java.lang.Override
@@ -429,7 +385,7 @@ public final class Unk2800JKLFAJKDLDG {
         if (other.getPointId() != 0) {
           setPointId(other.getPointId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -444,19 +400,43 @@ public final class Unk2800JKLFAJKDLDG {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.Unk2800JKLFAJKDLDG.Unk2800_JKLFAJKDLDG parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 48: {
+                pointId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 48
+              case 104: {
+                questId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 104
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.Unk2800JKLFAJKDLDG.Unk2800_JKLFAJKDLDG) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int questId_ ;
       /**
@@ -475,6 +455,7 @@ public final class Unk2800JKLFAJKDLDG {
       public Builder setQuestId(int value) {
         
         questId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -483,7 +464,7 @@ public final class Unk2800JKLFAJKDLDG {
        * @return This builder for chaining.
        */
       public Builder clearQuestId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         questId_ = 0;
         onChanged();
         return this;
@@ -506,6 +487,7 @@ public final class Unk2800JKLFAJKDLDG {
       public Builder setPointId(int value) {
         
         pointId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -514,7 +496,7 @@ public final class Unk2800JKLFAJKDLDG {
        * @return This builder for chaining.
        */
       public Builder clearPointId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         pointId_ = 0;
         onChanged();
         return this;
@@ -552,7 +534,18 @@ public final class Unk2800JKLFAJKDLDG {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Unk2800_JKLFAJKDLDG(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 

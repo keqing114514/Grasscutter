@@ -19,35 +19,38 @@ public final class AvatarFetterLevelRewardRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint64 avatar_guid = 4;</code>
-     * @return The avatarGuid.
-     */
-    long getAvatarGuid();
-
-    /**
-     * <code>uint32 reward_id = 1;</code>
-     * @return The rewardId.
-     */
-    int getRewardId();
-
-    /**
-     * <code>int32 retcode = 13;</code>
+     * <code>int32 retcode = 2;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>uint32 fetter_level = 14;</code>
+     * <code>uint32 reward_id = 15;</code>
+     * @return The rewardId.
+     */
+    int getRewardId();
+
+    /**
+     * <code>uint32 fetter_level = 1;</code>
      * @return The fetterLevel.
      */
     int getFetterLevel();
+
+    /**
+     * <code>uint64 avatar_guid = 6;</code>
+     * @return The avatarGuid.
+     */
+    long getAvatarGuid();
   }
   /**
    * <pre>
-   * CmdId: 1606
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 1753;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code AvatarFetterLevelRewardRsp}
@@ -76,63 +79,6 @@ public final class AvatarFetterLevelRewardRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AvatarFetterLevelRewardRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              rewardId_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-
-              avatarGuid_ = input.readUInt64();
-              break;
-            }
-            case 104: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 112: {
-
-              fetterLevel_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.grasscutter.net.proto.AvatarFetterLevelRewardRspOuterClass.internal_static_AvatarFetterLevelRewardRsp_descriptor;
@@ -146,32 +92,10 @@ public final class AvatarFetterLevelRewardRspOuterClass {
               emu.grasscutter.net.proto.AvatarFetterLevelRewardRspOuterClass.AvatarFetterLevelRewardRsp.class, emu.grasscutter.net.proto.AvatarFetterLevelRewardRspOuterClass.AvatarFetterLevelRewardRsp.Builder.class);
     }
 
-    public static final int AVATAR_GUID_FIELD_NUMBER = 4;
-    private long avatarGuid_;
+    public static final int RETCODE_FIELD_NUMBER = 2;
+    private int retcode_ = 0;
     /**
-     * <code>uint64 avatar_guid = 4;</code>
-     * @return The avatarGuid.
-     */
-    @java.lang.Override
-    public long getAvatarGuid() {
-      return avatarGuid_;
-    }
-
-    public static final int REWARD_ID_FIELD_NUMBER = 1;
-    private int rewardId_;
-    /**
-     * <code>uint32 reward_id = 1;</code>
-     * @return The rewardId.
-     */
-    @java.lang.Override
-    public int getRewardId() {
-      return rewardId_;
-    }
-
-    public static final int RETCODE_FIELD_NUMBER = 13;
-    private int retcode_;
-    /**
-     * <code>int32 retcode = 13;</code>
+     * <code>int32 retcode = 2;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -179,15 +103,37 @@ public final class AvatarFetterLevelRewardRspOuterClass {
       return retcode_;
     }
 
-    public static final int FETTER_LEVEL_FIELD_NUMBER = 14;
-    private int fetterLevel_;
+    public static final int REWARD_ID_FIELD_NUMBER = 15;
+    private int rewardId_ = 0;
     /**
-     * <code>uint32 fetter_level = 14;</code>
+     * <code>uint32 reward_id = 15;</code>
+     * @return The rewardId.
+     */
+    @java.lang.Override
+    public int getRewardId() {
+      return rewardId_;
+    }
+
+    public static final int FETTER_LEVEL_FIELD_NUMBER = 1;
+    private int fetterLevel_ = 0;
+    /**
+     * <code>uint32 fetter_level = 1;</code>
      * @return The fetterLevel.
      */
     @java.lang.Override
     public int getFetterLevel() {
       return fetterLevel_;
+    }
+
+    public static final int AVATAR_GUID_FIELD_NUMBER = 6;
+    private long avatarGuid_ = 0L;
+    /**
+     * <code>uint64 avatar_guid = 6;</code>
+     * @return The avatarGuid.
+     */
+    @java.lang.Override
+    public long getAvatarGuid() {
+      return avatarGuid_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -204,19 +150,19 @@ public final class AvatarFetterLevelRewardRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (rewardId_ != 0) {
-        output.writeUInt32(1, rewardId_);
-      }
-      if (avatarGuid_ != 0L) {
-        output.writeUInt64(4, avatarGuid_);
+      if (fetterLevel_ != 0) {
+        output.writeUInt32(1, fetterLevel_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(13, retcode_);
+        output.writeInt32(2, retcode_);
       }
-      if (fetterLevel_ != 0) {
-        output.writeUInt32(14, fetterLevel_);
+      if (avatarGuid_ != 0L) {
+        output.writeUInt64(6, avatarGuid_);
       }
-      unknownFields.writeTo(output);
+      if (rewardId_ != 0) {
+        output.writeUInt32(15, rewardId_);
+      }
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -225,23 +171,23 @@ public final class AvatarFetterLevelRewardRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (rewardId_ != 0) {
+      if (fetterLevel_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, rewardId_);
-      }
-      if (avatarGuid_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(4, avatarGuid_);
+          .computeUInt32Size(1, fetterLevel_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(13, retcode_);
+          .computeInt32Size(2, retcode_);
       }
-      if (fetterLevel_ != 0) {
+      if (avatarGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, fetterLevel_);
+          .computeUInt64Size(6, avatarGuid_);
       }
-      size += unknownFields.getSerializedSize();
+      if (rewardId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(15, rewardId_);
+      }
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -256,15 +202,15 @@ public final class AvatarFetterLevelRewardRspOuterClass {
       }
       emu.grasscutter.net.proto.AvatarFetterLevelRewardRspOuterClass.AvatarFetterLevelRewardRsp other = (emu.grasscutter.net.proto.AvatarFetterLevelRewardRspOuterClass.AvatarFetterLevelRewardRsp) obj;
 
-      if (getAvatarGuid()
-          != other.getAvatarGuid()) return false;
-      if (getRewardId()
-          != other.getRewardId()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
+      if (getRewardId()
+          != other.getRewardId()) return false;
       if (getFetterLevel()
           != other.getFetterLevel()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (getAvatarGuid()
+          != other.getAvatarGuid()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -275,16 +221,16 @@ public final class AvatarFetterLevelRewardRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
+      hash = (37 * hash) + REWARD_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRewardId();
+      hash = (37 * hash) + FETTER_LEVEL_FIELD_NUMBER;
+      hash = (53 * hash) + getFetterLevel();
       hash = (37 * hash) + AVATAR_GUID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getAvatarGuid());
-      hash = (37 * hash) + REWARD_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getRewardId();
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
-      hash = (37 * hash) + FETTER_LEVEL_FIELD_NUMBER;
-      hash = (53 * hash) + getFetterLevel();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -381,10 +327,13 @@ public final class AvatarFetterLevelRewardRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1606
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 1753;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code AvatarFetterLevelRewardRsp}
@@ -408,30 +357,22 @@ public final class AvatarFetterLevelRewardRspOuterClass {
 
       // Construct using emu.grasscutter.net.proto.AvatarFetterLevelRewardRspOuterClass.AvatarFetterLevelRewardRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        avatarGuid_ = 0L;
-
-        rewardId_ = 0;
-
+        bitField0_ = 0;
         retcode_ = 0;
-
+        rewardId_ = 0;
         fetterLevel_ = 0;
-
+        avatarGuid_ = 0L;
         return this;
       }
 
@@ -458,12 +399,25 @@ public final class AvatarFetterLevelRewardRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.AvatarFetterLevelRewardRspOuterClass.AvatarFetterLevelRewardRsp buildPartial() {
         emu.grasscutter.net.proto.AvatarFetterLevelRewardRspOuterClass.AvatarFetterLevelRewardRsp result = new emu.grasscutter.net.proto.AvatarFetterLevelRewardRspOuterClass.AvatarFetterLevelRewardRsp(this);
-        result.avatarGuid_ = avatarGuid_;
-        result.rewardId_ = rewardId_;
-        result.retcode_ = retcode_;
-        result.fetterLevel_ = fetterLevel_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.grasscutter.net.proto.AvatarFetterLevelRewardRspOuterClass.AvatarFetterLevelRewardRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.rewardId_ = rewardId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.fetterLevel_ = fetterLevel_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.avatarGuid_ = avatarGuid_;
+        }
       }
 
       @java.lang.Override
@@ -510,19 +464,19 @@ public final class AvatarFetterLevelRewardRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.AvatarFetterLevelRewardRspOuterClass.AvatarFetterLevelRewardRsp other) {
         if (other == emu.grasscutter.net.proto.AvatarFetterLevelRewardRspOuterClass.AvatarFetterLevelRewardRsp.getDefaultInstance()) return this;
-        if (other.getAvatarGuid() != 0L) {
-          setAvatarGuid(other.getAvatarGuid());
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
         }
         if (other.getRewardId() != 0) {
           setRewardId(other.getRewardId());
         }
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
-        }
         if (other.getFetterLevel() != 0) {
           setFetterLevel(other.getFetterLevel());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        if (other.getAvatarGuid() != 0L) {
+          setAvatarGuid(other.getAvatarGuid());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -537,85 +491,57 @@ public final class AvatarFetterLevelRewardRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.AvatarFetterLevelRewardRspOuterClass.AvatarFetterLevelRewardRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                fetterLevel_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 8
+              case 16: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 16
+              case 48: {
+                avatarGuid_ = input.readUInt64();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 48
+              case 120: {
+                rewardId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.AvatarFetterLevelRewardRspOuterClass.AvatarFetterLevelRewardRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
-
-      private long avatarGuid_ ;
-      /**
-       * <code>uint64 avatar_guid = 4;</code>
-       * @return The avatarGuid.
-       */
-      @java.lang.Override
-      public long getAvatarGuid() {
-        return avatarGuid_;
-      }
-      /**
-       * <code>uint64 avatar_guid = 4;</code>
-       * @param value The avatarGuid to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAvatarGuid(long value) {
-        
-        avatarGuid_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 avatar_guid = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAvatarGuid() {
-        
-        avatarGuid_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private int rewardId_ ;
-      /**
-       * <code>uint32 reward_id = 1;</code>
-       * @return The rewardId.
-       */
-      @java.lang.Override
-      public int getRewardId() {
-        return rewardId_;
-      }
-      /**
-       * <code>uint32 reward_id = 1;</code>
-       * @param value The rewardId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRewardId(int value) {
-        
-        rewardId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 reward_id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRewardId() {
-        
-        rewardId_ = 0;
-        onChanged();
-        return this;
-      }
+      private int bitField0_;
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 13;</code>
+       * <code>int32 retcode = 2;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -623,30 +549,63 @@ public final class AvatarFetterLevelRewardRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 13;</code>
+       * <code>int32 retcode = 2;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 retcode = 13;</code>
+       * <code>int32 retcode = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int rewardId_ ;
+      /**
+       * <code>uint32 reward_id = 15;</code>
+       * @return The rewardId.
+       */
+      @java.lang.Override
+      public int getRewardId() {
+        return rewardId_;
+      }
+      /**
+       * <code>uint32 reward_id = 15;</code>
+       * @param value The rewardId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRewardId(int value) {
+        
+        rewardId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 reward_id = 15;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRewardId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        rewardId_ = 0;
         onChanged();
         return this;
       }
 
       private int fetterLevel_ ;
       /**
-       * <code>uint32 fetter_level = 14;</code>
+       * <code>uint32 fetter_level = 1;</code>
        * @return The fetterLevel.
        */
       @java.lang.Override
@@ -654,23 +613,56 @@ public final class AvatarFetterLevelRewardRspOuterClass {
         return fetterLevel_;
       }
       /**
-       * <code>uint32 fetter_level = 14;</code>
+       * <code>uint32 fetter_level = 1;</code>
        * @param value The fetterLevel to set.
        * @return This builder for chaining.
        */
       public Builder setFetterLevel(int value) {
         
         fetterLevel_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 fetter_level = 14;</code>
+       * <code>uint32 fetter_level = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearFetterLevel() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         fetterLevel_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private long avatarGuid_ ;
+      /**
+       * <code>uint64 avatar_guid = 6;</code>
+       * @return The avatarGuid.
+       */
+      @java.lang.Override
+      public long getAvatarGuid() {
+        return avatarGuid_;
+      }
+      /**
+       * <code>uint64 avatar_guid = 6;</code>
+       * @param value The avatarGuid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAvatarGuid(long value) {
+        
+        avatarGuid_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 avatar_guid = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAvatarGuid() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        avatarGuid_ = 0L;
         onChanged();
         return this;
       }
@@ -707,7 +699,18 @@ public final class AvatarFetterLevelRewardRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AvatarFetterLevelRewardRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -742,9 +745,9 @@ public final class AvatarFetterLevelRewardRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n AvatarFetterLevelRewardRsp.proto\"k\n\032Av" +
-      "atarFetterLevelRewardRsp\022\023\n\013avatar_guid\030" +
-      "\004 \001(\004\022\021\n\treward_id\030\001 \001(\r\022\017\n\007retcode\030\r \001(" +
-      "\005\022\024\n\014fetter_level\030\016 \001(\rB\033\n\031emu.grasscutt" +
+      "atarFetterLevelRewardRsp\022\017\n\007retcode\030\002 \001(" +
+      "\005\022\021\n\treward_id\030\017 \001(\r\022\024\n\014fetter_level\030\001 \001" +
+      "(\r\022\023\n\013avatar_guid\030\006 \001(\004B\033\n\031emu.grasscutt" +
       "er.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -756,7 +759,7 @@ public final class AvatarFetterLevelRewardRspOuterClass {
     internal_static_AvatarFetterLevelRewardRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AvatarFetterLevelRewardRsp_descriptor,
-        new java.lang.String[] { "AvatarGuid", "RewardId", "Retcode", "FetterLevel", });
+        new java.lang.String[] { "Retcode", "RewardId", "FetterLevel", "AvatarGuid", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

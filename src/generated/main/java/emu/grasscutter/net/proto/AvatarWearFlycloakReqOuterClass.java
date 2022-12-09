@@ -25,17 +25,21 @@ public final class AvatarWearFlycloakReqOuterClass {
     long getAvatarGuid();
 
     /**
-     * <code>uint32 flycloak_id = 13;</code>
+     * <code>uint32 flycloak_id = 15;</code>
      * @return The flycloakId.
      */
     int getFlycloakId();
   }
   /**
    * <pre>
-   * CmdId: 1737
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 1636;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   *   IS_ALLOW_CLIENT = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code AvatarWearFlycloakReq}
@@ -64,53 +68,6 @@ public final class AvatarWearFlycloakReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AvatarWearFlycloakReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 88: {
-
-              avatarGuid_ = input.readUInt64();
-              break;
-            }
-            case 104: {
-
-              flycloakId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.grasscutter.net.proto.AvatarWearFlycloakReqOuterClass.internal_static_AvatarWearFlycloakReq_descriptor;
@@ -125,7 +82,7 @@ public final class AvatarWearFlycloakReqOuterClass {
     }
 
     public static final int AVATAR_GUID_FIELD_NUMBER = 11;
-    private long avatarGuid_;
+    private long avatarGuid_ = 0L;
     /**
      * <code>uint64 avatar_guid = 11;</code>
      * @return The avatarGuid.
@@ -135,10 +92,10 @@ public final class AvatarWearFlycloakReqOuterClass {
       return avatarGuid_;
     }
 
-    public static final int FLYCLOAK_ID_FIELD_NUMBER = 13;
-    private int flycloakId_;
+    public static final int FLYCLOAK_ID_FIELD_NUMBER = 15;
+    private int flycloakId_ = 0;
     /**
-     * <code>uint32 flycloak_id = 13;</code>
+     * <code>uint32 flycloak_id = 15;</code>
      * @return The flycloakId.
      */
     @java.lang.Override
@@ -164,9 +121,9 @@ public final class AvatarWearFlycloakReqOuterClass {
         output.writeUInt64(11, avatarGuid_);
       }
       if (flycloakId_ != 0) {
-        output.writeUInt32(13, flycloakId_);
+        output.writeUInt32(15, flycloakId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -181,9 +138,9 @@ public final class AvatarWearFlycloakReqOuterClass {
       }
       if (flycloakId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, flycloakId_);
+          .computeUInt32Size(15, flycloakId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -202,7 +159,7 @@ public final class AvatarWearFlycloakReqOuterClass {
           != other.getAvatarGuid()) return false;
       if (getFlycloakId()
           != other.getFlycloakId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -218,7 +175,7 @@ public final class AvatarWearFlycloakReqOuterClass {
           getAvatarGuid());
       hash = (37 * hash) + FLYCLOAK_ID_FIELD_NUMBER;
       hash = (53 * hash) + getFlycloakId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -315,10 +272,14 @@ public final class AvatarWearFlycloakReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1737
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 1636;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     *   IS_ALLOW_CLIENT = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code AvatarWearFlycloakReq}
@@ -342,26 +303,20 @@ public final class AvatarWearFlycloakReqOuterClass {
 
       // Construct using emu.grasscutter.net.proto.AvatarWearFlycloakReqOuterClass.AvatarWearFlycloakReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         avatarGuid_ = 0L;
-
         flycloakId_ = 0;
-
         return this;
       }
 
@@ -388,10 +343,19 @@ public final class AvatarWearFlycloakReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.AvatarWearFlycloakReqOuterClass.AvatarWearFlycloakReq buildPartial() {
         emu.grasscutter.net.proto.AvatarWearFlycloakReqOuterClass.AvatarWearFlycloakReq result = new emu.grasscutter.net.proto.AvatarWearFlycloakReqOuterClass.AvatarWearFlycloakReq(this);
-        result.avatarGuid_ = avatarGuid_;
-        result.flycloakId_ = flycloakId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.grasscutter.net.proto.AvatarWearFlycloakReqOuterClass.AvatarWearFlycloakReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.avatarGuid_ = avatarGuid_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.flycloakId_ = flycloakId_;
+        }
       }
 
       @java.lang.Override
@@ -444,7 +408,7 @@ public final class AvatarWearFlycloakReqOuterClass {
         if (other.getFlycloakId() != 0) {
           setFlycloakId(other.getFlycloakId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -459,19 +423,43 @@ public final class AvatarWearFlycloakReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.AvatarWearFlycloakReqOuterClass.AvatarWearFlycloakReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 88: {
+                avatarGuid_ = input.readUInt64();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 88
+              case 120: {
+                flycloakId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.AvatarWearFlycloakReqOuterClass.AvatarWearFlycloakReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private long avatarGuid_ ;
       /**
@@ -490,6 +478,7 @@ public final class AvatarWearFlycloakReqOuterClass {
       public Builder setAvatarGuid(long value) {
         
         avatarGuid_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -498,7 +487,7 @@ public final class AvatarWearFlycloakReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAvatarGuid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         avatarGuid_ = 0L;
         onChanged();
         return this;
@@ -506,7 +495,7 @@ public final class AvatarWearFlycloakReqOuterClass {
 
       private int flycloakId_ ;
       /**
-       * <code>uint32 flycloak_id = 13;</code>
+       * <code>uint32 flycloak_id = 15;</code>
        * @return The flycloakId.
        */
       @java.lang.Override
@@ -514,22 +503,23 @@ public final class AvatarWearFlycloakReqOuterClass {
         return flycloakId_;
       }
       /**
-       * <code>uint32 flycloak_id = 13;</code>
+       * <code>uint32 flycloak_id = 15;</code>
        * @param value The flycloakId to set.
        * @return This builder for chaining.
        */
       public Builder setFlycloakId(int value) {
         
         flycloakId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 flycloak_id = 13;</code>
+       * <code>uint32 flycloak_id = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearFlycloakId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         flycloakId_ = 0;
         onChanged();
         return this;
@@ -567,7 +557,18 @@ public final class AvatarWearFlycloakReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AvatarWearFlycloakReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -603,7 +604,7 @@ public final class AvatarWearFlycloakReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\033AvatarWearFlycloakReq.proto\"A\n\025AvatarW" +
       "earFlycloakReq\022\023\n\013avatar_guid\030\013 \001(\004\022\023\n\013f" +
-      "lycloak_id\030\r \001(\rB\033\n\031emu.grasscutter.net." +
+      "lycloak_id\030\017 \001(\rB\033\n\031emu.grasscutter.net." +
       "protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -19,67 +19,67 @@ public final class HomeBasicInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 level = 10;</code>
-     * @return The level.
-     */
-    int getLevel();
-
-    /**
-     * <code>uint32 cur_room_scene_id = 13;</code>
-     * @return The curRoomSceneId.
-     */
-    int getCurRoomSceneId();
-
-    /**
-     * <code>uint32 cur_module_id = 9;</code>
-     * @return The curModuleId.
-     */
-    int getCurModuleId();
-
-    /**
-     * <code>bool is_in_edit_mode = 5;</code>
-     * @return The isInEditMode.
-     */
-    boolean getIsInEditMode();
-
-    /**
-     * <code>uint32 home_owner_uid = 3;</code>
-     * @return The homeOwnerUid.
-     */
-    int getHomeOwnerUid();
-
-    /**
-     * <code>uint64 exp = 14;</code>
+     * <code>uint64 exp = 3;</code>
      * @return The exp.
      */
     long getExp();
 
     /**
-     * <code>.HomeLimitedShopInfo limited_shop_info = 15;</code>
-     * @return Whether the limitedShopInfo field is set.
+     * <code>uint32 Unk3300_AKPAPPGOFGN = 11;</code>
+     * @return The unk3300AKPAPPGOFGN.
      */
-    boolean hasLimitedShopInfo();
-    /**
-     * <code>.HomeLimitedShopInfo limited_shop_info = 15;</code>
-     * @return The limitedShopInfo.
-     */
-    emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo getLimitedShopInfo();
-    /**
-     * <code>.HomeLimitedShopInfo limited_shop_info = 15;</code>
-     */
-    emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfoOrBuilder getLimitedShopInfoOrBuilder();
+    int getUnk3300AKPAPPGOFGN();
 
     /**
-     * <code>string owner_nick_name = 4;</code>
+     * <code>uint32 Unk3300_GNFGFIIGHEA = 14;</code>
+     * @return The unk3300GNFGFIIGHEA.
+     */
+    int getUnk3300GNFGFIIGHEA();
+
+    /**
+     * <code>string owner_nick_name = 6;</code>
      * @return The ownerNickName.
      */
     java.lang.String getOwnerNickName();
     /**
-     * <code>string owner_nick_name = 4;</code>
+     * <code>string owner_nick_name = 6;</code>
      * @return The bytes for ownerNickName.
      */
     com.google.protobuf.ByteString
         getOwnerNickNameBytes();
+
+    /**
+     * <code>uint32 Unk3300_KGCBFKGGHDD = 4;</code>
+     * @return The unk3300KGCBFKGGHDD.
+     */
+    int getUnk3300KGCBFKGGHDD();
+
+    /**
+     * <code>.HomeLimitedShopInfo limited_shop_info = 13;</code>
+     * @return Whether the limitedShopInfo field is set.
+     */
+    boolean hasLimitedShopInfo();
+    /**
+     * <code>.HomeLimitedShopInfo limited_shop_info = 13;</code>
+     * @return The limitedShopInfo.
+     */
+    emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo getLimitedShopInfo();
+    /**
+     * <code>.HomeLimitedShopInfo limited_shop_info = 13;</code>
+     */
+    emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfoOrBuilder getLimitedShopInfoOrBuilder();
+
+    /**
+     * <code>bool is_in_edit_mode = 7;</code>
+     * @return The isInEditMode.
+     */
+    boolean getIsInEditMode();
+
+    /**
+     * <code>uint32 level = 9;</code>
+     * @return The level.
+     */
+    int getLevel();
   }
   /**
    * Protobuf type {@code HomeBasicInfo}
@@ -109,92 +109,6 @@ public final class HomeBasicInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private HomeBasicInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 24: {
-
-              homeOwnerUid_ = input.readUInt32();
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              ownerNickName_ = s;
-              break;
-            }
-            case 40: {
-
-              isInEditMode_ = input.readBool();
-              break;
-            }
-            case 72: {
-
-              curModuleId_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              level_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              curRoomSceneId_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-
-              exp_ = input.readUInt64();
-              break;
-            }
-            case 122: {
-              emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.Builder subBuilder = null;
-              if (limitedShopInfo_ != null) {
-                subBuilder = limitedShopInfo_.toBuilder();
-              }
-              limitedShopInfo_ = input.readMessage(emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(limitedShopInfo_);
-                limitedShopInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.grasscutter.net.proto.HomeBasicInfoOuterClass.internal_static_HomeBasicInfo_descriptor;
@@ -208,65 +122,10 @@ public final class HomeBasicInfoOuterClass {
               emu.grasscutter.net.proto.HomeBasicInfoOuterClass.HomeBasicInfo.class, emu.grasscutter.net.proto.HomeBasicInfoOuterClass.HomeBasicInfo.Builder.class);
     }
 
-    public static final int LEVEL_FIELD_NUMBER = 10;
-    private int level_;
+    public static final int EXP_FIELD_NUMBER = 3;
+    private long exp_ = 0L;
     /**
-     * <code>uint32 level = 10;</code>
-     * @return The level.
-     */
-    @java.lang.Override
-    public int getLevel() {
-      return level_;
-    }
-
-    public static final int CUR_ROOM_SCENE_ID_FIELD_NUMBER = 13;
-    private int curRoomSceneId_;
-    /**
-     * <code>uint32 cur_room_scene_id = 13;</code>
-     * @return The curRoomSceneId.
-     */
-    @java.lang.Override
-    public int getCurRoomSceneId() {
-      return curRoomSceneId_;
-    }
-
-    public static final int CUR_MODULE_ID_FIELD_NUMBER = 9;
-    private int curModuleId_;
-    /**
-     * <code>uint32 cur_module_id = 9;</code>
-     * @return The curModuleId.
-     */
-    @java.lang.Override
-    public int getCurModuleId() {
-      return curModuleId_;
-    }
-
-    public static final int IS_IN_EDIT_MODE_FIELD_NUMBER = 5;
-    private boolean isInEditMode_;
-    /**
-     * <code>bool is_in_edit_mode = 5;</code>
-     * @return The isInEditMode.
-     */
-    @java.lang.Override
-    public boolean getIsInEditMode() {
-      return isInEditMode_;
-    }
-
-    public static final int HOME_OWNER_UID_FIELD_NUMBER = 3;
-    private int homeOwnerUid_;
-    /**
-     * <code>uint32 home_owner_uid = 3;</code>
-     * @return The homeOwnerUid.
-     */
-    @java.lang.Override
-    public int getHomeOwnerUid() {
-      return homeOwnerUid_;
-    }
-
-    public static final int EXP_FIELD_NUMBER = 14;
-    private long exp_;
-    /**
-     * <code>uint64 exp = 14;</code>
+     * <code>uint64 exp = 3;</code>
      * @return The exp.
      */
     @java.lang.Override
@@ -274,36 +133,33 @@ public final class HomeBasicInfoOuterClass {
       return exp_;
     }
 
-    public static final int LIMITED_SHOP_INFO_FIELD_NUMBER = 15;
-    private emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo limitedShopInfo_;
+    public static final int UNK3300_AKPAPPGOFGN_FIELD_NUMBER = 11;
+    private int unk3300AKPAPPGOFGN_ = 0;
     /**
-     * <code>.HomeLimitedShopInfo limited_shop_info = 15;</code>
-     * @return Whether the limitedShopInfo field is set.
+     * <code>uint32 Unk3300_AKPAPPGOFGN = 11;</code>
+     * @return The unk3300AKPAPPGOFGN.
      */
     @java.lang.Override
-    public boolean hasLimitedShopInfo() {
-      return limitedShopInfo_ != null;
-    }
-    /**
-     * <code>.HomeLimitedShopInfo limited_shop_info = 15;</code>
-     * @return The limitedShopInfo.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo getLimitedShopInfo() {
-      return limitedShopInfo_ == null ? emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.getDefaultInstance() : limitedShopInfo_;
-    }
-    /**
-     * <code>.HomeLimitedShopInfo limited_shop_info = 15;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfoOrBuilder getLimitedShopInfoOrBuilder() {
-      return getLimitedShopInfo();
+    public int getUnk3300AKPAPPGOFGN() {
+      return unk3300AKPAPPGOFGN_;
     }
 
-    public static final int OWNER_NICK_NAME_FIELD_NUMBER = 4;
-    private volatile java.lang.Object ownerNickName_;
+    public static final int UNK3300_GNFGFIIGHEA_FIELD_NUMBER = 14;
+    private int unk3300GNFGFIIGHEA_ = 0;
     /**
-     * <code>string owner_nick_name = 4;</code>
+     * <code>uint32 Unk3300_GNFGFIIGHEA = 14;</code>
+     * @return The unk3300GNFGFIIGHEA.
+     */
+    @java.lang.Override
+    public int getUnk3300GNFGFIIGHEA() {
+      return unk3300GNFGFIIGHEA_;
+    }
+
+    public static final int OWNER_NICK_NAME_FIELD_NUMBER = 6;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object ownerNickName_ = "";
+    /**
+     * <code>string owner_nick_name = 6;</code>
      * @return The ownerNickName.
      */
     @java.lang.Override
@@ -320,7 +176,7 @@ public final class HomeBasicInfoOuterClass {
       }
     }
     /**
-     * <code>string owner_nick_name = 4;</code>
+     * <code>string owner_nick_name = 6;</code>
      * @return The bytes for ownerNickName.
      */
     @java.lang.Override
@@ -338,6 +194,65 @@ public final class HomeBasicInfoOuterClass {
       }
     }
 
+    public static final int UNK3300_KGCBFKGGHDD_FIELD_NUMBER = 4;
+    private int unk3300KGCBFKGGHDD_ = 0;
+    /**
+     * <code>uint32 Unk3300_KGCBFKGGHDD = 4;</code>
+     * @return The unk3300KGCBFKGGHDD.
+     */
+    @java.lang.Override
+    public int getUnk3300KGCBFKGGHDD() {
+      return unk3300KGCBFKGGHDD_;
+    }
+
+    public static final int LIMITED_SHOP_INFO_FIELD_NUMBER = 13;
+    private emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo limitedShopInfo_;
+    /**
+     * <code>.HomeLimitedShopInfo limited_shop_info = 13;</code>
+     * @return Whether the limitedShopInfo field is set.
+     */
+    @java.lang.Override
+    public boolean hasLimitedShopInfo() {
+      return limitedShopInfo_ != null;
+    }
+    /**
+     * <code>.HomeLimitedShopInfo limited_shop_info = 13;</code>
+     * @return The limitedShopInfo.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo getLimitedShopInfo() {
+      return limitedShopInfo_ == null ? emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.getDefaultInstance() : limitedShopInfo_;
+    }
+    /**
+     * <code>.HomeLimitedShopInfo limited_shop_info = 13;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfoOrBuilder getLimitedShopInfoOrBuilder() {
+      return limitedShopInfo_ == null ? emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.getDefaultInstance() : limitedShopInfo_;
+    }
+
+    public static final int IS_IN_EDIT_MODE_FIELD_NUMBER = 7;
+    private boolean isInEditMode_ = false;
+    /**
+     * <code>bool is_in_edit_mode = 7;</code>
+     * @return The isInEditMode.
+     */
+    @java.lang.Override
+    public boolean getIsInEditMode() {
+      return isInEditMode_;
+    }
+
+    public static final int LEVEL_FIELD_NUMBER = 9;
+    private int level_ = 0;
+    /**
+     * <code>uint32 level = 9;</code>
+     * @return The level.
+     */
+    @java.lang.Override
+    public int getLevel() {
+      return level_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -352,31 +267,31 @@ public final class HomeBasicInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (homeOwnerUid_ != 0) {
-        output.writeUInt32(3, homeOwnerUid_);
+      if (exp_ != 0L) {
+        output.writeUInt64(3, exp_);
+      }
+      if (unk3300KGCBFKGGHDD_ != 0) {
+        output.writeUInt32(4, unk3300KGCBFKGGHDD_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ownerNickName_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, ownerNickName_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, ownerNickName_);
       }
       if (isInEditMode_ != false) {
-        output.writeBool(5, isInEditMode_);
-      }
-      if (curModuleId_ != 0) {
-        output.writeUInt32(9, curModuleId_);
+        output.writeBool(7, isInEditMode_);
       }
       if (level_ != 0) {
-        output.writeUInt32(10, level_);
+        output.writeUInt32(9, level_);
       }
-      if (curRoomSceneId_ != 0) {
-        output.writeUInt32(13, curRoomSceneId_);
-      }
-      if (exp_ != 0L) {
-        output.writeUInt64(14, exp_);
+      if (unk3300AKPAPPGOFGN_ != 0) {
+        output.writeUInt32(11, unk3300AKPAPPGOFGN_);
       }
       if (limitedShopInfo_ != null) {
-        output.writeMessage(15, getLimitedShopInfo());
+        output.writeMessage(13, getLimitedShopInfo());
       }
-      unknownFields.writeTo(output);
+      if (unk3300GNFGFIIGHEA_ != 0) {
+        output.writeUInt32(14, unk3300GNFGFIIGHEA_);
+      }
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -385,38 +300,38 @@ public final class HomeBasicInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (homeOwnerUid_ != 0) {
+      if (exp_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, homeOwnerUid_);
+          .computeUInt64Size(3, exp_);
+      }
+      if (unk3300KGCBFKGGHDD_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(4, unk3300KGCBFKGGHDD_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ownerNickName_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, ownerNickName_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, ownerNickName_);
       }
       if (isInEditMode_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(5, isInEditMode_);
-      }
-      if (curModuleId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, curModuleId_);
+          .computeBoolSize(7, isInEditMode_);
       }
       if (level_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, level_);
+          .computeUInt32Size(9, level_);
       }
-      if (curRoomSceneId_ != 0) {
+      if (unk3300AKPAPPGOFGN_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, curRoomSceneId_);
-      }
-      if (exp_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(14, exp_);
+          .computeUInt32Size(11, unk3300AKPAPPGOFGN_);
       }
       if (limitedShopInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, getLimitedShopInfo());
+          .computeMessageSize(13, getLimitedShopInfo());
       }
-      size += unknownFields.getSerializedSize();
+      if (unk3300GNFGFIIGHEA_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(14, unk3300GNFGFIIGHEA_);
+      }
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -431,26 +346,26 @@ public final class HomeBasicInfoOuterClass {
       }
       emu.grasscutter.net.proto.HomeBasicInfoOuterClass.HomeBasicInfo other = (emu.grasscutter.net.proto.HomeBasicInfoOuterClass.HomeBasicInfo) obj;
 
-      if (getLevel()
-          != other.getLevel()) return false;
-      if (getCurRoomSceneId()
-          != other.getCurRoomSceneId()) return false;
-      if (getCurModuleId()
-          != other.getCurModuleId()) return false;
-      if (getIsInEditMode()
-          != other.getIsInEditMode()) return false;
-      if (getHomeOwnerUid()
-          != other.getHomeOwnerUid()) return false;
       if (getExp()
           != other.getExp()) return false;
+      if (getUnk3300AKPAPPGOFGN()
+          != other.getUnk3300AKPAPPGOFGN()) return false;
+      if (getUnk3300GNFGFIIGHEA()
+          != other.getUnk3300GNFGFIIGHEA()) return false;
+      if (!getOwnerNickName()
+          .equals(other.getOwnerNickName())) return false;
+      if (getUnk3300KGCBFKGGHDD()
+          != other.getUnk3300KGCBFKGGHDD()) return false;
       if (hasLimitedShopInfo() != other.hasLimitedShopInfo()) return false;
       if (hasLimitedShopInfo()) {
         if (!getLimitedShopInfo()
             .equals(other.getLimitedShopInfo())) return false;
       }
-      if (!getOwnerNickName()
-          .equals(other.getOwnerNickName())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (getIsInEditMode()
+          != other.getIsInEditMode()) return false;
+      if (getLevel()
+          != other.getLevel()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -461,27 +376,27 @@ public final class HomeBasicInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + LEVEL_FIELD_NUMBER;
-      hash = (53 * hash) + getLevel();
-      hash = (37 * hash) + CUR_ROOM_SCENE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getCurRoomSceneId();
-      hash = (37 * hash) + CUR_MODULE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getCurModuleId();
-      hash = (37 * hash) + IS_IN_EDIT_MODE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsInEditMode());
-      hash = (37 * hash) + HOME_OWNER_UID_FIELD_NUMBER;
-      hash = (53 * hash) + getHomeOwnerUid();
       hash = (37 * hash) + EXP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getExp());
+      hash = (37 * hash) + UNK3300_AKPAPPGOFGN_FIELD_NUMBER;
+      hash = (53 * hash) + getUnk3300AKPAPPGOFGN();
+      hash = (37 * hash) + UNK3300_GNFGFIIGHEA_FIELD_NUMBER;
+      hash = (53 * hash) + getUnk3300GNFGFIIGHEA();
+      hash = (37 * hash) + OWNER_NICK_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getOwnerNickName().hashCode();
+      hash = (37 * hash) + UNK3300_KGCBFKGGHDD_FIELD_NUMBER;
+      hash = (53 * hash) + getUnk3300KGCBFKGGHDD();
       if (hasLimitedShopInfo()) {
         hash = (37 * hash) + LIMITED_SHOP_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getLimitedShopInfo().hashCode();
       }
-      hash = (37 * hash) + OWNER_NICK_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getOwnerNickName().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (37 * hash) + IS_IN_EDIT_MODE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsInEditMode());
+      hash = (37 * hash) + LEVEL_FIELD_NUMBER;
+      hash = (53 * hash) + getLevel();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -598,42 +513,30 @@ public final class HomeBasicInfoOuterClass {
 
       // Construct using emu.grasscutter.net.proto.HomeBasicInfoOuterClass.HomeBasicInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        level_ = 0;
-
-        curRoomSceneId_ = 0;
-
-        curModuleId_ = 0;
-
-        isInEditMode_ = false;
-
-        homeOwnerUid_ = 0;
-
+        bitField0_ = 0;
         exp_ = 0L;
-
-        if (limitedShopInfoBuilder_ == null) {
-          limitedShopInfo_ = null;
-        } else {
-          limitedShopInfo_ = null;
+        unk3300AKPAPPGOFGN_ = 0;
+        unk3300GNFGFIIGHEA_ = 0;
+        ownerNickName_ = "";
+        unk3300KGCBFKGGHDD_ = 0;
+        limitedShopInfo_ = null;
+        if (limitedShopInfoBuilder_ != null) {
+          limitedShopInfoBuilder_.dispose();
           limitedShopInfoBuilder_ = null;
         }
-        ownerNickName_ = "";
-
+        isInEditMode_ = false;
+        level_ = 0;
         return this;
       }
 
@@ -660,20 +563,39 @@ public final class HomeBasicInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.HomeBasicInfoOuterClass.HomeBasicInfo buildPartial() {
         emu.grasscutter.net.proto.HomeBasicInfoOuterClass.HomeBasicInfo result = new emu.grasscutter.net.proto.HomeBasicInfoOuterClass.HomeBasicInfo(this);
-        result.level_ = level_;
-        result.curRoomSceneId_ = curRoomSceneId_;
-        result.curModuleId_ = curModuleId_;
-        result.isInEditMode_ = isInEditMode_;
-        result.homeOwnerUid_ = homeOwnerUid_;
-        result.exp_ = exp_;
-        if (limitedShopInfoBuilder_ == null) {
-          result.limitedShopInfo_ = limitedShopInfo_;
-        } else {
-          result.limitedShopInfo_ = limitedShopInfoBuilder_.build();
-        }
-        result.ownerNickName_ = ownerNickName_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.grasscutter.net.proto.HomeBasicInfoOuterClass.HomeBasicInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.exp_ = exp_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.unk3300AKPAPPGOFGN_ = unk3300AKPAPPGOFGN_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.unk3300GNFGFIIGHEA_ = unk3300GNFGFIIGHEA_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.ownerNickName_ = ownerNickName_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.unk3300KGCBFKGGHDD_ = unk3300KGCBFKGGHDD_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.limitedShopInfo_ = limitedShopInfoBuilder_ == null
+              ? limitedShopInfo_
+              : limitedShopInfoBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.isInEditMode_ = isInEditMode_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.level_ = level_;
+        }
       }
 
       @java.lang.Override
@@ -720,32 +642,33 @@ public final class HomeBasicInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.HomeBasicInfoOuterClass.HomeBasicInfo other) {
         if (other == emu.grasscutter.net.proto.HomeBasicInfoOuterClass.HomeBasicInfo.getDefaultInstance()) return this;
-        if (other.getLevel() != 0) {
-          setLevel(other.getLevel());
-        }
-        if (other.getCurRoomSceneId() != 0) {
-          setCurRoomSceneId(other.getCurRoomSceneId());
-        }
-        if (other.getCurModuleId() != 0) {
-          setCurModuleId(other.getCurModuleId());
-        }
-        if (other.getIsInEditMode() != false) {
-          setIsInEditMode(other.getIsInEditMode());
-        }
-        if (other.getHomeOwnerUid() != 0) {
-          setHomeOwnerUid(other.getHomeOwnerUid());
-        }
         if (other.getExp() != 0L) {
           setExp(other.getExp());
+        }
+        if (other.getUnk3300AKPAPPGOFGN() != 0) {
+          setUnk3300AKPAPPGOFGN(other.getUnk3300AKPAPPGOFGN());
+        }
+        if (other.getUnk3300GNFGFIIGHEA() != 0) {
+          setUnk3300GNFGFIIGHEA(other.getUnk3300GNFGFIIGHEA());
+        }
+        if (!other.getOwnerNickName().isEmpty()) {
+          ownerNickName_ = other.ownerNickName_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        if (other.getUnk3300KGCBFKGGHDD() != 0) {
+          setUnk3300KGCBFKGGHDD(other.getUnk3300KGCBFKGGHDD());
         }
         if (other.hasLimitedShopInfo()) {
           mergeLimitedShopInfo(other.getLimitedShopInfo());
         }
-        if (!other.getOwnerNickName().isEmpty()) {
-          ownerNickName_ = other.ownerNickName_;
-          onChanged();
+        if (other.getIsInEditMode() != false) {
+          setIsInEditMode(other.getIsInEditMode());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        if (other.getLevel() != 0) {
+          setLevel(other.getLevel());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -760,178 +683,79 @@ public final class HomeBasicInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.HomeBasicInfoOuterClass.HomeBasicInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24: {
+                exp_ = input.readUInt64();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 24
+              case 32: {
+                unk3300KGCBFKGGHDD_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 32
+              case 50: {
+                ownerNickName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 50
+              case 56: {
+                isInEditMode_ = input.readBool();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 56
+              case 72: {
+                level_ = input.readUInt32();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 72
+              case 88: {
+                unk3300AKPAPPGOFGN_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 88
+              case 106: {
+                input.readMessage(
+                    getLimitedShopInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 106
+              case 112: {
+                unk3300GNFGFIIGHEA_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.HomeBasicInfoOuterClass.HomeBasicInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
-
-      private int level_ ;
-      /**
-       * <code>uint32 level = 10;</code>
-       * @return The level.
-       */
-      @java.lang.Override
-      public int getLevel() {
-        return level_;
-      }
-      /**
-       * <code>uint32 level = 10;</code>
-       * @param value The level to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLevel(int value) {
-        
-        level_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 level = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLevel() {
-        
-        level_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int curRoomSceneId_ ;
-      /**
-       * <code>uint32 cur_room_scene_id = 13;</code>
-       * @return The curRoomSceneId.
-       */
-      @java.lang.Override
-      public int getCurRoomSceneId() {
-        return curRoomSceneId_;
-      }
-      /**
-       * <code>uint32 cur_room_scene_id = 13;</code>
-       * @param value The curRoomSceneId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCurRoomSceneId(int value) {
-        
-        curRoomSceneId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 cur_room_scene_id = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCurRoomSceneId() {
-        
-        curRoomSceneId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int curModuleId_ ;
-      /**
-       * <code>uint32 cur_module_id = 9;</code>
-       * @return The curModuleId.
-       */
-      @java.lang.Override
-      public int getCurModuleId() {
-        return curModuleId_;
-      }
-      /**
-       * <code>uint32 cur_module_id = 9;</code>
-       * @param value The curModuleId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCurModuleId(int value) {
-        
-        curModuleId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 cur_module_id = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCurModuleId() {
-        
-        curModuleId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private boolean isInEditMode_ ;
-      /**
-       * <code>bool is_in_edit_mode = 5;</code>
-       * @return The isInEditMode.
-       */
-      @java.lang.Override
-      public boolean getIsInEditMode() {
-        return isInEditMode_;
-      }
-      /**
-       * <code>bool is_in_edit_mode = 5;</code>
-       * @param value The isInEditMode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsInEditMode(boolean value) {
-        
-        isInEditMode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_in_edit_mode = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsInEditMode() {
-        
-        isInEditMode_ = false;
-        onChanged();
-        return this;
-      }
-
-      private int homeOwnerUid_ ;
-      /**
-       * <code>uint32 home_owner_uid = 3;</code>
-       * @return The homeOwnerUid.
-       */
-      @java.lang.Override
-      public int getHomeOwnerUid() {
-        return homeOwnerUid_;
-      }
-      /**
-       * <code>uint32 home_owner_uid = 3;</code>
-       * @param value The homeOwnerUid to set.
-       * @return This builder for chaining.
-       */
-      public Builder setHomeOwnerUid(int value) {
-        
-        homeOwnerUid_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 home_owner_uid = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearHomeOwnerUid() {
-        
-        homeOwnerUid_ = 0;
-        onChanged();
-        return this;
-      }
+      private int bitField0_;
 
       private long exp_ ;
       /**
-       * <code>uint64 exp = 14;</code>
+       * <code>uint64 exp = 3;</code>
        * @return The exp.
        */
       @java.lang.Override
@@ -939,149 +763,95 @@ public final class HomeBasicInfoOuterClass {
         return exp_;
       }
       /**
-       * <code>uint64 exp = 14;</code>
+       * <code>uint64 exp = 3;</code>
        * @param value The exp to set.
        * @return This builder for chaining.
        */
       public Builder setExp(long value) {
         
         exp_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
-       * <code>uint64 exp = 14;</code>
+       * <code>uint64 exp = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearExp() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         exp_ = 0L;
         onChanged();
         return this;
       }
 
-      private emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo limitedShopInfo_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo, emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.Builder, emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfoOrBuilder> limitedShopInfoBuilder_;
+      private int unk3300AKPAPPGOFGN_ ;
       /**
-       * <code>.HomeLimitedShopInfo limited_shop_info = 15;</code>
-       * @return Whether the limitedShopInfo field is set.
+       * <code>uint32 Unk3300_AKPAPPGOFGN = 11;</code>
+       * @return The unk3300AKPAPPGOFGN.
        */
-      public boolean hasLimitedShopInfo() {
-        return limitedShopInfoBuilder_ != null || limitedShopInfo_ != null;
+      @java.lang.Override
+      public int getUnk3300AKPAPPGOFGN() {
+        return unk3300AKPAPPGOFGN_;
       }
       /**
-       * <code>.HomeLimitedShopInfo limited_shop_info = 15;</code>
-       * @return The limitedShopInfo.
+       * <code>uint32 Unk3300_AKPAPPGOFGN = 11;</code>
+       * @param value The unk3300AKPAPPGOFGN to set.
+       * @return This builder for chaining.
        */
-      public emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo getLimitedShopInfo() {
-        if (limitedShopInfoBuilder_ == null) {
-          return limitedShopInfo_ == null ? emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.getDefaultInstance() : limitedShopInfo_;
-        } else {
-          return limitedShopInfoBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.HomeLimitedShopInfo limited_shop_info = 15;</code>
-       */
-      public Builder setLimitedShopInfo(emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo value) {
-        if (limitedShopInfoBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          limitedShopInfo_ = value;
-          onChanged();
-        } else {
-          limitedShopInfoBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.HomeLimitedShopInfo limited_shop_info = 15;</code>
-       */
-      public Builder setLimitedShopInfo(
-          emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.Builder builderForValue) {
-        if (limitedShopInfoBuilder_ == null) {
-          limitedShopInfo_ = builderForValue.build();
-          onChanged();
-        } else {
-          limitedShopInfoBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.HomeLimitedShopInfo limited_shop_info = 15;</code>
-       */
-      public Builder mergeLimitedShopInfo(emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo value) {
-        if (limitedShopInfoBuilder_ == null) {
-          if (limitedShopInfo_ != null) {
-            limitedShopInfo_ =
-              emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.newBuilder(limitedShopInfo_).mergeFrom(value).buildPartial();
-          } else {
-            limitedShopInfo_ = value;
-          }
-          onChanged();
-        } else {
-          limitedShopInfoBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.HomeLimitedShopInfo limited_shop_info = 15;</code>
-       */
-      public Builder clearLimitedShopInfo() {
-        if (limitedShopInfoBuilder_ == null) {
-          limitedShopInfo_ = null;
-          onChanged();
-        } else {
-          limitedShopInfo_ = null;
-          limitedShopInfoBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.HomeLimitedShopInfo limited_shop_info = 15;</code>
-       */
-      public emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.Builder getLimitedShopInfoBuilder() {
+      public Builder setUnk3300AKPAPPGOFGN(int value) {
         
+        unk3300AKPAPPGOFGN_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
-        return getLimitedShopInfoFieldBuilder().getBuilder();
+        return this;
       }
       /**
-       * <code>.HomeLimitedShopInfo limited_shop_info = 15;</code>
+       * <code>uint32 Unk3300_AKPAPPGOFGN = 11;</code>
+       * @return This builder for chaining.
        */
-      public emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfoOrBuilder getLimitedShopInfoOrBuilder() {
-        if (limitedShopInfoBuilder_ != null) {
-          return limitedShopInfoBuilder_.getMessageOrBuilder();
-        } else {
-          return limitedShopInfo_ == null ?
-              emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.getDefaultInstance() : limitedShopInfo_;
-        }
+      public Builder clearUnk3300AKPAPPGOFGN() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        unk3300AKPAPPGOFGN_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int unk3300GNFGFIIGHEA_ ;
+      /**
+       * <code>uint32 Unk3300_GNFGFIIGHEA = 14;</code>
+       * @return The unk3300GNFGFIIGHEA.
+       */
+      @java.lang.Override
+      public int getUnk3300GNFGFIIGHEA() {
+        return unk3300GNFGFIIGHEA_;
       }
       /**
-       * <code>.HomeLimitedShopInfo limited_shop_info = 15;</code>
+       * <code>uint32 Unk3300_GNFGFIIGHEA = 14;</code>
+       * @param value The unk3300GNFGFIIGHEA to set.
+       * @return This builder for chaining.
        */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo, emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.Builder, emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfoOrBuilder> 
-          getLimitedShopInfoFieldBuilder() {
-        if (limitedShopInfoBuilder_ == null) {
-          limitedShopInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo, emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.Builder, emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfoOrBuilder>(
-                  getLimitedShopInfo(),
-                  getParentForChildren(),
-                  isClean());
-          limitedShopInfo_ = null;
-        }
-        return limitedShopInfoBuilder_;
+      public Builder setUnk3300GNFGFIIGHEA(int value) {
+        
+        unk3300GNFGFIIGHEA_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 Unk3300_GNFGFIIGHEA = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUnk3300GNFGFIIGHEA() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        unk3300GNFGFIIGHEA_ = 0;
+        onChanged();
+        return this;
       }
 
       private java.lang.Object ownerNickName_ = "";
       /**
-       * <code>string owner_nick_name = 4;</code>
+       * <code>string owner_nick_name = 6;</code>
        * @return The ownerNickName.
        */
       public java.lang.String getOwnerNickName() {
@@ -1097,7 +867,7 @@ public final class HomeBasicInfoOuterClass {
         }
       }
       /**
-       * <code>string owner_nick_name = 4;</code>
+       * <code>string owner_nick_name = 6;</code>
        * @return The bytes for ownerNickName.
        */
       public com.google.protobuf.ByteString
@@ -1114,43 +884,254 @@ public final class HomeBasicInfoOuterClass {
         }
       }
       /**
-       * <code>string owner_nick_name = 4;</code>
+       * <code>string owner_nick_name = 6;</code>
        * @param value The ownerNickName to set.
        * @return This builder for chaining.
        */
       public Builder setOwnerNickName(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         ownerNickName_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
       /**
-       * <code>string owner_nick_name = 4;</code>
+       * <code>string owner_nick_name = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearOwnerNickName() {
-        
         ownerNickName_ = getDefaultInstance().getOwnerNickName();
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
       /**
-       * <code>string owner_nick_name = 4;</code>
+       * <code>string owner_nick_name = 6;</code>
        * @param value The bytes for ownerNickName to set.
        * @return This builder for chaining.
        */
       public Builder setOwnerNickNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         ownerNickName_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private int unk3300KGCBFKGGHDD_ ;
+      /**
+       * <code>uint32 Unk3300_KGCBFKGGHDD = 4;</code>
+       * @return The unk3300KGCBFKGGHDD.
+       */
+      @java.lang.Override
+      public int getUnk3300KGCBFKGGHDD() {
+        return unk3300KGCBFKGGHDD_;
+      }
+      /**
+       * <code>uint32 Unk3300_KGCBFKGGHDD = 4;</code>
+       * @param value The unk3300KGCBFKGGHDD to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUnk3300KGCBFKGGHDD(int value) {
+        
+        unk3300KGCBFKGGHDD_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 Unk3300_KGCBFKGGHDD = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUnk3300KGCBFKGGHDD() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        unk3300KGCBFKGGHDD_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo limitedShopInfo_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo, emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.Builder, emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfoOrBuilder> limitedShopInfoBuilder_;
+      /**
+       * <code>.HomeLimitedShopInfo limited_shop_info = 13;</code>
+       * @return Whether the limitedShopInfo field is set.
+       */
+      public boolean hasLimitedShopInfo() {
+        return ((bitField0_ & 0x00000020) != 0);
+      }
+      /**
+       * <code>.HomeLimitedShopInfo limited_shop_info = 13;</code>
+       * @return The limitedShopInfo.
+       */
+      public emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo getLimitedShopInfo() {
+        if (limitedShopInfoBuilder_ == null) {
+          return limitedShopInfo_ == null ? emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.getDefaultInstance() : limitedShopInfo_;
+        } else {
+          return limitedShopInfoBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.HomeLimitedShopInfo limited_shop_info = 13;</code>
+       */
+      public Builder setLimitedShopInfo(emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo value) {
+        if (limitedShopInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          limitedShopInfo_ = value;
+        } else {
+          limitedShopInfoBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.HomeLimitedShopInfo limited_shop_info = 13;</code>
+       */
+      public Builder setLimitedShopInfo(
+          emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.Builder builderForValue) {
+        if (limitedShopInfoBuilder_ == null) {
+          limitedShopInfo_ = builderForValue.build();
+        } else {
+          limitedShopInfoBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.HomeLimitedShopInfo limited_shop_info = 13;</code>
+       */
+      public Builder mergeLimitedShopInfo(emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo value) {
+        if (limitedShopInfoBuilder_ == null) {
+          if (((bitField0_ & 0x00000020) != 0) &&
+            limitedShopInfo_ != null &&
+            limitedShopInfo_ != emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.getDefaultInstance()) {
+            getLimitedShopInfoBuilder().mergeFrom(value);
+          } else {
+            limitedShopInfo_ = value;
+          }
+        } else {
+          limitedShopInfoBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.HomeLimitedShopInfo limited_shop_info = 13;</code>
+       */
+      public Builder clearLimitedShopInfo() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        limitedShopInfo_ = null;
+        if (limitedShopInfoBuilder_ != null) {
+          limitedShopInfoBuilder_.dispose();
+          limitedShopInfoBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.HomeLimitedShopInfo limited_shop_info = 13;</code>
+       */
+      public emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.Builder getLimitedShopInfoBuilder() {
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return getLimitedShopInfoFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.HomeLimitedShopInfo limited_shop_info = 13;</code>
+       */
+      public emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfoOrBuilder getLimitedShopInfoOrBuilder() {
+        if (limitedShopInfoBuilder_ != null) {
+          return limitedShopInfoBuilder_.getMessageOrBuilder();
+        } else {
+          return limitedShopInfo_ == null ?
+              emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.getDefaultInstance() : limitedShopInfo_;
+        }
+      }
+      /**
+       * <code>.HomeLimitedShopInfo limited_shop_info = 13;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo, emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.Builder, emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfoOrBuilder> 
+          getLimitedShopInfoFieldBuilder() {
+        if (limitedShopInfoBuilder_ == null) {
+          limitedShopInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo, emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.Builder, emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfoOrBuilder>(
+                  getLimitedShopInfo(),
+                  getParentForChildren(),
+                  isClean());
+          limitedShopInfo_ = null;
+        }
+        return limitedShopInfoBuilder_;
+      }
+
+      private boolean isInEditMode_ ;
+      /**
+       * <code>bool is_in_edit_mode = 7;</code>
+       * @return The isInEditMode.
+       */
+      @java.lang.Override
+      public boolean getIsInEditMode() {
+        return isInEditMode_;
+      }
+      /**
+       * <code>bool is_in_edit_mode = 7;</code>
+       * @param value The isInEditMode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsInEditMode(boolean value) {
+        
+        isInEditMode_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_in_edit_mode = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsInEditMode() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        isInEditMode_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int level_ ;
+      /**
+       * <code>uint32 level = 9;</code>
+       * @return The level.
+       */
+      @java.lang.Override
+      public int getLevel() {
+        return level_;
+      }
+      /**
+       * <code>uint32 level = 9;</code>
+       * @param value The level to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLevel(int value) {
+        
+        level_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 level = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLevel() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        level_ = 0;
         onChanged();
         return this;
       }
@@ -1187,7 +1168,18 @@ public final class HomeBasicInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new HomeBasicInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1222,13 +1214,13 @@ public final class HomeBasicInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\023HomeBasicInfo.proto\032\031HomeLimitedShopIn" +
-      "fo.proto\"\330\001\n\rHomeBasicInfo\022\r\n\005level\030\n \001(" +
-      "\r\022\031\n\021cur_room_scene_id\030\r \001(\r\022\025\n\rcur_modu" +
-      "le_id\030\t \001(\r\022\027\n\017is_in_edit_mode\030\005 \001(\010\022\026\n\016" +
-      "home_owner_uid\030\003 \001(\r\022\013\n\003exp\030\016 \001(\004\022/\n\021lim" +
-      "ited_shop_info\030\017 \001(\0132\024.HomeLimitedShopIn" +
-      "fo\022\027\n\017owner_nick_name\030\004 \001(\tB\033\n\031emu.grass" +
-      "cutter.net.protob\006proto3"
+      "fo.proto\"\345\001\n\rHomeBasicInfo\022\013\n\003exp\030\003 \001(\004\022" +
+      "\033\n\023Unk3300_AKPAPPGOFGN\030\013 \001(\r\022\033\n\023Unk3300_" +
+      "GNFGFIIGHEA\030\016 \001(\r\022\027\n\017owner_nick_name\030\006 \001" +
+      "(\t\022\033\n\023Unk3300_KGCBFKGGHDD\030\004 \001(\r\022/\n\021limit" +
+      "ed_shop_info\030\r \001(\0132\024.HomeLimitedShopInfo" +
+      "\022\027\n\017is_in_edit_mode\030\007 \001(\010\022\r\n\005level\030\t \001(\r" +
+      "B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1240,7 +1232,7 @@ public final class HomeBasicInfoOuterClass {
     internal_static_HomeBasicInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_HomeBasicInfo_descriptor,
-        new java.lang.String[] { "Level", "CurRoomSceneId", "CurModuleId", "IsInEditMode", "HomeOwnerUid", "Exp", "LimitedShopInfo", "OwnerNickName", });
+        new java.lang.String[] { "Exp", "Unk3300AKPAPPGOFGN", "Unk3300GNFGFIIGHEA", "OwnerNickName", "Unk3300KGCBFKGGHDD", "LimitedShopInfo", "IsInEditMode", "Level", });
     emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.getDescriptor();
   }
 

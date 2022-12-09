@@ -19,17 +19,17 @@ public final class HomeGetArrangementInfoReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 scene_id_list = 13;</code>
+     * <code>repeated uint32 scene_id_list = 6;</code>
      * @return A list containing the sceneIdList.
      */
     java.util.List<java.lang.Integer> getSceneIdListList();
     /**
-     * <code>repeated uint32 scene_id_list = 13;</code>
+     * <code>repeated uint32 scene_id_list = 6;</code>
      * @return The count of sceneIdList.
      */
     int getSceneIdListCount();
     /**
-     * <code>repeated uint32 scene_id_list = 13;</code>
+     * <code>repeated uint32 scene_id_list = 6;</code>
      * @param index The index of the element to return.
      * @return The sceneIdList at the given index.
      */
@@ -37,10 +37,14 @@ public final class HomeGetArrangementInfoReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 4848
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 4601;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   *   IS_ALLOW_CLIENT = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code HomeGetArrangementInfoReq}
@@ -70,68 +74,6 @@ public final class HomeGetArrangementInfoReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private HomeGetArrangementInfoReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 104: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                sceneIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              sceneIdList_.addInt(input.readUInt32());
-              break;
-            }
-            case 106: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                sceneIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                sceneIdList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          sceneIdList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.grasscutter.net.proto.HomeGetArrangementInfoReqOuterClass.internal_static_HomeGetArrangementInfoReq_descriptor;
@@ -145,10 +87,11 @@ public final class HomeGetArrangementInfoReqOuterClass {
               emu.grasscutter.net.proto.HomeGetArrangementInfoReqOuterClass.HomeGetArrangementInfoReq.class, emu.grasscutter.net.proto.HomeGetArrangementInfoReqOuterClass.HomeGetArrangementInfoReq.Builder.class);
     }
 
-    public static final int SCENE_ID_LIST_FIELD_NUMBER = 13;
+    public static final int SCENE_ID_LIST_FIELD_NUMBER = 6;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList sceneIdList_;
     /**
-     * <code>repeated uint32 scene_id_list = 13;</code>
+     * <code>repeated uint32 scene_id_list = 6;</code>
      * @return A list containing the sceneIdList.
      */
     @java.lang.Override
@@ -157,14 +100,14 @@ public final class HomeGetArrangementInfoReqOuterClass {
       return sceneIdList_;
     }
     /**
-     * <code>repeated uint32 scene_id_list = 13;</code>
+     * <code>repeated uint32 scene_id_list = 6;</code>
      * @return The count of sceneIdList.
      */
     public int getSceneIdListCount() {
       return sceneIdList_.size();
     }
     /**
-     * <code>repeated uint32 scene_id_list = 13;</code>
+     * <code>repeated uint32 scene_id_list = 6;</code>
      * @param index The index of the element to return.
      * @return The sceneIdList at the given index.
      */
@@ -189,13 +132,13 @@ public final class HomeGetArrangementInfoReqOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getSceneIdListList().size() > 0) {
-        output.writeUInt32NoTag(106);
+        output.writeUInt32NoTag(50);
         output.writeUInt32NoTag(sceneIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < sceneIdList_.size(); i++) {
         output.writeUInt32NoTag(sceneIdList_.getInt(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -218,7 +161,7 @@ public final class HomeGetArrangementInfoReqOuterClass {
         }
         sceneIdListMemoizedSerializedSize = dataSize;
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -235,7 +178,7 @@ public final class HomeGetArrangementInfoReqOuterClass {
 
       if (!getSceneIdListList()
           .equals(other.getSceneIdListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -250,7 +193,7 @@ public final class HomeGetArrangementInfoReqOuterClass {
         hash = (37 * hash) + SCENE_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getSceneIdListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -347,10 +290,14 @@ public final class HomeGetArrangementInfoReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4848
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 4601;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     *   IS_ALLOW_CLIENT = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code HomeGetArrangementInfoReq}
@@ -374,24 +321,19 @@ public final class HomeGetArrangementInfoReqOuterClass {
 
       // Construct using emu.grasscutter.net.proto.HomeGetArrangementInfoReqOuterClass.HomeGetArrangementInfoReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         sceneIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -418,14 +360,22 @@ public final class HomeGetArrangementInfoReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.HomeGetArrangementInfoReqOuterClass.HomeGetArrangementInfoReq buildPartial() {
         emu.grasscutter.net.proto.HomeGetArrangementInfoReqOuterClass.HomeGetArrangementInfoReq result = new emu.grasscutter.net.proto.HomeGetArrangementInfoReqOuterClass.HomeGetArrangementInfoReq(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.grasscutter.net.proto.HomeGetArrangementInfoReqOuterClass.HomeGetArrangementInfoReq result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           sceneIdList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.sceneIdList_ = sceneIdList_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.grasscutter.net.proto.HomeGetArrangementInfoReqOuterClass.HomeGetArrangementInfoReq result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -482,7 +432,7 @@ public final class HomeGetArrangementInfoReqOuterClass {
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -497,17 +447,46 @@ public final class HomeGetArrangementInfoReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.HomeGetArrangementInfoReqOuterClass.HomeGetArrangementInfoReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 48: {
+                int v = input.readUInt32();
+                ensureSceneIdListIsMutable();
+                sceneIdList_.addInt(v);
+                break;
+              } // case 48
+              case 50: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureSceneIdListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  sceneIdList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 50
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.HomeGetArrangementInfoReqOuterClass.HomeGetArrangementInfoReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -517,10 +496,10 @@ public final class HomeGetArrangementInfoReqOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           sceneIdList_ = mutableCopy(sceneIdList_);
           bitField0_ |= 0x00000001;
-         }
+        }
       }
       /**
-       * <code>repeated uint32 scene_id_list = 13;</code>
+       * <code>repeated uint32 scene_id_list = 6;</code>
        * @return A list containing the sceneIdList.
        */
       public java.util.List<java.lang.Integer>
@@ -529,14 +508,14 @@ public final class HomeGetArrangementInfoReqOuterClass {
                  java.util.Collections.unmodifiableList(sceneIdList_) : sceneIdList_;
       }
       /**
-       * <code>repeated uint32 scene_id_list = 13;</code>
+       * <code>repeated uint32 scene_id_list = 6;</code>
        * @return The count of sceneIdList.
        */
       public int getSceneIdListCount() {
         return sceneIdList_.size();
       }
       /**
-       * <code>repeated uint32 scene_id_list = 13;</code>
+       * <code>repeated uint32 scene_id_list = 6;</code>
        * @param index The index of the element to return.
        * @return The sceneIdList at the given index.
        */
@@ -544,31 +523,33 @@ public final class HomeGetArrangementInfoReqOuterClass {
         return sceneIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 scene_id_list = 13;</code>
+       * <code>repeated uint32 scene_id_list = 6;</code>
        * @param index The index to set the value at.
        * @param value The sceneIdList to set.
        * @return This builder for chaining.
        */
       public Builder setSceneIdList(
           int index, int value) {
+        
         ensureSceneIdListIsMutable();
         sceneIdList_.setInt(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 scene_id_list = 13;</code>
+       * <code>repeated uint32 scene_id_list = 6;</code>
        * @param value The sceneIdList to add.
        * @return This builder for chaining.
        */
       public Builder addSceneIdList(int value) {
+        
         ensureSceneIdListIsMutable();
         sceneIdList_.addInt(value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 scene_id_list = 13;</code>
+       * <code>repeated uint32 scene_id_list = 6;</code>
        * @param values The sceneIdList to add.
        * @return This builder for chaining.
        */
@@ -581,7 +562,7 @@ public final class HomeGetArrangementInfoReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 scene_id_list = 13;</code>
+       * <code>repeated uint32 scene_id_list = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearSceneIdList() {
@@ -623,7 +604,18 @@ public final class HomeGetArrangementInfoReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new HomeGetArrangementInfoReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -659,7 +651,7 @@ public final class HomeGetArrangementInfoReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\037HomeGetArrangementInfoReq.proto\"2\n\031Hom" +
       "eGetArrangementInfoReq\022\025\n\rscene_id_list\030" +
-      "\r \003(\rB\033\n\031emu.grasscutter.net.protob\006prot" +
+      "\006 \003(\rB\033\n\031emu.grasscutter.net.protob\006prot" +
       "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

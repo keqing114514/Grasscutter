@@ -19,29 +19,33 @@ public final class SetPlayerBornDataReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 avatar_id = 2;</code>
-     * @return The avatarId.
-     */
-    int getAvatarId();
-
-    /**
-     * <code>string nick_name = 13;</code>
+     * <code>string nick_name = 4;</code>
      * @return The nickName.
      */
     java.lang.String getNickName();
     /**
-     * <code>string nick_name = 13;</code>
+     * <code>string nick_name = 4;</code>
      * @return The bytes for nickName.
      */
     com.google.protobuf.ByteString
         getNickNameBytes();
+
+    /**
+     * <code>uint32 avatar_id = 14;</code>
+     * @return The avatarId.
+     */
+    int getAvatarId();
   }
   /**
    * <pre>
-   * CmdId: 105
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 142;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   *   IS_ALLOW_CLIENT = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code SetPlayerBornDataReq}
@@ -71,54 +75,6 @@ public final class SetPlayerBornDataReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SetPlayerBornDataReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              avatarId_ = input.readUInt32();
-              break;
-            }
-            case 106: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              nickName_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.grasscutter.net.proto.SetPlayerBornDataReqOuterClass.internal_static_SetPlayerBornDataReq_descriptor;
@@ -132,21 +88,11 @@ public final class SetPlayerBornDataReqOuterClass {
               emu.grasscutter.net.proto.SetPlayerBornDataReqOuterClass.SetPlayerBornDataReq.class, emu.grasscutter.net.proto.SetPlayerBornDataReqOuterClass.SetPlayerBornDataReq.Builder.class);
     }
 
-    public static final int AVATAR_ID_FIELD_NUMBER = 2;
-    private int avatarId_;
+    public static final int NICK_NAME_FIELD_NUMBER = 4;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object nickName_ = "";
     /**
-     * <code>uint32 avatar_id = 2;</code>
-     * @return The avatarId.
-     */
-    @java.lang.Override
-    public int getAvatarId() {
-      return avatarId_;
-    }
-
-    public static final int NICK_NAME_FIELD_NUMBER = 13;
-    private volatile java.lang.Object nickName_;
-    /**
-     * <code>string nick_name = 13;</code>
+     * <code>string nick_name = 4;</code>
      * @return The nickName.
      */
     @java.lang.Override
@@ -163,7 +109,7 @@ public final class SetPlayerBornDataReqOuterClass {
       }
     }
     /**
-     * <code>string nick_name = 13;</code>
+     * <code>string nick_name = 4;</code>
      * @return The bytes for nickName.
      */
     @java.lang.Override
@@ -181,6 +127,17 @@ public final class SetPlayerBornDataReqOuterClass {
       }
     }
 
+    public static final int AVATAR_ID_FIELD_NUMBER = 14;
+    private int avatarId_ = 0;
+    /**
+     * <code>uint32 avatar_id = 14;</code>
+     * @return The avatarId.
+     */
+    @java.lang.Override
+    public int getAvatarId() {
+      return avatarId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -195,13 +152,13 @@ public final class SetPlayerBornDataReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (avatarId_ != 0) {
-        output.writeUInt32(2, avatarId_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nickName_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, nickName_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, nickName_);
       }
-      unknownFields.writeTo(output);
+      if (avatarId_ != 0) {
+        output.writeUInt32(14, avatarId_);
+      }
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -210,14 +167,14 @@ public final class SetPlayerBornDataReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nickName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, nickName_);
+      }
       if (avatarId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, avatarId_);
+          .computeUInt32Size(14, avatarId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nickName_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, nickName_);
-      }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -232,11 +189,11 @@ public final class SetPlayerBornDataReqOuterClass {
       }
       emu.grasscutter.net.proto.SetPlayerBornDataReqOuterClass.SetPlayerBornDataReq other = (emu.grasscutter.net.proto.SetPlayerBornDataReqOuterClass.SetPlayerBornDataReq) obj;
 
-      if (getAvatarId()
-          != other.getAvatarId()) return false;
       if (!getNickName()
           .equals(other.getNickName())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (getAvatarId()
+          != other.getAvatarId()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -247,11 +204,11 @@ public final class SetPlayerBornDataReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + AVATAR_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getAvatarId();
       hash = (37 * hash) + NICK_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getNickName().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (37 * hash) + AVATAR_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getAvatarId();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -348,10 +305,14 @@ public final class SetPlayerBornDataReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 105
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 142;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     *   IS_ALLOW_CLIENT = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code SetPlayerBornDataReq}
@@ -375,26 +336,20 @@ public final class SetPlayerBornDataReqOuterClass {
 
       // Construct using emu.grasscutter.net.proto.SetPlayerBornDataReqOuterClass.SetPlayerBornDataReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        avatarId_ = 0;
-
+        bitField0_ = 0;
         nickName_ = "";
-
+        avatarId_ = 0;
         return this;
       }
 
@@ -421,10 +376,19 @@ public final class SetPlayerBornDataReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.SetPlayerBornDataReqOuterClass.SetPlayerBornDataReq buildPartial() {
         emu.grasscutter.net.proto.SetPlayerBornDataReqOuterClass.SetPlayerBornDataReq result = new emu.grasscutter.net.proto.SetPlayerBornDataReqOuterClass.SetPlayerBornDataReq(this);
-        result.avatarId_ = avatarId_;
-        result.nickName_ = nickName_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.grasscutter.net.proto.SetPlayerBornDataReqOuterClass.SetPlayerBornDataReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.nickName_ = nickName_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.avatarId_ = avatarId_;
+        }
       }
 
       @java.lang.Override
@@ -471,14 +435,15 @@ public final class SetPlayerBornDataReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.SetPlayerBornDataReqOuterClass.SetPlayerBornDataReq other) {
         if (other == emu.grasscutter.net.proto.SetPlayerBornDataReqOuterClass.SetPlayerBornDataReq.getDefaultInstance()) return this;
+        if (!other.getNickName().isEmpty()) {
+          nickName_ = other.nickName_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
         if (other.getAvatarId() != 0) {
           setAvatarId(other.getAvatarId());
         }
-        if (!other.getNickName().isEmpty()) {
-          nickName_ = other.nickName_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -493,54 +458,47 @@ public final class SetPlayerBornDataReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.SetPlayerBornDataReqOuterClass.SetPlayerBornDataReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 34: {
+                nickName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 34
+              case 112: {
+                avatarId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.SetPlayerBornDataReqOuterClass.SetPlayerBornDataReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
-
-      private int avatarId_ ;
-      /**
-       * <code>uint32 avatar_id = 2;</code>
-       * @return The avatarId.
-       */
-      @java.lang.Override
-      public int getAvatarId() {
-        return avatarId_;
-      }
-      /**
-       * <code>uint32 avatar_id = 2;</code>
-       * @param value The avatarId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAvatarId(int value) {
-        
-        avatarId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 avatar_id = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAvatarId() {
-        
-        avatarId_ = 0;
-        onChanged();
-        return this;
-      }
+      private int bitField0_;
 
       private java.lang.Object nickName_ = "";
       /**
-       * <code>string nick_name = 13;</code>
+       * <code>string nick_name = 4;</code>
        * @return The nickName.
        */
       public java.lang.String getNickName() {
@@ -556,7 +514,7 @@ public final class SetPlayerBornDataReqOuterClass {
         }
       }
       /**
-       * <code>string nick_name = 13;</code>
+       * <code>string nick_name = 4;</code>
        * @return The bytes for nickName.
        */
       public com.google.protobuf.ByteString
@@ -573,43 +531,71 @@ public final class SetPlayerBornDataReqOuterClass {
         }
       }
       /**
-       * <code>string nick_name = 13;</code>
+       * <code>string nick_name = 4;</code>
        * @param value The nickName to set.
        * @return This builder for chaining.
        */
       public Builder setNickName(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         nickName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
-       * <code>string nick_name = 13;</code>
+       * <code>string nick_name = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearNickName() {
-        
         nickName_ = getDefaultInstance().getNickName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
       /**
-       * <code>string nick_name = 13;</code>
+       * <code>string nick_name = 4;</code>
        * @param value The bytes for nickName to set.
        * @return This builder for chaining.
        */
       public Builder setNickNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         nickName_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private int avatarId_ ;
+      /**
+       * <code>uint32 avatar_id = 14;</code>
+       * @return The avatarId.
+       */
+      @java.lang.Override
+      public int getAvatarId() {
+        return avatarId_;
+      }
+      /**
+       * <code>uint32 avatar_id = 14;</code>
+       * @param value The avatarId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAvatarId(int value) {
+        
+        avatarId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 avatar_id = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAvatarId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        avatarId_ = 0;
         onChanged();
         return this;
       }
@@ -646,7 +632,18 @@ public final class SetPlayerBornDataReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SetPlayerBornDataReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -681,8 +678,8 @@ public final class SetPlayerBornDataReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\032SetPlayerBornDataReq.proto\"<\n\024SetPlaye" +
-      "rBornDataReq\022\021\n\tavatar_id\030\002 \001(\r\022\021\n\tnick_" +
-      "name\030\r \001(\tB\033\n\031emu.grasscutter.net.protob" +
+      "rBornDataReq\022\021\n\tnick_name\030\004 \001(\t\022\021\n\tavata" +
+      "r_id\030\016 \001(\rB\033\n\031emu.grasscutter.net.protob" +
       "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -694,7 +691,7 @@ public final class SetPlayerBornDataReqOuterClass {
     internal_static_SetPlayerBornDataReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SetPlayerBornDataReq_descriptor,
-        new java.lang.String[] { "AvatarId", "NickName", });
+        new java.lang.String[] { "NickName", "AvatarId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -19,6 +19,41 @@ public final class TowerCurLevelRecordOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <code>repeated uint32 buff_id_list = 14;</code>
+     * @return A list containing the buffIdList.
+     */
+    java.util.List<java.lang.Integer> getBuffIdListList();
+    /**
+     * <code>repeated uint32 buff_id_list = 14;</code>
+     * @return The count of buffIdList.
+     */
+    int getBuffIdListCount();
+    /**
+     * <code>repeated uint32 buff_id_list = 14;</code>
+     * @param index The index of the element to return.
+     * @return The buffIdList at the given index.
+     */
+    int getBuffIdList(int index);
+
+    /**
+     * <code>bool is_upper_part = 4;</code>
+     * @return The isUpperPart.
+     */
+    boolean getIsUpperPart();
+
+    /**
+     * <code>uint32 Unk3300_KPGBPDIJJJJ = 6;</code>
+     * @return The unk3300KPGBPDIJJJJ.
+     */
+    int getUnk3300KPGBPDIJJJJ();
+
+    /**
+     * <code>bool is_empty = 1;</code>
+     * @return The isEmpty.
+     */
+    boolean getIsEmpty();
+
+    /**
      * <code>repeated .TowerTeam tower_team_list = 8;</code>
      */
     java.util.List<emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeam> 
@@ -43,45 +78,10 @@ public final class TowerCurLevelRecordOuterClass {
         int index);
 
     /**
-     * <code>bool is_empty = 6;</code>
-     * @return The isEmpty.
+     * <code>uint32 Unk3300_PMHCLPFPHBJ = 9;</code>
+     * @return The unk3300PMHCLPFPHBJ.
      */
-    boolean getIsEmpty();
-
-    /**
-     * <code>repeated uint32 buff_id_list = 4;</code>
-     * @return A list containing the buffIdList.
-     */
-    java.util.List<java.lang.Integer> getBuffIdListList();
-    /**
-     * <code>repeated uint32 buff_id_list = 4;</code>
-     * @return The count of buffIdList.
-     */
-    int getBuffIdListCount();
-    /**
-     * <code>repeated uint32 buff_id_list = 4;</code>
-     * @param index The index of the element to return.
-     * @return The buffIdList at the given index.
-     */
-    int getBuffIdList(int index);
-
-    /**
-     * <code>bool Unk2700_CBPNPEBMPOH = 2;</code>
-     * @return The unk2700CBPNPEBMPOH.
-     */
-    boolean getUnk2700CBPNPEBMPOH();
-
-    /**
-     * <code>uint32 cur_level_index = 1;</code>
-     * @return The curLevelIndex.
-     */
-    int getCurLevelIndex();
-
-    /**
-     * <code>uint32 cur_floor_id = 15;</code>
-     * @return The curFloorId.
-     */
-    int getCurFloorId();
+    int getUnk3300PMHCLPFPHBJ();
   }
   /**
    * Protobuf type {@code TowerCurLevelRecord}
@@ -96,8 +96,8 @@ public final class TowerCurLevelRecordOuterClass {
       super(builder);
     }
     private TowerCurLevelRecord() {
-      towerTeamList_ = java.util.Collections.emptyList();
       buffIdList_ = emptyIntList();
+      towerTeamList_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -112,100 +112,6 @@ public final class TowerCurLevelRecordOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private TowerCurLevelRecord(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              curLevelIndex_ = input.readUInt32();
-              break;
-            }
-            case 16: {
-
-              unk2700CBPNPEBMPOH_ = input.readBool();
-              break;
-            }
-            case 32: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                buffIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              buffIdList_.addInt(input.readUInt32());
-              break;
-            }
-            case 34: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                buffIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                buffIdList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 48: {
-
-              isEmpty_ = input.readBool();
-              break;
-            }
-            case 66: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                towerTeamList_ = new java.util.ArrayList<emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeam>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              towerTeamList_.add(
-                  input.readMessage(emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeam.parser(), extensionRegistry));
-              break;
-            }
-            case 120: {
-
-              curFloorId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          buffIdList_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          towerTeamList_ = java.util.Collections.unmodifiableList(towerTeamList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.internal_static_TowerCurLevelRecord_descriptor;
@@ -219,7 +125,70 @@ public final class TowerCurLevelRecordOuterClass {
               emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord.class, emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord.Builder.class);
     }
 
+    public static final int BUFF_ID_LIST_FIELD_NUMBER = 14;
+    @SuppressWarnings("serial")
+    private com.google.protobuf.Internal.IntList buffIdList_;
+    /**
+     * <code>repeated uint32 buff_id_list = 14;</code>
+     * @return A list containing the buffIdList.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer>
+        getBuffIdListList() {
+      return buffIdList_;
+    }
+    /**
+     * <code>repeated uint32 buff_id_list = 14;</code>
+     * @return The count of buffIdList.
+     */
+    public int getBuffIdListCount() {
+      return buffIdList_.size();
+    }
+    /**
+     * <code>repeated uint32 buff_id_list = 14;</code>
+     * @param index The index of the element to return.
+     * @return The buffIdList at the given index.
+     */
+    public int getBuffIdList(int index) {
+      return buffIdList_.getInt(index);
+    }
+    private int buffIdListMemoizedSerializedSize = -1;
+
+    public static final int IS_UPPER_PART_FIELD_NUMBER = 4;
+    private boolean isUpperPart_ = false;
+    /**
+     * <code>bool is_upper_part = 4;</code>
+     * @return The isUpperPart.
+     */
+    @java.lang.Override
+    public boolean getIsUpperPart() {
+      return isUpperPart_;
+    }
+
+    public static final int UNK3300_KPGBPDIJJJJ_FIELD_NUMBER = 6;
+    private int unk3300KPGBPDIJJJJ_ = 0;
+    /**
+     * <code>uint32 Unk3300_KPGBPDIJJJJ = 6;</code>
+     * @return The unk3300KPGBPDIJJJJ.
+     */
+    @java.lang.Override
+    public int getUnk3300KPGBPDIJJJJ() {
+      return unk3300KPGBPDIJJJJ_;
+    }
+
+    public static final int IS_EMPTY_FIELD_NUMBER = 1;
+    private boolean isEmpty_ = false;
+    /**
+     * <code>bool is_empty = 1;</code>
+     * @return The isEmpty.
+     */
+    @java.lang.Override
+    public boolean getIsEmpty() {
+      return isEmpty_;
+    }
+
     public static final int TOWER_TEAM_LIST_FIELD_NUMBER = 8;
+    @SuppressWarnings("serial")
     private java.util.List<emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeam> towerTeamList_;
     /**
      * <code>repeated .TowerTeam tower_team_list = 8;</code>
@@ -259,76 +228,15 @@ public final class TowerCurLevelRecordOuterClass {
       return towerTeamList_.get(index);
     }
 
-    public static final int IS_EMPTY_FIELD_NUMBER = 6;
-    private boolean isEmpty_;
+    public static final int UNK3300_PMHCLPFPHBJ_FIELD_NUMBER = 9;
+    private int unk3300PMHCLPFPHBJ_ = 0;
     /**
-     * <code>bool is_empty = 6;</code>
-     * @return The isEmpty.
+     * <code>uint32 Unk3300_PMHCLPFPHBJ = 9;</code>
+     * @return The unk3300PMHCLPFPHBJ.
      */
     @java.lang.Override
-    public boolean getIsEmpty() {
-      return isEmpty_;
-    }
-
-    public static final int BUFF_ID_LIST_FIELD_NUMBER = 4;
-    private com.google.protobuf.Internal.IntList buffIdList_;
-    /**
-     * <code>repeated uint32 buff_id_list = 4;</code>
-     * @return A list containing the buffIdList.
-     */
-    @java.lang.Override
-    public java.util.List<java.lang.Integer>
-        getBuffIdListList() {
-      return buffIdList_;
-    }
-    /**
-     * <code>repeated uint32 buff_id_list = 4;</code>
-     * @return The count of buffIdList.
-     */
-    public int getBuffIdListCount() {
-      return buffIdList_.size();
-    }
-    /**
-     * <code>repeated uint32 buff_id_list = 4;</code>
-     * @param index The index of the element to return.
-     * @return The buffIdList at the given index.
-     */
-    public int getBuffIdList(int index) {
-      return buffIdList_.getInt(index);
-    }
-    private int buffIdListMemoizedSerializedSize = -1;
-
-    public static final int UNK2700_CBPNPEBMPOH_FIELD_NUMBER = 2;
-    private boolean unk2700CBPNPEBMPOH_;
-    /**
-     * <code>bool Unk2700_CBPNPEBMPOH = 2;</code>
-     * @return The unk2700CBPNPEBMPOH.
-     */
-    @java.lang.Override
-    public boolean getUnk2700CBPNPEBMPOH() {
-      return unk2700CBPNPEBMPOH_;
-    }
-
-    public static final int CUR_LEVEL_INDEX_FIELD_NUMBER = 1;
-    private int curLevelIndex_;
-    /**
-     * <code>uint32 cur_level_index = 1;</code>
-     * @return The curLevelIndex.
-     */
-    @java.lang.Override
-    public int getCurLevelIndex() {
-      return curLevelIndex_;
-    }
-
-    public static final int CUR_FLOOR_ID_FIELD_NUMBER = 15;
-    private int curFloorId_;
-    /**
-     * <code>uint32 cur_floor_id = 15;</code>
-     * @return The curFloorId.
-     */
-    @java.lang.Override
-    public int getCurFloorId() {
-      return curFloorId_;
+    public int getUnk3300PMHCLPFPHBJ() {
+      return unk3300PMHCLPFPHBJ_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -346,29 +254,29 @@ public final class TowerCurLevelRecordOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (curLevelIndex_ != 0) {
-        output.writeUInt32(1, curLevelIndex_);
+      if (isEmpty_ != false) {
+        output.writeBool(1, isEmpty_);
       }
-      if (unk2700CBPNPEBMPOH_ != false) {
-        output.writeBool(2, unk2700CBPNPEBMPOH_);
+      if (isUpperPart_ != false) {
+        output.writeBool(4, isUpperPart_);
+      }
+      if (unk3300KPGBPDIJJJJ_ != 0) {
+        output.writeUInt32(6, unk3300KPGBPDIJJJJ_);
+      }
+      for (int i = 0; i < towerTeamList_.size(); i++) {
+        output.writeMessage(8, towerTeamList_.get(i));
+      }
+      if (unk3300PMHCLPFPHBJ_ != 0) {
+        output.writeUInt32(9, unk3300PMHCLPFPHBJ_);
       }
       if (getBuffIdListList().size() > 0) {
-        output.writeUInt32NoTag(34);
+        output.writeUInt32NoTag(114);
         output.writeUInt32NoTag(buffIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < buffIdList_.size(); i++) {
         output.writeUInt32NoTag(buffIdList_.getInt(i));
       }
-      if (isEmpty_ != false) {
-        output.writeBool(6, isEmpty_);
-      }
-      for (int i = 0; i < towerTeamList_.size(); i++) {
-        output.writeMessage(8, towerTeamList_.get(i));
-      }
-      if (curFloorId_ != 0) {
-        output.writeUInt32(15, curFloorId_);
-      }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -377,13 +285,25 @@ public final class TowerCurLevelRecordOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (curLevelIndex_ != 0) {
+      if (isEmpty_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, curLevelIndex_);
+          .computeBoolSize(1, isEmpty_);
       }
-      if (unk2700CBPNPEBMPOH_ != false) {
+      if (isUpperPart_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, unk2700CBPNPEBMPOH_);
+          .computeBoolSize(4, isUpperPart_);
+      }
+      if (unk3300KPGBPDIJJJJ_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(6, unk3300KPGBPDIJJJJ_);
+      }
+      for (int i = 0; i < towerTeamList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(8, towerTeamList_.get(i));
+      }
+      if (unk3300PMHCLPFPHBJ_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(9, unk3300PMHCLPFPHBJ_);
       }
       {
         int dataSize = 0;
@@ -399,19 +319,7 @@ public final class TowerCurLevelRecordOuterClass {
         }
         buffIdListMemoizedSerializedSize = dataSize;
       }
-      if (isEmpty_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(6, isEmpty_);
-      }
-      for (int i = 0; i < towerTeamList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, towerTeamList_.get(i));
-      }
-      if (curFloorId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, curFloorId_);
-      }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -426,19 +334,19 @@ public final class TowerCurLevelRecordOuterClass {
       }
       emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord other = (emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord) obj;
 
-      if (!getTowerTeamListList()
-          .equals(other.getTowerTeamListList())) return false;
-      if (getIsEmpty()
-          != other.getIsEmpty()) return false;
       if (!getBuffIdListList()
           .equals(other.getBuffIdListList())) return false;
-      if (getUnk2700CBPNPEBMPOH()
-          != other.getUnk2700CBPNPEBMPOH()) return false;
-      if (getCurLevelIndex()
-          != other.getCurLevelIndex()) return false;
-      if (getCurFloorId()
-          != other.getCurFloorId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (getIsUpperPart()
+          != other.getIsUpperPart()) return false;
+      if (getUnk3300KPGBPDIJJJJ()
+          != other.getUnk3300KPGBPDIJJJJ()) return false;
+      if (getIsEmpty()
+          != other.getIsEmpty()) return false;
+      if (!getTowerTeamListList()
+          .equals(other.getTowerTeamListList())) return false;
+      if (getUnk3300PMHCLPFPHBJ()
+          != other.getUnk3300PMHCLPFPHBJ()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -449,25 +357,25 @@ public final class TowerCurLevelRecordOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getTowerTeamListCount() > 0) {
-        hash = (37 * hash) + TOWER_TEAM_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getTowerTeamListList().hashCode();
-      }
-      hash = (37 * hash) + IS_EMPTY_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsEmpty());
       if (getBuffIdListCount() > 0) {
         hash = (37 * hash) + BUFF_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getBuffIdListList().hashCode();
       }
-      hash = (37 * hash) + UNK2700_CBPNPEBMPOH_FIELD_NUMBER;
+      hash = (37 * hash) + IS_UPPER_PART_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getUnk2700CBPNPEBMPOH());
-      hash = (37 * hash) + CUR_LEVEL_INDEX_FIELD_NUMBER;
-      hash = (53 * hash) + getCurLevelIndex();
-      hash = (37 * hash) + CUR_FLOOR_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getCurFloorId();
-      hash = (29 * hash) + unknownFields.hashCode();
+          getIsUpperPart());
+      hash = (37 * hash) + UNK3300_KPGBPDIJJJJ_FIELD_NUMBER;
+      hash = (53 * hash) + getUnk3300KPGBPDIJJJJ();
+      hash = (37 * hash) + IS_EMPTY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsEmpty());
+      if (getTowerTeamListCount() > 0) {
+        hash = (37 * hash) + TOWER_TEAM_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getTowerTeamListList().hashCode();
+      }
+      hash = (37 * hash) + UNK3300_PMHCLPFPHBJ_FIELD_NUMBER;
+      hash = (53 * hash) + getUnk3300PMHCLPFPHBJ();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -584,39 +492,30 @@ public final class TowerCurLevelRecordOuterClass {
 
       // Construct using emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getTowerTeamListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
+        buffIdList_ = emptyIntList();
+        isUpperPart_ = false;
+        unk3300KPGBPDIJJJJ_ = 0;
+        isEmpty_ = false;
         if (towerTeamListBuilder_ == null) {
           towerTeamList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          towerTeamList_ = null;
           towerTeamListBuilder_.clear();
         }
-        isEmpty_ = false;
-
-        buffIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        unk2700CBPNPEBMPOH_ = false;
-
-        curLevelIndex_ = 0;
-
-        curFloorId_ = 0;
-
+        bitField0_ = (bitField0_ & ~0x00000010);
+        unk3300PMHCLPFPHBJ_ = 0;
         return this;
       }
 
@@ -643,27 +542,43 @@ public final class TowerCurLevelRecordOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord buildPartial() {
         emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord result = new emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord result) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          buffIdList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.buffIdList_ = buffIdList_;
         if (towerTeamListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000010) != 0)) {
             towerTeamList_ = java.util.Collections.unmodifiableList(towerTeamList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
           }
           result.towerTeamList_ = towerTeamList_;
         } else {
           result.towerTeamList_ = towerTeamListBuilder_.build();
         }
-        result.isEmpty_ = isEmpty_;
-        if (((bitField0_ & 0x00000002) != 0)) {
-          buffIdList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
+      }
+
+      private void buildPartial0(emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.isUpperPart_ = isUpperPart_;
         }
-        result.buffIdList_ = buffIdList_;
-        result.unk2700CBPNPEBMPOH_ = unk2700CBPNPEBMPOH_;
-        result.curLevelIndex_ = curLevelIndex_;
-        result.curFloorId_ = curFloorId_;
-        onBuilt();
-        return result;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.unk3300KPGBPDIJJJJ_ = unk3300KPGBPDIJJJJ_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.isEmpty_ = isEmpty_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.unk3300PMHCLPFPHBJ_ = unk3300PMHCLPFPHBJ_;
+        }
       }
 
       @java.lang.Override
@@ -710,11 +625,30 @@ public final class TowerCurLevelRecordOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord other) {
         if (other == emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord.getDefaultInstance()) return this;
+        if (!other.buffIdList_.isEmpty()) {
+          if (buffIdList_.isEmpty()) {
+            buffIdList_ = other.buffIdList_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureBuffIdListIsMutable();
+            buffIdList_.addAll(other.buffIdList_);
+          }
+          onChanged();
+        }
+        if (other.getIsUpperPart() != false) {
+          setIsUpperPart(other.getIsUpperPart());
+        }
+        if (other.getUnk3300KPGBPDIJJJJ() != 0) {
+          setUnk3300KPGBPDIJJJJ(other.getUnk3300KPGBPDIJJJJ());
+        }
+        if (other.getIsEmpty() != false) {
+          setIsEmpty(other.getIsEmpty());
+        }
         if (towerTeamListBuilder_ == null) {
           if (!other.towerTeamList_.isEmpty()) {
             if (towerTeamList_.isEmpty()) {
               towerTeamList_ = other.towerTeamList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000010);
             } else {
               ensureTowerTeamListIsMutable();
               towerTeamList_.addAll(other.towerTeamList_);
@@ -727,7 +661,7 @@ public final class TowerCurLevelRecordOuterClass {
               towerTeamListBuilder_.dispose();
               towerTeamListBuilder_ = null;
               towerTeamList_ = other.towerTeamList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000010);
               towerTeamListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getTowerTeamListFieldBuilder() : null;
@@ -736,29 +670,10 @@ public final class TowerCurLevelRecordOuterClass {
             }
           }
         }
-        if (other.getIsEmpty() != false) {
-          setIsEmpty(other.getIsEmpty());
+        if (other.getUnk3300PMHCLPFPHBJ() != 0) {
+          setUnk3300PMHCLPFPHBJ(other.getUnk3300PMHCLPFPHBJ());
         }
-        if (!other.buffIdList_.isEmpty()) {
-          if (buffIdList_.isEmpty()) {
-            buffIdList_ = other.buffIdList_;
-            bitField0_ = (bitField0_ & ~0x00000002);
-          } else {
-            ensureBuffIdListIsMutable();
-            buffIdList_.addAll(other.buffIdList_);
-          }
-          onChanged();
-        }
-        if (other.getUnk2700CBPNPEBMPOH() != false) {
-          setUnk2700CBPNPEBMPOH(other.getUnk2700CBPNPEBMPOH());
-        }
-        if (other.getCurLevelIndex() != 0) {
-          setCurLevelIndex(other.getCurLevelIndex());
-        }
-        if (other.getCurFloorId() != 0) {
-          setCurFloorId(other.getCurFloorId());
-        }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -773,27 +688,266 @@ public final class TowerCurLevelRecordOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                isEmpty_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 8
+              case 32: {
+                isUpperPart_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 32
+              case 48: {
+                unk3300KPGBPDIJJJJ_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 48
+              case 66: {
+                emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeam m =
+                    input.readMessage(
+                        emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeam.parser(),
+                        extensionRegistry);
+                if (towerTeamListBuilder_ == null) {
+                  ensureTowerTeamListIsMutable();
+                  towerTeamList_.add(m);
+                } else {
+                  towerTeamListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 66
+              case 72: {
+                unk3300PMHCLPFPHBJ_ = input.readUInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 72
+              case 112: {
+                int v = input.readUInt32();
+                ensureBuffIdListIsMutable();
+                buffIdList_.addInt(v);
+                break;
+              } // case 112
+              case 114: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureBuffIdListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  buffIdList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 114
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
 
+      private com.google.protobuf.Internal.IntList buffIdList_ = emptyIntList();
+      private void ensureBuffIdListIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          buffIdList_ = mutableCopy(buffIdList_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+      /**
+       * <code>repeated uint32 buff_id_list = 14;</code>
+       * @return A list containing the buffIdList.
+       */
+      public java.util.List<java.lang.Integer>
+          getBuffIdListList() {
+        return ((bitField0_ & 0x00000001) != 0) ?
+                 java.util.Collections.unmodifiableList(buffIdList_) : buffIdList_;
+      }
+      /**
+       * <code>repeated uint32 buff_id_list = 14;</code>
+       * @return The count of buffIdList.
+       */
+      public int getBuffIdListCount() {
+        return buffIdList_.size();
+      }
+      /**
+       * <code>repeated uint32 buff_id_list = 14;</code>
+       * @param index The index of the element to return.
+       * @return The buffIdList at the given index.
+       */
+      public int getBuffIdList(int index) {
+        return buffIdList_.getInt(index);
+      }
+      /**
+       * <code>repeated uint32 buff_id_list = 14;</code>
+       * @param index The index to set the value at.
+       * @param value The buffIdList to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBuffIdList(
+          int index, int value) {
+        
+        ensureBuffIdListIsMutable();
+        buffIdList_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 buff_id_list = 14;</code>
+       * @param value The buffIdList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addBuffIdList(int value) {
+        
+        ensureBuffIdListIsMutable();
+        buffIdList_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 buff_id_list = 14;</code>
+       * @param values The buffIdList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllBuffIdList(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureBuffIdListIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, buffIdList_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 buff_id_list = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBuffIdList() {
+        buffIdList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      private boolean isUpperPart_ ;
+      /**
+       * <code>bool is_upper_part = 4;</code>
+       * @return The isUpperPart.
+       */
+      @java.lang.Override
+      public boolean getIsUpperPart() {
+        return isUpperPart_;
+      }
+      /**
+       * <code>bool is_upper_part = 4;</code>
+       * @param value The isUpperPart to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsUpperPart(boolean value) {
+        
+        isUpperPart_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_upper_part = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsUpperPart() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        isUpperPart_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int unk3300KPGBPDIJJJJ_ ;
+      /**
+       * <code>uint32 Unk3300_KPGBPDIJJJJ = 6;</code>
+       * @return The unk3300KPGBPDIJJJJ.
+       */
+      @java.lang.Override
+      public int getUnk3300KPGBPDIJJJJ() {
+        return unk3300KPGBPDIJJJJ_;
+      }
+      /**
+       * <code>uint32 Unk3300_KPGBPDIJJJJ = 6;</code>
+       * @param value The unk3300KPGBPDIJJJJ to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUnk3300KPGBPDIJJJJ(int value) {
+        
+        unk3300KPGBPDIJJJJ_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 Unk3300_KPGBPDIJJJJ = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUnk3300KPGBPDIJJJJ() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        unk3300KPGBPDIJJJJ_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean isEmpty_ ;
+      /**
+       * <code>bool is_empty = 1;</code>
+       * @return The isEmpty.
+       */
+      @java.lang.Override
+      public boolean getIsEmpty() {
+        return isEmpty_;
+      }
+      /**
+       * <code>bool is_empty = 1;</code>
+       * @param value The isEmpty to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsEmpty(boolean value) {
+        
+        isEmpty_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_empty = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsEmpty() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        isEmpty_ = false;
+        onChanged();
+        return this;
+      }
+
       private java.util.List<emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeam> towerTeamList_ =
         java.util.Collections.emptyList();
       private void ensureTowerTeamListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000010) != 0)) {
           towerTeamList_ = new java.util.ArrayList<emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeam>(towerTeamList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000010;
          }
       }
 
@@ -943,7 +1097,7 @@ public final class TowerCurLevelRecordOuterClass {
       public Builder clearTowerTeamList() {
         if (towerTeamListBuilder_ == null) {
           towerTeamList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
         } else {
           towerTeamListBuilder_.clear();
@@ -1020,7 +1174,7 @@ public final class TowerCurLevelRecordOuterClass {
           towerTeamListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeam, emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeam.Builder, emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeamOrBuilder>(
                   towerTeamList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000010) != 0),
                   getParentForChildren(),
                   isClean());
           towerTeamList_ = null;
@@ -1028,205 +1182,34 @@ public final class TowerCurLevelRecordOuterClass {
         return towerTeamListBuilder_;
       }
 
-      private boolean isEmpty_ ;
+      private int unk3300PMHCLPFPHBJ_ ;
       /**
-       * <code>bool is_empty = 6;</code>
-       * @return The isEmpty.
+       * <code>uint32 Unk3300_PMHCLPFPHBJ = 9;</code>
+       * @return The unk3300PMHCLPFPHBJ.
        */
       @java.lang.Override
-      public boolean getIsEmpty() {
-        return isEmpty_;
+      public int getUnk3300PMHCLPFPHBJ() {
+        return unk3300PMHCLPFPHBJ_;
       }
       /**
-       * <code>bool is_empty = 6;</code>
-       * @param value The isEmpty to set.
+       * <code>uint32 Unk3300_PMHCLPFPHBJ = 9;</code>
+       * @param value The unk3300PMHCLPFPHBJ to set.
        * @return This builder for chaining.
        */
-      public Builder setIsEmpty(boolean value) {
+      public Builder setUnk3300PMHCLPFPHBJ(int value) {
         
-        isEmpty_ = value;
+        unk3300PMHCLPFPHBJ_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
       /**
-       * <code>bool is_empty = 6;</code>
+       * <code>uint32 Unk3300_PMHCLPFPHBJ = 9;</code>
        * @return This builder for chaining.
        */
-      public Builder clearIsEmpty() {
-        
-        isEmpty_ = false;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.Internal.IntList buffIdList_ = emptyIntList();
-      private void ensureBuffIdListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          buffIdList_ = mutableCopy(buffIdList_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-      /**
-       * <code>repeated uint32 buff_id_list = 4;</code>
-       * @return A list containing the buffIdList.
-       */
-      public java.util.List<java.lang.Integer>
-          getBuffIdListList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
-                 java.util.Collections.unmodifiableList(buffIdList_) : buffIdList_;
-      }
-      /**
-       * <code>repeated uint32 buff_id_list = 4;</code>
-       * @return The count of buffIdList.
-       */
-      public int getBuffIdListCount() {
-        return buffIdList_.size();
-      }
-      /**
-       * <code>repeated uint32 buff_id_list = 4;</code>
-       * @param index The index of the element to return.
-       * @return The buffIdList at the given index.
-       */
-      public int getBuffIdList(int index) {
-        return buffIdList_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 buff_id_list = 4;</code>
-       * @param index The index to set the value at.
-       * @param value The buffIdList to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBuffIdList(
-          int index, int value) {
-        ensureBuffIdListIsMutable();
-        buffIdList_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 buff_id_list = 4;</code>
-       * @param value The buffIdList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addBuffIdList(int value) {
-        ensureBuffIdListIsMutable();
-        buffIdList_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 buff_id_list = 4;</code>
-       * @param values The buffIdList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllBuffIdList(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureBuffIdListIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, buffIdList_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 buff_id_list = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearBuffIdList() {
-        buffIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-        return this;
-      }
-
-      private boolean unk2700CBPNPEBMPOH_ ;
-      /**
-       * <code>bool Unk2700_CBPNPEBMPOH = 2;</code>
-       * @return The unk2700CBPNPEBMPOH.
-       */
-      @java.lang.Override
-      public boolean getUnk2700CBPNPEBMPOH() {
-        return unk2700CBPNPEBMPOH_;
-      }
-      /**
-       * <code>bool Unk2700_CBPNPEBMPOH = 2;</code>
-       * @param value The unk2700CBPNPEBMPOH to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUnk2700CBPNPEBMPOH(boolean value) {
-        
-        unk2700CBPNPEBMPOH_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool Unk2700_CBPNPEBMPOH = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUnk2700CBPNPEBMPOH() {
-        
-        unk2700CBPNPEBMPOH_ = false;
-        onChanged();
-        return this;
-      }
-
-      private int curLevelIndex_ ;
-      /**
-       * <code>uint32 cur_level_index = 1;</code>
-       * @return The curLevelIndex.
-       */
-      @java.lang.Override
-      public int getCurLevelIndex() {
-        return curLevelIndex_;
-      }
-      /**
-       * <code>uint32 cur_level_index = 1;</code>
-       * @param value The curLevelIndex to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCurLevelIndex(int value) {
-        
-        curLevelIndex_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 cur_level_index = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCurLevelIndex() {
-        
-        curLevelIndex_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int curFloorId_ ;
-      /**
-       * <code>uint32 cur_floor_id = 15;</code>
-       * @return The curFloorId.
-       */
-      @java.lang.Override
-      public int getCurFloorId() {
-        return curFloorId_;
-      }
-      /**
-       * <code>uint32 cur_floor_id = 15;</code>
-       * @param value The curFloorId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCurFloorId(int value) {
-        
-        curFloorId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 cur_floor_id = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCurFloorId() {
-        
-        curFloorId_ = 0;
+      public Builder clearUnk3300PMHCLPFPHBJ() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        unk3300PMHCLPFPHBJ_ = 0;
         onChanged();
         return this;
       }
@@ -1263,7 +1246,18 @@ public final class TowerCurLevelRecordOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TowerCurLevelRecord(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1298,12 +1292,12 @@ public final class TowerCurLevelRecordOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031TowerCurLevelRecord.proto\032\017TowerTeam.p" +
-      "roto\"\256\001\n\023TowerCurLevelRecord\022#\n\017tower_te" +
-      "am_list\030\010 \003(\0132\n.TowerTeam\022\020\n\010is_empty\030\006 " +
-      "\001(\010\022\024\n\014buff_id_list\030\004 \003(\r\022\033\n\023Unk2700_CBP" +
-      "NPEBMPOH\030\002 \001(\010\022\027\n\017cur_level_index\030\001 \001(\r\022" +
-      "\024\n\014cur_floor_id\030\017 \001(\rB\033\n\031emu.grasscutter" +
-      ".net.protob\006proto3"
+      "roto\"\263\001\n\023TowerCurLevelRecord\022\024\n\014buff_id_" +
+      "list\030\016 \003(\r\022\025\n\ris_upper_part\030\004 \001(\010\022\033\n\023Unk" +
+      "3300_KPGBPDIJJJJ\030\006 \001(\r\022\020\n\010is_empty\030\001 \001(\010" +
+      "\022#\n\017tower_team_list\030\010 \003(\0132\n.TowerTeam\022\033\n" +
+      "\023Unk3300_PMHCLPFPHBJ\030\t \001(\rB\033\n\031emu.grassc" +
+      "utter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1315,7 +1309,7 @@ public final class TowerCurLevelRecordOuterClass {
     internal_static_TowerCurLevelRecord_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TowerCurLevelRecord_descriptor,
-        new java.lang.String[] { "TowerTeamList", "IsEmpty", "BuffIdList", "Unk2700CBPNPEBMPOH", "CurLevelIndex", "CurFloorId", });
+        new java.lang.String[] { "BuffIdList", "IsUpperPart", "Unk3300KPGBPDIJJJJ", "IsEmpty", "TowerTeamList", "Unk3300PMHCLPFPHBJ", });
     emu.grasscutter.net.proto.TowerTeamOuterClass.getDescriptor();
   }
 

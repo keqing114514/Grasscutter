@@ -19,17 +19,21 @@ public final class WeaponPromoteReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint64 target_weapon_guid = 5;</code>
+     * <code>uint64 target_weapon_guid = 14;</code>
      * @return The targetWeaponGuid.
      */
     long getTargetWeaponGuid();
   }
   /**
    * <pre>
-   * CmdId: 622
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 637;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   *   IS_ALLOW_CLIENT = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code WeaponPromoteReq}
@@ -58,48 +62,6 @@ public final class WeaponPromoteReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private WeaponPromoteReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 40: {
-
-              targetWeaponGuid_ = input.readUInt64();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.grasscutter.net.proto.WeaponPromoteReqOuterClass.internal_static_WeaponPromoteReq_descriptor;
@@ -113,10 +75,10 @@ public final class WeaponPromoteReqOuterClass {
               emu.grasscutter.net.proto.WeaponPromoteReqOuterClass.WeaponPromoteReq.class, emu.grasscutter.net.proto.WeaponPromoteReqOuterClass.WeaponPromoteReq.Builder.class);
     }
 
-    public static final int TARGET_WEAPON_GUID_FIELD_NUMBER = 5;
-    private long targetWeaponGuid_;
+    public static final int TARGET_WEAPON_GUID_FIELD_NUMBER = 14;
+    private long targetWeaponGuid_ = 0L;
     /**
-     * <code>uint64 target_weapon_guid = 5;</code>
+     * <code>uint64 target_weapon_guid = 14;</code>
      * @return The targetWeaponGuid.
      */
     @java.lang.Override
@@ -139,9 +101,9 @@ public final class WeaponPromoteReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (targetWeaponGuid_ != 0L) {
-        output.writeUInt64(5, targetWeaponGuid_);
+        output.writeUInt64(14, targetWeaponGuid_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -152,9 +114,9 @@ public final class WeaponPromoteReqOuterClass {
       size = 0;
       if (targetWeaponGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(5, targetWeaponGuid_);
+          .computeUInt64Size(14, targetWeaponGuid_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -171,7 +133,7 @@ public final class WeaponPromoteReqOuterClass {
 
       if (getTargetWeaponGuid()
           != other.getTargetWeaponGuid()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -185,7 +147,7 @@ public final class WeaponPromoteReqOuterClass {
       hash = (37 * hash) + TARGET_WEAPON_GUID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTargetWeaponGuid());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -282,10 +244,14 @@ public final class WeaponPromoteReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 622
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 637;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     *   IS_ALLOW_CLIENT = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code WeaponPromoteReq}
@@ -309,24 +275,19 @@ public final class WeaponPromoteReqOuterClass {
 
       // Construct using emu.grasscutter.net.proto.WeaponPromoteReqOuterClass.WeaponPromoteReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         targetWeaponGuid_ = 0L;
-
         return this;
       }
 
@@ -353,9 +314,16 @@ public final class WeaponPromoteReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.WeaponPromoteReqOuterClass.WeaponPromoteReq buildPartial() {
         emu.grasscutter.net.proto.WeaponPromoteReqOuterClass.WeaponPromoteReq result = new emu.grasscutter.net.proto.WeaponPromoteReqOuterClass.WeaponPromoteReq(this);
-        result.targetWeaponGuid_ = targetWeaponGuid_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.grasscutter.net.proto.WeaponPromoteReqOuterClass.WeaponPromoteReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.targetWeaponGuid_ = targetWeaponGuid_;
+        }
       }
 
       @java.lang.Override
@@ -405,7 +373,7 @@ public final class WeaponPromoteReqOuterClass {
         if (other.getTargetWeaponGuid() != 0L) {
           setTargetWeaponGuid(other.getTargetWeaponGuid());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -420,23 +388,42 @@ public final class WeaponPromoteReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.WeaponPromoteReqOuterClass.WeaponPromoteReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 112: {
+                targetWeaponGuid_ = input.readUInt64();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.WeaponPromoteReqOuterClass.WeaponPromoteReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private long targetWeaponGuid_ ;
       /**
-       * <code>uint64 target_weapon_guid = 5;</code>
+       * <code>uint64 target_weapon_guid = 14;</code>
        * @return The targetWeaponGuid.
        */
       @java.lang.Override
@@ -444,22 +431,23 @@ public final class WeaponPromoteReqOuterClass {
         return targetWeaponGuid_;
       }
       /**
-       * <code>uint64 target_weapon_guid = 5;</code>
+       * <code>uint64 target_weapon_guid = 14;</code>
        * @param value The targetWeaponGuid to set.
        * @return This builder for chaining.
        */
       public Builder setTargetWeaponGuid(long value) {
         
         targetWeaponGuid_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
-       * <code>uint64 target_weapon_guid = 5;</code>
+       * <code>uint64 target_weapon_guid = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearTargetWeaponGuid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         targetWeaponGuid_ = 0L;
         onChanged();
         return this;
@@ -497,7 +485,18 @@ public final class WeaponPromoteReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new WeaponPromoteReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -532,7 +531,7 @@ public final class WeaponPromoteReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\026WeaponPromoteReq.proto\".\n\020WeaponPromot" +
-      "eReq\022\032\n\022target_weapon_guid\030\005 \001(\004B\033\n\031emu." +
+      "eReq\022\032\n\022target_weapon_guid\030\016 \001(\004B\033\n\031emu." +
       "grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

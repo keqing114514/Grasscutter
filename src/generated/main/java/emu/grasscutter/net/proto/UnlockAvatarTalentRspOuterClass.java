@@ -19,29 +19,32 @@ public final class UnlockAvatarTalentRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 talent_id = 2;</code>
+     * <code>uint32 talent_id = 14;</code>
      * @return The talentId.
      */
     int getTalentId();
+
+    /**
+     * <code>uint64 avatar_guid = 1;</code>
+     * @return The avatarGuid.
+     */
+    long getAvatarGuid();
 
     /**
      * <code>int32 retcode = 3;</code>
      * @return The retcode.
      */
     int getRetcode();
-
-    /**
-     * <code>uint64 avatar_guid = 10;</code>
-     * @return The avatarGuid.
-     */
-    long getAvatarGuid();
   }
   /**
    * <pre>
-   * CmdId: 1098
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 1030;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code UnlockAvatarTalentRsp}
@@ -70,58 +73,6 @@ public final class UnlockAvatarTalentRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private UnlockAvatarTalentRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              talentId_ = input.readUInt32();
-              break;
-            }
-            case 24: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 80: {
-
-              avatarGuid_ = input.readUInt64();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.grasscutter.net.proto.UnlockAvatarTalentRspOuterClass.internal_static_UnlockAvatarTalentRsp_descriptor;
@@ -135,10 +86,10 @@ public final class UnlockAvatarTalentRspOuterClass {
               emu.grasscutter.net.proto.UnlockAvatarTalentRspOuterClass.UnlockAvatarTalentRsp.class, emu.grasscutter.net.proto.UnlockAvatarTalentRspOuterClass.UnlockAvatarTalentRsp.Builder.class);
     }
 
-    public static final int TALENT_ID_FIELD_NUMBER = 2;
-    private int talentId_;
+    public static final int TALENT_ID_FIELD_NUMBER = 14;
+    private int talentId_ = 0;
     /**
-     * <code>uint32 talent_id = 2;</code>
+     * <code>uint32 talent_id = 14;</code>
      * @return The talentId.
      */
     @java.lang.Override
@@ -146,8 +97,19 @@ public final class UnlockAvatarTalentRspOuterClass {
       return talentId_;
     }
 
+    public static final int AVATAR_GUID_FIELD_NUMBER = 1;
+    private long avatarGuid_ = 0L;
+    /**
+     * <code>uint64 avatar_guid = 1;</code>
+     * @return The avatarGuid.
+     */
+    @java.lang.Override
+    public long getAvatarGuid() {
+      return avatarGuid_;
+    }
+
     public static final int RETCODE_FIELD_NUMBER = 3;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 3;</code>
      * @return The retcode.
@@ -155,17 +117,6 @@ public final class UnlockAvatarTalentRspOuterClass {
     @java.lang.Override
     public int getRetcode() {
       return retcode_;
-    }
-
-    public static final int AVATAR_GUID_FIELD_NUMBER = 10;
-    private long avatarGuid_;
-    /**
-     * <code>uint64 avatar_guid = 10;</code>
-     * @return The avatarGuid.
-     */
-    @java.lang.Override
-    public long getAvatarGuid() {
-      return avatarGuid_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -182,16 +133,16 @@ public final class UnlockAvatarTalentRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (talentId_ != 0) {
-        output.writeUInt32(2, talentId_);
+      if (avatarGuid_ != 0L) {
+        output.writeUInt64(1, avatarGuid_);
       }
       if (retcode_ != 0) {
         output.writeInt32(3, retcode_);
       }
-      if (avatarGuid_ != 0L) {
-        output.writeUInt64(10, avatarGuid_);
+      if (talentId_ != 0) {
+        output.writeUInt32(14, talentId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -200,19 +151,19 @@ public final class UnlockAvatarTalentRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (talentId_ != 0) {
+      if (avatarGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, talentId_);
+          .computeUInt64Size(1, avatarGuid_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(3, retcode_);
       }
-      if (avatarGuid_ != 0L) {
+      if (talentId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(10, avatarGuid_);
+          .computeUInt32Size(14, talentId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -229,11 +180,11 @@ public final class UnlockAvatarTalentRspOuterClass {
 
       if (getTalentId()
           != other.getTalentId()) return false;
-      if (getRetcode()
-          != other.getRetcode()) return false;
       if (getAvatarGuid()
           != other.getAvatarGuid()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (getRetcode()
+          != other.getRetcode()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -246,12 +197,12 @@ public final class UnlockAvatarTalentRspOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + TALENT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getTalentId();
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + AVATAR_GUID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getAvatarGuid());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -348,10 +299,13 @@ public final class UnlockAvatarTalentRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1098
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 1030;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code UnlockAvatarTalentRsp}
@@ -375,28 +329,21 @@ public final class UnlockAvatarTalentRspOuterClass {
 
       // Construct using emu.grasscutter.net.proto.UnlockAvatarTalentRspOuterClass.UnlockAvatarTalentRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         talentId_ = 0;
-
-        retcode_ = 0;
-
         avatarGuid_ = 0L;
-
+        retcode_ = 0;
         return this;
       }
 
@@ -423,11 +370,22 @@ public final class UnlockAvatarTalentRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.UnlockAvatarTalentRspOuterClass.UnlockAvatarTalentRsp buildPartial() {
         emu.grasscutter.net.proto.UnlockAvatarTalentRspOuterClass.UnlockAvatarTalentRsp result = new emu.grasscutter.net.proto.UnlockAvatarTalentRspOuterClass.UnlockAvatarTalentRsp(this);
-        result.talentId_ = talentId_;
-        result.retcode_ = retcode_;
-        result.avatarGuid_ = avatarGuid_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.grasscutter.net.proto.UnlockAvatarTalentRspOuterClass.UnlockAvatarTalentRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.talentId_ = talentId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.avatarGuid_ = avatarGuid_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.retcode_ = retcode_;
+        }
       }
 
       @java.lang.Override
@@ -477,13 +435,13 @@ public final class UnlockAvatarTalentRspOuterClass {
         if (other.getTalentId() != 0) {
           setTalentId(other.getTalentId());
         }
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
-        }
         if (other.getAvatarGuid() != 0L) {
           setAvatarGuid(other.getAvatarGuid());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -498,23 +456,52 @@ public final class UnlockAvatarTalentRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.UnlockAvatarTalentRspOuterClass.UnlockAvatarTalentRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                avatarGuid_ = input.readUInt64();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 8
+              case 24: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              case 112: {
+                talentId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.UnlockAvatarTalentRspOuterClass.UnlockAvatarTalentRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int talentId_ ;
       /**
-       * <code>uint32 talent_id = 2;</code>
+       * <code>uint32 talent_id = 14;</code>
        * @return The talentId.
        */
       @java.lang.Override
@@ -522,23 +509,56 @@ public final class UnlockAvatarTalentRspOuterClass {
         return talentId_;
       }
       /**
-       * <code>uint32 talent_id = 2;</code>
+       * <code>uint32 talent_id = 14;</code>
        * @param value The talentId to set.
        * @return This builder for chaining.
        */
       public Builder setTalentId(int value) {
         
         talentId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 talent_id = 2;</code>
+       * <code>uint32 talent_id = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearTalentId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         talentId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private long avatarGuid_ ;
+      /**
+       * <code>uint64 avatar_guid = 1;</code>
+       * @return The avatarGuid.
+       */
+      @java.lang.Override
+      public long getAvatarGuid() {
+        return avatarGuid_;
+      }
+      /**
+       * <code>uint64 avatar_guid = 1;</code>
+       * @param value The avatarGuid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAvatarGuid(long value) {
+        
+        avatarGuid_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 avatar_guid = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAvatarGuid() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        avatarGuid_ = 0L;
         onChanged();
         return this;
       }
@@ -560,6 +580,7 @@ public final class UnlockAvatarTalentRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -568,39 +589,8 @@ public final class UnlockAvatarTalentRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         retcode_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private long avatarGuid_ ;
-      /**
-       * <code>uint64 avatar_guid = 10;</code>
-       * @return The avatarGuid.
-       */
-      @java.lang.Override
-      public long getAvatarGuid() {
-        return avatarGuid_;
-      }
-      /**
-       * <code>uint64 avatar_guid = 10;</code>
-       * @param value The avatarGuid to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAvatarGuid(long value) {
-        
-        avatarGuid_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 avatar_guid = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAvatarGuid() {
-        
-        avatarGuid_ = 0L;
         onChanged();
         return this;
       }
@@ -637,7 +627,18 @@ public final class UnlockAvatarTalentRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new UnlockAvatarTalentRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -672,8 +673,8 @@ public final class UnlockAvatarTalentRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033UnlockAvatarTalentRsp.proto\"P\n\025UnlockA" +
-      "vatarTalentRsp\022\021\n\ttalent_id\030\002 \001(\r\022\017\n\007ret" +
-      "code\030\003 \001(\005\022\023\n\013avatar_guid\030\n \001(\004B\033\n\031emu.g" +
+      "vatarTalentRsp\022\021\n\ttalent_id\030\016 \001(\r\022\023\n\013ava" +
+      "tar_guid\030\001 \001(\004\022\017\n\007retcode\030\003 \001(\005B\033\n\031emu.g" +
       "rasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -685,7 +686,7 @@ public final class UnlockAvatarTalentRspOuterClass {
     internal_static_UnlockAvatarTalentRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_UnlockAvatarTalentRsp_descriptor,
-        new java.lang.String[] { "TalentId", "Retcode", "AvatarGuid", });
+        new java.lang.String[] { "TalentId", "AvatarGuid", "Retcode", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

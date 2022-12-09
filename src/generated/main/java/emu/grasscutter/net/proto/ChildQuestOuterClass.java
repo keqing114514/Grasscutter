@@ -19,19 +19,19 @@ public final class ChildQuestOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 quest_config_id = 8;</code>
-     * @return The questConfigId.
-     */
-    int getQuestConfigId();
-
-    /**
-     * <code>uint32 state = 4;</code>
+     * <code>uint32 state = 15;</code>
      * @return The state.
      */
     int getState();
 
     /**
-     * <code>uint32 quest_id = 15;</code>
+     * <code>uint32 quest_config_id = 9;</code>
+     * @return The questConfigId.
+     */
+    int getQuestConfigId();
+
+    /**
+     * <code>uint32 quest_id = 13;</code>
      * @return The questId.
      */
     int getQuestId();
@@ -63,58 +63,6 @@ public final class ChildQuestOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ChildQuest(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 32: {
-
-              state_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              questConfigId_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              questId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.grasscutter.net.proto.ChildQuestOuterClass.internal_static_ChildQuest_descriptor;
@@ -128,21 +76,10 @@ public final class ChildQuestOuterClass {
               emu.grasscutter.net.proto.ChildQuestOuterClass.ChildQuest.class, emu.grasscutter.net.proto.ChildQuestOuterClass.ChildQuest.Builder.class);
     }
 
-    public static final int QUEST_CONFIG_ID_FIELD_NUMBER = 8;
-    private int questConfigId_;
+    public static final int STATE_FIELD_NUMBER = 15;
+    private int state_ = 0;
     /**
-     * <code>uint32 quest_config_id = 8;</code>
-     * @return The questConfigId.
-     */
-    @java.lang.Override
-    public int getQuestConfigId() {
-      return questConfigId_;
-    }
-
-    public static final int STATE_FIELD_NUMBER = 4;
-    private int state_;
-    /**
-     * <code>uint32 state = 4;</code>
+     * <code>uint32 state = 15;</code>
      * @return The state.
      */
     @java.lang.Override
@@ -150,10 +87,21 @@ public final class ChildQuestOuterClass {
       return state_;
     }
 
-    public static final int QUEST_ID_FIELD_NUMBER = 15;
-    private int questId_;
+    public static final int QUEST_CONFIG_ID_FIELD_NUMBER = 9;
+    private int questConfigId_ = 0;
     /**
-     * <code>uint32 quest_id = 15;</code>
+     * <code>uint32 quest_config_id = 9;</code>
+     * @return The questConfigId.
+     */
+    @java.lang.Override
+    public int getQuestConfigId() {
+      return questConfigId_;
+    }
+
+    public static final int QUEST_ID_FIELD_NUMBER = 13;
+    private int questId_ = 0;
+    /**
+     * <code>uint32 quest_id = 13;</code>
      * @return The questId.
      */
     @java.lang.Override
@@ -175,16 +123,16 @@ public final class ChildQuestOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (state_ != 0) {
-        output.writeUInt32(4, state_);
-      }
       if (questConfigId_ != 0) {
-        output.writeUInt32(8, questConfigId_);
+        output.writeUInt32(9, questConfigId_);
       }
       if (questId_ != 0) {
-        output.writeUInt32(15, questId_);
+        output.writeUInt32(13, questId_);
       }
-      unknownFields.writeTo(output);
+      if (state_ != 0) {
+        output.writeUInt32(15, state_);
+      }
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -193,19 +141,19 @@ public final class ChildQuestOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (state_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, state_);
-      }
       if (questConfigId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, questConfigId_);
+          .computeUInt32Size(9, questConfigId_);
       }
       if (questId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, questId_);
+          .computeUInt32Size(13, questId_);
       }
-      size += unknownFields.getSerializedSize();
+      if (state_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(15, state_);
+      }
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -220,13 +168,13 @@ public final class ChildQuestOuterClass {
       }
       emu.grasscutter.net.proto.ChildQuestOuterClass.ChildQuest other = (emu.grasscutter.net.proto.ChildQuestOuterClass.ChildQuest) obj;
 
-      if (getQuestConfigId()
-          != other.getQuestConfigId()) return false;
       if (getState()
           != other.getState()) return false;
+      if (getQuestConfigId()
+          != other.getQuestConfigId()) return false;
       if (getQuestId()
           != other.getQuestId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -237,13 +185,13 @@ public final class ChildQuestOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + QUEST_CONFIG_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getQuestConfigId();
       hash = (37 * hash) + STATE_FIELD_NUMBER;
       hash = (53 * hash) + getState();
+      hash = (37 * hash) + QUEST_CONFIG_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getQuestConfigId();
       hash = (37 * hash) + QUEST_ID_FIELD_NUMBER;
       hash = (53 * hash) + getQuestId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -360,28 +308,21 @@ public final class ChildQuestOuterClass {
 
       // Construct using emu.grasscutter.net.proto.ChildQuestOuterClass.ChildQuest.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        questConfigId_ = 0;
-
+        bitField0_ = 0;
         state_ = 0;
-
+        questConfigId_ = 0;
         questId_ = 0;
-
         return this;
       }
 
@@ -408,11 +349,22 @@ public final class ChildQuestOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.ChildQuestOuterClass.ChildQuest buildPartial() {
         emu.grasscutter.net.proto.ChildQuestOuterClass.ChildQuest result = new emu.grasscutter.net.proto.ChildQuestOuterClass.ChildQuest(this);
-        result.questConfigId_ = questConfigId_;
-        result.state_ = state_;
-        result.questId_ = questId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.grasscutter.net.proto.ChildQuestOuterClass.ChildQuest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.state_ = state_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.questConfigId_ = questConfigId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.questId_ = questId_;
+        }
       }
 
       @java.lang.Override
@@ -459,16 +411,16 @@ public final class ChildQuestOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ChildQuestOuterClass.ChildQuest other) {
         if (other == emu.grasscutter.net.proto.ChildQuestOuterClass.ChildQuest.getDefaultInstance()) return this;
-        if (other.getQuestConfigId() != 0) {
-          setQuestConfigId(other.getQuestConfigId());
-        }
         if (other.getState() != 0) {
           setState(other.getState());
+        }
+        if (other.getQuestConfigId() != 0) {
+          setQuestConfigId(other.getQuestConfigId());
         }
         if (other.getQuestId() != 0) {
           setQuestId(other.getQuestId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -483,54 +435,52 @@ public final class ChildQuestOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.ChildQuestOuterClass.ChildQuest parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 72: {
+                questConfigId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 72
+              case 104: {
+                questId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 104
+              case 120: {
+                state_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.ChildQuestOuterClass.ChildQuest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
-
-      private int questConfigId_ ;
-      /**
-       * <code>uint32 quest_config_id = 8;</code>
-       * @return The questConfigId.
-       */
-      @java.lang.Override
-      public int getQuestConfigId() {
-        return questConfigId_;
-      }
-      /**
-       * <code>uint32 quest_config_id = 8;</code>
-       * @param value The questConfigId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setQuestConfigId(int value) {
-        
-        questConfigId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 quest_config_id = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearQuestConfigId() {
-        
-        questConfigId_ = 0;
-        onChanged();
-        return this;
-      }
+      private int bitField0_;
 
       private int state_ ;
       /**
-       * <code>uint32 state = 4;</code>
+       * <code>uint32 state = 15;</code>
        * @return The state.
        */
       @java.lang.Override
@@ -538,30 +488,63 @@ public final class ChildQuestOuterClass {
         return state_;
       }
       /**
-       * <code>uint32 state = 4;</code>
+       * <code>uint32 state = 15;</code>
        * @param value The state to set.
        * @return This builder for chaining.
        */
       public Builder setState(int value) {
         
         state_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 state = 4;</code>
+       * <code>uint32 state = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearState() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         state_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int questConfigId_ ;
+      /**
+       * <code>uint32 quest_config_id = 9;</code>
+       * @return The questConfigId.
+       */
+      @java.lang.Override
+      public int getQuestConfigId() {
+        return questConfigId_;
+      }
+      /**
+       * <code>uint32 quest_config_id = 9;</code>
+       * @param value The questConfigId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setQuestConfigId(int value) {
+        
+        questConfigId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 quest_config_id = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearQuestConfigId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        questConfigId_ = 0;
         onChanged();
         return this;
       }
 
       private int questId_ ;
       /**
-       * <code>uint32 quest_id = 15;</code>
+       * <code>uint32 quest_id = 13;</code>
        * @return The questId.
        */
       @java.lang.Override
@@ -569,22 +552,23 @@ public final class ChildQuestOuterClass {
         return questId_;
       }
       /**
-       * <code>uint32 quest_id = 15;</code>
+       * <code>uint32 quest_id = 13;</code>
        * @param value The questId to set.
        * @return This builder for chaining.
        */
       public Builder setQuestId(int value) {
         
         questId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 quest_id = 15;</code>
+       * <code>uint32 quest_id = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearQuestId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         questId_ = 0;
         onChanged();
         return this;
@@ -622,7 +606,18 @@ public final class ChildQuestOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ChildQuest(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -656,9 +651,9 @@ public final class ChildQuestOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\020ChildQuest.proto\"F\n\nChildQuest\022\027\n\017ques" +
-      "t_config_id\030\010 \001(\r\022\r\n\005state\030\004 \001(\r\022\020\n\010ques" +
-      "t_id\030\017 \001(\rB\033\n\031emu.grasscutter.net.protob" +
+      "\n\020ChildQuest.proto\"F\n\nChildQuest\022\r\n\005stat" +
+      "e\030\017 \001(\r\022\027\n\017quest_config_id\030\t \001(\r\022\020\n\010ques" +
+      "t_id\030\r \001(\rB\033\n\031emu.grasscutter.net.protob" +
       "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -670,7 +665,7 @@ public final class ChildQuestOuterClass {
     internal_static_ChildQuest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ChildQuest_descriptor,
-        new java.lang.String[] { "QuestConfigId", "State", "QuestId", });
+        new java.lang.String[] { "State", "QuestConfigId", "QuestId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

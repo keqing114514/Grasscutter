@@ -19,35 +19,38 @@ public final class TeamResonanceChangeNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .AvatarTeamResonanceInfo info_list = 1;</code>
+     * <code>repeated .AvatarTeamResonanceInfo info_list = 9;</code>
      */
     java.util.List<emu.grasscutter.net.proto.AvatarTeamResonanceInfoOuterClass.AvatarTeamResonanceInfo> 
         getInfoListList();
     /**
-     * <code>repeated .AvatarTeamResonanceInfo info_list = 1;</code>
+     * <code>repeated .AvatarTeamResonanceInfo info_list = 9;</code>
      */
     emu.grasscutter.net.proto.AvatarTeamResonanceInfoOuterClass.AvatarTeamResonanceInfo getInfoList(int index);
     /**
-     * <code>repeated .AvatarTeamResonanceInfo info_list = 1;</code>
+     * <code>repeated .AvatarTeamResonanceInfo info_list = 9;</code>
      */
     int getInfoListCount();
     /**
-     * <code>repeated .AvatarTeamResonanceInfo info_list = 1;</code>
+     * <code>repeated .AvatarTeamResonanceInfo info_list = 9;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.AvatarTeamResonanceInfoOuterClass.AvatarTeamResonanceInfoOrBuilder> 
         getInfoListOrBuilderList();
     /**
-     * <code>repeated .AvatarTeamResonanceInfo info_list = 1;</code>
+     * <code>repeated .AvatarTeamResonanceInfo info_list = 9;</code>
      */
     emu.grasscutter.net.proto.AvatarTeamResonanceInfoOuterClass.AvatarTeamResonanceInfoOrBuilder getInfoListOrBuilder(
         int index);
   }
   /**
    * <pre>
-   * CmdId: 1082
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 1090;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code TeamResonanceChangeNotify}
@@ -77,56 +80,6 @@ public final class TeamResonanceChangeNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private TeamResonanceChangeNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                infoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.AvatarTeamResonanceInfoOuterClass.AvatarTeamResonanceInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              infoList_.add(
-                  input.readMessage(emu.grasscutter.net.proto.AvatarTeamResonanceInfoOuterClass.AvatarTeamResonanceInfo.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          infoList_ = java.util.Collections.unmodifiableList(infoList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.grasscutter.net.proto.TeamResonanceChangeNotifyOuterClass.internal_static_TeamResonanceChangeNotify_descriptor;
@@ -140,17 +93,18 @@ public final class TeamResonanceChangeNotifyOuterClass {
               emu.grasscutter.net.proto.TeamResonanceChangeNotifyOuterClass.TeamResonanceChangeNotify.class, emu.grasscutter.net.proto.TeamResonanceChangeNotifyOuterClass.TeamResonanceChangeNotify.Builder.class);
     }
 
-    public static final int INFO_LIST_FIELD_NUMBER = 1;
+    public static final int INFO_LIST_FIELD_NUMBER = 9;
+    @SuppressWarnings("serial")
     private java.util.List<emu.grasscutter.net.proto.AvatarTeamResonanceInfoOuterClass.AvatarTeamResonanceInfo> infoList_;
     /**
-     * <code>repeated .AvatarTeamResonanceInfo info_list = 1;</code>
+     * <code>repeated .AvatarTeamResonanceInfo info_list = 9;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.AvatarTeamResonanceInfoOuterClass.AvatarTeamResonanceInfo> getInfoListList() {
       return infoList_;
     }
     /**
-     * <code>repeated .AvatarTeamResonanceInfo info_list = 1;</code>
+     * <code>repeated .AvatarTeamResonanceInfo info_list = 9;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.AvatarTeamResonanceInfoOuterClass.AvatarTeamResonanceInfoOrBuilder> 
@@ -158,21 +112,21 @@ public final class TeamResonanceChangeNotifyOuterClass {
       return infoList_;
     }
     /**
-     * <code>repeated .AvatarTeamResonanceInfo info_list = 1;</code>
+     * <code>repeated .AvatarTeamResonanceInfo info_list = 9;</code>
      */
     @java.lang.Override
     public int getInfoListCount() {
       return infoList_.size();
     }
     /**
-     * <code>repeated .AvatarTeamResonanceInfo info_list = 1;</code>
+     * <code>repeated .AvatarTeamResonanceInfo info_list = 9;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.AvatarTeamResonanceInfoOuterClass.AvatarTeamResonanceInfo getInfoList(int index) {
       return infoList_.get(index);
     }
     /**
-     * <code>repeated .AvatarTeamResonanceInfo info_list = 1;</code>
+     * <code>repeated .AvatarTeamResonanceInfo info_list = 9;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.AvatarTeamResonanceInfoOuterClass.AvatarTeamResonanceInfoOrBuilder getInfoListOrBuilder(
@@ -195,9 +149,9 @@ public final class TeamResonanceChangeNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < infoList_.size(); i++) {
-        output.writeMessage(1, infoList_.get(i));
+        output.writeMessage(9, infoList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -208,9 +162,9 @@ public final class TeamResonanceChangeNotifyOuterClass {
       size = 0;
       for (int i = 0; i < infoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, infoList_.get(i));
+          .computeMessageSize(9, infoList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -227,7 +181,7 @@ public final class TeamResonanceChangeNotifyOuterClass {
 
       if (!getInfoListList()
           .equals(other.getInfoListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -242,7 +196,7 @@ public final class TeamResonanceChangeNotifyOuterClass {
         hash = (37 * hash) + INFO_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getInfoListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -339,10 +293,13 @@ public final class TeamResonanceChangeNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1082
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 1090;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code TeamResonanceChangeNotify}
@@ -366,29 +323,25 @@ public final class TeamResonanceChangeNotifyOuterClass {
 
       // Construct using emu.grasscutter.net.proto.TeamResonanceChangeNotifyOuterClass.TeamResonanceChangeNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getInfoListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (infoListBuilder_ == null) {
           infoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          infoList_ = null;
           infoListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -415,7 +368,13 @@ public final class TeamResonanceChangeNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.TeamResonanceChangeNotifyOuterClass.TeamResonanceChangeNotify buildPartial() {
         emu.grasscutter.net.proto.TeamResonanceChangeNotifyOuterClass.TeamResonanceChangeNotify result = new emu.grasscutter.net.proto.TeamResonanceChangeNotifyOuterClass.TeamResonanceChangeNotify(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.grasscutter.net.proto.TeamResonanceChangeNotifyOuterClass.TeamResonanceChangeNotify result) {
         if (infoListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             infoList_ = java.util.Collections.unmodifiableList(infoList_);
@@ -425,8 +384,10 @@ public final class TeamResonanceChangeNotifyOuterClass {
         } else {
           result.infoList_ = infoListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.grasscutter.net.proto.TeamResonanceChangeNotifyOuterClass.TeamResonanceChangeNotify result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -499,7 +460,7 @@ public final class TeamResonanceChangeNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -514,17 +475,43 @@ public final class TeamResonanceChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.TeamResonanceChangeNotifyOuterClass.TeamResonanceChangeNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 74: {
+                emu.grasscutter.net.proto.AvatarTeamResonanceInfoOuterClass.AvatarTeamResonanceInfo m =
+                    input.readMessage(
+                        emu.grasscutter.net.proto.AvatarTeamResonanceInfoOuterClass.AvatarTeamResonanceInfo.parser(),
+                        extensionRegistry);
+                if (infoListBuilder_ == null) {
+                  ensureInfoListIsMutable();
+                  infoList_.add(m);
+                } else {
+                  infoListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 74
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.TeamResonanceChangeNotifyOuterClass.TeamResonanceChangeNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -542,7 +529,7 @@ public final class TeamResonanceChangeNotifyOuterClass {
           emu.grasscutter.net.proto.AvatarTeamResonanceInfoOuterClass.AvatarTeamResonanceInfo, emu.grasscutter.net.proto.AvatarTeamResonanceInfoOuterClass.AvatarTeamResonanceInfo.Builder, emu.grasscutter.net.proto.AvatarTeamResonanceInfoOuterClass.AvatarTeamResonanceInfoOrBuilder> infoListBuilder_;
 
       /**
-       * <code>repeated .AvatarTeamResonanceInfo info_list = 1;</code>
+       * <code>repeated .AvatarTeamResonanceInfo info_list = 9;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.AvatarTeamResonanceInfoOuterClass.AvatarTeamResonanceInfo> getInfoListList() {
         if (infoListBuilder_ == null) {
@@ -552,7 +539,7 @@ public final class TeamResonanceChangeNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .AvatarTeamResonanceInfo info_list = 1;</code>
+       * <code>repeated .AvatarTeamResonanceInfo info_list = 9;</code>
        */
       public int getInfoListCount() {
         if (infoListBuilder_ == null) {
@@ -562,7 +549,7 @@ public final class TeamResonanceChangeNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .AvatarTeamResonanceInfo info_list = 1;</code>
+       * <code>repeated .AvatarTeamResonanceInfo info_list = 9;</code>
        */
       public emu.grasscutter.net.proto.AvatarTeamResonanceInfoOuterClass.AvatarTeamResonanceInfo getInfoList(int index) {
         if (infoListBuilder_ == null) {
@@ -572,7 +559,7 @@ public final class TeamResonanceChangeNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .AvatarTeamResonanceInfo info_list = 1;</code>
+       * <code>repeated .AvatarTeamResonanceInfo info_list = 9;</code>
        */
       public Builder setInfoList(
           int index, emu.grasscutter.net.proto.AvatarTeamResonanceInfoOuterClass.AvatarTeamResonanceInfo value) {
@@ -589,7 +576,7 @@ public final class TeamResonanceChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AvatarTeamResonanceInfo info_list = 1;</code>
+       * <code>repeated .AvatarTeamResonanceInfo info_list = 9;</code>
        */
       public Builder setInfoList(
           int index, emu.grasscutter.net.proto.AvatarTeamResonanceInfoOuterClass.AvatarTeamResonanceInfo.Builder builderForValue) {
@@ -603,7 +590,7 @@ public final class TeamResonanceChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AvatarTeamResonanceInfo info_list = 1;</code>
+       * <code>repeated .AvatarTeamResonanceInfo info_list = 9;</code>
        */
       public Builder addInfoList(emu.grasscutter.net.proto.AvatarTeamResonanceInfoOuterClass.AvatarTeamResonanceInfo value) {
         if (infoListBuilder_ == null) {
@@ -619,7 +606,7 @@ public final class TeamResonanceChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AvatarTeamResonanceInfo info_list = 1;</code>
+       * <code>repeated .AvatarTeamResonanceInfo info_list = 9;</code>
        */
       public Builder addInfoList(
           int index, emu.grasscutter.net.proto.AvatarTeamResonanceInfoOuterClass.AvatarTeamResonanceInfo value) {
@@ -636,7 +623,7 @@ public final class TeamResonanceChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AvatarTeamResonanceInfo info_list = 1;</code>
+       * <code>repeated .AvatarTeamResonanceInfo info_list = 9;</code>
        */
       public Builder addInfoList(
           emu.grasscutter.net.proto.AvatarTeamResonanceInfoOuterClass.AvatarTeamResonanceInfo.Builder builderForValue) {
@@ -650,7 +637,7 @@ public final class TeamResonanceChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AvatarTeamResonanceInfo info_list = 1;</code>
+       * <code>repeated .AvatarTeamResonanceInfo info_list = 9;</code>
        */
       public Builder addInfoList(
           int index, emu.grasscutter.net.proto.AvatarTeamResonanceInfoOuterClass.AvatarTeamResonanceInfo.Builder builderForValue) {
@@ -664,7 +651,7 @@ public final class TeamResonanceChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AvatarTeamResonanceInfo info_list = 1;</code>
+       * <code>repeated .AvatarTeamResonanceInfo info_list = 9;</code>
        */
       public Builder addAllInfoList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.AvatarTeamResonanceInfoOuterClass.AvatarTeamResonanceInfo> values) {
@@ -679,7 +666,7 @@ public final class TeamResonanceChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AvatarTeamResonanceInfo info_list = 1;</code>
+       * <code>repeated .AvatarTeamResonanceInfo info_list = 9;</code>
        */
       public Builder clearInfoList() {
         if (infoListBuilder_ == null) {
@@ -692,7 +679,7 @@ public final class TeamResonanceChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AvatarTeamResonanceInfo info_list = 1;</code>
+       * <code>repeated .AvatarTeamResonanceInfo info_list = 9;</code>
        */
       public Builder removeInfoList(int index) {
         if (infoListBuilder_ == null) {
@@ -705,14 +692,14 @@ public final class TeamResonanceChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AvatarTeamResonanceInfo info_list = 1;</code>
+       * <code>repeated .AvatarTeamResonanceInfo info_list = 9;</code>
        */
       public emu.grasscutter.net.proto.AvatarTeamResonanceInfoOuterClass.AvatarTeamResonanceInfo.Builder getInfoListBuilder(
           int index) {
         return getInfoListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .AvatarTeamResonanceInfo info_list = 1;</code>
+       * <code>repeated .AvatarTeamResonanceInfo info_list = 9;</code>
        */
       public emu.grasscutter.net.proto.AvatarTeamResonanceInfoOuterClass.AvatarTeamResonanceInfoOrBuilder getInfoListOrBuilder(
           int index) {
@@ -722,7 +709,7 @@ public final class TeamResonanceChangeNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .AvatarTeamResonanceInfo info_list = 1;</code>
+       * <code>repeated .AvatarTeamResonanceInfo info_list = 9;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.AvatarTeamResonanceInfoOuterClass.AvatarTeamResonanceInfoOrBuilder> 
            getInfoListOrBuilderList() {
@@ -733,14 +720,14 @@ public final class TeamResonanceChangeNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .AvatarTeamResonanceInfo info_list = 1;</code>
+       * <code>repeated .AvatarTeamResonanceInfo info_list = 9;</code>
        */
       public emu.grasscutter.net.proto.AvatarTeamResonanceInfoOuterClass.AvatarTeamResonanceInfo.Builder addInfoListBuilder() {
         return getInfoListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.AvatarTeamResonanceInfoOuterClass.AvatarTeamResonanceInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .AvatarTeamResonanceInfo info_list = 1;</code>
+       * <code>repeated .AvatarTeamResonanceInfo info_list = 9;</code>
        */
       public emu.grasscutter.net.proto.AvatarTeamResonanceInfoOuterClass.AvatarTeamResonanceInfo.Builder addInfoListBuilder(
           int index) {
@@ -748,7 +735,7 @@ public final class TeamResonanceChangeNotifyOuterClass {
             index, emu.grasscutter.net.proto.AvatarTeamResonanceInfoOuterClass.AvatarTeamResonanceInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .AvatarTeamResonanceInfo info_list = 1;</code>
+       * <code>repeated .AvatarTeamResonanceInfo info_list = 9;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.AvatarTeamResonanceInfoOuterClass.AvatarTeamResonanceInfo.Builder> 
            getInfoListBuilderList() {
@@ -801,7 +788,18 @@ public final class TeamResonanceChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TeamResonanceChangeNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -837,7 +835,7 @@ public final class TeamResonanceChangeNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\037TeamResonanceChangeNotify.proto\032\035Avata" +
       "rTeamResonanceInfo.proto\"H\n\031TeamResonanc" +
-      "eChangeNotify\022+\n\tinfo_list\030\001 \003(\0132\030.Avata" +
+      "eChangeNotify\022+\n\tinfo_list\030\t \003(\0132\030.Avata" +
       "rTeamResonanceInfoB\033\n\031emu.grasscutter.ne" +
       "t.protob\006proto3"
     };

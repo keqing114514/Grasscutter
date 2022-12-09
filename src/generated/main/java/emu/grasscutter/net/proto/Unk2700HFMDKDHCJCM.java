@@ -60,56 +60,6 @@ public final class Unk2700HFMDKDHCJCM {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private Unk2700_HFMDKDHCJCM(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (unk2700CMOMNFNGCGB_ != null) {
-                subBuilder = unk2700CMOMNFNGCGB_.toBuilder();
-              }
-              unk2700CMOMNFNGCGB_ = input.readMessage(emu.grasscutter.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(unk2700CMOMNFNGCGB_);
-                unk2700CMOMNFNGCGB_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.grasscutter.net.proto.Unk2700HFMDKDHCJCM.internal_static_Unk2700_HFMDKDHCJCM_descriptor;
@@ -146,7 +96,7 @@ public final class Unk2700HFMDKDHCJCM {
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getUnk2700CMOMNFNGCGBOrBuilder() {
-      return getUnk2700CMOMNFNGCGB();
+      return unk2700CMOMNFNGCGB_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : unk2700CMOMNFNGCGB_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -166,7 +116,7 @@ public final class Unk2700HFMDKDHCJCM {
       if (unk2700CMOMNFNGCGB_ != null) {
         output.writeMessage(1, getUnk2700CMOMNFNGCGB());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -179,7 +129,7 @@ public final class Unk2700HFMDKDHCJCM {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getUnk2700CMOMNFNGCGB());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -199,7 +149,7 @@ public final class Unk2700HFMDKDHCJCM {
         if (!getUnk2700CMOMNFNGCGB()
             .equals(other.getUnk2700CMOMNFNGCGB())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -214,7 +164,7 @@ public final class Unk2700HFMDKDHCJCM {
         hash = (37 * hash) + UNK2700_CMOMNFNGCGB_FIELD_NUMBER;
         hash = (53 * hash) + getUnk2700CMOMNFNGCGB().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -331,26 +281,21 @@ public final class Unk2700HFMDKDHCJCM {
 
       // Construct using emu.grasscutter.net.proto.Unk2700HFMDKDHCJCM.Unk2700_HFMDKDHCJCM.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (unk2700CMOMNFNGCGBBuilder_ == null) {
-          unk2700CMOMNFNGCGB_ = null;
-        } else {
-          unk2700CMOMNFNGCGB_ = null;
+        bitField0_ = 0;
+        unk2700CMOMNFNGCGB_ = null;
+        if (unk2700CMOMNFNGCGBBuilder_ != null) {
+          unk2700CMOMNFNGCGBBuilder_.dispose();
           unk2700CMOMNFNGCGBBuilder_ = null;
         }
         return this;
@@ -379,13 +324,18 @@ public final class Unk2700HFMDKDHCJCM {
       @java.lang.Override
       public emu.grasscutter.net.proto.Unk2700HFMDKDHCJCM.Unk2700_HFMDKDHCJCM buildPartial() {
         emu.grasscutter.net.proto.Unk2700HFMDKDHCJCM.Unk2700_HFMDKDHCJCM result = new emu.grasscutter.net.proto.Unk2700HFMDKDHCJCM.Unk2700_HFMDKDHCJCM(this);
-        if (unk2700CMOMNFNGCGBBuilder_ == null) {
-          result.unk2700CMOMNFNGCGB_ = unk2700CMOMNFNGCGB_;
-        } else {
-          result.unk2700CMOMNFNGCGB_ = unk2700CMOMNFNGCGBBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.grasscutter.net.proto.Unk2700HFMDKDHCJCM.Unk2700_HFMDKDHCJCM result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.unk2700CMOMNFNGCGB_ = unk2700CMOMNFNGCGBBuilder_ == null
+              ? unk2700CMOMNFNGCGB_
+              : unk2700CMOMNFNGCGBBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -435,7 +385,7 @@ public final class Unk2700HFMDKDHCJCM {
         if (other.hasUnk2700CMOMNFNGCGB()) {
           mergeUnk2700CMOMNFNGCGB(other.getUnk2700CMOMNFNGCGB());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -450,19 +400,40 @@ public final class Unk2700HFMDKDHCJCM {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.Unk2700HFMDKDHCJCM.Unk2700_HFMDKDHCJCM parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getUnk2700CMOMNFNGCGBFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.Unk2700HFMDKDHCJCM.Unk2700_HFMDKDHCJCM) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private emu.grasscutter.net.proto.VectorOuterClass.Vector unk2700CMOMNFNGCGB_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -472,7 +443,7 @@ public final class Unk2700HFMDKDHCJCM {
        * @return Whether the unk2700CMOMNFNGCGB field is set.
        */
       public boolean hasUnk2700CMOMNFNGCGB() {
-        return unk2700CMOMNFNGCGBBuilder_ != null || unk2700CMOMNFNGCGB_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.Vector Unk2700_CMOMNFNGCGB = 1;</code>
@@ -494,11 +465,11 @@ public final class Unk2700HFMDKDHCJCM {
             throw new NullPointerException();
           }
           unk2700CMOMNFNGCGB_ = value;
-          onChanged();
         } else {
           unk2700CMOMNFNGCGBBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -508,11 +479,11 @@ public final class Unk2700HFMDKDHCJCM {
           emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (unk2700CMOMNFNGCGBBuilder_ == null) {
           unk2700CMOMNFNGCGB_ = builderForValue.build();
-          onChanged();
         } else {
           unk2700CMOMNFNGCGBBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -520,38 +491,38 @@ public final class Unk2700HFMDKDHCJCM {
        */
       public Builder mergeUnk2700CMOMNFNGCGB(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (unk2700CMOMNFNGCGBBuilder_ == null) {
-          if (unk2700CMOMNFNGCGB_ != null) {
-            unk2700CMOMNFNGCGB_ =
-              emu.grasscutter.net.proto.VectorOuterClass.Vector.newBuilder(unk2700CMOMNFNGCGB_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            unk2700CMOMNFNGCGB_ != null &&
+            unk2700CMOMNFNGCGB_ != emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getUnk2700CMOMNFNGCGBBuilder().mergeFrom(value);
           } else {
             unk2700CMOMNFNGCGB_ = value;
           }
-          onChanged();
         } else {
           unk2700CMOMNFNGCGBBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector Unk2700_CMOMNFNGCGB = 1;</code>
        */
       public Builder clearUnk2700CMOMNFNGCGB() {
-        if (unk2700CMOMNFNGCGBBuilder_ == null) {
-          unk2700CMOMNFNGCGB_ = null;
-          onChanged();
-        } else {
-          unk2700CMOMNFNGCGB_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        unk2700CMOMNFNGCGB_ = null;
+        if (unk2700CMOMNFNGCGBBuilder_ != null) {
+          unk2700CMOMNFNGCGBBuilder_.dispose();
           unk2700CMOMNFNGCGBBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector Unk2700_CMOMNFNGCGB = 1;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getUnk2700CMOMNFNGCGBBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getUnk2700CMOMNFNGCGBFieldBuilder().getBuilder();
       }
@@ -615,7 +586,18 @@ public final class Unk2700HFMDKDHCJCM {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Unk2700_HFMDKDHCJCM(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 

@@ -19,23 +19,26 @@ public final class SceneKickPlayerRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 13;</code>
+     * <code>int32 retcode = 8;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>uint32 target_uid = 10;</code>
+     * <code>uint32 target_uid = 11;</code>
      * @return The targetUid.
      */
     int getTargetUid();
   }
   /**
    * <pre>
-   * CmdId: 238
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 231;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code SceneKickPlayerRsp}
@@ -64,53 +67,6 @@ public final class SceneKickPlayerRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SceneKickPlayerRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 80: {
-
-              targetUid_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.grasscutter.net.proto.SceneKickPlayerRspOuterClass.internal_static_SceneKickPlayerRsp_descriptor;
@@ -124,10 +80,10 @@ public final class SceneKickPlayerRspOuterClass {
               emu.grasscutter.net.proto.SceneKickPlayerRspOuterClass.SceneKickPlayerRsp.class, emu.grasscutter.net.proto.SceneKickPlayerRspOuterClass.SceneKickPlayerRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 13;
-    private int retcode_;
+    public static final int RETCODE_FIELD_NUMBER = 8;
+    private int retcode_ = 0;
     /**
-     * <code>int32 retcode = 13;</code>
+     * <code>int32 retcode = 8;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -135,10 +91,10 @@ public final class SceneKickPlayerRspOuterClass {
       return retcode_;
     }
 
-    public static final int TARGET_UID_FIELD_NUMBER = 10;
-    private int targetUid_;
+    public static final int TARGET_UID_FIELD_NUMBER = 11;
+    private int targetUid_ = 0;
     /**
-     * <code>uint32 target_uid = 10;</code>
+     * <code>uint32 target_uid = 11;</code>
      * @return The targetUid.
      */
     @java.lang.Override
@@ -160,13 +116,13 @@ public final class SceneKickPlayerRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (targetUid_ != 0) {
-        output.writeUInt32(10, targetUid_);
-      }
       if (retcode_ != 0) {
-        output.writeInt32(13, retcode_);
+        output.writeInt32(8, retcode_);
       }
-      unknownFields.writeTo(output);
+      if (targetUid_ != 0) {
+        output.writeUInt32(11, targetUid_);
+      }
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -175,15 +131,15 @@ public final class SceneKickPlayerRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (targetUid_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, targetUid_);
-      }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(13, retcode_);
+          .computeInt32Size(8, retcode_);
       }
-      size += unknownFields.getSerializedSize();
+      if (targetUid_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(11, targetUid_);
+      }
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -202,7 +158,7 @@ public final class SceneKickPlayerRspOuterClass {
           != other.getRetcode()) return false;
       if (getTargetUid()
           != other.getTargetUid()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -217,7 +173,7 @@ public final class SceneKickPlayerRspOuterClass {
       hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + TARGET_UID_FIELD_NUMBER;
       hash = (53 * hash) + getTargetUid();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -314,10 +270,13 @@ public final class SceneKickPlayerRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 238
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 231;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code SceneKickPlayerRsp}
@@ -341,26 +300,20 @@ public final class SceneKickPlayerRspOuterClass {
 
       // Construct using emu.grasscutter.net.proto.SceneKickPlayerRspOuterClass.SceneKickPlayerRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         retcode_ = 0;
-
         targetUid_ = 0;
-
         return this;
       }
 
@@ -387,10 +340,19 @@ public final class SceneKickPlayerRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.SceneKickPlayerRspOuterClass.SceneKickPlayerRsp buildPartial() {
         emu.grasscutter.net.proto.SceneKickPlayerRspOuterClass.SceneKickPlayerRsp result = new emu.grasscutter.net.proto.SceneKickPlayerRspOuterClass.SceneKickPlayerRsp(this);
-        result.retcode_ = retcode_;
-        result.targetUid_ = targetUid_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.grasscutter.net.proto.SceneKickPlayerRspOuterClass.SceneKickPlayerRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.targetUid_ = targetUid_;
+        }
       }
 
       @java.lang.Override
@@ -443,7 +405,7 @@ public final class SceneKickPlayerRspOuterClass {
         if (other.getTargetUid() != 0) {
           setTargetUid(other.getTargetUid());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -458,23 +420,47 @@ public final class SceneKickPlayerRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.SceneKickPlayerRspOuterClass.SceneKickPlayerRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 64: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 64
+              case 88: {
+                targetUid_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 88
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.SceneKickPlayerRspOuterClass.SceneKickPlayerRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 13;</code>
+       * <code>int32 retcode = 8;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -482,22 +468,23 @@ public final class SceneKickPlayerRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 13;</code>
+       * <code>int32 retcode = 8;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 retcode = 13;</code>
+       * <code>int32 retcode = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
         onChanged();
         return this;
@@ -505,7 +492,7 @@ public final class SceneKickPlayerRspOuterClass {
 
       private int targetUid_ ;
       /**
-       * <code>uint32 target_uid = 10;</code>
+       * <code>uint32 target_uid = 11;</code>
        * @return The targetUid.
        */
       @java.lang.Override
@@ -513,22 +500,23 @@ public final class SceneKickPlayerRspOuterClass {
         return targetUid_;
       }
       /**
-       * <code>uint32 target_uid = 10;</code>
+       * <code>uint32 target_uid = 11;</code>
        * @param value The targetUid to set.
        * @return This builder for chaining.
        */
       public Builder setTargetUid(int value) {
         
         targetUid_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 target_uid = 10;</code>
+       * <code>uint32 target_uid = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearTargetUid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         targetUid_ = 0;
         onChanged();
         return this;
@@ -566,7 +554,18 @@ public final class SceneKickPlayerRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SceneKickPlayerRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -601,8 +600,8 @@ public final class SceneKickPlayerRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\030SceneKickPlayerRsp.proto\"9\n\022SceneKickP" +
-      "layerRsp\022\017\n\007retcode\030\r \001(\005\022\022\n\ntarget_uid\030" +
-      "\n \001(\rB\033\n\031emu.grasscutter.net.protob\006prot" +
+      "layerRsp\022\017\n\007retcode\030\010 \001(\005\022\022\n\ntarget_uid\030" +
+      "\013 \001(\rB\033\n\031emu.grasscutter.net.protob\006prot" +
       "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

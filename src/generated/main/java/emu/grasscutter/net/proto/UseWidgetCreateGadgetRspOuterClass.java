@@ -19,7 +19,7 @@ public final class UseWidgetCreateGadgetRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 15;</code>
+     * <code>int32 retcode = 10;</code>
      * @return The retcode.
      */
     int getRetcode();
@@ -32,10 +32,13 @@ public final class UseWidgetCreateGadgetRspOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 4290
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 4298;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code UseWidgetCreateGadgetRsp}
@@ -64,53 +67,6 @@ public final class UseWidgetCreateGadgetRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private UseWidgetCreateGadgetRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 96: {
-
-              materialId_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.grasscutter.net.proto.UseWidgetCreateGadgetRspOuterClass.internal_static_UseWidgetCreateGadgetRsp_descriptor;
@@ -124,10 +80,10 @@ public final class UseWidgetCreateGadgetRspOuterClass {
               emu.grasscutter.net.proto.UseWidgetCreateGadgetRspOuterClass.UseWidgetCreateGadgetRsp.class, emu.grasscutter.net.proto.UseWidgetCreateGadgetRspOuterClass.UseWidgetCreateGadgetRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 15;
-    private int retcode_;
+    public static final int RETCODE_FIELD_NUMBER = 10;
+    private int retcode_ = 0;
     /**
-     * <code>int32 retcode = 15;</code>
+     * <code>int32 retcode = 10;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -136,7 +92,7 @@ public final class UseWidgetCreateGadgetRspOuterClass {
     }
 
     public static final int MATERIAL_ID_FIELD_NUMBER = 12;
-    private int materialId_;
+    private int materialId_ = 0;
     /**
      * <code>uint32 material_id = 12;</code>
      * @return The materialId.
@@ -160,13 +116,13 @@ public final class UseWidgetCreateGadgetRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (retcode_ != 0) {
+        output.writeInt32(10, retcode_);
+      }
       if (materialId_ != 0) {
         output.writeUInt32(12, materialId_);
       }
-      if (retcode_ != 0) {
-        output.writeInt32(15, retcode_);
-      }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -175,15 +131,15 @@ public final class UseWidgetCreateGadgetRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(10, retcode_);
+      }
       if (materialId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, materialId_);
       }
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(15, retcode_);
-      }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -202,7 +158,7 @@ public final class UseWidgetCreateGadgetRspOuterClass {
           != other.getRetcode()) return false;
       if (getMaterialId()
           != other.getMaterialId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -217,7 +173,7 @@ public final class UseWidgetCreateGadgetRspOuterClass {
       hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + MATERIAL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getMaterialId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -314,10 +270,13 @@ public final class UseWidgetCreateGadgetRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4290
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 4298;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code UseWidgetCreateGadgetRsp}
@@ -341,26 +300,20 @@ public final class UseWidgetCreateGadgetRspOuterClass {
 
       // Construct using emu.grasscutter.net.proto.UseWidgetCreateGadgetRspOuterClass.UseWidgetCreateGadgetRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         retcode_ = 0;
-
         materialId_ = 0;
-
         return this;
       }
 
@@ -387,10 +340,19 @@ public final class UseWidgetCreateGadgetRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.UseWidgetCreateGadgetRspOuterClass.UseWidgetCreateGadgetRsp buildPartial() {
         emu.grasscutter.net.proto.UseWidgetCreateGadgetRspOuterClass.UseWidgetCreateGadgetRsp result = new emu.grasscutter.net.proto.UseWidgetCreateGadgetRspOuterClass.UseWidgetCreateGadgetRsp(this);
-        result.retcode_ = retcode_;
-        result.materialId_ = materialId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.grasscutter.net.proto.UseWidgetCreateGadgetRspOuterClass.UseWidgetCreateGadgetRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.materialId_ = materialId_;
+        }
       }
 
       @java.lang.Override
@@ -443,7 +405,7 @@ public final class UseWidgetCreateGadgetRspOuterClass {
         if (other.getMaterialId() != 0) {
           setMaterialId(other.getMaterialId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -458,23 +420,47 @@ public final class UseWidgetCreateGadgetRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.UseWidgetCreateGadgetRspOuterClass.UseWidgetCreateGadgetRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 80: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 80
+              case 96: {
+                materialId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 96
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.UseWidgetCreateGadgetRspOuterClass.UseWidgetCreateGadgetRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 15;</code>
+       * <code>int32 retcode = 10;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -482,22 +468,23 @@ public final class UseWidgetCreateGadgetRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 15;</code>
+       * <code>int32 retcode = 10;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 retcode = 15;</code>
+       * <code>int32 retcode = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
         onChanged();
         return this;
@@ -520,6 +507,7 @@ public final class UseWidgetCreateGadgetRspOuterClass {
       public Builder setMaterialId(int value) {
         
         materialId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -528,7 +516,7 @@ public final class UseWidgetCreateGadgetRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMaterialId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         materialId_ = 0;
         onChanged();
         return this;
@@ -566,7 +554,18 @@ public final class UseWidgetCreateGadgetRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new UseWidgetCreateGadgetRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -601,7 +600,7 @@ public final class UseWidgetCreateGadgetRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\036UseWidgetCreateGadgetRsp.proto\"@\n\030UseW" +
-      "idgetCreateGadgetRsp\022\017\n\007retcode\030\017 \001(\005\022\023\n" +
+      "idgetCreateGadgetRsp\022\017\n\007retcode\030\n \001(\005\022\023\n" +
       "\013material_id\030\014 \001(\rB\033\n\031emu.grasscutter.ne" +
       "t.protob\006proto3"
     };

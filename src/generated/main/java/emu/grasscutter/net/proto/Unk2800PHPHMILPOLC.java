@@ -63,54 +63,6 @@ public final class Unk2800PHPHMILPOLC {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private Unk2800_PHPHMILPOLC(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 32: {
-
-              unk2800CLOCMPFBGMD_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-              int rawValue = input.readEnum();
-
-              state_ = rawValue;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.grasscutter.net.proto.Unk2800PHPHMILPOLC.internal_static_Unk2800_PHPHMILPOLC_descriptor;
@@ -125,7 +77,7 @@ public final class Unk2800PHPHMILPOLC {
     }
 
     public static final int STATE_FIELD_NUMBER = 10;
-    private int state_;
+    private int state_ = 0;
     /**
      * <code>.Unk2800_FDLKPKFOIIK state = 10;</code>
      * @return The enum numeric value on the wire for state.
@@ -138,13 +90,12 @@ public final class Unk2800PHPHMILPOLC {
      * @return The state.
      */
     @java.lang.Override public emu.grasscutter.net.proto.Unk2800FDLKPKFOIIK.Unk2800_FDLKPKFOIIK getState() {
-      @SuppressWarnings("deprecation")
-      emu.grasscutter.net.proto.Unk2800FDLKPKFOIIK.Unk2800_FDLKPKFOIIK result = emu.grasscutter.net.proto.Unk2800FDLKPKFOIIK.Unk2800_FDLKPKFOIIK.valueOf(state_);
+      emu.grasscutter.net.proto.Unk2800FDLKPKFOIIK.Unk2800_FDLKPKFOIIK result = emu.grasscutter.net.proto.Unk2800FDLKPKFOIIK.Unk2800_FDLKPKFOIIK.forNumber(state_);
       return result == null ? emu.grasscutter.net.proto.Unk2800FDLKPKFOIIK.Unk2800_FDLKPKFOIIK.UNRECOGNIZED : result;
     }
 
     public static final int UNK2800_CLOCMPFBGMD_FIELD_NUMBER = 4;
-    private int unk2800CLOCMPFBGMD_;
+    private int unk2800CLOCMPFBGMD_ = 0;
     /**
      * <code>uint32 Unk2800_CLOCMPFBGMD = 4;</code>
      * @return The unk2800CLOCMPFBGMD.
@@ -174,7 +125,7 @@ public final class Unk2800PHPHMILPOLC {
       if (state_ != emu.grasscutter.net.proto.Unk2800FDLKPKFOIIK.Unk2800_FDLKPKFOIIK.Unk2800_FDLKPKFOIIK_NONE.getNumber()) {
         output.writeEnum(10, state_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -191,7 +142,7 @@ public final class Unk2800PHPHMILPOLC {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(10, state_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -209,7 +160,7 @@ public final class Unk2800PHPHMILPOLC {
       if (state_ != other.state_) return false;
       if (getUnk2800CLOCMPFBGMD()
           != other.getUnk2800CLOCMPFBGMD()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -224,7 +175,7 @@ public final class Unk2800PHPHMILPOLC {
       hash = (53 * hash) + state_;
       hash = (37 * hash) + UNK2800_CLOCMPFBGMD_FIELD_NUMBER;
       hash = (53 * hash) + getUnk2800CLOCMPFBGMD();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -341,26 +292,20 @@ public final class Unk2800PHPHMILPOLC {
 
       // Construct using emu.grasscutter.net.proto.Unk2800PHPHMILPOLC.Unk2800_PHPHMILPOLC.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         state_ = 0;
-
         unk2800CLOCMPFBGMD_ = 0;
-
         return this;
       }
 
@@ -387,10 +332,19 @@ public final class Unk2800PHPHMILPOLC {
       @java.lang.Override
       public emu.grasscutter.net.proto.Unk2800PHPHMILPOLC.Unk2800_PHPHMILPOLC buildPartial() {
         emu.grasscutter.net.proto.Unk2800PHPHMILPOLC.Unk2800_PHPHMILPOLC result = new emu.grasscutter.net.proto.Unk2800PHPHMILPOLC.Unk2800_PHPHMILPOLC(this);
-        result.state_ = state_;
-        result.unk2800CLOCMPFBGMD_ = unk2800CLOCMPFBGMD_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.grasscutter.net.proto.Unk2800PHPHMILPOLC.Unk2800_PHPHMILPOLC result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.state_ = state_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.unk2800CLOCMPFBGMD_ = unk2800CLOCMPFBGMD_;
+        }
       }
 
       @java.lang.Override
@@ -443,7 +397,7 @@ public final class Unk2800PHPHMILPOLC {
         if (other.getUnk2800CLOCMPFBGMD() != 0) {
           setUnk2800CLOCMPFBGMD(other.getUnk2800CLOCMPFBGMD());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -458,19 +412,43 @@ public final class Unk2800PHPHMILPOLC {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.Unk2800PHPHMILPOLC.Unk2800_PHPHMILPOLC parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 32: {
+                unk2800CLOCMPFBGMD_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 32
+              case 80: {
+                state_ = input.readEnum();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 80
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.Unk2800PHPHMILPOLC.Unk2800_PHPHMILPOLC) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int state_ = 0;
       /**
@@ -486,8 +464,8 @@ public final class Unk2800PHPHMILPOLC {
        * @return This builder for chaining.
        */
       public Builder setStateValue(int value) {
-        
         state_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -497,8 +475,7 @@ public final class Unk2800PHPHMILPOLC {
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.Unk2800FDLKPKFOIIK.Unk2800_FDLKPKFOIIK getState() {
-        @SuppressWarnings("deprecation")
-        emu.grasscutter.net.proto.Unk2800FDLKPKFOIIK.Unk2800_FDLKPKFOIIK result = emu.grasscutter.net.proto.Unk2800FDLKPKFOIIK.Unk2800_FDLKPKFOIIK.valueOf(state_);
+        emu.grasscutter.net.proto.Unk2800FDLKPKFOIIK.Unk2800_FDLKPKFOIIK result = emu.grasscutter.net.proto.Unk2800FDLKPKFOIIK.Unk2800_FDLKPKFOIIK.forNumber(state_);
         return result == null ? emu.grasscutter.net.proto.Unk2800FDLKPKFOIIK.Unk2800_FDLKPKFOIIK.UNRECOGNIZED : result;
       }
       /**
@@ -510,7 +487,7 @@ public final class Unk2800PHPHMILPOLC {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000001;
         state_ = value.getNumber();
         onChanged();
         return this;
@@ -520,7 +497,7 @@ public final class Unk2800PHPHMILPOLC {
        * @return This builder for chaining.
        */
       public Builder clearState() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         state_ = 0;
         onChanged();
         return this;
@@ -543,6 +520,7 @@ public final class Unk2800PHPHMILPOLC {
       public Builder setUnk2800CLOCMPFBGMD(int value) {
         
         unk2800CLOCMPFBGMD_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -551,7 +529,7 @@ public final class Unk2800PHPHMILPOLC {
        * @return This builder for chaining.
        */
       public Builder clearUnk2800CLOCMPFBGMD() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         unk2800CLOCMPFBGMD_ = 0;
         onChanged();
         return this;
@@ -589,7 +567,18 @@ public final class Unk2800PHPHMILPOLC {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Unk2800_PHPHMILPOLC(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 

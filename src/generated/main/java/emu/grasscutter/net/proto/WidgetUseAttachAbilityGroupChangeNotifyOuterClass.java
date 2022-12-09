@@ -19,23 +19,26 @@ public final class WidgetUseAttachAbilityGroupChangeNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_attach = 6;</code>
-     * @return The isAttach.
-     */
-    boolean getIsAttach();
-
-    /**
-     * <code>uint32 material_id = 11;</code>
+     * <code>uint32 material_id = 15;</code>
      * @return The materialId.
      */
     int getMaterialId();
+
+    /**
+     * <code>bool is_attach = 7;</code>
+     * @return The isAttach.
+     */
+    boolean getIsAttach();
   }
   /**
    * <pre>
-   * CmdId: 4258
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 4290;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code WidgetUseAttachAbilityGroupChangeNotify}
@@ -64,53 +67,6 @@ public final class WidgetUseAttachAbilityGroupChangeNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private WidgetUseAttachAbilityGroupChangeNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 48: {
-
-              isAttach_ = input.readBool();
-              break;
-            }
-            case 88: {
-
-              materialId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.grasscutter.net.proto.WidgetUseAttachAbilityGroupChangeNotifyOuterClass.internal_static_WidgetUseAttachAbilityGroupChangeNotify_descriptor;
@@ -124,26 +80,26 @@ public final class WidgetUseAttachAbilityGroupChangeNotifyOuterClass {
               emu.grasscutter.net.proto.WidgetUseAttachAbilityGroupChangeNotifyOuterClass.WidgetUseAttachAbilityGroupChangeNotify.class, emu.grasscutter.net.proto.WidgetUseAttachAbilityGroupChangeNotifyOuterClass.WidgetUseAttachAbilityGroupChangeNotify.Builder.class);
     }
 
-    public static final int IS_ATTACH_FIELD_NUMBER = 6;
-    private boolean isAttach_;
+    public static final int MATERIAL_ID_FIELD_NUMBER = 15;
+    private int materialId_ = 0;
     /**
-     * <code>bool is_attach = 6;</code>
-     * @return The isAttach.
-     */
-    @java.lang.Override
-    public boolean getIsAttach() {
-      return isAttach_;
-    }
-
-    public static final int MATERIAL_ID_FIELD_NUMBER = 11;
-    private int materialId_;
-    /**
-     * <code>uint32 material_id = 11;</code>
+     * <code>uint32 material_id = 15;</code>
      * @return The materialId.
      */
     @java.lang.Override
     public int getMaterialId() {
       return materialId_;
+    }
+
+    public static final int IS_ATTACH_FIELD_NUMBER = 7;
+    private boolean isAttach_ = false;
+    /**
+     * <code>bool is_attach = 7;</code>
+     * @return The isAttach.
+     */
+    @java.lang.Override
+    public boolean getIsAttach() {
+      return isAttach_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -161,12 +117,12 @@ public final class WidgetUseAttachAbilityGroupChangeNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isAttach_ != false) {
-        output.writeBool(6, isAttach_);
+        output.writeBool(7, isAttach_);
       }
       if (materialId_ != 0) {
-        output.writeUInt32(11, materialId_);
+        output.writeUInt32(15, materialId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -177,13 +133,13 @@ public final class WidgetUseAttachAbilityGroupChangeNotifyOuterClass {
       size = 0;
       if (isAttach_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(6, isAttach_);
+          .computeBoolSize(7, isAttach_);
       }
       if (materialId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, materialId_);
+          .computeUInt32Size(15, materialId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -198,11 +154,11 @@ public final class WidgetUseAttachAbilityGroupChangeNotifyOuterClass {
       }
       emu.grasscutter.net.proto.WidgetUseAttachAbilityGroupChangeNotifyOuterClass.WidgetUseAttachAbilityGroupChangeNotify other = (emu.grasscutter.net.proto.WidgetUseAttachAbilityGroupChangeNotifyOuterClass.WidgetUseAttachAbilityGroupChangeNotify) obj;
 
-      if (getIsAttach()
-          != other.getIsAttach()) return false;
       if (getMaterialId()
           != other.getMaterialId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (getIsAttach()
+          != other.getIsAttach()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -213,12 +169,12 @@ public final class WidgetUseAttachAbilityGroupChangeNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MATERIAL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getMaterialId();
       hash = (37 * hash) + IS_ATTACH_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsAttach());
-      hash = (37 * hash) + MATERIAL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getMaterialId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -315,10 +271,13 @@ public final class WidgetUseAttachAbilityGroupChangeNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4258
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 4290;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code WidgetUseAttachAbilityGroupChangeNotify}
@@ -342,26 +301,20 @@ public final class WidgetUseAttachAbilityGroupChangeNotifyOuterClass {
 
       // Construct using emu.grasscutter.net.proto.WidgetUseAttachAbilityGroupChangeNotifyOuterClass.WidgetUseAttachAbilityGroupChangeNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        isAttach_ = false;
-
+        bitField0_ = 0;
         materialId_ = 0;
-
+        isAttach_ = false;
         return this;
       }
 
@@ -388,10 +341,19 @@ public final class WidgetUseAttachAbilityGroupChangeNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.WidgetUseAttachAbilityGroupChangeNotifyOuterClass.WidgetUseAttachAbilityGroupChangeNotify buildPartial() {
         emu.grasscutter.net.proto.WidgetUseAttachAbilityGroupChangeNotifyOuterClass.WidgetUseAttachAbilityGroupChangeNotify result = new emu.grasscutter.net.proto.WidgetUseAttachAbilityGroupChangeNotifyOuterClass.WidgetUseAttachAbilityGroupChangeNotify(this);
-        result.isAttach_ = isAttach_;
-        result.materialId_ = materialId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.grasscutter.net.proto.WidgetUseAttachAbilityGroupChangeNotifyOuterClass.WidgetUseAttachAbilityGroupChangeNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.materialId_ = materialId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.isAttach_ = isAttach_;
+        }
       }
 
       @java.lang.Override
@@ -438,13 +400,13 @@ public final class WidgetUseAttachAbilityGroupChangeNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.WidgetUseAttachAbilityGroupChangeNotifyOuterClass.WidgetUseAttachAbilityGroupChangeNotify other) {
         if (other == emu.grasscutter.net.proto.WidgetUseAttachAbilityGroupChangeNotifyOuterClass.WidgetUseAttachAbilityGroupChangeNotify.getDefaultInstance()) return this;
-        if (other.getIsAttach() != false) {
-          setIsAttach(other.getIsAttach());
-        }
         if (other.getMaterialId() != 0) {
           setMaterialId(other.getMaterialId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        if (other.getIsAttach() != false) {
+          setIsAttach(other.getIsAttach());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -459,54 +421,47 @@ public final class WidgetUseAttachAbilityGroupChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.WidgetUseAttachAbilityGroupChangeNotifyOuterClass.WidgetUseAttachAbilityGroupChangeNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 56: {
+                isAttach_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 56
+              case 120: {
+                materialId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.WidgetUseAttachAbilityGroupChangeNotifyOuterClass.WidgetUseAttachAbilityGroupChangeNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
-
-      private boolean isAttach_ ;
-      /**
-       * <code>bool is_attach = 6;</code>
-       * @return The isAttach.
-       */
-      @java.lang.Override
-      public boolean getIsAttach() {
-        return isAttach_;
-      }
-      /**
-       * <code>bool is_attach = 6;</code>
-       * @param value The isAttach to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsAttach(boolean value) {
-        
-        isAttach_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_attach = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsAttach() {
-        
-        isAttach_ = false;
-        onChanged();
-        return this;
-      }
+      private int bitField0_;
 
       private int materialId_ ;
       /**
-       * <code>uint32 material_id = 11;</code>
+       * <code>uint32 material_id = 15;</code>
        * @return The materialId.
        */
       @java.lang.Override
@@ -514,23 +469,56 @@ public final class WidgetUseAttachAbilityGroupChangeNotifyOuterClass {
         return materialId_;
       }
       /**
-       * <code>uint32 material_id = 11;</code>
+       * <code>uint32 material_id = 15;</code>
        * @param value The materialId to set.
        * @return This builder for chaining.
        */
       public Builder setMaterialId(int value) {
         
         materialId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 material_id = 11;</code>
+       * <code>uint32 material_id = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearMaterialId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         materialId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean isAttach_ ;
+      /**
+       * <code>bool is_attach = 7;</code>
+       * @return The isAttach.
+       */
+      @java.lang.Override
+      public boolean getIsAttach() {
+        return isAttach_;
+      }
+      /**
+       * <code>bool is_attach = 7;</code>
+       * @param value The isAttach to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsAttach(boolean value) {
+        
+        isAttach_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_attach = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsAttach() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        isAttach_ = false;
         onChanged();
         return this;
       }
@@ -567,7 +555,18 @@ public final class WidgetUseAttachAbilityGroupChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new WidgetUseAttachAbilityGroupChangeNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -603,8 +602,8 @@ public final class WidgetUseAttachAbilityGroupChangeNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n-WidgetUseAttachAbilityGroupChangeNotif" +
       "y.proto\"Q\n\'WidgetUseAttachAbilityGroupCh" +
-      "angeNotify\022\021\n\tis_attach\030\006 \001(\010\022\023\n\013materia" +
-      "l_id\030\013 \001(\rB\033\n\031emu.grasscutter.net.protob" +
+      "angeNotify\022\023\n\013material_id\030\017 \001(\r\022\021\n\tis_at" +
+      "tach\030\007 \001(\010B\033\n\031emu.grasscutter.net.protob" +
       "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -616,7 +615,7 @@ public final class WidgetUseAttachAbilityGroupChangeNotifyOuterClass {
     internal_static_WidgetUseAttachAbilityGroupChangeNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_WidgetUseAttachAbilityGroupChangeNotify_descriptor,
-        new java.lang.String[] { "IsAttach", "MaterialId", });
+        new java.lang.String[] { "MaterialId", "IsAttach", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

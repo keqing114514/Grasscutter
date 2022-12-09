@@ -19,12 +19,6 @@ public final class GadgetInteractRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 gadget_entity_id = 10;</code>
-     * @return The gadgetEntityId.
-     */
-    int getGadgetEntityId();
-
-    /**
      * <code>.InteractType interact_type = 2;</code>
      * @return The enum numeric value on the wire for interactType.
      */
@@ -36,15 +30,10 @@ public final class GadgetInteractRspOuterClass {
     emu.grasscutter.net.proto.InteractTypeOuterClass.InteractType getInteractType();
 
     /**
-     * <code>.InterOpType op_type = 3;</code>
-     * @return The enum numeric value on the wire for opType.
+     * <code>uint32 gadget_id = 11;</code>
+     * @return The gadgetId.
      */
-    int getOpTypeValue();
-    /**
-     * <code>.InterOpType op_type = 3;</code>
-     * @return The opType.
-     */
-    emu.grasscutter.net.proto.InterOpTypeOuterClass.InterOpType getOpType();
+    int getGadgetId();
 
     /**
      * <code>int32 retcode = 7;</code>
@@ -53,17 +42,31 @@ public final class GadgetInteractRspOuterClass {
     int getRetcode();
 
     /**
-     * <code>uint32 gadget_id = 15;</code>
-     * @return The gadgetId.
+     * <code>uint32 gadget_entity_id = 1;</code>
+     * @return The gadgetEntityId.
      */
-    int getGadgetId();
+    int getGadgetEntityId();
+
+    /**
+     * <code>.InterOpType op_type = 8;</code>
+     * @return The enum numeric value on the wire for opType.
+     */
+    int getOpTypeValue();
+    /**
+     * <code>.InterOpType op_type = 8;</code>
+     * @return The opType.
+     */
+    emu.grasscutter.net.proto.InterOpTypeOuterClass.InterOpType getOpType();
   }
   /**
    * <pre>
-   * CmdId: 898
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 830;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code GadgetInteractRsp}
@@ -94,70 +97,6 @@ public final class GadgetInteractRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GadgetInteractRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-              int rawValue = input.readEnum();
-
-              interactType_ = rawValue;
-              break;
-            }
-            case 24: {
-              int rawValue = input.readEnum();
-
-              opType_ = rawValue;
-              break;
-            }
-            case 56: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 80: {
-
-              gadgetEntityId_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              gadgetId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.grasscutter.net.proto.GadgetInteractRspOuterClass.internal_static_GadgetInteractRsp_descriptor;
@@ -171,19 +110,8 @@ public final class GadgetInteractRspOuterClass {
               emu.grasscutter.net.proto.GadgetInteractRspOuterClass.GadgetInteractRsp.class, emu.grasscutter.net.proto.GadgetInteractRspOuterClass.GadgetInteractRsp.Builder.class);
     }
 
-    public static final int GADGET_ENTITY_ID_FIELD_NUMBER = 10;
-    private int gadgetEntityId_;
-    /**
-     * <code>uint32 gadget_entity_id = 10;</code>
-     * @return The gadgetEntityId.
-     */
-    @java.lang.Override
-    public int getGadgetEntityId() {
-      return gadgetEntityId_;
-    }
-
     public static final int INTERACT_TYPE_FIELD_NUMBER = 2;
-    private int interactType_;
+    private int interactType_ = 0;
     /**
      * <code>.InteractType interact_type = 2;</code>
      * @return The enum numeric value on the wire for interactType.
@@ -196,32 +124,23 @@ public final class GadgetInteractRspOuterClass {
      * @return The interactType.
      */
     @java.lang.Override public emu.grasscutter.net.proto.InteractTypeOuterClass.InteractType getInteractType() {
-      @SuppressWarnings("deprecation")
-      emu.grasscutter.net.proto.InteractTypeOuterClass.InteractType result = emu.grasscutter.net.proto.InteractTypeOuterClass.InteractType.valueOf(interactType_);
+      emu.grasscutter.net.proto.InteractTypeOuterClass.InteractType result = emu.grasscutter.net.proto.InteractTypeOuterClass.InteractType.forNumber(interactType_);
       return result == null ? emu.grasscutter.net.proto.InteractTypeOuterClass.InteractType.UNRECOGNIZED : result;
     }
 
-    public static final int OP_TYPE_FIELD_NUMBER = 3;
-    private int opType_;
+    public static final int GADGET_ID_FIELD_NUMBER = 11;
+    private int gadgetId_ = 0;
     /**
-     * <code>.InterOpType op_type = 3;</code>
-     * @return The enum numeric value on the wire for opType.
+     * <code>uint32 gadget_id = 11;</code>
+     * @return The gadgetId.
      */
-    @java.lang.Override public int getOpTypeValue() {
-      return opType_;
-    }
-    /**
-     * <code>.InterOpType op_type = 3;</code>
-     * @return The opType.
-     */
-    @java.lang.Override public emu.grasscutter.net.proto.InterOpTypeOuterClass.InterOpType getOpType() {
-      @SuppressWarnings("deprecation")
-      emu.grasscutter.net.proto.InterOpTypeOuterClass.InterOpType result = emu.grasscutter.net.proto.InterOpTypeOuterClass.InterOpType.valueOf(opType_);
-      return result == null ? emu.grasscutter.net.proto.InterOpTypeOuterClass.InterOpType.UNRECOGNIZED : result;
+    @java.lang.Override
+    public int getGadgetId() {
+      return gadgetId_;
     }
 
     public static final int RETCODE_FIELD_NUMBER = 7;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 7;</code>
      * @return The retcode.
@@ -231,15 +150,33 @@ public final class GadgetInteractRspOuterClass {
       return retcode_;
     }
 
-    public static final int GADGET_ID_FIELD_NUMBER = 15;
-    private int gadgetId_;
+    public static final int GADGET_ENTITY_ID_FIELD_NUMBER = 1;
+    private int gadgetEntityId_ = 0;
     /**
-     * <code>uint32 gadget_id = 15;</code>
-     * @return The gadgetId.
+     * <code>uint32 gadget_entity_id = 1;</code>
+     * @return The gadgetEntityId.
      */
     @java.lang.Override
-    public int getGadgetId() {
-      return gadgetId_;
+    public int getGadgetEntityId() {
+      return gadgetEntityId_;
+    }
+
+    public static final int OP_TYPE_FIELD_NUMBER = 8;
+    private int opType_ = 0;
+    /**
+     * <code>.InterOpType op_type = 8;</code>
+     * @return The enum numeric value on the wire for opType.
+     */
+    @java.lang.Override public int getOpTypeValue() {
+      return opType_;
+    }
+    /**
+     * <code>.InterOpType op_type = 8;</code>
+     * @return The opType.
+     */
+    @java.lang.Override public emu.grasscutter.net.proto.InterOpTypeOuterClass.InterOpType getOpType() {
+      emu.grasscutter.net.proto.InterOpTypeOuterClass.InterOpType result = emu.grasscutter.net.proto.InterOpTypeOuterClass.InterOpType.forNumber(opType_);
+      return result == null ? emu.grasscutter.net.proto.InterOpTypeOuterClass.InterOpType.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -256,22 +193,22 @@ public final class GadgetInteractRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (gadgetEntityId_ != 0) {
+        output.writeUInt32(1, gadgetEntityId_);
+      }
       if (interactType_ != emu.grasscutter.net.proto.InteractTypeOuterClass.InteractType.INTERACT_TYPE_NONE.getNumber()) {
         output.writeEnum(2, interactType_);
-      }
-      if (opType_ != emu.grasscutter.net.proto.InterOpTypeOuterClass.InterOpType.INTER_OP_TYPE_FINISH.getNumber()) {
-        output.writeEnum(3, opType_);
       }
       if (retcode_ != 0) {
         output.writeInt32(7, retcode_);
       }
-      if (gadgetEntityId_ != 0) {
-        output.writeUInt32(10, gadgetEntityId_);
+      if (opType_ != emu.grasscutter.net.proto.InterOpTypeOuterClass.InterOpType.INTER_OP_TYPE_FINISH.getNumber()) {
+        output.writeEnum(8, opType_);
       }
       if (gadgetId_ != 0) {
-        output.writeUInt32(15, gadgetId_);
+        output.writeUInt32(11, gadgetId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -280,27 +217,27 @@ public final class GadgetInteractRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (gadgetEntityId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, gadgetEntityId_);
+      }
       if (interactType_ != emu.grasscutter.net.proto.InteractTypeOuterClass.InteractType.INTERACT_TYPE_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, interactType_);
-      }
-      if (opType_ != emu.grasscutter.net.proto.InterOpTypeOuterClass.InterOpType.INTER_OP_TYPE_FINISH.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(3, opType_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(7, retcode_);
       }
-      if (gadgetEntityId_ != 0) {
+      if (opType_ != emu.grasscutter.net.proto.InterOpTypeOuterClass.InterOpType.INTER_OP_TYPE_FINISH.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, gadgetEntityId_);
+          .computeEnumSize(8, opType_);
       }
       if (gadgetId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, gadgetId_);
+          .computeUInt32Size(11, gadgetId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -315,15 +252,15 @@ public final class GadgetInteractRspOuterClass {
       }
       emu.grasscutter.net.proto.GadgetInteractRspOuterClass.GadgetInteractRsp other = (emu.grasscutter.net.proto.GadgetInteractRspOuterClass.GadgetInteractRsp) obj;
 
-      if (getGadgetEntityId()
-          != other.getGadgetEntityId()) return false;
       if (interactType_ != other.interactType_) return false;
-      if (opType_ != other.opType_) return false;
-      if (getRetcode()
-          != other.getRetcode()) return false;
       if (getGadgetId()
           != other.getGadgetId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (getRetcode()
+          != other.getRetcode()) return false;
+      if (getGadgetEntityId()
+          != other.getGadgetEntityId()) return false;
+      if (opType_ != other.opType_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -334,17 +271,17 @@ public final class GadgetInteractRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + GADGET_ENTITY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getGadgetEntityId();
       hash = (37 * hash) + INTERACT_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + interactType_;
-      hash = (37 * hash) + OP_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + opType_;
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + GADGET_ID_FIELD_NUMBER;
       hash = (53 * hash) + getGadgetId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
+      hash = (37 * hash) + GADGET_ENTITY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getGadgetEntityId();
+      hash = (37 * hash) + OP_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + opType_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -441,10 +378,13 @@ public final class GadgetInteractRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 898
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 830;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code GadgetInteractRsp}
@@ -468,32 +408,23 @@ public final class GadgetInteractRspOuterClass {
 
       // Construct using emu.grasscutter.net.proto.GadgetInteractRspOuterClass.GadgetInteractRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        gadgetEntityId_ = 0;
-
+        bitField0_ = 0;
         interactType_ = 0;
-
-        opType_ = 0;
-
-        retcode_ = 0;
-
         gadgetId_ = 0;
-
+        retcode_ = 0;
+        gadgetEntityId_ = 0;
+        opType_ = 0;
         return this;
       }
 
@@ -520,13 +451,28 @@ public final class GadgetInteractRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.GadgetInteractRspOuterClass.GadgetInteractRsp buildPartial() {
         emu.grasscutter.net.proto.GadgetInteractRspOuterClass.GadgetInteractRsp result = new emu.grasscutter.net.proto.GadgetInteractRspOuterClass.GadgetInteractRsp(this);
-        result.gadgetEntityId_ = gadgetEntityId_;
-        result.interactType_ = interactType_;
-        result.opType_ = opType_;
-        result.retcode_ = retcode_;
-        result.gadgetId_ = gadgetId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.grasscutter.net.proto.GadgetInteractRspOuterClass.GadgetInteractRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.interactType_ = interactType_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.gadgetId_ = gadgetId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.gadgetEntityId_ = gadgetEntityId_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.opType_ = opType_;
+        }
       }
 
       @java.lang.Override
@@ -573,22 +519,22 @@ public final class GadgetInteractRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GadgetInteractRspOuterClass.GadgetInteractRsp other) {
         if (other == emu.grasscutter.net.proto.GadgetInteractRspOuterClass.GadgetInteractRsp.getDefaultInstance()) return this;
-        if (other.getGadgetEntityId() != 0) {
-          setGadgetEntityId(other.getGadgetEntityId());
-        }
         if (other.interactType_ != 0) {
           setInteractTypeValue(other.getInteractTypeValue());
-        }
-        if (other.opType_ != 0) {
-          setOpTypeValue(other.getOpTypeValue());
-        }
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
         }
         if (other.getGadgetId() != 0) {
           setGadgetId(other.getGadgetId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
+        }
+        if (other.getGadgetEntityId() != 0) {
+          setGadgetEntityId(other.getGadgetEntityId());
+        }
+        if (other.opType_ != 0) {
+          setOpTypeValue(other.getOpTypeValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -603,50 +549,58 @@ public final class GadgetInteractRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.GadgetInteractRspOuterClass.GadgetInteractRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                gadgetEntityId_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 8
+              case 16: {
+                interactType_ = input.readEnum();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 16
+              case 56: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 56
+              case 64: {
+                opType_ = input.readEnum();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 64
+              case 88: {
+                gadgetId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 88
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.GadgetInteractRspOuterClass.GadgetInteractRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
-
-      private int gadgetEntityId_ ;
-      /**
-       * <code>uint32 gadget_entity_id = 10;</code>
-       * @return The gadgetEntityId.
-       */
-      @java.lang.Override
-      public int getGadgetEntityId() {
-        return gadgetEntityId_;
-      }
-      /**
-       * <code>uint32 gadget_entity_id = 10;</code>
-       * @param value The gadgetEntityId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGadgetEntityId(int value) {
-        
-        gadgetEntityId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 gadget_entity_id = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGadgetEntityId() {
-        
-        gadgetEntityId_ = 0;
-        onChanged();
-        return this;
-      }
+      private int bitField0_;
 
       private int interactType_ = 0;
       /**
@@ -662,8 +616,8 @@ public final class GadgetInteractRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder setInteractTypeValue(int value) {
-        
         interactType_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -673,8 +627,7 @@ public final class GadgetInteractRspOuterClass {
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.InteractTypeOuterClass.InteractType getInteractType() {
-        @SuppressWarnings("deprecation")
-        emu.grasscutter.net.proto.InteractTypeOuterClass.InteractType result = emu.grasscutter.net.proto.InteractTypeOuterClass.InteractType.valueOf(interactType_);
+        emu.grasscutter.net.proto.InteractTypeOuterClass.InteractType result = emu.grasscutter.net.proto.InteractTypeOuterClass.InteractType.forNumber(interactType_);
         return result == null ? emu.grasscutter.net.proto.InteractTypeOuterClass.InteractType.UNRECOGNIZED : result;
       }
       /**
@@ -686,7 +639,7 @@ public final class GadgetInteractRspOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000001;
         interactType_ = value.getNumber();
         onChanged();
         return this;
@@ -696,62 +649,40 @@ public final class GadgetInteractRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearInteractType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         interactType_ = 0;
         onChanged();
         return this;
       }
 
-      private int opType_ = 0;
+      private int gadgetId_ ;
       /**
-       * <code>.InterOpType op_type = 3;</code>
-       * @return The enum numeric value on the wire for opType.
-       */
-      @java.lang.Override public int getOpTypeValue() {
-        return opType_;
-      }
-      /**
-       * <code>.InterOpType op_type = 3;</code>
-       * @param value The enum numeric value on the wire for opType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOpTypeValue(int value) {
-        
-        opType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.InterOpType op_type = 3;</code>
-       * @return The opType.
+       * <code>uint32 gadget_id = 11;</code>
+       * @return The gadgetId.
        */
       @java.lang.Override
-      public emu.grasscutter.net.proto.InterOpTypeOuterClass.InterOpType getOpType() {
-        @SuppressWarnings("deprecation")
-        emu.grasscutter.net.proto.InterOpTypeOuterClass.InterOpType result = emu.grasscutter.net.proto.InterOpTypeOuterClass.InterOpType.valueOf(opType_);
-        return result == null ? emu.grasscutter.net.proto.InterOpTypeOuterClass.InterOpType.UNRECOGNIZED : result;
+      public int getGadgetId() {
+        return gadgetId_;
       }
       /**
-       * <code>.InterOpType op_type = 3;</code>
-       * @param value The opType to set.
+       * <code>uint32 gadget_id = 11;</code>
+       * @param value The gadgetId to set.
        * @return This builder for chaining.
        */
-      public Builder setOpType(emu.grasscutter.net.proto.InterOpTypeOuterClass.InterOpType value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
+      public Builder setGadgetId(int value) {
         
-        opType_ = value.getNumber();
+        gadgetId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
       /**
-       * <code>.InterOpType op_type = 3;</code>
+       * <code>uint32 gadget_id = 11;</code>
        * @return This builder for chaining.
        */
-      public Builder clearOpType() {
-        
-        opType_ = 0;
+      public Builder clearGadgetId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        gadgetId_ = 0;
         onChanged();
         return this;
       }
@@ -773,6 +704,7 @@ public final class GadgetInteractRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -781,39 +713,93 @@ public final class GadgetInteractRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         retcode_ = 0;
         onChanged();
         return this;
       }
 
-      private int gadgetId_ ;
+      private int gadgetEntityId_ ;
       /**
-       * <code>uint32 gadget_id = 15;</code>
-       * @return The gadgetId.
+       * <code>uint32 gadget_entity_id = 1;</code>
+       * @return The gadgetEntityId.
        */
       @java.lang.Override
-      public int getGadgetId() {
-        return gadgetId_;
+      public int getGadgetEntityId() {
+        return gadgetEntityId_;
       }
       /**
-       * <code>uint32 gadget_id = 15;</code>
-       * @param value The gadgetId to set.
+       * <code>uint32 gadget_entity_id = 1;</code>
+       * @param value The gadgetEntityId to set.
        * @return This builder for chaining.
        */
-      public Builder setGadgetId(int value) {
+      public Builder setGadgetEntityId(int value) {
         
-        gadgetId_ = value;
+        gadgetEntityId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 gadget_id = 15;</code>
+       * <code>uint32 gadget_entity_id = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearGadgetId() {
-        
-        gadgetId_ = 0;
+      public Builder clearGadgetEntityId() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        gadgetEntityId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int opType_ = 0;
+      /**
+       * <code>.InterOpType op_type = 8;</code>
+       * @return The enum numeric value on the wire for opType.
+       */
+      @java.lang.Override public int getOpTypeValue() {
+        return opType_;
+      }
+      /**
+       * <code>.InterOpType op_type = 8;</code>
+       * @param value The enum numeric value on the wire for opType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOpTypeValue(int value) {
+        opType_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.InterOpType op_type = 8;</code>
+       * @return The opType.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.InterOpTypeOuterClass.InterOpType getOpType() {
+        emu.grasscutter.net.proto.InterOpTypeOuterClass.InterOpType result = emu.grasscutter.net.proto.InterOpTypeOuterClass.InterOpType.forNumber(opType_);
+        return result == null ? emu.grasscutter.net.proto.InterOpTypeOuterClass.InterOpType.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.InterOpType op_type = 8;</code>
+       * @param value The opType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOpType(emu.grasscutter.net.proto.InterOpTypeOuterClass.InterOpType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000010;
+        opType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.InterOpType op_type = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOpType() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        opType_ = 0;
         onChanged();
         return this;
       }
@@ -850,7 +836,18 @@ public final class GadgetInteractRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GadgetInteractRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -884,28 +881,28 @@ public final class GadgetInteractRspOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\027GadgetInteractRsp.proto\032\022InteractType." +
-      "proto\032\021InterOpType.proto\"\226\001\n\021GadgetInter" +
-      "actRsp\022\030\n\020gadget_entity_id\030\n \001(\r\022$\n\rinte" +
-      "ract_type\030\002 \001(\0162\r.InteractType\022\035\n\007op_typ" +
-      "e\030\003 \001(\0162\014.InterOpType\022\017\n\007retcode\030\007 \001(\005\022\021" +
-      "\n\tgadget_id\030\017 \001(\rB\033\n\031emu.grasscutter.net" +
+      "\n\027GadgetInteractRsp.proto\032\021InterOpType.p" +
+      "roto\032\022InteractType.proto\"\226\001\n\021GadgetInter" +
+      "actRsp\022$\n\rinteract_type\030\002 \001(\0162\r.Interact" +
+      "Type\022\021\n\tgadget_id\030\013 \001(\r\022\017\n\007retcode\030\007 \001(\005" +
+      "\022\030\n\020gadget_entity_id\030\001 \001(\r\022\035\n\007op_type\030\010 " +
+      "\001(\0162\014.InterOpTypeB\033\n\031emu.grasscutter.net" +
       ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.InteractTypeOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.InterOpTypeOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.InteractTypeOuterClass.getDescriptor(),
         });
     internal_static_GadgetInteractRsp_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_GadgetInteractRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GadgetInteractRsp_descriptor,
-        new java.lang.String[] { "GadgetEntityId", "InteractType", "OpType", "Retcode", "GadgetId", });
-    emu.grasscutter.net.proto.InteractTypeOuterClass.getDescriptor();
+        new java.lang.String[] { "InteractType", "GadgetId", "Retcode", "GadgetEntityId", "OpType", });
     emu.grasscutter.net.proto.InterOpTypeOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.InteractTypeOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

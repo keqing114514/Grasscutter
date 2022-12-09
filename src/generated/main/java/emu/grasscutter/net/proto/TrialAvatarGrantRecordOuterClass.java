@@ -57,53 +57,6 @@ public final class TrialAvatarGrantRecordOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private TrialAvatarGrantRecord(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              grantReason_ = input.readUInt32();
-              break;
-            }
-            case 16: {
-
-              fromParentQuestId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.internal_static_TrialAvatarGrantRecord_descriptor;
@@ -147,29 +100,37 @@ public final class TrialAvatarGrantRecordOuterClass {
        */
       GRANT_REASON_BY_SUMO_ACTIVITY(5),
       /**
-       * <code>GRANT_REASON_Unk2700_ELPMDIEIOHP = 6;</code>
+       * <code>GRANT_REASON_BY_POTION_ACTIVITY = 6;</code>
        */
-      GRANT_REASON_Unk2700_ELPMDIEIOHP(6),
+      GRANT_REASON_BY_POTION_ACTIVITY(6),
       /**
-       * <code>GRANT_REASON_Unk2700_FALPDBLGHJB = 7;</code>
+       * <code>GRANT_REASON_BY_CRYSTAL_LINK_ACTIVITY = 7;</code>
        */
-      GRANT_REASON_Unk2700_FALPDBLGHJB(7),
+      GRANT_REASON_BY_CRYSTAL_LINK_ACTIVITY(7),
       /**
-       * <code>GRANT_REASON_Unk2700_GAMADMGGMBC = 8;</code>
+       * <code>GRANT_REASON_BY_IRODORI_MASTER = 8;</code>
        */
-      GRANT_REASON_Unk2700_GAMADMGGMBC(8),
+      GRANT_REASON_BY_IRODORI_MASTER(8),
       /**
-       * <code>GRANT_REASON_Unk2800_FIIDJHAKMOI = 9;</code>
+       * <code>GRANT_REASON_BY_GM = 9;</code>
        */
-      GRANT_REASON_Unk2800_FIIDJHAKMOI(9),
+      GRANT_REASON_BY_GM(9),
       /**
-       * <code>GRANT_REASON_Unk3000_ANPCNHCADHG = 10;</code>
+       * <code>GRANT_REASON_BY_INSTABLE_SPRAY_ACTIVITY = 10;</code>
        */
-      GRANT_REASON_Unk3000_ANPCNHCADHG(10),
+      GRANT_REASON_BY_INSTABLE_SPRAY_ACTIVITY(10),
       /**
-       * <code>GRANT_REASON_Unk3000_AJIFFOLFKLO = 11;</code>
+       * <code>GRANT_REASON_BY_MUQADAS_POTION_ACTIVITY = 11;</code>
        */
-      GRANT_REASON_Unk3000_AJIFFOLFKLO(11),
+      GRANT_REASON_BY_MUQADAS_POTION_ACTIVITY(11),
+      /**
+       * <code>GRANT_REASON_BY_VINTAGE_HUNTING = 12;</code>
+       */
+      GRANT_REASON_BY_VINTAGE_HUNTING(12),
+      /**
+       * <code>GRANT_REASON_BY_CHAR_AMUSEMENT = 13;</code>
+       */
+      GRANT_REASON_BY_CHAR_AMUSEMENT(13),
       UNRECOGNIZED(-1),
       ;
 
@@ -198,29 +159,37 @@ public final class TrialAvatarGrantRecordOuterClass {
        */
       public static final int GRANT_REASON_BY_SUMO_ACTIVITY_VALUE = 5;
       /**
-       * <code>GRANT_REASON_Unk2700_ELPMDIEIOHP = 6;</code>
+       * <code>GRANT_REASON_BY_POTION_ACTIVITY = 6;</code>
        */
-      public static final int GRANT_REASON_Unk2700_ELPMDIEIOHP_VALUE = 6;
+      public static final int GRANT_REASON_BY_POTION_ACTIVITY_VALUE = 6;
       /**
-       * <code>GRANT_REASON_Unk2700_FALPDBLGHJB = 7;</code>
+       * <code>GRANT_REASON_BY_CRYSTAL_LINK_ACTIVITY = 7;</code>
        */
-      public static final int GRANT_REASON_Unk2700_FALPDBLGHJB_VALUE = 7;
+      public static final int GRANT_REASON_BY_CRYSTAL_LINK_ACTIVITY_VALUE = 7;
       /**
-       * <code>GRANT_REASON_Unk2700_GAMADMGGMBC = 8;</code>
+       * <code>GRANT_REASON_BY_IRODORI_MASTER = 8;</code>
        */
-      public static final int GRANT_REASON_Unk2700_GAMADMGGMBC_VALUE = 8;
+      public static final int GRANT_REASON_BY_IRODORI_MASTER_VALUE = 8;
       /**
-       * <code>GRANT_REASON_Unk2800_FIIDJHAKMOI = 9;</code>
+       * <code>GRANT_REASON_BY_GM = 9;</code>
        */
-      public static final int GRANT_REASON_Unk2800_FIIDJHAKMOI_VALUE = 9;
+      public static final int GRANT_REASON_BY_GM_VALUE = 9;
       /**
-       * <code>GRANT_REASON_Unk3000_ANPCNHCADHG = 10;</code>
+       * <code>GRANT_REASON_BY_INSTABLE_SPRAY_ACTIVITY = 10;</code>
        */
-      public static final int GRANT_REASON_Unk3000_ANPCNHCADHG_VALUE = 10;
+      public static final int GRANT_REASON_BY_INSTABLE_SPRAY_ACTIVITY_VALUE = 10;
       /**
-       * <code>GRANT_REASON_Unk3000_AJIFFOLFKLO = 11;</code>
+       * <code>GRANT_REASON_BY_MUQADAS_POTION_ACTIVITY = 11;</code>
        */
-      public static final int GRANT_REASON_Unk3000_AJIFFOLFKLO_VALUE = 11;
+      public static final int GRANT_REASON_BY_MUQADAS_POTION_ACTIVITY_VALUE = 11;
+      /**
+       * <code>GRANT_REASON_BY_VINTAGE_HUNTING = 12;</code>
+       */
+      public static final int GRANT_REASON_BY_VINTAGE_HUNTING_VALUE = 12;
+      /**
+       * <code>GRANT_REASON_BY_CHAR_AMUSEMENT = 13;</code>
+       */
+      public static final int GRANT_REASON_BY_CHAR_AMUSEMENT_VALUE = 13;
 
 
       public final int getNumber() {
@@ -253,12 +222,14 @@ public final class TrialAvatarGrantRecordOuterClass {
           case 3: return GRANT_REASON_BY_DUNGEON_ELEMENT_CHALLENGE;
           case 4: return GRANT_REASON_BY_MIST_TRIAL_ACTIVITY;
           case 5: return GRANT_REASON_BY_SUMO_ACTIVITY;
-          case 6: return GRANT_REASON_Unk2700_ELPMDIEIOHP;
-          case 7: return GRANT_REASON_Unk2700_FALPDBLGHJB;
-          case 8: return GRANT_REASON_Unk2700_GAMADMGGMBC;
-          case 9: return GRANT_REASON_Unk2800_FIIDJHAKMOI;
-          case 10: return GRANT_REASON_Unk3000_ANPCNHCADHG;
-          case 11: return GRANT_REASON_Unk3000_AJIFFOLFKLO;
+          case 6: return GRANT_REASON_BY_POTION_ACTIVITY;
+          case 7: return GRANT_REASON_BY_CRYSTAL_LINK_ACTIVITY;
+          case 8: return GRANT_REASON_BY_IRODORI_MASTER;
+          case 9: return GRANT_REASON_BY_GM;
+          case 10: return GRANT_REASON_BY_INSTABLE_SPRAY_ACTIVITY;
+          case 11: return GRANT_REASON_BY_MUQADAS_POTION_ACTIVITY;
+          case 12: return GRANT_REASON_BY_VINTAGE_HUNTING;
+          case 13: return GRANT_REASON_BY_CHAR_AMUSEMENT;
           default: return null;
         }
       }
@@ -316,7 +287,7 @@ public final class TrialAvatarGrantRecordOuterClass {
     }
 
     public static final int GRANT_REASON_FIELD_NUMBER = 1;
-    private int grantReason_;
+    private int grantReason_ = 0;
     /**
      * <code>uint32 grant_reason = 1;</code>
      * @return The grantReason.
@@ -327,7 +298,7 @@ public final class TrialAvatarGrantRecordOuterClass {
     }
 
     public static final int FROM_PARENT_QUEST_ID_FIELD_NUMBER = 2;
-    private int fromParentQuestId_;
+    private int fromParentQuestId_ = 0;
     /**
      * <code>uint32 from_parent_quest_id = 2;</code>
      * @return The fromParentQuestId.
@@ -357,7 +328,7 @@ public final class TrialAvatarGrantRecordOuterClass {
       if (fromParentQuestId_ != 0) {
         output.writeUInt32(2, fromParentQuestId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -374,7 +345,7 @@ public final class TrialAvatarGrantRecordOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(2, fromParentQuestId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -393,7 +364,7 @@ public final class TrialAvatarGrantRecordOuterClass {
           != other.getGrantReason()) return false;
       if (getFromParentQuestId()
           != other.getFromParentQuestId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -408,7 +379,7 @@ public final class TrialAvatarGrantRecordOuterClass {
       hash = (53 * hash) + getGrantReason();
       hash = (37 * hash) + FROM_PARENT_QUEST_ID_FIELD_NUMBER;
       hash = (53 * hash) + getFromParentQuestId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -525,26 +496,20 @@ public final class TrialAvatarGrantRecordOuterClass {
 
       // Construct using emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         grantReason_ = 0;
-
         fromParentQuestId_ = 0;
-
         return this;
       }
 
@@ -571,10 +536,19 @@ public final class TrialAvatarGrantRecordOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord buildPartial() {
         emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord result = new emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord(this);
-        result.grantReason_ = grantReason_;
-        result.fromParentQuestId_ = fromParentQuestId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.grantReason_ = grantReason_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.fromParentQuestId_ = fromParentQuestId_;
+        }
       }
 
       @java.lang.Override
@@ -627,7 +601,7 @@ public final class TrialAvatarGrantRecordOuterClass {
         if (other.getFromParentQuestId() != 0) {
           setFromParentQuestId(other.getFromParentQuestId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -642,19 +616,43 @@ public final class TrialAvatarGrantRecordOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                grantReason_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                fromParentQuestId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int grantReason_ ;
       /**
@@ -673,6 +671,7 @@ public final class TrialAvatarGrantRecordOuterClass {
       public Builder setGrantReason(int value) {
         
         grantReason_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -681,7 +680,7 @@ public final class TrialAvatarGrantRecordOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGrantReason() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         grantReason_ = 0;
         onChanged();
         return this;
@@ -704,6 +703,7 @@ public final class TrialAvatarGrantRecordOuterClass {
       public Builder setFromParentQuestId(int value) {
         
         fromParentQuestId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -712,7 +712,7 @@ public final class TrialAvatarGrantRecordOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFromParentQuestId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         fromParentQuestId_ = 0;
         onChanged();
         return this;
@@ -750,7 +750,18 @@ public final class TrialAvatarGrantRecordOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TrialAvatarGrantRecord(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -784,22 +795,24 @@ public final class TrialAvatarGrantRecordOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\034TrialAvatarGrantRecord.proto\"\233\004\n\026Trial" +
+      "\n\034TrialAvatarGrantRecord.proto\"\346\004\n\026Trial" +
       "AvatarGrantRecord\022\024\n\014grant_reason\030\001 \001(\r\022" +
-      "\034\n\024from_parent_quest_id\030\002 \001(\r\"\314\003\n\013GrantR" +
+      "\034\n\024from_parent_quest_id\030\002 \001(\r\"\227\004\n\013GrantR" +
       "eason\022\030\n\024GRANT_REASON_INVALID\020\000\022\031\n\025GRANT" +
       "_REASON_BY_QUEST\020\001\022)\n%GRANT_REASON_BY_TR" +
       "IAL_AVATAR_ACTIVITY\020\002\022-\n)GRANT_REASON_BY" +
       "_DUNGEON_ELEMENT_CHALLENGE\020\003\022\'\n#GRANT_RE" +
       "ASON_BY_MIST_TRIAL_ACTIVITY\020\004\022!\n\035GRANT_R" +
-      "EASON_BY_SUMO_ACTIVITY\020\005\022$\n GRANT_REASON" +
-      "_Unk2700_ELPMDIEIOHP\020\006\022$\n GRANT_REASON_U" +
-      "nk2700_FALPDBLGHJB\020\007\022$\n GRANT_REASON_Unk" +
-      "2700_GAMADMGGMBC\020\010\022$\n GRANT_REASON_Unk28" +
-      "00_FIIDJHAKMOI\020\t\022$\n GRANT_REASON_Unk3000" +
-      "_ANPCNHCADHG\020\n\022$\n GRANT_REASON_Unk3000_A" +
-      "JIFFOLFKLO\020\013B\033\n\031emu.grasscutter.net.prot" +
-      "ob\006proto3"
+      "EASON_BY_SUMO_ACTIVITY\020\005\022#\n\037GRANT_REASON" +
+      "_BY_POTION_ACTIVITY\020\006\022)\n%GRANT_REASON_BY" +
+      "_CRYSTAL_LINK_ACTIVITY\020\007\022\"\n\036GRANT_REASON" +
+      "_BY_IRODORI_MASTER\020\010\022\026\n\022GRANT_REASON_BY_" +
+      "GM\020\t\022+\n\'GRANT_REASON_BY_INSTABLE_SPRAY_A" +
+      "CTIVITY\020\n\022+\n\'GRANT_REASON_BY_MUQADAS_POT" +
+      "ION_ACTIVITY\020\013\022#\n\037GRANT_REASON_BY_VINTAG" +
+      "E_HUNTING\020\014\022\"\n\036GRANT_REASON_BY_CHAR_AMUS" +
+      "EMENT\020\rB\033\n\031emu.grasscutter.net.protob\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

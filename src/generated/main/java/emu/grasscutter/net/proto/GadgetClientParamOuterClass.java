@@ -81,73 +81,6 @@ public final class GadgetClientParamOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GadgetClientParam(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              campId_ = input.readUInt32();
-              break;
-            }
-            case 16: {
-
-              campType_ = input.readUInt32();
-              break;
-            }
-            case 24: {
-
-              guid_ = input.readUInt64();
-              break;
-            }
-            case 32: {
-
-              ownerEntityId_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-
-              targetEntityId_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              asyncLoad_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.grasscutter.net.proto.GadgetClientParamOuterClass.internal_static_GadgetClientParam_descriptor;
@@ -162,7 +95,7 @@ public final class GadgetClientParamOuterClass {
     }
 
     public static final int CAMPID_FIELD_NUMBER = 1;
-    private int campId_;
+    private int campId_ = 0;
     /**
      * <code>uint32 campId = 1;</code>
      * @return The campId.
@@ -173,7 +106,7 @@ public final class GadgetClientParamOuterClass {
     }
 
     public static final int CAMPTYPE_FIELD_NUMBER = 2;
-    private int campType_;
+    private int campType_ = 0;
     /**
      * <code>uint32 campType = 2;</code>
      * @return The campType.
@@ -184,7 +117,7 @@ public final class GadgetClientParamOuterClass {
     }
 
     public static final int GUID_FIELD_NUMBER = 3;
-    private long guid_;
+    private long guid_ = 0L;
     /**
      * <code>uint64 guid = 3;</code>
      * @return The guid.
@@ -195,7 +128,7 @@ public final class GadgetClientParamOuterClass {
     }
 
     public static final int OWNERENTITYID_FIELD_NUMBER = 4;
-    private int ownerEntityId_;
+    private int ownerEntityId_ = 0;
     /**
      * <code>uint32 ownerEntityId = 4;</code>
      * @return The ownerEntityId.
@@ -206,7 +139,7 @@ public final class GadgetClientParamOuterClass {
     }
 
     public static final int TARGETENTITYID_FIELD_NUMBER = 5;
-    private int targetEntityId_;
+    private int targetEntityId_ = 0;
     /**
      * <code>uint32 targetEntityId = 5;</code>
      * @return The targetEntityId.
@@ -217,7 +150,7 @@ public final class GadgetClientParamOuterClass {
     }
 
     public static final int ASYNCLOAD_FIELD_NUMBER = 6;
-    private boolean asyncLoad_;
+    private boolean asyncLoad_ = false;
     /**
      * <code>bool asyncLoad = 6;</code>
      * @return The asyncLoad.
@@ -259,7 +192,7 @@ public final class GadgetClientParamOuterClass {
       if (asyncLoad_ != false) {
         output.writeBool(6, asyncLoad_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -292,7 +225,7 @@ public final class GadgetClientParamOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(6, asyncLoad_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -319,7 +252,7 @@ public final class GadgetClientParamOuterClass {
           != other.getTargetEntityId()) return false;
       if (getAsyncLoad()
           != other.getAsyncLoad()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -344,7 +277,7 @@ public final class GadgetClientParamOuterClass {
       hash = (37 * hash) + ASYNCLOAD_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getAsyncLoad());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -461,34 +394,24 @@ public final class GadgetClientParamOuterClass {
 
       // Construct using emu.grasscutter.net.proto.GadgetClientParamOuterClass.GadgetClientParam.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         campId_ = 0;
-
         campType_ = 0;
-
         guid_ = 0L;
-
         ownerEntityId_ = 0;
-
         targetEntityId_ = 0;
-
         asyncLoad_ = false;
-
         return this;
       }
 
@@ -515,14 +438,31 @@ public final class GadgetClientParamOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.GadgetClientParamOuterClass.GadgetClientParam buildPartial() {
         emu.grasscutter.net.proto.GadgetClientParamOuterClass.GadgetClientParam result = new emu.grasscutter.net.proto.GadgetClientParamOuterClass.GadgetClientParam(this);
-        result.campId_ = campId_;
-        result.campType_ = campType_;
-        result.guid_ = guid_;
-        result.ownerEntityId_ = ownerEntityId_;
-        result.targetEntityId_ = targetEntityId_;
-        result.asyncLoad_ = asyncLoad_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.grasscutter.net.proto.GadgetClientParamOuterClass.GadgetClientParam result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.campId_ = campId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.campType_ = campType_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.guid_ = guid_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.ownerEntityId_ = ownerEntityId_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.targetEntityId_ = targetEntityId_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.asyncLoad_ = asyncLoad_;
+        }
       }
 
       @java.lang.Override
@@ -587,7 +527,7 @@ public final class GadgetClientParamOuterClass {
         if (other.getAsyncLoad() != false) {
           setAsyncLoad(other.getAsyncLoad());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -602,19 +542,63 @@ public final class GadgetClientParamOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.GadgetClientParamOuterClass.GadgetClientParam parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                campId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                campType_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 24: {
+                guid_ = input.readUInt64();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              case 32: {
+                ownerEntityId_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+              case 40: {
+                targetEntityId_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
+              case 48: {
+                asyncLoad_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.GadgetClientParamOuterClass.GadgetClientParam) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int campId_ ;
       /**
@@ -633,6 +617,7 @@ public final class GadgetClientParamOuterClass {
       public Builder setCampId(int value) {
         
         campId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -641,7 +626,7 @@ public final class GadgetClientParamOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCampId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         campId_ = 0;
         onChanged();
         return this;
@@ -664,6 +649,7 @@ public final class GadgetClientParamOuterClass {
       public Builder setCampType(int value) {
         
         campType_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -672,7 +658,7 @@ public final class GadgetClientParamOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCampType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         campType_ = 0;
         onChanged();
         return this;
@@ -695,6 +681,7 @@ public final class GadgetClientParamOuterClass {
       public Builder setGuid(long value) {
         
         guid_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -703,7 +690,7 @@ public final class GadgetClientParamOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGuid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         guid_ = 0L;
         onChanged();
         return this;
@@ -726,6 +713,7 @@ public final class GadgetClientParamOuterClass {
       public Builder setOwnerEntityId(int value) {
         
         ownerEntityId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -734,7 +722,7 @@ public final class GadgetClientParamOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOwnerEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         ownerEntityId_ = 0;
         onChanged();
         return this;
@@ -757,6 +745,7 @@ public final class GadgetClientParamOuterClass {
       public Builder setTargetEntityId(int value) {
         
         targetEntityId_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -765,7 +754,7 @@ public final class GadgetClientParamOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTargetEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         targetEntityId_ = 0;
         onChanged();
         return this;
@@ -788,6 +777,7 @@ public final class GadgetClientParamOuterClass {
       public Builder setAsyncLoad(boolean value) {
         
         asyncLoad_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -796,7 +786,7 @@ public final class GadgetClientParamOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAsyncLoad() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         asyncLoad_ = false;
         onChanged();
         return this;
@@ -834,7 +824,18 @@ public final class GadgetClientParamOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GadgetClientParam(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 

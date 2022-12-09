@@ -19,55 +19,55 @@ public final class OneofGatherPointDetectorDataOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.Vector hint_center_pos = 7;</code>
-     * @return Whether the hintCenterPos field is set.
-     */
-    boolean hasHintCenterPos();
-    /**
-     * <code>.Vector hint_center_pos = 7;</code>
-     * @return The hintCenterPos.
-     */
-    emu.grasscutter.net.proto.VectorOuterClass.Vector getHintCenterPos();
-    /**
-     * <code>.Vector hint_center_pos = 7;</code>
-     */
-    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getHintCenterPosOrBuilder();
-
-    /**
-     * <code>uint32 hint_radius = 14;</code>
+     * <code>uint32 hint_radius = 4;</code>
      * @return The hintRadius.
      */
     int getHintRadius();
 
     /**
-     * <code>uint32 material_id = 10;</code>
-     * @return The materialId.
-     */
-    int getMaterialId();
-
-    /**
-     * <code>uint32 config_id = 6;</code>
+     * <code>uint32 config_id = 3;</code>
      * @return The configId.
      */
     int getConfigId();
 
     /**
-     * <code>uint32 group_id = 13;</code>
-     * @return The groupId.
+     * <code>bool is_hint_valid = 11;</code>
+     * @return The isHintValid.
      */
-    int getGroupId();
+    boolean getIsHintValid();
 
     /**
-     * <code>bool is_all_collected = 4;</code>
+     * <code>.Vector hint_center_pos = 12;</code>
+     * @return Whether the hintCenterPos field is set.
+     */
+    boolean hasHintCenterPos();
+    /**
+     * <code>.Vector hint_center_pos = 12;</code>
+     * @return The hintCenterPos.
+     */
+    emu.grasscutter.net.proto.VectorOuterClass.Vector getHintCenterPos();
+    /**
+     * <code>.Vector hint_center_pos = 12;</code>
+     */
+    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getHintCenterPosOrBuilder();
+
+    /**
+     * <code>bool is_all_collected = 10;</code>
      * @return The isAllCollected.
      */
     boolean getIsAllCollected();
 
     /**
-     * <code>bool is_hint_valid = 15;</code>
-     * @return The isHintValid.
+     * <code>uint32 group_id = 1;</code>
+     * @return The groupId.
      */
-    boolean getIsHintValid();
+    int getGroupId();
+
+    /**
+     * <code>uint32 material_id = 9;</code>
+     * @return The materialId.
+     */
+    int getMaterialId();
   }
   /**
    * Protobuf type {@code OneofGatherPointDetectorData}
@@ -96,86 +96,6 @@ public final class OneofGatherPointDetectorDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private OneofGatherPointDetectorData(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 32: {
-
-              isAllCollected_ = input.readBool();
-              break;
-            }
-            case 48: {
-
-              configId_ = input.readUInt32();
-              break;
-            }
-            case 58: {
-              emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (hintCenterPos_ != null) {
-                subBuilder = hintCenterPos_.toBuilder();
-              }
-              hintCenterPos_ = input.readMessage(emu.grasscutter.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(hintCenterPos_);
-                hintCenterPos_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 80: {
-
-              materialId_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              groupId_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-
-              hintRadius_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              isHintValid_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.grasscutter.net.proto.OneofGatherPointDetectorDataOuterClass.internal_static_OneofGatherPointDetectorData_descriptor;
@@ -189,36 +109,10 @@ public final class OneofGatherPointDetectorDataOuterClass {
               emu.grasscutter.net.proto.OneofGatherPointDetectorDataOuterClass.OneofGatherPointDetectorData.class, emu.grasscutter.net.proto.OneofGatherPointDetectorDataOuterClass.OneofGatherPointDetectorData.Builder.class);
     }
 
-    public static final int HINT_CENTER_POS_FIELD_NUMBER = 7;
-    private emu.grasscutter.net.proto.VectorOuterClass.Vector hintCenterPos_;
+    public static final int HINT_RADIUS_FIELD_NUMBER = 4;
+    private int hintRadius_ = 0;
     /**
-     * <code>.Vector hint_center_pos = 7;</code>
-     * @return Whether the hintCenterPos field is set.
-     */
-    @java.lang.Override
-    public boolean hasHintCenterPos() {
-      return hintCenterPos_ != null;
-    }
-    /**
-     * <code>.Vector hint_center_pos = 7;</code>
-     * @return The hintCenterPos.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.VectorOuterClass.Vector getHintCenterPos() {
-      return hintCenterPos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : hintCenterPos_;
-    }
-    /**
-     * <code>.Vector hint_center_pos = 7;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getHintCenterPosOrBuilder() {
-      return getHintCenterPos();
-    }
-
-    public static final int HINT_RADIUS_FIELD_NUMBER = 14;
-    private int hintRadius_;
-    /**
-     * <code>uint32 hint_radius = 14;</code>
+     * <code>uint32 hint_radius = 4;</code>
      * @return The hintRadius.
      */
     @java.lang.Override
@@ -226,21 +120,10 @@ public final class OneofGatherPointDetectorDataOuterClass {
       return hintRadius_;
     }
 
-    public static final int MATERIAL_ID_FIELD_NUMBER = 10;
-    private int materialId_;
+    public static final int CONFIG_ID_FIELD_NUMBER = 3;
+    private int configId_ = 0;
     /**
-     * <code>uint32 material_id = 10;</code>
-     * @return The materialId.
-     */
-    @java.lang.Override
-    public int getMaterialId() {
-      return materialId_;
-    }
-
-    public static final int CONFIG_ID_FIELD_NUMBER = 6;
-    private int configId_;
-    /**
-     * <code>uint32 config_id = 6;</code>
+     * <code>uint32 config_id = 3;</code>
      * @return The configId.
      */
     @java.lang.Override
@@ -248,21 +131,47 @@ public final class OneofGatherPointDetectorDataOuterClass {
       return configId_;
     }
 
-    public static final int GROUP_ID_FIELD_NUMBER = 13;
-    private int groupId_;
+    public static final int IS_HINT_VALID_FIELD_NUMBER = 11;
+    private boolean isHintValid_ = false;
     /**
-     * <code>uint32 group_id = 13;</code>
-     * @return The groupId.
+     * <code>bool is_hint_valid = 11;</code>
+     * @return The isHintValid.
      */
     @java.lang.Override
-    public int getGroupId() {
-      return groupId_;
+    public boolean getIsHintValid() {
+      return isHintValid_;
     }
 
-    public static final int IS_ALL_COLLECTED_FIELD_NUMBER = 4;
-    private boolean isAllCollected_;
+    public static final int HINT_CENTER_POS_FIELD_NUMBER = 12;
+    private emu.grasscutter.net.proto.VectorOuterClass.Vector hintCenterPos_;
     /**
-     * <code>bool is_all_collected = 4;</code>
+     * <code>.Vector hint_center_pos = 12;</code>
+     * @return Whether the hintCenterPos field is set.
+     */
+    @java.lang.Override
+    public boolean hasHintCenterPos() {
+      return hintCenterPos_ != null;
+    }
+    /**
+     * <code>.Vector hint_center_pos = 12;</code>
+     * @return The hintCenterPos.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.VectorOuterClass.Vector getHintCenterPos() {
+      return hintCenterPos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : hintCenterPos_;
+    }
+    /**
+     * <code>.Vector hint_center_pos = 12;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getHintCenterPosOrBuilder() {
+      return hintCenterPos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : hintCenterPos_;
+    }
+
+    public static final int IS_ALL_COLLECTED_FIELD_NUMBER = 10;
+    private boolean isAllCollected_ = false;
+    /**
+     * <code>bool is_all_collected = 10;</code>
      * @return The isAllCollected.
      */
     @java.lang.Override
@@ -270,15 +179,26 @@ public final class OneofGatherPointDetectorDataOuterClass {
       return isAllCollected_;
     }
 
-    public static final int IS_HINT_VALID_FIELD_NUMBER = 15;
-    private boolean isHintValid_;
+    public static final int GROUP_ID_FIELD_NUMBER = 1;
+    private int groupId_ = 0;
     /**
-     * <code>bool is_hint_valid = 15;</code>
-     * @return The isHintValid.
+     * <code>uint32 group_id = 1;</code>
+     * @return The groupId.
      */
     @java.lang.Override
-    public boolean getIsHintValid() {
-      return isHintValid_;
+    public int getGroupId() {
+      return groupId_;
+    }
+
+    public static final int MATERIAL_ID_FIELD_NUMBER = 9;
+    private int materialId_ = 0;
+    /**
+     * <code>uint32 material_id = 9;</code>
+     * @return The materialId.
+     */
+    @java.lang.Override
+    public int getMaterialId() {
+      return materialId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -295,28 +215,28 @@ public final class OneofGatherPointDetectorDataOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (isAllCollected_ != false) {
-        output.writeBool(4, isAllCollected_);
+      if (groupId_ != 0) {
+        output.writeUInt32(1, groupId_);
       }
       if (configId_ != 0) {
-        output.writeUInt32(6, configId_);
-      }
-      if (hintCenterPos_ != null) {
-        output.writeMessage(7, getHintCenterPos());
-      }
-      if (materialId_ != 0) {
-        output.writeUInt32(10, materialId_);
-      }
-      if (groupId_ != 0) {
-        output.writeUInt32(13, groupId_);
+        output.writeUInt32(3, configId_);
       }
       if (hintRadius_ != 0) {
-        output.writeUInt32(14, hintRadius_);
+        output.writeUInt32(4, hintRadius_);
+      }
+      if (materialId_ != 0) {
+        output.writeUInt32(9, materialId_);
+      }
+      if (isAllCollected_ != false) {
+        output.writeBool(10, isAllCollected_);
       }
       if (isHintValid_ != false) {
-        output.writeBool(15, isHintValid_);
+        output.writeBool(11, isHintValid_);
       }
-      unknownFields.writeTo(output);
+      if (hintCenterPos_ != null) {
+        output.writeMessage(12, getHintCenterPos());
+      }
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -325,35 +245,35 @@ public final class OneofGatherPointDetectorDataOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (isAllCollected_ != false) {
+      if (groupId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, isAllCollected_);
+          .computeUInt32Size(1, groupId_);
       }
       if (configId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, configId_);
-      }
-      if (hintCenterPos_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, getHintCenterPos());
-      }
-      if (materialId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, materialId_);
-      }
-      if (groupId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, groupId_);
+          .computeUInt32Size(3, configId_);
       }
       if (hintRadius_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, hintRadius_);
+          .computeUInt32Size(4, hintRadius_);
+      }
+      if (materialId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(9, materialId_);
+      }
+      if (isAllCollected_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(10, isAllCollected_);
       }
       if (isHintValid_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(15, isHintValid_);
+          .computeBoolSize(11, isHintValid_);
       }
-      size += unknownFields.getSerializedSize();
+      if (hintCenterPos_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(12, getHintCenterPos());
+      }
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -368,24 +288,24 @@ public final class OneofGatherPointDetectorDataOuterClass {
       }
       emu.grasscutter.net.proto.OneofGatherPointDetectorDataOuterClass.OneofGatherPointDetectorData other = (emu.grasscutter.net.proto.OneofGatherPointDetectorDataOuterClass.OneofGatherPointDetectorData) obj;
 
+      if (getHintRadius()
+          != other.getHintRadius()) return false;
+      if (getConfigId()
+          != other.getConfigId()) return false;
+      if (getIsHintValid()
+          != other.getIsHintValid()) return false;
       if (hasHintCenterPos() != other.hasHintCenterPos()) return false;
       if (hasHintCenterPos()) {
         if (!getHintCenterPos()
             .equals(other.getHintCenterPos())) return false;
       }
-      if (getHintRadius()
-          != other.getHintRadius()) return false;
-      if (getMaterialId()
-          != other.getMaterialId()) return false;
-      if (getConfigId()
-          != other.getConfigId()) return false;
-      if (getGroupId()
-          != other.getGroupId()) return false;
       if (getIsAllCollected()
           != other.getIsAllCollected()) return false;
-      if (getIsHintValid()
-          != other.getIsHintValid()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (getGroupId()
+          != other.getGroupId()) return false;
+      if (getMaterialId()
+          != other.getMaterialId()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -396,25 +316,25 @@ public final class OneofGatherPointDetectorDataOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + HINT_RADIUS_FIELD_NUMBER;
+      hash = (53 * hash) + getHintRadius();
+      hash = (37 * hash) + CONFIG_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getConfigId();
+      hash = (37 * hash) + IS_HINT_VALID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsHintValid());
       if (hasHintCenterPos()) {
         hash = (37 * hash) + HINT_CENTER_POS_FIELD_NUMBER;
         hash = (53 * hash) + getHintCenterPos().hashCode();
       }
-      hash = (37 * hash) + HINT_RADIUS_FIELD_NUMBER;
-      hash = (53 * hash) + getHintRadius();
-      hash = (37 * hash) + MATERIAL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getMaterialId();
-      hash = (37 * hash) + CONFIG_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getConfigId();
-      hash = (37 * hash) + GROUP_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getGroupId();
       hash = (37 * hash) + IS_ALL_COLLECTED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsAllCollected());
-      hash = (37 * hash) + IS_HINT_VALID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsHintValid());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (37 * hash) + GROUP_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getGroupId();
+      hash = (37 * hash) + MATERIAL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getMaterialId();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -531,40 +451,29 @@ public final class OneofGatherPointDetectorDataOuterClass {
 
       // Construct using emu.grasscutter.net.proto.OneofGatherPointDetectorDataOuterClass.OneofGatherPointDetectorData.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (hintCenterPosBuilder_ == null) {
-          hintCenterPos_ = null;
-        } else {
-          hintCenterPos_ = null;
+        bitField0_ = 0;
+        hintRadius_ = 0;
+        configId_ = 0;
+        isHintValid_ = false;
+        hintCenterPos_ = null;
+        if (hintCenterPosBuilder_ != null) {
+          hintCenterPosBuilder_.dispose();
           hintCenterPosBuilder_ = null;
         }
-        hintRadius_ = 0;
-
-        materialId_ = 0;
-
-        configId_ = 0;
-
-        groupId_ = 0;
-
         isAllCollected_ = false;
-
-        isHintValid_ = false;
-
+        groupId_ = 0;
+        materialId_ = 0;
         return this;
       }
 
@@ -591,19 +500,36 @@ public final class OneofGatherPointDetectorDataOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.OneofGatherPointDetectorDataOuterClass.OneofGatherPointDetectorData buildPartial() {
         emu.grasscutter.net.proto.OneofGatherPointDetectorDataOuterClass.OneofGatherPointDetectorData result = new emu.grasscutter.net.proto.OneofGatherPointDetectorDataOuterClass.OneofGatherPointDetectorData(this);
-        if (hintCenterPosBuilder_ == null) {
-          result.hintCenterPos_ = hintCenterPos_;
-        } else {
-          result.hintCenterPos_ = hintCenterPosBuilder_.build();
-        }
-        result.hintRadius_ = hintRadius_;
-        result.materialId_ = materialId_;
-        result.configId_ = configId_;
-        result.groupId_ = groupId_;
-        result.isAllCollected_ = isAllCollected_;
-        result.isHintValid_ = isHintValid_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.grasscutter.net.proto.OneofGatherPointDetectorDataOuterClass.OneofGatherPointDetectorData result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.hintRadius_ = hintRadius_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.configId_ = configId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.isHintValid_ = isHintValid_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.hintCenterPos_ = hintCenterPosBuilder_ == null
+              ? hintCenterPos_
+              : hintCenterPosBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.isAllCollected_ = isAllCollected_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.groupId_ = groupId_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.materialId_ = materialId_;
+        }
       }
 
       @java.lang.Override
@@ -650,28 +576,28 @@ public final class OneofGatherPointDetectorDataOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.OneofGatherPointDetectorDataOuterClass.OneofGatherPointDetectorData other) {
         if (other == emu.grasscutter.net.proto.OneofGatherPointDetectorDataOuterClass.OneofGatherPointDetectorData.getDefaultInstance()) return this;
-        if (other.hasHintCenterPos()) {
-          mergeHintCenterPos(other.getHintCenterPos());
-        }
         if (other.getHintRadius() != 0) {
           setHintRadius(other.getHintRadius());
-        }
-        if (other.getMaterialId() != 0) {
-          setMaterialId(other.getMaterialId());
         }
         if (other.getConfigId() != 0) {
           setConfigId(other.getConfigId());
         }
-        if (other.getGroupId() != 0) {
-          setGroupId(other.getGroupId());
+        if (other.getIsHintValid() != false) {
+          setIsHintValid(other.getIsHintValid());
+        }
+        if (other.hasHintCenterPos()) {
+          mergeHintCenterPos(other.getHintCenterPos());
         }
         if (other.getIsAllCollected() != false) {
           setIsAllCollected(other.getIsAllCollected());
         }
-        if (other.getIsHintValid() != false) {
-          setIsHintValid(other.getIsHintValid());
+        if (other.getGroupId() != 0) {
+          setGroupId(other.getGroupId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        if (other.getMaterialId() != 0) {
+          setMaterialId(other.getMaterialId());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -686,17 +612,164 @@ public final class OneofGatherPointDetectorDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.OneofGatherPointDetectorDataOuterClass.OneofGatherPointDetectorData parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                groupId_ = input.readUInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 8
+              case 24: {
+                configId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 24
+              case 32: {
+                hintRadius_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 32
+              case 72: {
+                materialId_ = input.readUInt32();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 72
+              case 80: {
+                isAllCollected_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 80
+              case 88: {
+                isHintValid_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 88
+              case 98: {
+                input.readMessage(
+                    getHintCenterPosFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 98
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.OneofGatherPointDetectorDataOuterClass.OneofGatherPointDetectorData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private int hintRadius_ ;
+      /**
+       * <code>uint32 hint_radius = 4;</code>
+       * @return The hintRadius.
+       */
+      @java.lang.Override
+      public int getHintRadius() {
+        return hintRadius_;
+      }
+      /**
+       * <code>uint32 hint_radius = 4;</code>
+       * @param value The hintRadius to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHintRadius(int value) {
+        
+        hintRadius_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 hint_radius = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHintRadius() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        hintRadius_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int configId_ ;
+      /**
+       * <code>uint32 config_id = 3;</code>
+       * @return The configId.
+       */
+      @java.lang.Override
+      public int getConfigId() {
+        return configId_;
+      }
+      /**
+       * <code>uint32 config_id = 3;</code>
+       * @param value The configId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConfigId(int value) {
+        
+        configId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 config_id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearConfigId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        configId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean isHintValid_ ;
+      /**
+       * <code>bool is_hint_valid = 11;</code>
+       * @return The isHintValid.
+       */
+      @java.lang.Override
+      public boolean getIsHintValid() {
+        return isHintValid_;
+      }
+      /**
+       * <code>bool is_hint_valid = 11;</code>
+       * @param value The isHintValid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsHintValid(boolean value) {
+        
+        isHintValid_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_hint_valid = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsHintValid() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        isHintValid_ = false;
+        onChanged();
         return this;
       }
 
@@ -704,14 +777,14 @@ public final class OneofGatherPointDetectorDataOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> hintCenterPosBuilder_;
       /**
-       * <code>.Vector hint_center_pos = 7;</code>
+       * <code>.Vector hint_center_pos = 12;</code>
        * @return Whether the hintCenterPos field is set.
        */
       public boolean hasHintCenterPos() {
-        return hintCenterPosBuilder_ != null || hintCenterPos_ != null;
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
-       * <code>.Vector hint_center_pos = 7;</code>
+       * <code>.Vector hint_center_pos = 12;</code>
        * @return The hintCenterPos.
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector getHintCenterPos() {
@@ -722,7 +795,7 @@ public final class OneofGatherPointDetectorDataOuterClass {
         }
       }
       /**
-       * <code>.Vector hint_center_pos = 7;</code>
+       * <code>.Vector hint_center_pos = 12;</code>
        */
       public Builder setHintCenterPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (hintCenterPosBuilder_ == null) {
@@ -730,69 +803,69 @@ public final class OneofGatherPointDetectorDataOuterClass {
             throw new NullPointerException();
           }
           hintCenterPos_ = value;
-          onChanged();
         } else {
           hintCenterPosBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
-       * <code>.Vector hint_center_pos = 7;</code>
+       * <code>.Vector hint_center_pos = 12;</code>
        */
       public Builder setHintCenterPos(
           emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (hintCenterPosBuilder_ == null) {
           hintCenterPos_ = builderForValue.build();
-          onChanged();
         } else {
           hintCenterPosBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
-       * <code>.Vector hint_center_pos = 7;</code>
+       * <code>.Vector hint_center_pos = 12;</code>
        */
       public Builder mergeHintCenterPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (hintCenterPosBuilder_ == null) {
-          if (hintCenterPos_ != null) {
-            hintCenterPos_ =
-              emu.grasscutter.net.proto.VectorOuterClass.Vector.newBuilder(hintCenterPos_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000008) != 0) &&
+            hintCenterPos_ != null &&
+            hintCenterPos_ != emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getHintCenterPosBuilder().mergeFrom(value);
           } else {
             hintCenterPos_ = value;
           }
-          onChanged();
         } else {
           hintCenterPosBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
-       * <code>.Vector hint_center_pos = 7;</code>
+       * <code>.Vector hint_center_pos = 12;</code>
        */
       public Builder clearHintCenterPos() {
-        if (hintCenterPosBuilder_ == null) {
-          hintCenterPos_ = null;
-          onChanged();
-        } else {
-          hintCenterPos_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        hintCenterPos_ = null;
+        if (hintCenterPosBuilder_ != null) {
+          hintCenterPosBuilder_.dispose();
           hintCenterPosBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
-       * <code>.Vector hint_center_pos = 7;</code>
+       * <code>.Vector hint_center_pos = 12;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getHintCenterPosBuilder() {
-        
+        bitField0_ |= 0x00000008;
         onChanged();
         return getHintCenterPosFieldBuilder().getBuilder();
       }
       /**
-       * <code>.Vector hint_center_pos = 7;</code>
+       * <code>.Vector hint_center_pos = 12;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getHintCenterPosOrBuilder() {
         if (hintCenterPosBuilder_ != null) {
@@ -803,7 +876,7 @@ public final class OneofGatherPointDetectorDataOuterClass {
         }
       }
       /**
-       * <code>.Vector hint_center_pos = 7;</code>
+       * <code>.Vector hint_center_pos = 12;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
@@ -819,133 +892,9 @@ public final class OneofGatherPointDetectorDataOuterClass {
         return hintCenterPosBuilder_;
       }
 
-      private int hintRadius_ ;
-      /**
-       * <code>uint32 hint_radius = 14;</code>
-       * @return The hintRadius.
-       */
-      @java.lang.Override
-      public int getHintRadius() {
-        return hintRadius_;
-      }
-      /**
-       * <code>uint32 hint_radius = 14;</code>
-       * @param value The hintRadius to set.
-       * @return This builder for chaining.
-       */
-      public Builder setHintRadius(int value) {
-        
-        hintRadius_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 hint_radius = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearHintRadius() {
-        
-        hintRadius_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int materialId_ ;
-      /**
-       * <code>uint32 material_id = 10;</code>
-       * @return The materialId.
-       */
-      @java.lang.Override
-      public int getMaterialId() {
-        return materialId_;
-      }
-      /**
-       * <code>uint32 material_id = 10;</code>
-       * @param value The materialId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMaterialId(int value) {
-        
-        materialId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 material_id = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMaterialId() {
-        
-        materialId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int configId_ ;
-      /**
-       * <code>uint32 config_id = 6;</code>
-       * @return The configId.
-       */
-      @java.lang.Override
-      public int getConfigId() {
-        return configId_;
-      }
-      /**
-       * <code>uint32 config_id = 6;</code>
-       * @param value The configId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setConfigId(int value) {
-        
-        configId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 config_id = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearConfigId() {
-        
-        configId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int groupId_ ;
-      /**
-       * <code>uint32 group_id = 13;</code>
-       * @return The groupId.
-       */
-      @java.lang.Override
-      public int getGroupId() {
-        return groupId_;
-      }
-      /**
-       * <code>uint32 group_id = 13;</code>
-       * @param value The groupId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGroupId(int value) {
-        
-        groupId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 group_id = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGroupId() {
-        
-        groupId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private boolean isAllCollected_ ;
       /**
-       * <code>bool is_all_collected = 4;</code>
+       * <code>bool is_all_collected = 10;</code>
        * @return The isAllCollected.
        */
       @java.lang.Override
@@ -953,54 +902,88 @@ public final class OneofGatherPointDetectorDataOuterClass {
         return isAllCollected_;
       }
       /**
-       * <code>bool is_all_collected = 4;</code>
+       * <code>bool is_all_collected = 10;</code>
        * @param value The isAllCollected to set.
        * @return This builder for chaining.
        */
       public Builder setIsAllCollected(boolean value) {
         
         isAllCollected_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
       /**
-       * <code>bool is_all_collected = 4;</code>
+       * <code>bool is_all_collected = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsAllCollected() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         isAllCollected_ = false;
         onChanged();
         return this;
       }
 
-      private boolean isHintValid_ ;
+      private int groupId_ ;
       /**
-       * <code>bool is_hint_valid = 15;</code>
-       * @return The isHintValid.
+       * <code>uint32 group_id = 1;</code>
+       * @return The groupId.
        */
       @java.lang.Override
-      public boolean getIsHintValid() {
-        return isHintValid_;
+      public int getGroupId() {
+        return groupId_;
       }
       /**
-       * <code>bool is_hint_valid = 15;</code>
-       * @param value The isHintValid to set.
+       * <code>uint32 group_id = 1;</code>
+       * @param value The groupId to set.
        * @return This builder for chaining.
        */
-      public Builder setIsHintValid(boolean value) {
+      public Builder setGroupId(int value) {
         
-        isHintValid_ = value;
+        groupId_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
       /**
-       * <code>bool is_hint_valid = 15;</code>
+       * <code>uint32 group_id = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearIsHintValid() {
+      public Builder clearGroupId() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        groupId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int materialId_ ;
+      /**
+       * <code>uint32 material_id = 9;</code>
+       * @return The materialId.
+       */
+      @java.lang.Override
+      public int getMaterialId() {
+        return materialId_;
+      }
+      /**
+       * <code>uint32 material_id = 9;</code>
+       * @param value The materialId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMaterialId(int value) {
         
-        isHintValid_ = false;
+        materialId_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 material_id = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMaterialId() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        materialId_ = 0;
         onChanged();
         return this;
       }
@@ -1037,7 +1020,18 @@ public final class OneofGatherPointDetectorDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new OneofGatherPointDetectorData(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1073,11 +1067,11 @@ public final class OneofGatherPointDetectorDataOuterClass {
     java.lang.String[] descriptorData = {
       "\n\"OneofGatherPointDetectorData.proto\032\014Ve" +
       "ctor.proto\"\300\001\n\034OneofGatherPointDetectorD" +
-      "ata\022 \n\017hint_center_pos\030\007 \001(\0132\007.Vector\022\023\n" +
-      "\013hint_radius\030\016 \001(\r\022\023\n\013material_id\030\n \001(\r\022" +
-      "\021\n\tconfig_id\030\006 \001(\r\022\020\n\010group_id\030\r \001(\r\022\030\n\020" +
-      "is_all_collected\030\004 \001(\010\022\025\n\ris_hint_valid\030" +
-      "\017 \001(\010B\033\n\031emu.grasscutter.net.protob\006prot" +
+      "ata\022\023\n\013hint_radius\030\004 \001(\r\022\021\n\tconfig_id\030\003 " +
+      "\001(\r\022\025\n\ris_hint_valid\030\013 \001(\010\022 \n\017hint_cente" +
+      "r_pos\030\014 \001(\0132\007.Vector\022\030\n\020is_all_collected" +
+      "\030\n \001(\010\022\020\n\010group_id\030\001 \001(\r\022\023\n\013material_id\030" +
+      "\t \001(\rB\033\n\031emu.grasscutter.net.protob\006prot" +
       "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -1090,7 +1084,7 @@ public final class OneofGatherPointDetectorDataOuterClass {
     internal_static_OneofGatherPointDetectorData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_OneofGatherPointDetectorData_descriptor,
-        new java.lang.String[] { "HintCenterPos", "HintRadius", "MaterialId", "ConfigId", "GroupId", "IsAllCollected", "IsHintValid", });
+        new java.lang.String[] { "HintRadius", "ConfigId", "IsHintValid", "HintCenterPos", "IsAllCollected", "GroupId", "MaterialId", });
     emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
   }
 

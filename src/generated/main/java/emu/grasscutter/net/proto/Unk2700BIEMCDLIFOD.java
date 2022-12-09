@@ -84,86 +84,6 @@ public final class Unk2700BIEMCDLIFOD {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private Unk2700_BIEMCDLIFOD(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 88: {
-
-              guid_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                includedFurnitureIndexList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              includedFurnitureIndexList_.addInt(input.readInt32());
-              break;
-            }
-            case 98: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                includedFurnitureIndexList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                includedFurnitureIndexList_.addInt(input.readInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 114: {
-              emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (spawnPos_ != null) {
-                subBuilder = spawnPos_.toBuilder();
-              }
-              spawnPos_ = input.readMessage(emu.grasscutter.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(spawnPos_);
-                spawnPos_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          includedFurnitureIndexList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.grasscutter.net.proto.Unk2700BIEMCDLIFOD.internal_static_Unk2700_BIEMCDLIFOD_descriptor;
@@ -178,7 +98,7 @@ public final class Unk2700BIEMCDLIFOD {
     }
 
     public static final int GUID_FIELD_NUMBER = 11;
-    private int guid_;
+    private int guid_ = 0;
     /**
      * <code>uint32 guid = 11;</code>
      * @return The guid.
@@ -211,10 +131,11 @@ public final class Unk2700BIEMCDLIFOD {
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getSpawnPosOrBuilder() {
-      return getSpawnPos();
+      return spawnPos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : spawnPos_;
     }
 
     public static final int INCLUDED_FURNITURE_INDEX_LIST_FIELD_NUMBER = 12;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList includedFurnitureIndexList_;
     /**
      * <code>repeated int32 included_furniture_index_list = 12;</code>
@@ -270,7 +191,7 @@ public final class Unk2700BIEMCDLIFOD {
       if (spawnPos_ != null) {
         output.writeMessage(14, getSpawnPos());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -301,7 +222,7 @@ public final class Unk2700BIEMCDLIFOD {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, getSpawnPos());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -325,7 +246,7 @@ public final class Unk2700BIEMCDLIFOD {
       }
       if (!getIncludedFurnitureIndexListList()
           .equals(other.getIncludedFurnitureIndexListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -346,7 +267,7 @@ public final class Unk2700BIEMCDLIFOD {
         hash = (37 * hash) + INCLUDED_FURNITURE_INDEX_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getIncludedFurnitureIndexListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -463,32 +384,25 @@ public final class Unk2700BIEMCDLIFOD {
 
       // Construct using emu.grasscutter.net.proto.Unk2700BIEMCDLIFOD.Unk2700_BIEMCDLIFOD.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         guid_ = 0;
-
-        if (spawnPosBuilder_ == null) {
-          spawnPos_ = null;
-        } else {
-          spawnPos_ = null;
+        spawnPos_ = null;
+        if (spawnPosBuilder_ != null) {
+          spawnPosBuilder_.dispose();
           spawnPosBuilder_ = null;
         }
         includedFurnitureIndexList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -515,20 +429,30 @@ public final class Unk2700BIEMCDLIFOD {
       @java.lang.Override
       public emu.grasscutter.net.proto.Unk2700BIEMCDLIFOD.Unk2700_BIEMCDLIFOD buildPartial() {
         emu.grasscutter.net.proto.Unk2700BIEMCDLIFOD.Unk2700_BIEMCDLIFOD result = new emu.grasscutter.net.proto.Unk2700BIEMCDLIFOD.Unk2700_BIEMCDLIFOD(this);
-        int from_bitField0_ = bitField0_;
-        result.guid_ = guid_;
-        if (spawnPosBuilder_ == null) {
-          result.spawnPos_ = spawnPos_;
-        } else {
-          result.spawnPos_ = spawnPosBuilder_.build();
-        }
-        if (((bitField0_ & 0x00000001) != 0)) {
-          includedFurnitureIndexList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.includedFurnitureIndexList_ = includedFurnitureIndexList_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.grasscutter.net.proto.Unk2700BIEMCDLIFOD.Unk2700_BIEMCDLIFOD result) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          includedFurnitureIndexList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.includedFurnitureIndexList_ = includedFurnitureIndexList_;
+      }
+
+      private void buildPartial0(emu.grasscutter.net.proto.Unk2700BIEMCDLIFOD.Unk2700_BIEMCDLIFOD result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.guid_ = guid_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.spawnPos_ = spawnPosBuilder_ == null
+              ? spawnPos_
+              : spawnPosBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -584,14 +508,14 @@ public final class Unk2700BIEMCDLIFOD {
         if (!other.includedFurnitureIndexList_.isEmpty()) {
           if (includedFurnitureIndexList_.isEmpty()) {
             includedFurnitureIndexList_ = other.includedFurnitureIndexList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureIncludedFurnitureIndexListIsMutable();
             includedFurnitureIndexList_.addAll(other.includedFurnitureIndexList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -606,17 +530,58 @@ public final class Unk2700BIEMCDLIFOD {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.Unk2700BIEMCDLIFOD.Unk2700_BIEMCDLIFOD parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 88: {
+                guid_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 88
+              case 96: {
+                int v = input.readInt32();
+                ensureIncludedFurnitureIndexListIsMutable();
+                includedFurnitureIndexList_.addInt(v);
+                break;
+              } // case 96
+              case 98: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureIncludedFurnitureIndexListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  includedFurnitureIndexList_.addInt(input.readInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 98
+              case 114: {
+                input.readMessage(
+                    getSpawnPosFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 114
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.Unk2700BIEMCDLIFOD.Unk2700_BIEMCDLIFOD) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -638,6 +603,7 @@ public final class Unk2700BIEMCDLIFOD {
       public Builder setGuid(int value) {
         
         guid_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -646,7 +612,7 @@ public final class Unk2700BIEMCDLIFOD {
        * @return This builder for chaining.
        */
       public Builder clearGuid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         guid_ = 0;
         onChanged();
         return this;
@@ -660,7 +626,7 @@ public final class Unk2700BIEMCDLIFOD {
        * @return Whether the spawnPos field is set.
        */
       public boolean hasSpawnPos() {
-        return spawnPosBuilder_ != null || spawnPos_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.Vector spawn_pos = 14;</code>
@@ -682,11 +648,11 @@ public final class Unk2700BIEMCDLIFOD {
             throw new NullPointerException();
           }
           spawnPos_ = value;
-          onChanged();
         } else {
           spawnPosBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -696,11 +662,11 @@ public final class Unk2700BIEMCDLIFOD {
           emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (spawnPosBuilder_ == null) {
           spawnPos_ = builderForValue.build();
-          onChanged();
         } else {
           spawnPosBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -708,38 +674,38 @@ public final class Unk2700BIEMCDLIFOD {
        */
       public Builder mergeSpawnPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (spawnPosBuilder_ == null) {
-          if (spawnPos_ != null) {
-            spawnPos_ =
-              emu.grasscutter.net.proto.VectorOuterClass.Vector.newBuilder(spawnPos_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            spawnPos_ != null &&
+            spawnPos_ != emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getSpawnPosBuilder().mergeFrom(value);
           } else {
             spawnPos_ = value;
           }
-          onChanged();
         } else {
           spawnPosBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector spawn_pos = 14;</code>
        */
       public Builder clearSpawnPos() {
-        if (spawnPosBuilder_ == null) {
-          spawnPos_ = null;
-          onChanged();
-        } else {
-          spawnPos_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        spawnPos_ = null;
+        if (spawnPosBuilder_ != null) {
+          spawnPosBuilder_.dispose();
           spawnPosBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector spawn_pos = 14;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getSpawnPosBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getSpawnPosFieldBuilder().getBuilder();
       }
@@ -773,10 +739,10 @@ public final class Unk2700BIEMCDLIFOD {
 
       private com.google.protobuf.Internal.IntList includedFurnitureIndexList_ = emptyIntList();
       private void ensureIncludedFurnitureIndexListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           includedFurnitureIndexList_ = mutableCopy(includedFurnitureIndexList_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000004;
+        }
       }
       /**
        * <code>repeated int32 included_furniture_index_list = 12;</code>
@@ -784,7 +750,7 @@ public final class Unk2700BIEMCDLIFOD {
        */
       public java.util.List<java.lang.Integer>
           getIncludedFurnitureIndexListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000004) != 0) ?
                  java.util.Collections.unmodifiableList(includedFurnitureIndexList_) : includedFurnitureIndexList_;
       }
       /**
@@ -810,6 +776,7 @@ public final class Unk2700BIEMCDLIFOD {
        */
       public Builder setIncludedFurnitureIndexList(
           int index, int value) {
+        
         ensureIncludedFurnitureIndexListIsMutable();
         includedFurnitureIndexList_.setInt(index, value);
         onChanged();
@@ -821,6 +788,7 @@ public final class Unk2700BIEMCDLIFOD {
        * @return This builder for chaining.
        */
       public Builder addIncludedFurnitureIndexList(int value) {
+        
         ensureIncludedFurnitureIndexListIsMutable();
         includedFurnitureIndexList_.addInt(value);
         onChanged();
@@ -845,7 +813,7 @@ public final class Unk2700BIEMCDLIFOD {
        */
       public Builder clearIncludedFurnitureIndexList() {
         includedFurnitureIndexList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -882,7 +850,18 @@ public final class Unk2700BIEMCDLIFOD {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Unk2700_BIEMCDLIFOD(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 

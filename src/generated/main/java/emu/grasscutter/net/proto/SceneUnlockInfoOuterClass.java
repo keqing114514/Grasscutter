@@ -75,78 +75,6 @@ public final class SceneUnlockInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SceneUnlockInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              sceneId_ = input.readUInt32();
-              break;
-            }
-            case 16: {
-
-              isLocked_ = input.readBool();
-              break;
-            }
-            case 24: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                sceneTagIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              sceneTagIdList_.addInt(input.readUInt32());
-              break;
-            }
-            case 26: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                sceneTagIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                sceneTagIdList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          sceneTagIdList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.grasscutter.net.proto.SceneUnlockInfoOuterClass.internal_static_SceneUnlockInfo_descriptor;
@@ -161,7 +89,7 @@ public final class SceneUnlockInfoOuterClass {
     }
 
     public static final int SCENEID_FIELD_NUMBER = 1;
-    private int sceneId_;
+    private int sceneId_ = 0;
     /**
      * <code>uint32 sceneId = 1;</code>
      * @return The sceneId.
@@ -172,7 +100,7 @@ public final class SceneUnlockInfoOuterClass {
     }
 
     public static final int ISLOCKED_FIELD_NUMBER = 2;
-    private boolean isLocked_;
+    private boolean isLocked_ = false;
     /**
      * <code>bool isLocked = 2;</code>
      * @return The isLocked.
@@ -183,6 +111,7 @@ public final class SceneUnlockInfoOuterClass {
     }
 
     public static final int SCENETAGIDLIST_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList sceneTagIdList_;
     /**
      * <code>repeated uint32 sceneTagIdList = 3;</code>
@@ -238,7 +167,7 @@ public final class SceneUnlockInfoOuterClass {
       for (int i = 0; i < sceneTagIdList_.size(); i++) {
         output.writeUInt32NoTag(sceneTagIdList_.getInt(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -269,7 +198,7 @@ public final class SceneUnlockInfoOuterClass {
         }
         sceneTagIdListMemoizedSerializedSize = dataSize;
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -290,7 +219,7 @@ public final class SceneUnlockInfoOuterClass {
           != other.getIsLocked()) return false;
       if (!getSceneTagIdListList()
           .equals(other.getSceneTagIdListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -310,7 +239,7 @@ public final class SceneUnlockInfoOuterClass {
         hash = (37 * hash) + SCENETAGIDLIST_FIELD_NUMBER;
         hash = (53 * hash) + getSceneTagIdListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -427,28 +356,21 @@ public final class SceneUnlockInfoOuterClass {
 
       // Construct using emu.grasscutter.net.proto.SceneUnlockInfoOuterClass.SceneUnlockInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         sceneId_ = 0;
-
         isLocked_ = false;
-
         sceneTagIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -475,16 +397,28 @@ public final class SceneUnlockInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.SceneUnlockInfoOuterClass.SceneUnlockInfo buildPartial() {
         emu.grasscutter.net.proto.SceneUnlockInfoOuterClass.SceneUnlockInfo result = new emu.grasscutter.net.proto.SceneUnlockInfoOuterClass.SceneUnlockInfo(this);
-        int from_bitField0_ = bitField0_;
-        result.sceneId_ = sceneId_;
-        result.isLocked_ = isLocked_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          sceneTagIdList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.sceneTagIdList_ = sceneTagIdList_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.grasscutter.net.proto.SceneUnlockInfoOuterClass.SceneUnlockInfo result) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          sceneTagIdList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.sceneTagIdList_ = sceneTagIdList_;
+      }
+
+      private void buildPartial0(emu.grasscutter.net.proto.SceneUnlockInfoOuterClass.SceneUnlockInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.sceneId_ = sceneId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.isLocked_ = isLocked_;
+        }
       }
 
       @java.lang.Override
@@ -540,14 +474,14 @@ public final class SceneUnlockInfoOuterClass {
         if (!other.sceneTagIdList_.isEmpty()) {
           if (sceneTagIdList_.isEmpty()) {
             sceneTagIdList_ = other.sceneTagIdList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureSceneTagIdListIsMutable();
             sceneTagIdList_.addAll(other.sceneTagIdList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -562,17 +496,56 @@ public final class SceneUnlockInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.SceneUnlockInfoOuterClass.SceneUnlockInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                sceneId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                isLocked_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 24: {
+                int v = input.readUInt32();
+                ensureSceneTagIdListIsMutable();
+                sceneTagIdList_.addInt(v);
+                break;
+              } // case 24
+              case 26: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureSceneTagIdListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  sceneTagIdList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 26
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.SceneUnlockInfoOuterClass.SceneUnlockInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -594,6 +567,7 @@ public final class SceneUnlockInfoOuterClass {
       public Builder setSceneId(int value) {
         
         sceneId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -602,7 +576,7 @@ public final class SceneUnlockInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         sceneId_ = 0;
         onChanged();
         return this;
@@ -625,6 +599,7 @@ public final class SceneUnlockInfoOuterClass {
       public Builder setIsLocked(boolean value) {
         
         isLocked_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -633,7 +608,7 @@ public final class SceneUnlockInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsLocked() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         isLocked_ = false;
         onChanged();
         return this;
@@ -641,10 +616,10 @@ public final class SceneUnlockInfoOuterClass {
 
       private com.google.protobuf.Internal.IntList sceneTagIdList_ = emptyIntList();
       private void ensureSceneTagIdListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           sceneTagIdList_ = mutableCopy(sceneTagIdList_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000004;
+        }
       }
       /**
        * <code>repeated uint32 sceneTagIdList = 3;</code>
@@ -652,7 +627,7 @@ public final class SceneUnlockInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getSceneTagIdListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000004) != 0) ?
                  java.util.Collections.unmodifiableList(sceneTagIdList_) : sceneTagIdList_;
       }
       /**
@@ -678,6 +653,7 @@ public final class SceneUnlockInfoOuterClass {
        */
       public Builder setSceneTagIdList(
           int index, int value) {
+        
         ensureSceneTagIdListIsMutable();
         sceneTagIdList_.setInt(index, value);
         onChanged();
@@ -689,6 +665,7 @@ public final class SceneUnlockInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addSceneTagIdList(int value) {
+        
         ensureSceneTagIdListIsMutable();
         sceneTagIdList_.addInt(value);
         onChanged();
@@ -713,7 +690,7 @@ public final class SceneUnlockInfoOuterClass {
        */
       public Builder clearSceneTagIdList() {
         sceneTagIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -750,7 +727,18 @@ public final class SceneUnlockInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SceneUnlockInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 

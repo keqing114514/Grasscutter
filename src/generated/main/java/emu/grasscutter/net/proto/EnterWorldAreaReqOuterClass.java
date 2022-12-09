@@ -25,17 +25,21 @@ public final class EnterWorldAreaReqOuterClass {
     int getAreaType();
 
     /**
-     * <code>uint32 area_id = 1;</code>
+     * <code>uint32 area_id = 10;</code>
      * @return The areaId.
      */
     int getAreaId();
   }
   /**
    * <pre>
-   * CmdId: 250
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 246;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   *   IS_ALLOW_CLIENT = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code EnterWorldAreaReq}
@@ -64,53 +68,6 @@ public final class EnterWorldAreaReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private EnterWorldAreaReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              areaId_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              areaType_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.grasscutter.net.proto.EnterWorldAreaReqOuterClass.internal_static_EnterWorldAreaReq_descriptor;
@@ -125,7 +82,7 @@ public final class EnterWorldAreaReqOuterClass {
     }
 
     public static final int AREA_TYPE_FIELD_NUMBER = 8;
-    private int areaType_;
+    private int areaType_ = 0;
     /**
      * <code>uint32 area_type = 8;</code>
      * @return The areaType.
@@ -135,10 +92,10 @@ public final class EnterWorldAreaReqOuterClass {
       return areaType_;
     }
 
-    public static final int AREA_ID_FIELD_NUMBER = 1;
-    private int areaId_;
+    public static final int AREA_ID_FIELD_NUMBER = 10;
+    private int areaId_ = 0;
     /**
-     * <code>uint32 area_id = 1;</code>
+     * <code>uint32 area_id = 10;</code>
      * @return The areaId.
      */
     @java.lang.Override
@@ -160,13 +117,13 @@ public final class EnterWorldAreaReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (areaId_ != 0) {
-        output.writeUInt32(1, areaId_);
-      }
       if (areaType_ != 0) {
         output.writeUInt32(8, areaType_);
       }
-      unknownFields.writeTo(output);
+      if (areaId_ != 0) {
+        output.writeUInt32(10, areaId_);
+      }
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -175,15 +132,15 @@ public final class EnterWorldAreaReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (areaId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, areaId_);
-      }
       if (areaType_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(8, areaType_);
       }
-      size += unknownFields.getSerializedSize();
+      if (areaId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(10, areaId_);
+      }
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -202,7 +159,7 @@ public final class EnterWorldAreaReqOuterClass {
           != other.getAreaType()) return false;
       if (getAreaId()
           != other.getAreaId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -217,7 +174,7 @@ public final class EnterWorldAreaReqOuterClass {
       hash = (53 * hash) + getAreaType();
       hash = (37 * hash) + AREA_ID_FIELD_NUMBER;
       hash = (53 * hash) + getAreaId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -314,10 +271,14 @@ public final class EnterWorldAreaReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 250
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 246;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     *   IS_ALLOW_CLIENT = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code EnterWorldAreaReq}
@@ -341,26 +302,20 @@ public final class EnterWorldAreaReqOuterClass {
 
       // Construct using emu.grasscutter.net.proto.EnterWorldAreaReqOuterClass.EnterWorldAreaReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         areaType_ = 0;
-
         areaId_ = 0;
-
         return this;
       }
 
@@ -387,10 +342,19 @@ public final class EnterWorldAreaReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.EnterWorldAreaReqOuterClass.EnterWorldAreaReq buildPartial() {
         emu.grasscutter.net.proto.EnterWorldAreaReqOuterClass.EnterWorldAreaReq result = new emu.grasscutter.net.proto.EnterWorldAreaReqOuterClass.EnterWorldAreaReq(this);
-        result.areaType_ = areaType_;
-        result.areaId_ = areaId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.grasscutter.net.proto.EnterWorldAreaReqOuterClass.EnterWorldAreaReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.areaType_ = areaType_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.areaId_ = areaId_;
+        }
       }
 
       @java.lang.Override
@@ -443,7 +407,7 @@ public final class EnterWorldAreaReqOuterClass {
         if (other.getAreaId() != 0) {
           setAreaId(other.getAreaId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -458,19 +422,43 @@ public final class EnterWorldAreaReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.EnterWorldAreaReqOuterClass.EnterWorldAreaReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 64: {
+                areaType_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 64
+              case 80: {
+                areaId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 80
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.EnterWorldAreaReqOuterClass.EnterWorldAreaReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int areaType_ ;
       /**
@@ -489,6 +477,7 @@ public final class EnterWorldAreaReqOuterClass {
       public Builder setAreaType(int value) {
         
         areaType_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -497,7 +486,7 @@ public final class EnterWorldAreaReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAreaType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         areaType_ = 0;
         onChanged();
         return this;
@@ -505,7 +494,7 @@ public final class EnterWorldAreaReqOuterClass {
 
       private int areaId_ ;
       /**
-       * <code>uint32 area_id = 1;</code>
+       * <code>uint32 area_id = 10;</code>
        * @return The areaId.
        */
       @java.lang.Override
@@ -513,22 +502,23 @@ public final class EnterWorldAreaReqOuterClass {
         return areaId_;
       }
       /**
-       * <code>uint32 area_id = 1;</code>
+       * <code>uint32 area_id = 10;</code>
        * @param value The areaId to set.
        * @return This builder for chaining.
        */
       public Builder setAreaId(int value) {
         
         areaId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 area_id = 1;</code>
+       * <code>uint32 area_id = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearAreaId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         areaId_ = 0;
         onChanged();
         return this;
@@ -566,7 +556,18 @@ public final class EnterWorldAreaReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new EnterWorldAreaReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -601,7 +602,7 @@ public final class EnterWorldAreaReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\027EnterWorldAreaReq.proto\"7\n\021EnterWorldA" +
-      "reaReq\022\021\n\tarea_type\030\010 \001(\r\022\017\n\007area_id\030\001 \001" +
+      "reaReq\022\021\n\tarea_type\030\010 \001(\r\022\017\n\007area_id\030\n \001" +
       "(\rB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

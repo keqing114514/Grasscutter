@@ -19,35 +19,35 @@ public final class UnlockPersonalLineRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 4;</code>
-     * @return The retcode.
-     */
-    int getRetcode();
-
-    /**
-     * <code>uint32 personal_line_id = 10;</code>
+     * <code>uint32 personal_line_id = 4;</code>
      * @return The personalLineId.
      */
     int getPersonalLineId();
 
     /**
-     * <code>uint32 level = 11;</code>
+     * <code>int32 retcode = 12;</code>
+     * @return The retcode.
+     */
+    int getRetcode();
+
+    /**
+     * <code>uint32 level = 10;</code>
      * @return Whether the level field is set.
      */
     boolean hasLevel();
     /**
-     * <code>uint32 level = 11;</code>
+     * <code>uint32 level = 10;</code>
      * @return The level.
      */
     int getLevel();
 
     /**
-     * <code>uint32 chapter_id = 6;</code>
+     * <code>uint32 chapter_id = 3;</code>
      * @return Whether the chapterId field is set.
      */
     boolean hasChapterId();
     /**
-     * <code>uint32 chapter_id = 6;</code>
+     * <code>uint32 chapter_id = 3;</code>
      * @return The chapterId.
      */
     int getChapterId();
@@ -56,10 +56,13 @@ public final class UnlockPersonalLineRspOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 491
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 421;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code UnlockPersonalLineRsp}
@@ -88,63 +91,6 @@ public final class UnlockPersonalLineRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private UnlockPersonalLineRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 32: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 48: {
-              paramCase_ = 6;
-              param_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              personalLineId_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-              paramCase_ = 11;
-              param_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.grasscutter.net.proto.UnlockPersonalLineRspOuterClass.internal_static_UnlockPersonalLineRsp_descriptor;
@@ -163,8 +109,8 @@ public final class UnlockPersonalLineRspOuterClass {
     public enum ParamCase
         implements com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-      LEVEL(11),
-      CHAPTER_ID(6),
+      LEVEL(10),
+      CHAPTER_ID(3),
       PARAM_NOT_SET(0);
       private final int value;
       private ParamCase(int value) {
@@ -182,8 +128,8 @@ public final class UnlockPersonalLineRspOuterClass {
 
       public static ParamCase forNumber(int value) {
         switch (value) {
-          case 11: return LEVEL;
-          case 6: return CHAPTER_ID;
+          case 10: return LEVEL;
+          case 3: return CHAPTER_ID;
           case 0: return PARAM_NOT_SET;
           default: return null;
         }
@@ -199,21 +145,10 @@ public final class UnlockPersonalLineRspOuterClass {
           paramCase_);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 4;
-    private int retcode_;
+    public static final int PERSONAL_LINE_ID_FIELD_NUMBER = 4;
+    private int personalLineId_ = 0;
     /**
-     * <code>int32 retcode = 4;</code>
-     * @return The retcode.
-     */
-    @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
-    }
-
-    public static final int PERSONAL_LINE_ID_FIELD_NUMBER = 10;
-    private int personalLineId_;
-    /**
-     * <code>uint32 personal_line_id = 10;</code>
+     * <code>uint32 personal_line_id = 4;</code>
      * @return The personalLineId.
      */
     @java.lang.Override
@@ -221,43 +156,54 @@ public final class UnlockPersonalLineRspOuterClass {
       return personalLineId_;
     }
 
-    public static final int LEVEL_FIELD_NUMBER = 11;
+    public static final int RETCODE_FIELD_NUMBER = 12;
+    private int retcode_ = 0;
     /**
-     * <code>uint32 level = 11;</code>
+     * <code>int32 retcode = 12;</code>
+     * @return The retcode.
+     */
+    @java.lang.Override
+    public int getRetcode() {
+      return retcode_;
+    }
+
+    public static final int LEVEL_FIELD_NUMBER = 10;
+    /**
+     * <code>uint32 level = 10;</code>
      * @return Whether the level field is set.
      */
     @java.lang.Override
     public boolean hasLevel() {
-      return paramCase_ == 11;
+      return paramCase_ == 10;
     }
     /**
-     * <code>uint32 level = 11;</code>
+     * <code>uint32 level = 10;</code>
      * @return The level.
      */
     @java.lang.Override
     public int getLevel() {
-      if (paramCase_ == 11) {
+      if (paramCase_ == 10) {
         return (java.lang.Integer) param_;
       }
       return 0;
     }
 
-    public static final int CHAPTER_ID_FIELD_NUMBER = 6;
+    public static final int CHAPTER_ID_FIELD_NUMBER = 3;
     /**
-     * <code>uint32 chapter_id = 6;</code>
+     * <code>uint32 chapter_id = 3;</code>
      * @return Whether the chapterId field is set.
      */
     @java.lang.Override
     public boolean hasChapterId() {
-      return paramCase_ == 6;
+      return paramCase_ == 3;
     }
     /**
-     * <code>uint32 chapter_id = 6;</code>
+     * <code>uint32 chapter_id = 3;</code>
      * @return The chapterId.
      */
     @java.lang.Override
     public int getChapterId() {
-      if (paramCase_ == 6) {
+      if (paramCase_ == 3) {
         return (java.lang.Integer) param_;
       }
       return 0;
@@ -277,21 +223,21 @@ public final class UnlockPersonalLineRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (retcode_ != 0) {
-        output.writeInt32(4, retcode_);
-      }
-      if (paramCase_ == 6) {
+      if (paramCase_ == 3) {
         output.writeUInt32(
-            6, (int)((java.lang.Integer) param_));
+            3, (int)((java.lang.Integer) param_));
       }
       if (personalLineId_ != 0) {
-        output.writeUInt32(10, personalLineId_);
+        output.writeUInt32(4, personalLineId_);
       }
-      if (paramCase_ == 11) {
+      if (paramCase_ == 10) {
         output.writeUInt32(
-            11, (int)((java.lang.Integer) param_));
+            10, (int)((java.lang.Integer) param_));
       }
-      unknownFields.writeTo(output);
+      if (retcode_ != 0) {
+        output.writeInt32(12, retcode_);
+      }
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -300,25 +246,25 @@ public final class UnlockPersonalLineRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, retcode_);
-      }
-      if (paramCase_ == 6) {
+      if (paramCase_ == 3) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(
-              6, (int)((java.lang.Integer) param_));
+              3, (int)((java.lang.Integer) param_));
       }
       if (personalLineId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, personalLineId_);
+          .computeUInt32Size(4, personalLineId_);
       }
-      if (paramCase_ == 11) {
+      if (paramCase_ == 10) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(
-              11, (int)((java.lang.Integer) param_));
+              10, (int)((java.lang.Integer) param_));
       }
-      size += unknownFields.getSerializedSize();
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(12, retcode_);
+      }
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -333,24 +279,24 @@ public final class UnlockPersonalLineRspOuterClass {
       }
       emu.grasscutter.net.proto.UnlockPersonalLineRspOuterClass.UnlockPersonalLineRsp other = (emu.grasscutter.net.proto.UnlockPersonalLineRspOuterClass.UnlockPersonalLineRsp) obj;
 
-      if (getRetcode()
-          != other.getRetcode()) return false;
       if (getPersonalLineId()
           != other.getPersonalLineId()) return false;
+      if (getRetcode()
+          != other.getRetcode()) return false;
       if (!getParamCase().equals(other.getParamCase())) return false;
       switch (paramCase_) {
-        case 11:
+        case 10:
           if (getLevel()
               != other.getLevel()) return false;
           break;
-        case 6:
+        case 3:
           if (getChapterId()
               != other.getChapterId()) return false;
           break;
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -361,23 +307,23 @@ public final class UnlockPersonalLineRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + PERSONAL_LINE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getPersonalLineId();
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
       switch (paramCase_) {
-        case 11:
+        case 10:
           hash = (37 * hash) + LEVEL_FIELD_NUMBER;
           hash = (53 * hash) + getLevel();
           break;
-        case 6:
+        case 3:
           hash = (37 * hash) + CHAPTER_ID_FIELD_NUMBER;
           hash = (53 * hash) + getChapterId();
           break;
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -474,10 +420,13 @@ public final class UnlockPersonalLineRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 491
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 421;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code UnlockPersonalLineRsp}
@@ -501,26 +450,20 @@ public final class UnlockPersonalLineRspOuterClass {
 
       // Construct using emu.grasscutter.net.proto.UnlockPersonalLineRspOuterClass.UnlockPersonalLineRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        retcode_ = 0;
-
+        bitField0_ = 0;
         personalLineId_ = 0;
-
+        retcode_ = 0;
         paramCase_ = 0;
         param_ = null;
         return this;
@@ -549,17 +492,25 @@ public final class UnlockPersonalLineRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.UnlockPersonalLineRspOuterClass.UnlockPersonalLineRsp buildPartial() {
         emu.grasscutter.net.proto.UnlockPersonalLineRspOuterClass.UnlockPersonalLineRsp result = new emu.grasscutter.net.proto.UnlockPersonalLineRspOuterClass.UnlockPersonalLineRsp(this);
-        result.retcode_ = retcode_;
-        result.personalLineId_ = personalLineId_;
-        if (paramCase_ == 11) {
-          result.param_ = param_;
-        }
-        if (paramCase_ == 6) {
-          result.param_ = param_;
-        }
-        result.paramCase_ = paramCase_;
+        if (bitField0_ != 0) { buildPartial0(result); }
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.grasscutter.net.proto.UnlockPersonalLineRspOuterClass.UnlockPersonalLineRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.personalLineId_ = personalLineId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.retcode_ = retcode_;
+        }
+      }
+
+      private void buildPartialOneofs(emu.grasscutter.net.proto.UnlockPersonalLineRspOuterClass.UnlockPersonalLineRsp result) {
+        result.paramCase_ = paramCase_;
+        result.param_ = this.param_;
       }
 
       @java.lang.Override
@@ -606,11 +557,11 @@ public final class UnlockPersonalLineRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.UnlockPersonalLineRspOuterClass.UnlockPersonalLineRsp other) {
         if (other == emu.grasscutter.net.proto.UnlockPersonalLineRspOuterClass.UnlockPersonalLineRsp.getDefaultInstance()) return this;
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
-        }
         if (other.getPersonalLineId() != 0) {
           setPersonalLineId(other.getPersonalLineId());
+        }
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
         }
         switch (other.getParamCase()) {
           case LEVEL: {
@@ -625,7 +576,7 @@ public final class UnlockPersonalLineRspOuterClass {
             break;
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -640,17 +591,50 @@ public final class UnlockPersonalLineRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.UnlockPersonalLineRspOuterClass.UnlockPersonalLineRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24: {
+                param_ = input.readUInt32();
+                paramCase_ = 3;
+                break;
+              } // case 24
+              case 32: {
+                personalLineId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 32
+              case 80: {
+                param_ = input.readUInt32();
+                paramCase_ = 10;
+                break;
+              } // case 80
+              case 96: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 96
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.UnlockPersonalLineRspOuterClass.UnlockPersonalLineRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int paramCase_ = 0;
@@ -668,41 +652,11 @@ public final class UnlockPersonalLineRspOuterClass {
         return this;
       }
 
-
-      private int retcode_ ;
-      /**
-       * <code>int32 retcode = 4;</code>
-       * @return The retcode.
-       */
-      @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
-      }
-      /**
-       * <code>int32 retcode = 4;</code>
-       * @param value The retcode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetcode(int value) {
-        
-        retcode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 retcode = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetcode() {
-        
-        retcode_ = 0;
-        onChanged();
-        return this;
-      }
+      private int bitField0_;
 
       private int personalLineId_ ;
       /**
-       * <code>uint32 personal_line_id = 10;</code>
+       * <code>uint32 personal_line_id = 4;</code>
        * @return The personalLineId.
        */
       @java.lang.Override
@@ -710,61 +664,95 @@ public final class UnlockPersonalLineRspOuterClass {
         return personalLineId_;
       }
       /**
-       * <code>uint32 personal_line_id = 10;</code>
+       * <code>uint32 personal_line_id = 4;</code>
        * @param value The personalLineId to set.
        * @return This builder for chaining.
        */
       public Builder setPersonalLineId(int value) {
         
         personalLineId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 personal_line_id = 10;</code>
+       * <code>uint32 personal_line_id = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearPersonalLineId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         personalLineId_ = 0;
         onChanged();
         return this;
       }
 
+      private int retcode_ ;
       /**
-       * <code>uint32 level = 11;</code>
+       * <code>int32 retcode = 12;</code>
+       * @return The retcode.
+       */
+      @java.lang.Override
+      public int getRetcode() {
+        return retcode_;
+      }
+      /**
+       * <code>int32 retcode = 12;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetcode(int value) {
+        
+        retcode_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 retcode = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetcode() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        retcode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <code>uint32 level = 10;</code>
        * @return Whether the level field is set.
        */
       public boolean hasLevel() {
-        return paramCase_ == 11;
+        return paramCase_ == 10;
       }
       /**
-       * <code>uint32 level = 11;</code>
+       * <code>uint32 level = 10;</code>
        * @return The level.
        */
       public int getLevel() {
-        if (paramCase_ == 11) {
+        if (paramCase_ == 10) {
           return (java.lang.Integer) param_;
         }
         return 0;
       }
       /**
-       * <code>uint32 level = 11;</code>
+       * <code>uint32 level = 10;</code>
        * @param value The level to set.
        * @return This builder for chaining.
        */
       public Builder setLevel(int value) {
-        paramCase_ = 11;
+        
+        paramCase_ = 10;
         param_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 level = 11;</code>
+       * <code>uint32 level = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearLevel() {
-        if (paramCase_ == 11) {
+        if (paramCase_ == 10) {
           paramCase_ = 0;
           param_ = null;
           onChanged();
@@ -773,39 +761,40 @@ public final class UnlockPersonalLineRspOuterClass {
       }
 
       /**
-       * <code>uint32 chapter_id = 6;</code>
+       * <code>uint32 chapter_id = 3;</code>
        * @return Whether the chapterId field is set.
        */
       public boolean hasChapterId() {
-        return paramCase_ == 6;
+        return paramCase_ == 3;
       }
       /**
-       * <code>uint32 chapter_id = 6;</code>
+       * <code>uint32 chapter_id = 3;</code>
        * @return The chapterId.
        */
       public int getChapterId() {
-        if (paramCase_ == 6) {
+        if (paramCase_ == 3) {
           return (java.lang.Integer) param_;
         }
         return 0;
       }
       /**
-       * <code>uint32 chapter_id = 6;</code>
+       * <code>uint32 chapter_id = 3;</code>
        * @param value The chapterId to set.
        * @return This builder for chaining.
        */
       public Builder setChapterId(int value) {
-        paramCase_ = 6;
+        
+        paramCase_ = 3;
         param_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 chapter_id = 6;</code>
+       * <code>uint32 chapter_id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearChapterId() {
-        if (paramCase_ == 6) {
+        if (paramCase_ == 3) {
           paramCase_ = 0;
           param_ = null;
           onChanged();
@@ -845,7 +834,18 @@ public final class UnlockPersonalLineRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new UnlockPersonalLineRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -880,9 +880,9 @@ public final class UnlockPersonalLineRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033UnlockPersonalLineRsp.proto\"r\n\025UnlockP" +
-      "ersonalLineRsp\022\017\n\007retcode\030\004 \001(\005\022\030\n\020perso" +
-      "nal_line_id\030\n \001(\r\022\017\n\005level\030\013 \001(\rH\000\022\024\n\nch" +
-      "apter_id\030\006 \001(\rH\000B\007\n\005paramB\033\n\031emu.grasscu" +
+      "ersonalLineRsp\022\030\n\020personal_line_id\030\004 \001(\r" +
+      "\022\017\n\007retcode\030\014 \001(\005\022\017\n\005level\030\n \001(\rH\000\022\024\n\nch" +
+      "apter_id\030\003 \001(\rH\000B\007\n\005paramB\033\n\031emu.grasscu" +
       "tter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -894,7 +894,7 @@ public final class UnlockPersonalLineRspOuterClass {
     internal_static_UnlockPersonalLineRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_UnlockPersonalLineRsp_descriptor,
-        new java.lang.String[] { "Retcode", "PersonalLineId", "Level", "ChapterId", "Param", });
+        new java.lang.String[] { "PersonalLineId", "Retcode", "Level", "ChapterId", "Param", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

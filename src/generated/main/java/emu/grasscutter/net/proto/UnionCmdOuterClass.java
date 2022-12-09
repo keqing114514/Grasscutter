@@ -19,13 +19,13 @@ public final class UnionCmdOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bytes body = 14;</code>
+     * <code>bytes body = 3;</code>
      * @return The body.
      */
     com.google.protobuf.ByteString getBody();
 
     /**
-     * <code>uint32 message_id = 8;</code>
+     * <code>uint32 message_id = 4;</code>
      * @return The messageId.
      */
     int getMessageId();
@@ -58,53 +58,6 @@ public final class UnionCmdOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private UnionCmd(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 64: {
-
-              messageId_ = input.readUInt32();
-              break;
-            }
-            case 114: {
-
-              body_ = input.readBytes();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.grasscutter.net.proto.UnionCmdOuterClass.internal_static_UnionCmd_descriptor;
@@ -118,10 +71,10 @@ public final class UnionCmdOuterClass {
               emu.grasscutter.net.proto.UnionCmdOuterClass.UnionCmd.class, emu.grasscutter.net.proto.UnionCmdOuterClass.UnionCmd.Builder.class);
     }
 
-    public static final int BODY_FIELD_NUMBER = 14;
-    private com.google.protobuf.ByteString body_;
+    public static final int BODY_FIELD_NUMBER = 3;
+    private com.google.protobuf.ByteString body_ = com.google.protobuf.ByteString.EMPTY;
     /**
-     * <code>bytes body = 14;</code>
+     * <code>bytes body = 3;</code>
      * @return The body.
      */
     @java.lang.Override
@@ -129,10 +82,10 @@ public final class UnionCmdOuterClass {
       return body_;
     }
 
-    public static final int MESSAGE_ID_FIELD_NUMBER = 8;
-    private int messageId_;
+    public static final int MESSAGE_ID_FIELD_NUMBER = 4;
+    private int messageId_ = 0;
     /**
-     * <code>uint32 message_id = 8;</code>
+     * <code>uint32 message_id = 4;</code>
      * @return The messageId.
      */
     @java.lang.Override
@@ -154,13 +107,13 @@ public final class UnionCmdOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (messageId_ != 0) {
-        output.writeUInt32(8, messageId_);
-      }
       if (!body_.isEmpty()) {
-        output.writeBytes(14, body_);
+        output.writeBytes(3, body_);
       }
-      unknownFields.writeTo(output);
+      if (messageId_ != 0) {
+        output.writeUInt32(4, messageId_);
+      }
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -169,15 +122,15 @@ public final class UnionCmdOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (messageId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, messageId_);
-      }
       if (!body_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(14, body_);
+          .computeBytesSize(3, body_);
       }
-      size += unknownFields.getSerializedSize();
+      if (messageId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(4, messageId_);
+      }
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -196,7 +149,7 @@ public final class UnionCmdOuterClass {
           .equals(other.getBody())) return false;
       if (getMessageId()
           != other.getMessageId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -211,7 +164,7 @@ public final class UnionCmdOuterClass {
       hash = (53 * hash) + getBody().hashCode();
       hash = (37 * hash) + MESSAGE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getMessageId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -328,26 +281,20 @@ public final class UnionCmdOuterClass {
 
       // Construct using emu.grasscutter.net.proto.UnionCmdOuterClass.UnionCmd.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         body_ = com.google.protobuf.ByteString.EMPTY;
-
         messageId_ = 0;
-
         return this;
       }
 
@@ -374,10 +321,19 @@ public final class UnionCmdOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.UnionCmdOuterClass.UnionCmd buildPartial() {
         emu.grasscutter.net.proto.UnionCmdOuterClass.UnionCmd result = new emu.grasscutter.net.proto.UnionCmdOuterClass.UnionCmd(this);
-        result.body_ = body_;
-        result.messageId_ = messageId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.grasscutter.net.proto.UnionCmdOuterClass.UnionCmd result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.body_ = body_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.messageId_ = messageId_;
+        }
       }
 
       @java.lang.Override
@@ -430,7 +386,7 @@ public final class UnionCmdOuterClass {
         if (other.getMessageId() != 0) {
           setMessageId(other.getMessageId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -445,23 +401,47 @@ public final class UnionCmdOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.UnionCmdOuterClass.UnionCmd parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 26: {
+                body_ = input.readBytes();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 26
+              case 32: {
+                messageId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 32
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.UnionCmdOuterClass.UnionCmd) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private com.google.protobuf.ByteString body_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes body = 14;</code>
+       * <code>bytes body = 3;</code>
        * @return The body.
        */
       @java.lang.Override
@@ -469,25 +449,23 @@ public final class UnionCmdOuterClass {
         return body_;
       }
       /**
-       * <code>bytes body = 14;</code>
+       * <code>bytes body = 3;</code>
        * @param value The body to set.
        * @return This builder for chaining.
        */
       public Builder setBody(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         body_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
-       * <code>bytes body = 14;</code>
+       * <code>bytes body = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearBody() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         body_ = getDefaultInstance().getBody();
         onChanged();
         return this;
@@ -495,7 +473,7 @@ public final class UnionCmdOuterClass {
 
       private int messageId_ ;
       /**
-       * <code>uint32 message_id = 8;</code>
+       * <code>uint32 message_id = 4;</code>
        * @return The messageId.
        */
       @java.lang.Override
@@ -503,22 +481,23 @@ public final class UnionCmdOuterClass {
         return messageId_;
       }
       /**
-       * <code>uint32 message_id = 8;</code>
+       * <code>uint32 message_id = 4;</code>
        * @param value The messageId to set.
        * @return This builder for chaining.
        */
       public Builder setMessageId(int value) {
         
         messageId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 message_id = 8;</code>
+       * <code>uint32 message_id = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearMessageId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         messageId_ = 0;
         onChanged();
         return this;
@@ -556,7 +535,18 @@ public final class UnionCmdOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new UnionCmd(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -590,8 +580,8 @@ public final class UnionCmdOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\016UnionCmd.proto\",\n\010UnionCmd\022\014\n\004body\030\016 \001" +
-      "(\014\022\022\n\nmessage_id\030\010 \001(\rB\033\n\031emu.grasscutte" +
+      "\n\016UnionCmd.proto\",\n\010UnionCmd\022\014\n\004body\030\003 \001" +
+      "(\014\022\022\n\nmessage_id\030\004 \001(\rB\033\n\031emu.grasscutte" +
       "r.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

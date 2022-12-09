@@ -49,16 +49,16 @@ public final class BuildingInfoOuterClass {
     int getOwnerUid();
 
     /**
-     * <code>uint32 Unk2700_MDJOPHOHFDB = 7;</code>
-     * @return The unk2700MDJOPHOHFDB.
+     * <code>uint32 current_num = 7;</code>
+     * @return The currentNum.
      */
-    int getUnk2700MDJOPHOHFDB();
+    int getCurrentNum();
 
     /**
-     * <code>uint32 Unk2700_COFBIGLBNGP = 8;</code>
-     * @return The unk2700COFBIGLBNGP.
+     * <code>uint32 max_num = 8;</code>
+     * @return The maxNum.
      */
-    int getUnk2700COFBIGLBNGP();
+    int getMaxNum();
   }
   /**
    * Protobuf type {@code BuildingInfo}
@@ -87,78 +87,6 @@ public final class BuildingInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private BuildingInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              buildingId_ = input.readUInt32();
-              break;
-            }
-            case 16: {
-
-              pointConfigId_ = input.readUInt32();
-              break;
-            }
-            case 24: {
-
-              cost_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-
-              refund_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              ownerUid_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-
-              unk2700MDJOPHOHFDB_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              unk2700COFBIGLBNGP_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.grasscutter.net.proto.BuildingInfoOuterClass.internal_static_BuildingInfo_descriptor;
@@ -173,7 +101,7 @@ public final class BuildingInfoOuterClass {
     }
 
     public static final int BUILDING_ID_FIELD_NUMBER = 1;
-    private int buildingId_;
+    private int buildingId_ = 0;
     /**
      * <code>uint32 building_id = 1;</code>
      * @return The buildingId.
@@ -184,7 +112,7 @@ public final class BuildingInfoOuterClass {
     }
 
     public static final int POINT_CONFIG_ID_FIELD_NUMBER = 2;
-    private int pointConfigId_;
+    private int pointConfigId_ = 0;
     /**
      * <code>uint32 point_config_id = 2;</code>
      * @return The pointConfigId.
@@ -195,7 +123,7 @@ public final class BuildingInfoOuterClass {
     }
 
     public static final int COST_FIELD_NUMBER = 3;
-    private int cost_;
+    private int cost_ = 0;
     /**
      * <code>uint32 cost = 3;</code>
      * @return The cost.
@@ -206,7 +134,7 @@ public final class BuildingInfoOuterClass {
     }
 
     public static final int REFUND_FIELD_NUMBER = 5;
-    private int refund_;
+    private int refund_ = 0;
     /**
      * <code>uint32 refund = 5;</code>
      * @return The refund.
@@ -217,7 +145,7 @@ public final class BuildingInfoOuterClass {
     }
 
     public static final int OWNER_UID_FIELD_NUMBER = 6;
-    private int ownerUid_;
+    private int ownerUid_ = 0;
     /**
      * <code>uint32 owner_uid = 6;</code>
      * @return The ownerUid.
@@ -227,26 +155,26 @@ public final class BuildingInfoOuterClass {
       return ownerUid_;
     }
 
-    public static final int UNK2700_MDJOPHOHFDB_FIELD_NUMBER = 7;
-    private int unk2700MDJOPHOHFDB_;
+    public static final int CURRENT_NUM_FIELD_NUMBER = 7;
+    private int currentNum_ = 0;
     /**
-     * <code>uint32 Unk2700_MDJOPHOHFDB = 7;</code>
-     * @return The unk2700MDJOPHOHFDB.
+     * <code>uint32 current_num = 7;</code>
+     * @return The currentNum.
      */
     @java.lang.Override
-    public int getUnk2700MDJOPHOHFDB() {
-      return unk2700MDJOPHOHFDB_;
+    public int getCurrentNum() {
+      return currentNum_;
     }
 
-    public static final int UNK2700_COFBIGLBNGP_FIELD_NUMBER = 8;
-    private int unk2700COFBIGLBNGP_;
+    public static final int MAX_NUM_FIELD_NUMBER = 8;
+    private int maxNum_ = 0;
     /**
-     * <code>uint32 Unk2700_COFBIGLBNGP = 8;</code>
-     * @return The unk2700COFBIGLBNGP.
+     * <code>uint32 max_num = 8;</code>
+     * @return The maxNum.
      */
     @java.lang.Override
-    public int getUnk2700COFBIGLBNGP() {
-      return unk2700COFBIGLBNGP_;
+    public int getMaxNum() {
+      return maxNum_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -278,13 +206,13 @@ public final class BuildingInfoOuterClass {
       if (ownerUid_ != 0) {
         output.writeUInt32(6, ownerUid_);
       }
-      if (unk2700MDJOPHOHFDB_ != 0) {
-        output.writeUInt32(7, unk2700MDJOPHOHFDB_);
+      if (currentNum_ != 0) {
+        output.writeUInt32(7, currentNum_);
       }
-      if (unk2700COFBIGLBNGP_ != 0) {
-        output.writeUInt32(8, unk2700COFBIGLBNGP_);
+      if (maxNum_ != 0) {
+        output.writeUInt32(8, maxNum_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -313,15 +241,15 @@ public final class BuildingInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(6, ownerUid_);
       }
-      if (unk2700MDJOPHOHFDB_ != 0) {
+      if (currentNum_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, unk2700MDJOPHOHFDB_);
+          .computeUInt32Size(7, currentNum_);
       }
-      if (unk2700COFBIGLBNGP_ != 0) {
+      if (maxNum_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, unk2700COFBIGLBNGP_);
+          .computeUInt32Size(8, maxNum_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -346,11 +274,11 @@ public final class BuildingInfoOuterClass {
           != other.getRefund()) return false;
       if (getOwnerUid()
           != other.getOwnerUid()) return false;
-      if (getUnk2700MDJOPHOHFDB()
-          != other.getUnk2700MDJOPHOHFDB()) return false;
-      if (getUnk2700COFBIGLBNGP()
-          != other.getUnk2700COFBIGLBNGP()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (getCurrentNum()
+          != other.getCurrentNum()) return false;
+      if (getMaxNum()
+          != other.getMaxNum()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -371,11 +299,11 @@ public final class BuildingInfoOuterClass {
       hash = (53 * hash) + getRefund();
       hash = (37 * hash) + OWNER_UID_FIELD_NUMBER;
       hash = (53 * hash) + getOwnerUid();
-      hash = (37 * hash) + UNK2700_MDJOPHOHFDB_FIELD_NUMBER;
-      hash = (53 * hash) + getUnk2700MDJOPHOHFDB();
-      hash = (37 * hash) + UNK2700_COFBIGLBNGP_FIELD_NUMBER;
-      hash = (53 * hash) + getUnk2700COFBIGLBNGP();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (37 * hash) + CURRENT_NUM_FIELD_NUMBER;
+      hash = (53 * hash) + getCurrentNum();
+      hash = (37 * hash) + MAX_NUM_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxNum();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -492,36 +420,25 @@ public final class BuildingInfoOuterClass {
 
       // Construct using emu.grasscutter.net.proto.BuildingInfoOuterClass.BuildingInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         buildingId_ = 0;
-
         pointConfigId_ = 0;
-
         cost_ = 0;
-
         refund_ = 0;
-
         ownerUid_ = 0;
-
-        unk2700MDJOPHOHFDB_ = 0;
-
-        unk2700COFBIGLBNGP_ = 0;
-
+        currentNum_ = 0;
+        maxNum_ = 0;
         return this;
       }
 
@@ -548,15 +465,34 @@ public final class BuildingInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.BuildingInfoOuterClass.BuildingInfo buildPartial() {
         emu.grasscutter.net.proto.BuildingInfoOuterClass.BuildingInfo result = new emu.grasscutter.net.proto.BuildingInfoOuterClass.BuildingInfo(this);
-        result.buildingId_ = buildingId_;
-        result.pointConfigId_ = pointConfigId_;
-        result.cost_ = cost_;
-        result.refund_ = refund_;
-        result.ownerUid_ = ownerUid_;
-        result.unk2700MDJOPHOHFDB_ = unk2700MDJOPHOHFDB_;
-        result.unk2700COFBIGLBNGP_ = unk2700COFBIGLBNGP_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.grasscutter.net.proto.BuildingInfoOuterClass.BuildingInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.buildingId_ = buildingId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.pointConfigId_ = pointConfigId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.cost_ = cost_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.refund_ = refund_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.ownerUid_ = ownerUid_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.currentNum_ = currentNum_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.maxNum_ = maxNum_;
+        }
       }
 
       @java.lang.Override
@@ -618,13 +554,13 @@ public final class BuildingInfoOuterClass {
         if (other.getOwnerUid() != 0) {
           setOwnerUid(other.getOwnerUid());
         }
-        if (other.getUnk2700MDJOPHOHFDB() != 0) {
-          setUnk2700MDJOPHOHFDB(other.getUnk2700MDJOPHOHFDB());
+        if (other.getCurrentNum() != 0) {
+          setCurrentNum(other.getCurrentNum());
         }
-        if (other.getUnk2700COFBIGLBNGP() != 0) {
-          setUnk2700COFBIGLBNGP(other.getUnk2700COFBIGLBNGP());
+        if (other.getMaxNum() != 0) {
+          setMaxNum(other.getMaxNum());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -639,19 +575,68 @@ public final class BuildingInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.BuildingInfoOuterClass.BuildingInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                buildingId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                pointConfigId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 24: {
+                cost_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              case 40: {
+                refund_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 40
+              case 48: {
+                ownerUid_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 48
+              case 56: {
+                currentNum_ = input.readUInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 56
+              case 64: {
+                maxNum_ = input.readUInt32();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 64
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.BuildingInfoOuterClass.BuildingInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int buildingId_ ;
       /**
@@ -670,6 +655,7 @@ public final class BuildingInfoOuterClass {
       public Builder setBuildingId(int value) {
         
         buildingId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -678,7 +664,7 @@ public final class BuildingInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBuildingId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         buildingId_ = 0;
         onChanged();
         return this;
@@ -701,6 +687,7 @@ public final class BuildingInfoOuterClass {
       public Builder setPointConfigId(int value) {
         
         pointConfigId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -709,7 +696,7 @@ public final class BuildingInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPointConfigId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         pointConfigId_ = 0;
         onChanged();
         return this;
@@ -732,6 +719,7 @@ public final class BuildingInfoOuterClass {
       public Builder setCost(int value) {
         
         cost_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -740,7 +728,7 @@ public final class BuildingInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCost() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         cost_ = 0;
         onChanged();
         return this;
@@ -763,6 +751,7 @@ public final class BuildingInfoOuterClass {
       public Builder setRefund(int value) {
         
         refund_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -771,7 +760,7 @@ public final class BuildingInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRefund() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         refund_ = 0;
         onChanged();
         return this;
@@ -794,6 +783,7 @@ public final class BuildingInfoOuterClass {
       public Builder setOwnerUid(int value) {
         
         ownerUid_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -802,70 +792,72 @@ public final class BuildingInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOwnerUid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         ownerUid_ = 0;
         onChanged();
         return this;
       }
 
-      private int unk2700MDJOPHOHFDB_ ;
+      private int currentNum_ ;
       /**
-       * <code>uint32 Unk2700_MDJOPHOHFDB = 7;</code>
-       * @return The unk2700MDJOPHOHFDB.
+       * <code>uint32 current_num = 7;</code>
+       * @return The currentNum.
        */
       @java.lang.Override
-      public int getUnk2700MDJOPHOHFDB() {
-        return unk2700MDJOPHOHFDB_;
+      public int getCurrentNum() {
+        return currentNum_;
       }
       /**
-       * <code>uint32 Unk2700_MDJOPHOHFDB = 7;</code>
-       * @param value The unk2700MDJOPHOHFDB to set.
+       * <code>uint32 current_num = 7;</code>
+       * @param value The currentNum to set.
        * @return This builder for chaining.
        */
-      public Builder setUnk2700MDJOPHOHFDB(int value) {
+      public Builder setCurrentNum(int value) {
         
-        unk2700MDJOPHOHFDB_ = value;
+        currentNum_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 Unk2700_MDJOPHOHFDB = 7;</code>
+       * <code>uint32 current_num = 7;</code>
        * @return This builder for chaining.
        */
-      public Builder clearUnk2700MDJOPHOHFDB() {
-        
-        unk2700MDJOPHOHFDB_ = 0;
+      public Builder clearCurrentNum() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        currentNum_ = 0;
         onChanged();
         return this;
       }
 
-      private int unk2700COFBIGLBNGP_ ;
+      private int maxNum_ ;
       /**
-       * <code>uint32 Unk2700_COFBIGLBNGP = 8;</code>
-       * @return The unk2700COFBIGLBNGP.
+       * <code>uint32 max_num = 8;</code>
+       * @return The maxNum.
        */
       @java.lang.Override
-      public int getUnk2700COFBIGLBNGP() {
-        return unk2700COFBIGLBNGP_;
+      public int getMaxNum() {
+        return maxNum_;
       }
       /**
-       * <code>uint32 Unk2700_COFBIGLBNGP = 8;</code>
-       * @param value The unk2700COFBIGLBNGP to set.
+       * <code>uint32 max_num = 8;</code>
+       * @param value The maxNum to set.
        * @return This builder for chaining.
        */
-      public Builder setUnk2700COFBIGLBNGP(int value) {
+      public Builder setMaxNum(int value) {
         
-        unk2700COFBIGLBNGP_ = value;
+        maxNum_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 Unk2700_COFBIGLBNGP = 8;</code>
+       * <code>uint32 max_num = 8;</code>
        * @return This builder for chaining.
        */
-      public Builder clearUnk2700COFBIGLBNGP() {
-        
-        unk2700COFBIGLBNGP_ = 0;
+      public Builder clearMaxNum() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        maxNum_ = 0;
         onChanged();
         return this;
       }
@@ -902,7 +894,18 @@ public final class BuildingInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new BuildingInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -936,12 +939,12 @@ public final class BuildingInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\022BuildingInfo.proto\"\247\001\n\014BuildingInfo\022\023\n" +
+      "\n\022BuildingInfo.proto\"\223\001\n\014BuildingInfo\022\023\n" +
       "\013building_id\030\001 \001(\r\022\027\n\017point_config_id\030\002 " +
       "\001(\r\022\014\n\004cost\030\003 \001(\r\022\016\n\006refund\030\005 \001(\r\022\021\n\town" +
-      "er_uid\030\006 \001(\r\022\033\n\023Unk2700_MDJOPHOHFDB\030\007 \001(" +
-      "\r\022\033\n\023Unk2700_COFBIGLBNGP\030\010 \001(\rB\033\n\031emu.gr" +
-      "asscutter.net.protob\006proto3"
+      "er_uid\030\006 \001(\r\022\023\n\013current_num\030\007 \001(\r\022\017\n\007max" +
+      "_num\030\010 \001(\rB\033\n\031emu.grasscutter.net.protob" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -952,7 +955,7 @@ public final class BuildingInfoOuterClass {
     internal_static_BuildingInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_BuildingInfo_descriptor,
-        new java.lang.String[] { "BuildingId", "PointConfigId", "Cost", "Refund", "OwnerUid", "Unk2700MDJOPHOHFDB", "Unk2700COFBIGLBNGP", });
+        new java.lang.String[] { "BuildingId", "PointConfigId", "Cost", "Refund", "OwnerUid", "CurrentNum", "MaxNum", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

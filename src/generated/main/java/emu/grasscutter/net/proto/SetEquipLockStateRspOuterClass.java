@@ -19,29 +19,32 @@ public final class SetEquipLockStateRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint64 target_equip_guid = 14;</code>
+     * <code>uint64 target_equip_guid = 1;</code>
      * @return The targetEquipGuid.
      */
     long getTargetEquipGuid();
 
     /**
-     * <code>int32 retcode = 13;</code>
-     * @return The retcode.
-     */
-    int getRetcode();
-
-    /**
-     * <code>bool is_locked = 10;</code>
+     * <code>bool is_locked = 3;</code>
      * @return The isLocked.
      */
     boolean getIsLocked();
+
+    /**
+     * <code>int32 retcode = 12;</code>
+     * @return The retcode.
+     */
+    int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 668
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 688;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code SetEquipLockStateRsp}
@@ -70,58 +73,6 @@ public final class SetEquipLockStateRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SetEquipLockStateRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 80: {
-
-              isLocked_ = input.readBool();
-              break;
-            }
-            case 104: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 112: {
-
-              targetEquipGuid_ = input.readUInt64();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.grasscutter.net.proto.SetEquipLockStateRspOuterClass.internal_static_SetEquipLockStateRsp_descriptor;
@@ -135,10 +86,10 @@ public final class SetEquipLockStateRspOuterClass {
               emu.grasscutter.net.proto.SetEquipLockStateRspOuterClass.SetEquipLockStateRsp.class, emu.grasscutter.net.proto.SetEquipLockStateRspOuterClass.SetEquipLockStateRsp.Builder.class);
     }
 
-    public static final int TARGET_EQUIP_GUID_FIELD_NUMBER = 14;
-    private long targetEquipGuid_;
+    public static final int TARGET_EQUIP_GUID_FIELD_NUMBER = 1;
+    private long targetEquipGuid_ = 0L;
     /**
-     * <code>uint64 target_equip_guid = 14;</code>
+     * <code>uint64 target_equip_guid = 1;</code>
      * @return The targetEquipGuid.
      */
     @java.lang.Override
@@ -146,26 +97,26 @@ public final class SetEquipLockStateRspOuterClass {
       return targetEquipGuid_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 13;
-    private int retcode_;
+    public static final int IS_LOCKED_FIELD_NUMBER = 3;
+    private boolean isLocked_ = false;
     /**
-     * <code>int32 retcode = 13;</code>
-     * @return The retcode.
-     */
-    @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
-    }
-
-    public static final int IS_LOCKED_FIELD_NUMBER = 10;
-    private boolean isLocked_;
-    /**
-     * <code>bool is_locked = 10;</code>
+     * <code>bool is_locked = 3;</code>
      * @return The isLocked.
      */
     @java.lang.Override
     public boolean getIsLocked() {
       return isLocked_;
+    }
+
+    public static final int RETCODE_FIELD_NUMBER = 12;
+    private int retcode_ = 0;
+    /**
+     * <code>int32 retcode = 12;</code>
+     * @return The retcode.
+     */
+    @java.lang.Override
+    public int getRetcode() {
+      return retcode_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -182,16 +133,16 @@ public final class SetEquipLockStateRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (targetEquipGuid_ != 0L) {
+        output.writeUInt64(1, targetEquipGuid_);
+      }
       if (isLocked_ != false) {
-        output.writeBool(10, isLocked_);
+        output.writeBool(3, isLocked_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(13, retcode_);
+        output.writeInt32(12, retcode_);
       }
-      if (targetEquipGuid_ != 0L) {
-        output.writeUInt64(14, targetEquipGuid_);
-      }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -200,19 +151,19 @@ public final class SetEquipLockStateRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (targetEquipGuid_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(1, targetEquipGuid_);
+      }
       if (isLocked_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(10, isLocked_);
+          .computeBoolSize(3, isLocked_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(13, retcode_);
+          .computeInt32Size(12, retcode_);
       }
-      if (targetEquipGuid_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(14, targetEquipGuid_);
-      }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -229,11 +180,11 @@ public final class SetEquipLockStateRspOuterClass {
 
       if (getTargetEquipGuid()
           != other.getTargetEquipGuid()) return false;
-      if (getRetcode()
-          != other.getRetcode()) return false;
       if (getIsLocked()
           != other.getIsLocked()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (getRetcode()
+          != other.getRetcode()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -247,12 +198,12 @@ public final class SetEquipLockStateRspOuterClass {
       hash = (37 * hash) + TARGET_EQUIP_GUID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTargetEquipGuid());
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + IS_LOCKED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsLocked());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -349,10 +300,13 @@ public final class SetEquipLockStateRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 668
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 688;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code SetEquipLockStateRsp}
@@ -376,28 +330,21 @@ public final class SetEquipLockStateRspOuterClass {
 
       // Construct using emu.grasscutter.net.proto.SetEquipLockStateRspOuterClass.SetEquipLockStateRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         targetEquipGuid_ = 0L;
-
-        retcode_ = 0;
-
         isLocked_ = false;
-
+        retcode_ = 0;
         return this;
       }
 
@@ -424,11 +371,22 @@ public final class SetEquipLockStateRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.SetEquipLockStateRspOuterClass.SetEquipLockStateRsp buildPartial() {
         emu.grasscutter.net.proto.SetEquipLockStateRspOuterClass.SetEquipLockStateRsp result = new emu.grasscutter.net.proto.SetEquipLockStateRspOuterClass.SetEquipLockStateRsp(this);
-        result.targetEquipGuid_ = targetEquipGuid_;
-        result.retcode_ = retcode_;
-        result.isLocked_ = isLocked_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.grasscutter.net.proto.SetEquipLockStateRspOuterClass.SetEquipLockStateRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.targetEquipGuid_ = targetEquipGuid_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.isLocked_ = isLocked_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.retcode_ = retcode_;
+        }
       }
 
       @java.lang.Override
@@ -478,13 +436,13 @@ public final class SetEquipLockStateRspOuterClass {
         if (other.getTargetEquipGuid() != 0L) {
           setTargetEquipGuid(other.getTargetEquipGuid());
         }
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
-        }
         if (other.getIsLocked() != false) {
           setIsLocked(other.getIsLocked());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -499,23 +457,52 @@ public final class SetEquipLockStateRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.SetEquipLockStateRspOuterClass.SetEquipLockStateRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                targetEquipGuid_ = input.readUInt64();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 24: {
+                isLocked_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 24
+              case 96: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 96
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.SetEquipLockStateRspOuterClass.SetEquipLockStateRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private long targetEquipGuid_ ;
       /**
-       * <code>uint64 target_equip_guid = 14;</code>
+       * <code>uint64 target_equip_guid = 1;</code>
        * @return The targetEquipGuid.
        */
       @java.lang.Override
@@ -523,61 +510,31 @@ public final class SetEquipLockStateRspOuterClass {
         return targetEquipGuid_;
       }
       /**
-       * <code>uint64 target_equip_guid = 14;</code>
+       * <code>uint64 target_equip_guid = 1;</code>
        * @param value The targetEquipGuid to set.
        * @return This builder for chaining.
        */
       public Builder setTargetEquipGuid(long value) {
         
         targetEquipGuid_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
-       * <code>uint64 target_equip_guid = 14;</code>
+       * <code>uint64 target_equip_guid = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearTargetEquipGuid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         targetEquipGuid_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private int retcode_ ;
-      /**
-       * <code>int32 retcode = 13;</code>
-       * @return The retcode.
-       */
-      @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
-      }
-      /**
-       * <code>int32 retcode = 13;</code>
-       * @param value The retcode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetcode(int value) {
-        
-        retcode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 retcode = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetcode() {
-        
-        retcode_ = 0;
         onChanged();
         return this;
       }
 
       private boolean isLocked_ ;
       /**
-       * <code>bool is_locked = 10;</code>
+       * <code>bool is_locked = 3;</code>
        * @return The isLocked.
        */
       @java.lang.Override
@@ -585,23 +542,56 @@ public final class SetEquipLockStateRspOuterClass {
         return isLocked_;
       }
       /**
-       * <code>bool is_locked = 10;</code>
+       * <code>bool is_locked = 3;</code>
        * @param value The isLocked to set.
        * @return This builder for chaining.
        */
       public Builder setIsLocked(boolean value) {
         
         isLocked_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
       /**
-       * <code>bool is_locked = 10;</code>
+       * <code>bool is_locked = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsLocked() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         isLocked_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int retcode_ ;
+      /**
+       * <code>int32 retcode = 12;</code>
+       * @return The retcode.
+       */
+      @java.lang.Override
+      public int getRetcode() {
+        return retcode_;
+      }
+      /**
+       * <code>int32 retcode = 12;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetcode(int value) {
+        
+        retcode_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 retcode = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetcode() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        retcode_ = 0;
         onChanged();
         return this;
       }
@@ -638,7 +628,18 @@ public final class SetEquipLockStateRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SetEquipLockStateRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -673,8 +674,8 @@ public final class SetEquipLockStateRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\032SetEquipLockStateRsp.proto\"U\n\024SetEquip" +
-      "LockStateRsp\022\031\n\021target_equip_guid\030\016 \001(\004\022" +
-      "\017\n\007retcode\030\r \001(\005\022\021\n\tis_locked\030\n \001(\010B\033\n\031e" +
+      "LockStateRsp\022\031\n\021target_equip_guid\030\001 \001(\004\022" +
+      "\021\n\tis_locked\030\003 \001(\010\022\017\n\007retcode\030\014 \001(\005B\033\n\031e" +
       "mu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -686,7 +687,7 @@ public final class SetEquipLockStateRspOuterClass {
     internal_static_SetEquipLockStateRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SetEquipLockStateRsp_descriptor,
-        new java.lang.String[] { "TargetEquipGuid", "Retcode", "IsLocked", });
+        new java.lang.String[] { "TargetEquipGuid", "IsLocked", "Retcode", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

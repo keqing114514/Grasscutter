@@ -19,17 +19,21 @@ public final class DeleteFriendReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 target_uid = 13;</code>
+     * <code>uint32 target_uid = 6;</code>
      * @return The targetUid.
      */
     int getTargetUid();
   }
   /**
    * <pre>
-   * CmdId: 4031
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 4027;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   *   IS_ALLOW_CLIENT = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code DeleteFriendReq}
@@ -58,48 +62,6 @@ public final class DeleteFriendReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private DeleteFriendReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 104: {
-
-              targetUid_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.grasscutter.net.proto.DeleteFriendReqOuterClass.internal_static_DeleteFriendReq_descriptor;
@@ -113,10 +75,10 @@ public final class DeleteFriendReqOuterClass {
               emu.grasscutter.net.proto.DeleteFriendReqOuterClass.DeleteFriendReq.class, emu.grasscutter.net.proto.DeleteFriendReqOuterClass.DeleteFriendReq.Builder.class);
     }
 
-    public static final int TARGET_UID_FIELD_NUMBER = 13;
-    private int targetUid_;
+    public static final int TARGET_UID_FIELD_NUMBER = 6;
+    private int targetUid_ = 0;
     /**
-     * <code>uint32 target_uid = 13;</code>
+     * <code>uint32 target_uid = 6;</code>
      * @return The targetUid.
      */
     @java.lang.Override
@@ -139,9 +101,9 @@ public final class DeleteFriendReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (targetUid_ != 0) {
-        output.writeUInt32(13, targetUid_);
+        output.writeUInt32(6, targetUid_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -152,9 +114,9 @@ public final class DeleteFriendReqOuterClass {
       size = 0;
       if (targetUid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, targetUid_);
+          .computeUInt32Size(6, targetUid_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -171,7 +133,7 @@ public final class DeleteFriendReqOuterClass {
 
       if (getTargetUid()
           != other.getTargetUid()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -184,7 +146,7 @@ public final class DeleteFriendReqOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + TARGET_UID_FIELD_NUMBER;
       hash = (53 * hash) + getTargetUid();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -281,10 +243,14 @@ public final class DeleteFriendReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4031
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 4027;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     *   IS_ALLOW_CLIENT = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code DeleteFriendReq}
@@ -308,24 +274,19 @@ public final class DeleteFriendReqOuterClass {
 
       // Construct using emu.grasscutter.net.proto.DeleteFriendReqOuterClass.DeleteFriendReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         targetUid_ = 0;
-
         return this;
       }
 
@@ -352,9 +313,16 @@ public final class DeleteFriendReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.DeleteFriendReqOuterClass.DeleteFriendReq buildPartial() {
         emu.grasscutter.net.proto.DeleteFriendReqOuterClass.DeleteFriendReq result = new emu.grasscutter.net.proto.DeleteFriendReqOuterClass.DeleteFriendReq(this);
-        result.targetUid_ = targetUid_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.grasscutter.net.proto.DeleteFriendReqOuterClass.DeleteFriendReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.targetUid_ = targetUid_;
+        }
       }
 
       @java.lang.Override
@@ -404,7 +372,7 @@ public final class DeleteFriendReqOuterClass {
         if (other.getTargetUid() != 0) {
           setTargetUid(other.getTargetUid());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -419,23 +387,42 @@ public final class DeleteFriendReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.DeleteFriendReqOuterClass.DeleteFriendReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 48: {
+                targetUid_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 48
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.DeleteFriendReqOuterClass.DeleteFriendReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int targetUid_ ;
       /**
-       * <code>uint32 target_uid = 13;</code>
+       * <code>uint32 target_uid = 6;</code>
        * @return The targetUid.
        */
       @java.lang.Override
@@ -443,22 +430,23 @@ public final class DeleteFriendReqOuterClass {
         return targetUid_;
       }
       /**
-       * <code>uint32 target_uid = 13;</code>
+       * <code>uint32 target_uid = 6;</code>
        * @param value The targetUid to set.
        * @return This builder for chaining.
        */
       public Builder setTargetUid(int value) {
         
         targetUid_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 target_uid = 13;</code>
+       * <code>uint32 target_uid = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearTargetUid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         targetUid_ = 0;
         onChanged();
         return this;
@@ -496,7 +484,18 @@ public final class DeleteFriendReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DeleteFriendReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -531,7 +530,7 @@ public final class DeleteFriendReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\025DeleteFriendReq.proto\"%\n\017DeleteFriendR" +
-      "eq\022\022\n\ntarget_uid\030\r \001(\rB\033\n\031emu.grasscutte" +
+      "eq\022\022\n\ntarget_uid\030\006 \001(\rB\033\n\031emu.grasscutte" +
       "r.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

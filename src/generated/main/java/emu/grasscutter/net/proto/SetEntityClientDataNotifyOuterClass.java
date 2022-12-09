@@ -19,32 +19,36 @@ public final class SetEntityClientDataNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 entity_id = 14;</code>
+     * <code>uint32 entity_id = 15;</code>
      * @return The entityId.
      */
     int getEntityId();
 
     /**
-     * <code>.EntityClientData entity_client_data = 9;</code>
+     * <code>.EntityClientData entity_client_data = 5;</code>
      * @return Whether the entityClientData field is set.
      */
     boolean hasEntityClientData();
     /**
-     * <code>.EntityClientData entity_client_data = 9;</code>
+     * <code>.EntityClientData entity_client_data = 5;</code>
      * @return The entityClientData.
      */
     emu.grasscutter.net.proto.EntityClientDataOuterClass.EntityClientData getEntityClientData();
     /**
-     * <code>.EntityClientData entity_client_data = 9;</code>
+     * <code>.EntityClientData entity_client_data = 5;</code>
      */
     emu.grasscutter.net.proto.EntityClientDataOuterClass.EntityClientDataOrBuilder getEntityClientDataOrBuilder();
   }
   /**
    * <pre>
-   * CmdId: 3146
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 3318;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   *   IS_ALLOW_CLIENT = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code SetEntityClientDataNotify}
@@ -73,61 +77,6 @@ public final class SetEntityClientDataNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SetEntityClientDataNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 74: {
-              emu.grasscutter.net.proto.EntityClientDataOuterClass.EntityClientData.Builder subBuilder = null;
-              if (entityClientData_ != null) {
-                subBuilder = entityClientData_.toBuilder();
-              }
-              entityClientData_ = input.readMessage(emu.grasscutter.net.proto.EntityClientDataOuterClass.EntityClientData.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(entityClientData_);
-                entityClientData_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 112: {
-
-              entityId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.grasscutter.net.proto.SetEntityClientDataNotifyOuterClass.internal_static_SetEntityClientDataNotify_descriptor;
@@ -141,10 +90,10 @@ public final class SetEntityClientDataNotifyOuterClass {
               emu.grasscutter.net.proto.SetEntityClientDataNotifyOuterClass.SetEntityClientDataNotify.class, emu.grasscutter.net.proto.SetEntityClientDataNotifyOuterClass.SetEntityClientDataNotify.Builder.class);
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 14;
-    private int entityId_;
+    public static final int ENTITY_ID_FIELD_NUMBER = 15;
+    private int entityId_ = 0;
     /**
-     * <code>uint32 entity_id = 14;</code>
+     * <code>uint32 entity_id = 15;</code>
      * @return The entityId.
      */
     @java.lang.Override
@@ -152,10 +101,10 @@ public final class SetEntityClientDataNotifyOuterClass {
       return entityId_;
     }
 
-    public static final int ENTITY_CLIENT_DATA_FIELD_NUMBER = 9;
+    public static final int ENTITY_CLIENT_DATA_FIELD_NUMBER = 5;
     private emu.grasscutter.net.proto.EntityClientDataOuterClass.EntityClientData entityClientData_;
     /**
-     * <code>.EntityClientData entity_client_data = 9;</code>
+     * <code>.EntityClientData entity_client_data = 5;</code>
      * @return Whether the entityClientData field is set.
      */
     @java.lang.Override
@@ -163,7 +112,7 @@ public final class SetEntityClientDataNotifyOuterClass {
       return entityClientData_ != null;
     }
     /**
-     * <code>.EntityClientData entity_client_data = 9;</code>
+     * <code>.EntityClientData entity_client_data = 5;</code>
      * @return The entityClientData.
      */
     @java.lang.Override
@@ -171,11 +120,11 @@ public final class SetEntityClientDataNotifyOuterClass {
       return entityClientData_ == null ? emu.grasscutter.net.proto.EntityClientDataOuterClass.EntityClientData.getDefaultInstance() : entityClientData_;
     }
     /**
-     * <code>.EntityClientData entity_client_data = 9;</code>
+     * <code>.EntityClientData entity_client_data = 5;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.EntityClientDataOuterClass.EntityClientDataOrBuilder getEntityClientDataOrBuilder() {
-      return getEntityClientData();
+      return entityClientData_ == null ? emu.grasscutter.net.proto.EntityClientDataOuterClass.EntityClientData.getDefaultInstance() : entityClientData_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -193,12 +142,12 @@ public final class SetEntityClientDataNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (entityClientData_ != null) {
-        output.writeMessage(9, getEntityClientData());
+        output.writeMessage(5, getEntityClientData());
       }
       if (entityId_ != 0) {
-        output.writeUInt32(14, entityId_);
+        output.writeUInt32(15, entityId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -209,13 +158,13 @@ public final class SetEntityClientDataNotifyOuterClass {
       size = 0;
       if (entityClientData_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, getEntityClientData());
+          .computeMessageSize(5, getEntityClientData());
       }
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, entityId_);
+          .computeUInt32Size(15, entityId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -237,7 +186,7 @@ public final class SetEntityClientDataNotifyOuterClass {
         if (!getEntityClientData()
             .equals(other.getEntityClientData())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -254,7 +203,7 @@ public final class SetEntityClientDataNotifyOuterClass {
         hash = (37 * hash) + ENTITY_CLIENT_DATA_FIELD_NUMBER;
         hash = (53 * hash) + getEntityClientData().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -351,10 +300,14 @@ public final class SetEntityClientDataNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 3146
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 3318;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     *   IS_ALLOW_CLIENT = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code SetEntityClientDataNotify}
@@ -378,28 +331,22 @@ public final class SetEntityClientDataNotifyOuterClass {
 
       // Construct using emu.grasscutter.net.proto.SetEntityClientDataNotifyOuterClass.SetEntityClientDataNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         entityId_ = 0;
-
-        if (entityClientDataBuilder_ == null) {
-          entityClientData_ = null;
-        } else {
-          entityClientData_ = null;
+        entityClientData_ = null;
+        if (entityClientDataBuilder_ != null) {
+          entityClientDataBuilder_.dispose();
           entityClientDataBuilder_ = null;
         }
         return this;
@@ -428,14 +375,21 @@ public final class SetEntityClientDataNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.SetEntityClientDataNotifyOuterClass.SetEntityClientDataNotify buildPartial() {
         emu.grasscutter.net.proto.SetEntityClientDataNotifyOuterClass.SetEntityClientDataNotify result = new emu.grasscutter.net.proto.SetEntityClientDataNotifyOuterClass.SetEntityClientDataNotify(this);
-        result.entityId_ = entityId_;
-        if (entityClientDataBuilder_ == null) {
-          result.entityClientData_ = entityClientData_;
-        } else {
-          result.entityClientData_ = entityClientDataBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.grasscutter.net.proto.SetEntityClientDataNotifyOuterClass.SetEntityClientDataNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.entityId_ = entityId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.entityClientData_ = entityClientDataBuilder_ == null
+              ? entityClientData_
+              : entityClientDataBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -488,7 +442,7 @@ public final class SetEntityClientDataNotifyOuterClass {
         if (other.hasEntityClientData()) {
           mergeEntityClientData(other.getEntityClientData());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -503,23 +457,49 @@ public final class SetEntityClientDataNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.SetEntityClientDataNotifyOuterClass.SetEntityClientDataNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 42: {
+                input.readMessage(
+                    getEntityClientDataFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 42
+              case 120: {
+                entityId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.SetEntityClientDataNotifyOuterClass.SetEntityClientDataNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int entityId_ ;
       /**
-       * <code>uint32 entity_id = 14;</code>
+       * <code>uint32 entity_id = 15;</code>
        * @return The entityId.
        */
       @java.lang.Override
@@ -527,22 +507,23 @@ public final class SetEntityClientDataNotifyOuterClass {
         return entityId_;
       }
       /**
-       * <code>uint32 entity_id = 14;</code>
+       * <code>uint32 entity_id = 15;</code>
        * @param value The entityId to set.
        * @return This builder for chaining.
        */
       public Builder setEntityId(int value) {
         
         entityId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 entity_id = 14;</code>
+       * <code>uint32 entity_id = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         entityId_ = 0;
         onChanged();
         return this;
@@ -552,14 +533,14 @@ public final class SetEntityClientDataNotifyOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.EntityClientDataOuterClass.EntityClientData, emu.grasscutter.net.proto.EntityClientDataOuterClass.EntityClientData.Builder, emu.grasscutter.net.proto.EntityClientDataOuterClass.EntityClientDataOrBuilder> entityClientDataBuilder_;
       /**
-       * <code>.EntityClientData entity_client_data = 9;</code>
+       * <code>.EntityClientData entity_client_data = 5;</code>
        * @return Whether the entityClientData field is set.
        */
       public boolean hasEntityClientData() {
-        return entityClientDataBuilder_ != null || entityClientData_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
-       * <code>.EntityClientData entity_client_data = 9;</code>
+       * <code>.EntityClientData entity_client_data = 5;</code>
        * @return The entityClientData.
        */
       public emu.grasscutter.net.proto.EntityClientDataOuterClass.EntityClientData getEntityClientData() {
@@ -570,7 +551,7 @@ public final class SetEntityClientDataNotifyOuterClass {
         }
       }
       /**
-       * <code>.EntityClientData entity_client_data = 9;</code>
+       * <code>.EntityClientData entity_client_data = 5;</code>
        */
       public Builder setEntityClientData(emu.grasscutter.net.proto.EntityClientDataOuterClass.EntityClientData value) {
         if (entityClientDataBuilder_ == null) {
@@ -578,69 +559,69 @@ public final class SetEntityClientDataNotifyOuterClass {
             throw new NullPointerException();
           }
           entityClientData_ = value;
-          onChanged();
         } else {
           entityClientDataBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
-       * <code>.EntityClientData entity_client_data = 9;</code>
+       * <code>.EntityClientData entity_client_data = 5;</code>
        */
       public Builder setEntityClientData(
           emu.grasscutter.net.proto.EntityClientDataOuterClass.EntityClientData.Builder builderForValue) {
         if (entityClientDataBuilder_ == null) {
           entityClientData_ = builderForValue.build();
-          onChanged();
         } else {
           entityClientDataBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
-       * <code>.EntityClientData entity_client_data = 9;</code>
+       * <code>.EntityClientData entity_client_data = 5;</code>
        */
       public Builder mergeEntityClientData(emu.grasscutter.net.proto.EntityClientDataOuterClass.EntityClientData value) {
         if (entityClientDataBuilder_ == null) {
-          if (entityClientData_ != null) {
-            entityClientData_ =
-              emu.grasscutter.net.proto.EntityClientDataOuterClass.EntityClientData.newBuilder(entityClientData_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            entityClientData_ != null &&
+            entityClientData_ != emu.grasscutter.net.proto.EntityClientDataOuterClass.EntityClientData.getDefaultInstance()) {
+            getEntityClientDataBuilder().mergeFrom(value);
           } else {
             entityClientData_ = value;
           }
-          onChanged();
         } else {
           entityClientDataBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
-       * <code>.EntityClientData entity_client_data = 9;</code>
+       * <code>.EntityClientData entity_client_data = 5;</code>
        */
       public Builder clearEntityClientData() {
-        if (entityClientDataBuilder_ == null) {
-          entityClientData_ = null;
-          onChanged();
-        } else {
-          entityClientData_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        entityClientData_ = null;
+        if (entityClientDataBuilder_ != null) {
+          entityClientDataBuilder_.dispose();
           entityClientDataBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
-       * <code>.EntityClientData entity_client_data = 9;</code>
+       * <code>.EntityClientData entity_client_data = 5;</code>
        */
       public emu.grasscutter.net.proto.EntityClientDataOuterClass.EntityClientData.Builder getEntityClientDataBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getEntityClientDataFieldBuilder().getBuilder();
       }
       /**
-       * <code>.EntityClientData entity_client_data = 9;</code>
+       * <code>.EntityClientData entity_client_data = 5;</code>
        */
       public emu.grasscutter.net.proto.EntityClientDataOuterClass.EntityClientDataOrBuilder getEntityClientDataOrBuilder() {
         if (entityClientDataBuilder_ != null) {
@@ -651,7 +632,7 @@ public final class SetEntityClientDataNotifyOuterClass {
         }
       }
       /**
-       * <code>.EntityClientData entity_client_data = 9;</code>
+       * <code>.EntityClientData entity_client_data = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.EntityClientDataOuterClass.EntityClientData, emu.grasscutter.net.proto.EntityClientDataOuterClass.EntityClientData.Builder, emu.grasscutter.net.proto.EntityClientDataOuterClass.EntityClientDataOrBuilder> 
@@ -699,7 +680,18 @@ public final class SetEntityClientDataNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SetEntityClientDataNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -735,8 +727,8 @@ public final class SetEntityClientDataNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\037SetEntityClientDataNotify.proto\032\026Entit" +
       "yClientData.proto\"]\n\031SetEntityClientData" +
-      "Notify\022\021\n\tentity_id\030\016 \001(\r\022-\n\022entity_clie" +
-      "nt_data\030\t \001(\0132\021.EntityClientDataB\033\n\031emu." +
+      "Notify\022\021\n\tentity_id\030\017 \001(\r\022-\n\022entity_clie" +
+      "nt_data\030\005 \001(\0132\021.EntityClientDataB\033\n\031emu." +
       "grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

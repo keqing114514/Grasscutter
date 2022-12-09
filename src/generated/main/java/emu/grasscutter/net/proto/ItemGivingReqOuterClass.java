@@ -19,11 +19,52 @@ public final class ItemGivingReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>map&lt;uint64, uint32&gt; item_guid_count_map = 15;</code>
+     * <code>uint32 giving_id = 6;</code>
+     * @return The givingId.
+     */
+    int getGivingId();
+
+    /**
+     * <code>.ItemGivingReq.ItemGivingType item_giving_type = 8;</code>
+     * @return The enum numeric value on the wire for itemGivingType.
+     */
+    int getItemGivingTypeValue();
+    /**
+     * <code>.ItemGivingReq.ItemGivingType item_giving_type = 8;</code>
+     * @return The itemGivingType.
+     */
+    emu.grasscutter.net.proto.ItemGivingReqOuterClass.ItemGivingReq.ItemGivingType getItemGivingType();
+
+    /**
+     * <code>repeated .ItemParam item_param_list = 12;</code>
+     */
+    java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> 
+        getItemParamListList();
+    /**
+     * <code>repeated .ItemParam item_param_list = 12;</code>
+     */
+    emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getItemParamList(int index);
+    /**
+     * <code>repeated .ItemParam item_param_list = 12;</code>
+     */
+    int getItemParamListCount();
+    /**
+     * <code>repeated .ItemParam item_param_list = 12;</code>
+     */
+    java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
+        getItemParamListOrBuilderList();
+    /**
+     * <code>repeated .ItemParam item_param_list = 12;</code>
+     */
+    emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getItemParamListOrBuilder(
+        int index);
+
+    /**
+     * <code>map&lt;uint64, uint32&gt; item_guid_count_map = 11;</code>
      */
     int getItemGuidCountMapCount();
     /**
-     * <code>map&lt;uint64, uint32&gt; item_guid_count_map = 15;</code>
+     * <code>map&lt;uint64, uint32&gt; item_guid_count_map = 11;</code>
      */
     boolean containsItemGuidCountMap(
         long key);
@@ -34,71 +75,32 @@ public final class ItemGivingReqOuterClass {
     java.util.Map<java.lang.Long, java.lang.Integer>
     getItemGuidCountMap();
     /**
-     * <code>map&lt;uint64, uint32&gt; item_guid_count_map = 15;</code>
+     * <code>map&lt;uint64, uint32&gt; item_guid_count_map = 11;</code>
      */
     java.util.Map<java.lang.Long, java.lang.Integer>
     getItemGuidCountMapMap();
     /**
-     * <code>map&lt;uint64, uint32&gt; item_guid_count_map = 15;</code>
+     * <code>map&lt;uint64, uint32&gt; item_guid_count_map = 11;</code>
      */
-
     int getItemGuidCountMapOrDefault(
         long key,
         int defaultValue);
     /**
-     * <code>map&lt;uint64, uint32&gt; item_guid_count_map = 15;</code>
+     * <code>map&lt;uint64, uint32&gt; item_guid_count_map = 11;</code>
      */
-
     int getItemGuidCountMapOrThrow(
         long key);
-
-    /**
-     * <code>uint32 giving_id = 13;</code>
-     * @return The givingId.
-     */
-    int getGivingId();
-
-    /**
-     * <code>repeated .ItemParam item_param_list = 4;</code>
-     */
-    java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> 
-        getItemParamListList();
-    /**
-     * <code>repeated .ItemParam item_param_list = 4;</code>
-     */
-    emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getItemParamList(int index);
-    /**
-     * <code>repeated .ItemParam item_param_list = 4;</code>
-     */
-    int getItemParamListCount();
-    /**
-     * <code>repeated .ItemParam item_param_list = 4;</code>
-     */
-    java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
-        getItemParamListOrBuilderList();
-    /**
-     * <code>repeated .ItemParam item_param_list = 4;</code>
-     */
-    emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getItemParamListOrBuilder(
-        int index);
-
-    /**
-     * <code>.ItemGivingReq.Unk2800_LENCDFJACFN Unk2800_PHNIJJMECGN = 2;</code>
-     * @return The enum numeric value on the wire for unk2800PHNIJJMECGN.
-     */
-    int getUnk2800PHNIJJMECGNValue();
-    /**
-     * <code>.ItemGivingReq.Unk2800_LENCDFJACFN Unk2800_PHNIJJMECGN = 2;</code>
-     * @return The unk2800PHNIJJMECGN.
-     */
-    emu.grasscutter.net.proto.ItemGivingReqOuterClass.ItemGivingReq.Unk2800_LENCDFJACFN getUnk2800PHNIJJMECGN();
   }
   /**
    * <pre>
-   * CmdId: 140
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 185;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   *   IS_ALLOW_CLIENT = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code ItemGivingReq}
@@ -113,8 +115,8 @@ public final class ItemGivingReqOuterClass {
       super(builder);
     }
     private ItemGivingReq() {
+      itemGivingType_ = 0;
       itemParamList_ = java.util.Collections.emptyList();
-      unk2800PHNIJJMECGN_ = 0;
     }
 
     @java.lang.Override
@@ -129,80 +131,6 @@ public final class ItemGivingReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ItemGivingReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-              int rawValue = input.readEnum();
-
-              unk2800PHNIJJMECGN_ = rawValue;
-              break;
-            }
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                itemParamList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              itemParamList_.add(
-                  input.readMessage(emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
-              break;
-            }
-            case 104: {
-
-              givingId_ = input.readUInt32();
-              break;
-            }
-            case 122: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                itemGuidCountMap_ = com.google.protobuf.MapField.newMapField(
-                    ItemGuidCountMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.Long, java.lang.Integer>
-              itemGuidCountMap__ = input.readMessage(
-                  ItemGuidCountMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              itemGuidCountMap_.getMutableMap().put(
-                  itemGuidCountMap__.getKey(), itemGuidCountMap__.getValue());
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          itemParamList_ = java.util.Collections.unmodifiableList(itemParamList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.grasscutter.net.proto.ItemGivingReqOuterClass.internal_static_ItemGivingReq_descriptor;
@@ -213,7 +141,7 @@ public final class ItemGivingReqOuterClass {
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 15:
+        case 11:
           return internalGetItemGuidCountMap();
         default:
           throw new RuntimeException(
@@ -229,29 +157,29 @@ public final class ItemGivingReqOuterClass {
     }
 
     /**
-     * Protobuf enum {@code ItemGivingReq.Unk2800_LENCDFJACFN}
+     * Protobuf enum {@code ItemGivingReq.ItemGivingType}
      */
-    public enum Unk2800_LENCDFJACFN
+    public enum ItemGivingType
         implements com.google.protobuf.ProtocolMessageEnum {
       /**
-       * <code>Unk2800_LENCDFJACFN_QUEST = 0;</code>
+       * <code>ITEM_GIVING_TYPE_QUEST = 0;</code>
        */
-      Unk2800_LENCDFJACFN_QUEST(0),
+      ITEM_GIVING_TYPE_QUEST(0),
       /**
-       * <code>Unk2800_LENCDFJACFN_Unk2800_HHHOPEHIPFG = 1;</code>
+       * <code>ITEM_GIVING_TYPE_GADGET = 1;</code>
        */
-      Unk2800_LENCDFJACFN_Unk2800_HHHOPEHIPFG(1),
+      ITEM_GIVING_TYPE_GADGET(1),
       UNRECOGNIZED(-1),
       ;
 
       /**
-       * <code>Unk2800_LENCDFJACFN_QUEST = 0;</code>
+       * <code>ITEM_GIVING_TYPE_QUEST = 0;</code>
        */
-      public static final int Unk2800_LENCDFJACFN_QUEST_VALUE = 0;
+      public static final int ITEM_GIVING_TYPE_QUEST_VALUE = 0;
       /**
-       * <code>Unk2800_LENCDFJACFN_Unk2800_HHHOPEHIPFG = 1;</code>
+       * <code>ITEM_GIVING_TYPE_GADGET = 1;</code>
        */
-      public static final int Unk2800_LENCDFJACFN_Unk2800_HHHOPEHIPFG_VALUE = 1;
+      public static final int ITEM_GIVING_TYPE_GADGET_VALUE = 1;
 
 
       public final int getNumber() {
@@ -268,7 +196,7 @@ public final class ItemGivingReqOuterClass {
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
-      public static Unk2800_LENCDFJACFN valueOf(int value) {
+      public static ItemGivingType valueOf(int value) {
         return forNumber(value);
       }
 
@@ -276,23 +204,23 @@ public final class ItemGivingReqOuterClass {
        * @param value The numeric wire value of the corresponding enum entry.
        * @return The enum associated with the given numeric wire value.
        */
-      public static Unk2800_LENCDFJACFN forNumber(int value) {
+      public static ItemGivingType forNumber(int value) {
         switch (value) {
-          case 0: return Unk2800_LENCDFJACFN_QUEST;
-          case 1: return Unk2800_LENCDFJACFN_Unk2800_HHHOPEHIPFG;
+          case 0: return ITEM_GIVING_TYPE_QUEST;
+          case 1: return ITEM_GIVING_TYPE_GADGET;
           default: return null;
         }
       }
 
-      public static com.google.protobuf.Internal.EnumLiteMap<Unk2800_LENCDFJACFN>
+      public static com.google.protobuf.Internal.EnumLiteMap<ItemGivingType>
           internalGetValueMap() {
         return internalValueMap;
       }
       private static final com.google.protobuf.Internal.EnumLiteMap<
-          Unk2800_LENCDFJACFN> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<Unk2800_LENCDFJACFN>() {
-              public Unk2800_LENCDFJACFN findValueByNumber(int number) {
-                return Unk2800_LENCDFJACFN.forNumber(number);
+          ItemGivingType> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<ItemGivingType>() {
+              public ItemGivingType findValueByNumber(int number) {
+                return ItemGivingType.forNumber(number);
               }
             };
 
@@ -313,9 +241,9 @@ public final class ItemGivingReqOuterClass {
         return emu.grasscutter.net.proto.ItemGivingReqOuterClass.ItemGivingReq.getDescriptor().getEnumTypes().get(0);
       }
 
-      private static final Unk2800_LENCDFJACFN[] VALUES = values();
+      private static final ItemGivingType[] VALUES = values();
 
-      public static Unk2800_LENCDFJACFN valueOf(
+      public static ItemGivingType valueOf(
           com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
         if (desc.getType() != getDescriptor()) {
           throw new java.lang.IllegalArgumentException(
@@ -329,14 +257,84 @@ public final class ItemGivingReqOuterClass {
 
       private final int value;
 
-      private Unk2800_LENCDFJACFN(int value) {
+      private ItemGivingType(int value) {
         this.value = value;
       }
 
-      // @@protoc_insertion_point(enum_scope:ItemGivingReq.Unk2800_LENCDFJACFN)
+      // @@protoc_insertion_point(enum_scope:ItemGivingReq.ItemGivingType)
     }
 
-    public static final int ITEM_GUID_COUNT_MAP_FIELD_NUMBER = 15;
+    public static final int GIVING_ID_FIELD_NUMBER = 6;
+    private int givingId_ = 0;
+    /**
+     * <code>uint32 giving_id = 6;</code>
+     * @return The givingId.
+     */
+    @java.lang.Override
+    public int getGivingId() {
+      return givingId_;
+    }
+
+    public static final int ITEM_GIVING_TYPE_FIELD_NUMBER = 8;
+    private int itemGivingType_ = 0;
+    /**
+     * <code>.ItemGivingReq.ItemGivingType item_giving_type = 8;</code>
+     * @return The enum numeric value on the wire for itemGivingType.
+     */
+    @java.lang.Override public int getItemGivingTypeValue() {
+      return itemGivingType_;
+    }
+    /**
+     * <code>.ItemGivingReq.ItemGivingType item_giving_type = 8;</code>
+     * @return The itemGivingType.
+     */
+    @java.lang.Override public emu.grasscutter.net.proto.ItemGivingReqOuterClass.ItemGivingReq.ItemGivingType getItemGivingType() {
+      emu.grasscutter.net.proto.ItemGivingReqOuterClass.ItemGivingReq.ItemGivingType result = emu.grasscutter.net.proto.ItemGivingReqOuterClass.ItemGivingReq.ItemGivingType.forNumber(itemGivingType_);
+      return result == null ? emu.grasscutter.net.proto.ItemGivingReqOuterClass.ItemGivingReq.ItemGivingType.UNRECOGNIZED : result;
+    }
+
+    public static final int ITEM_PARAM_LIST_FIELD_NUMBER = 12;
+    @SuppressWarnings("serial")
+    private java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> itemParamList_;
+    /**
+     * <code>repeated .ItemParam item_param_list = 12;</code>
+     */
+    @java.lang.Override
+    public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> getItemParamListList() {
+      return itemParamList_;
+    }
+    /**
+     * <code>repeated .ItemParam item_param_list = 12;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
+        getItemParamListOrBuilderList() {
+      return itemParamList_;
+    }
+    /**
+     * <code>repeated .ItemParam item_param_list = 12;</code>
+     */
+    @java.lang.Override
+    public int getItemParamListCount() {
+      return itemParamList_.size();
+    }
+    /**
+     * <code>repeated .ItemParam item_param_list = 12;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getItemParamList(int index) {
+      return itemParamList_.get(index);
+    }
+    /**
+     * <code>repeated .ItemParam item_param_list = 12;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getItemParamListOrBuilder(
+        int index) {
+      return itemParamList_.get(index);
+    }
+
+    public static final int ITEM_GUID_COUNT_MAP_FIELD_NUMBER = 11;
     private static final class ItemGuidCountMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Long, java.lang.Integer> defaultEntry =
@@ -348,6 +346,7 @@ public final class ItemGivingReqOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Long, java.lang.Integer> itemGuidCountMap_;
     private com.google.protobuf.MapField<java.lang.Long, java.lang.Integer>
@@ -358,14 +357,12 @@ public final class ItemGivingReqOuterClass {
       }
       return itemGuidCountMap_;
     }
-
     public int getItemGuidCountMapCount() {
       return internalGetItemGuidCountMap().getMap().size();
     }
     /**
-     * <code>map&lt;uint64, uint32&gt; item_guid_count_map = 15;</code>
+     * <code>map&lt;uint64, uint32&gt; item_guid_count_map = 11;</code>
      */
-
     @java.lang.Override
     public boolean containsItemGuidCountMap(
         long key) {
@@ -381,18 +378,16 @@ public final class ItemGivingReqOuterClass {
       return getItemGuidCountMapMap();
     }
     /**
-     * <code>map&lt;uint64, uint32&gt; item_guid_count_map = 15;</code>
+     * <code>map&lt;uint64, uint32&gt; item_guid_count_map = 11;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Long, java.lang.Integer> getItemGuidCountMapMap() {
       return internalGetItemGuidCountMap().getMap();
     }
     /**
-     * <code>map&lt;uint64, uint32&gt; item_guid_count_map = 15;</code>
+     * <code>map&lt;uint64, uint32&gt; item_guid_count_map = 11;</code>
      */
     @java.lang.Override
-
     public int getItemGuidCountMapOrDefault(
         long key,
         int defaultValue) {
@@ -402,10 +397,9 @@ public final class ItemGivingReqOuterClass {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;uint64, uint32&gt; item_guid_count_map = 15;</code>
+     * <code>map&lt;uint64, uint32&gt; item_guid_count_map = 11;</code>
      */
     @java.lang.Override
-
     public int getItemGuidCountMapOrThrow(
         long key) {
       
@@ -415,76 +409,6 @@ public final class ItemGivingReqOuterClass {
         throw new java.lang.IllegalArgumentException();
       }
       return map.get(key);
-    }
-
-    public static final int GIVING_ID_FIELD_NUMBER = 13;
-    private int givingId_;
-    /**
-     * <code>uint32 giving_id = 13;</code>
-     * @return The givingId.
-     */
-    @java.lang.Override
-    public int getGivingId() {
-      return givingId_;
-    }
-
-    public static final int ITEM_PARAM_LIST_FIELD_NUMBER = 4;
-    private java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> itemParamList_;
-    /**
-     * <code>repeated .ItemParam item_param_list = 4;</code>
-     */
-    @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> getItemParamListList() {
-      return itemParamList_;
-    }
-    /**
-     * <code>repeated .ItemParam item_param_list = 4;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
-        getItemParamListOrBuilderList() {
-      return itemParamList_;
-    }
-    /**
-     * <code>repeated .ItemParam item_param_list = 4;</code>
-     */
-    @java.lang.Override
-    public int getItemParamListCount() {
-      return itemParamList_.size();
-    }
-    /**
-     * <code>repeated .ItemParam item_param_list = 4;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getItemParamList(int index) {
-      return itemParamList_.get(index);
-    }
-    /**
-     * <code>repeated .ItemParam item_param_list = 4;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getItemParamListOrBuilder(
-        int index) {
-      return itemParamList_.get(index);
-    }
-
-    public static final int UNK2800_PHNIJJMECGN_FIELD_NUMBER = 2;
-    private int unk2800PHNIJJMECGN_;
-    /**
-     * <code>.ItemGivingReq.Unk2800_LENCDFJACFN Unk2800_PHNIJJMECGN = 2;</code>
-     * @return The enum numeric value on the wire for unk2800PHNIJJMECGN.
-     */
-    @java.lang.Override public int getUnk2800PHNIJJMECGNValue() {
-      return unk2800PHNIJJMECGN_;
-    }
-    /**
-     * <code>.ItemGivingReq.Unk2800_LENCDFJACFN Unk2800_PHNIJJMECGN = 2;</code>
-     * @return The unk2800PHNIJJMECGN.
-     */
-    @java.lang.Override public emu.grasscutter.net.proto.ItemGivingReqOuterClass.ItemGivingReq.Unk2800_LENCDFJACFN getUnk2800PHNIJJMECGN() {
-      @SuppressWarnings("deprecation")
-      emu.grasscutter.net.proto.ItemGivingReqOuterClass.ItemGivingReq.Unk2800_LENCDFJACFN result = emu.grasscutter.net.proto.ItemGivingReqOuterClass.ItemGivingReq.Unk2800_LENCDFJACFN.valueOf(unk2800PHNIJJMECGN_);
-      return result == null ? emu.grasscutter.net.proto.ItemGivingReqOuterClass.ItemGivingReq.Unk2800_LENCDFJACFN.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -501,22 +425,22 @@ public final class ItemGivingReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (unk2800PHNIJJMECGN_ != emu.grasscutter.net.proto.ItemGivingReqOuterClass.ItemGivingReq.Unk2800_LENCDFJACFN.Unk2800_LENCDFJACFN_QUEST.getNumber()) {
-        output.writeEnum(2, unk2800PHNIJJMECGN_);
-      }
-      for (int i = 0; i < itemParamList_.size(); i++) {
-        output.writeMessage(4, itemParamList_.get(i));
-      }
       if (givingId_ != 0) {
-        output.writeUInt32(13, givingId_);
+        output.writeUInt32(6, givingId_);
+      }
+      if (itemGivingType_ != emu.grasscutter.net.proto.ItemGivingReqOuterClass.ItemGivingReq.ItemGivingType.ITEM_GIVING_TYPE_QUEST.getNumber()) {
+        output.writeEnum(8, itemGivingType_);
       }
       com.google.protobuf.GeneratedMessageV3
         .serializeLongMapTo(
           output,
           internalGetItemGuidCountMap(),
           ItemGuidCountMapDefaultEntryHolder.defaultEntry,
-          15);
-      unknownFields.writeTo(output);
+          11);
+      for (int i = 0; i < itemParamList_.size(); i++) {
+        output.writeMessage(12, itemParamList_.get(i));
+      }
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -525,17 +449,13 @@ public final class ItemGivingReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (unk2800PHNIJJMECGN_ != emu.grasscutter.net.proto.ItemGivingReqOuterClass.ItemGivingReq.Unk2800_LENCDFJACFN.Unk2800_LENCDFJACFN_QUEST.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(2, unk2800PHNIJJMECGN_);
-      }
-      for (int i = 0; i < itemParamList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, itemParamList_.get(i));
-      }
       if (givingId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, givingId_);
+          .computeUInt32Size(6, givingId_);
+      }
+      if (itemGivingType_ != emu.grasscutter.net.proto.ItemGivingReqOuterClass.ItemGivingReq.ItemGivingType.ITEM_GIVING_TYPE_QUEST.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(8, itemGivingType_);
       }
       for (java.util.Map.Entry<java.lang.Long, java.lang.Integer> entry
            : internalGetItemGuidCountMap().getMap().entrySet()) {
@@ -545,9 +465,13 @@ public final class ItemGivingReqOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(15, itemGuidCountMap__);
+            .computeMessageSize(11, itemGuidCountMap__);
       }
-      size += unknownFields.getSerializedSize();
+      for (int i = 0; i < itemParamList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(12, itemParamList_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -562,14 +486,14 @@ public final class ItemGivingReqOuterClass {
       }
       emu.grasscutter.net.proto.ItemGivingReqOuterClass.ItemGivingReq other = (emu.grasscutter.net.proto.ItemGivingReqOuterClass.ItemGivingReq) obj;
 
-      if (!internalGetItemGuidCountMap().equals(
-          other.internalGetItemGuidCountMap())) return false;
       if (getGivingId()
           != other.getGivingId()) return false;
+      if (itemGivingType_ != other.itemGivingType_) return false;
       if (!getItemParamListList()
           .equals(other.getItemParamListList())) return false;
-      if (unk2800PHNIJJMECGN_ != other.unk2800PHNIJJMECGN_) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!internalGetItemGuidCountMap().equals(
+          other.internalGetItemGuidCountMap())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -580,19 +504,19 @@ public final class ItemGivingReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (!internalGetItemGuidCountMap().getMap().isEmpty()) {
-        hash = (37 * hash) + ITEM_GUID_COUNT_MAP_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetItemGuidCountMap().hashCode();
-      }
       hash = (37 * hash) + GIVING_ID_FIELD_NUMBER;
       hash = (53 * hash) + getGivingId();
+      hash = (37 * hash) + ITEM_GIVING_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + itemGivingType_;
       if (getItemParamListCount() > 0) {
         hash = (37 * hash) + ITEM_PARAM_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getItemParamListList().hashCode();
       }
-      hash = (37 * hash) + UNK2800_PHNIJJMECGN_FIELD_NUMBER;
-      hash = (53 * hash) + unk2800PHNIJJMECGN_;
-      hash = (29 * hash) + unknownFields.hashCode();
+      if (!internalGetItemGuidCountMap().getMap().isEmpty()) {
+        hash = (37 * hash) + ITEM_GUID_COUNT_MAP_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetItemGuidCountMap().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -689,10 +613,14 @@ public final class ItemGivingReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 140
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 185;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     *   IS_ALLOW_CLIENT = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code ItemGivingReq}
@@ -710,7 +638,7 @@ public final class ItemGivingReqOuterClass {
       protected com.google.protobuf.MapField internalGetMapField(
           int number) {
         switch (number) {
-          case 15:
+          case 11:
             return internalGetItemGuidCountMap();
           default:
             throw new RuntimeException(
@@ -721,7 +649,7 @@ public final class ItemGivingReqOuterClass {
       protected com.google.protobuf.MapField internalGetMutableMapField(
           int number) {
         switch (number) {
-          case 15:
+          case 11:
             return internalGetMutableItemGuidCountMap();
           default:
             throw new RuntimeException(
@@ -738,34 +666,28 @@ public final class ItemGivingReqOuterClass {
 
       // Construct using emu.grasscutter.net.proto.ItemGivingReqOuterClass.ItemGivingReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getItemParamListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        internalGetMutableItemGuidCountMap().clear();
+        bitField0_ = 0;
         givingId_ = 0;
-
+        itemGivingType_ = 0;
         if (itemParamListBuilder_ == null) {
           itemParamList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          itemParamList_ = null;
           itemParamListBuilder_.clear();
         }
-        unk2800PHNIJJMECGN_ = 0;
-
+        bitField0_ = (bitField0_ & ~0x00000004);
+        internalGetMutableItemGuidCountMap().clear();
         return this;
       }
 
@@ -792,22 +714,36 @@ public final class ItemGivingReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.ItemGivingReqOuterClass.ItemGivingReq buildPartial() {
         emu.grasscutter.net.proto.ItemGivingReqOuterClass.ItemGivingReq result = new emu.grasscutter.net.proto.ItemGivingReqOuterClass.ItemGivingReq(this);
-        int from_bitField0_ = bitField0_;
-        result.itemGuidCountMap_ = internalGetItemGuidCountMap();
-        result.itemGuidCountMap_.makeImmutable();
-        result.givingId_ = givingId_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.grasscutter.net.proto.ItemGivingReqOuterClass.ItemGivingReq result) {
         if (itemParamListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             itemParamList_ = java.util.Collections.unmodifiableList(itemParamList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.itemParamList_ = itemParamList_;
         } else {
           result.itemParamList_ = itemParamListBuilder_.build();
         }
-        result.unk2800PHNIJJMECGN_ = unk2800PHNIJJMECGN_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.grasscutter.net.proto.ItemGivingReqOuterClass.ItemGivingReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.givingId_ = givingId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.itemGivingType_ = itemGivingType_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.itemGuidCountMap_ = internalGetItemGuidCountMap();
+          result.itemGuidCountMap_.makeImmutable();
+        }
       }
 
       @java.lang.Override
@@ -854,16 +790,17 @@ public final class ItemGivingReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ItemGivingReqOuterClass.ItemGivingReq other) {
         if (other == emu.grasscutter.net.proto.ItemGivingReqOuterClass.ItemGivingReq.getDefaultInstance()) return this;
-        internalGetMutableItemGuidCountMap().mergeFrom(
-            other.internalGetItemGuidCountMap());
         if (other.getGivingId() != 0) {
           setGivingId(other.getGivingId());
+        }
+        if (other.itemGivingType_ != 0) {
+          setItemGivingTypeValue(other.getItemGivingTypeValue());
         }
         if (itemParamListBuilder_ == null) {
           if (!other.itemParamList_.isEmpty()) {
             if (itemParamList_.isEmpty()) {
               itemParamList_ = other.itemParamList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureItemParamListIsMutable();
               itemParamList_.addAll(other.itemParamList_);
@@ -876,7 +813,7 @@ public final class ItemGivingReqOuterClass {
               itemParamListBuilder_.dispose();
               itemParamListBuilder_ = null;
               itemParamList_ = other.itemParamList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000004);
               itemParamListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getItemParamListFieldBuilder() : null;
@@ -885,10 +822,10 @@ public final class ItemGivingReqOuterClass {
             }
           }
         }
-        if (other.unk2800PHNIJJMECGN_ != 0) {
-          setUnk2800PHNIJJMECGNValue(other.getUnk2800PHNIJJMECGNValue());
-        }
-        this.mergeUnknownFields(other.unknownFields);
+        internalGetMutableItemGuidCountMap().mergeFrom(
+            other.internalGetItemGuidCountMap());
+        bitField0_ |= 0x00000008;
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -903,152 +840,69 @@ public final class ItemGivingReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.ItemGivingReqOuterClass.ItemGivingReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 48: {
+                givingId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 48
+              case 64: {
+                itemGivingType_ = input.readEnum();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 64
+              case 90: {
+                com.google.protobuf.MapEntry<java.lang.Long, java.lang.Integer>
+                itemGuidCountMap__ = input.readMessage(
+                    ItemGuidCountMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableItemGuidCountMap().getMutableMap().put(
+                    itemGuidCountMap__.getKey(), itemGuidCountMap__.getValue());
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 90
+              case 98: {
+                emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam m =
+                    input.readMessage(
+                        emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.parser(),
+                        extensionRegistry);
+                if (itemParamListBuilder_ == null) {
+                  ensureItemParamListIsMutable();
+                  itemParamList_.add(m);
+                } else {
+                  itemParamListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 98
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.ItemGivingReqOuterClass.ItemGivingReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
 
-      private com.google.protobuf.MapField<
-          java.lang.Long, java.lang.Integer> itemGuidCountMap_;
-      private com.google.protobuf.MapField<java.lang.Long, java.lang.Integer>
-      internalGetItemGuidCountMap() {
-        if (itemGuidCountMap_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              ItemGuidCountMapDefaultEntryHolder.defaultEntry);
-        }
-        return itemGuidCountMap_;
-      }
-      private com.google.protobuf.MapField<java.lang.Long, java.lang.Integer>
-      internalGetMutableItemGuidCountMap() {
-        onChanged();;
-        if (itemGuidCountMap_ == null) {
-          itemGuidCountMap_ = com.google.protobuf.MapField.newMapField(
-              ItemGuidCountMapDefaultEntryHolder.defaultEntry);
-        }
-        if (!itemGuidCountMap_.isMutable()) {
-          itemGuidCountMap_ = itemGuidCountMap_.copy();
-        }
-        return itemGuidCountMap_;
-      }
-
-      public int getItemGuidCountMapCount() {
-        return internalGetItemGuidCountMap().getMap().size();
-      }
-      /**
-       * <code>map&lt;uint64, uint32&gt; item_guid_count_map = 15;</code>
-       */
-
-      @java.lang.Override
-      public boolean containsItemGuidCountMap(
-          long key) {
-        
-        return internalGetItemGuidCountMap().getMap().containsKey(key);
-      }
-      /**
-       * Use {@link #getItemGuidCountMapMap()} instead.
-       */
-      @java.lang.Override
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.Long, java.lang.Integer> getItemGuidCountMap() {
-        return getItemGuidCountMapMap();
-      }
-      /**
-       * <code>map&lt;uint64, uint32&gt; item_guid_count_map = 15;</code>
-       */
-      @java.lang.Override
-
-      public java.util.Map<java.lang.Long, java.lang.Integer> getItemGuidCountMapMap() {
-        return internalGetItemGuidCountMap().getMap();
-      }
-      /**
-       * <code>map&lt;uint64, uint32&gt; item_guid_count_map = 15;</code>
-       */
-      @java.lang.Override
-
-      public int getItemGuidCountMapOrDefault(
-          long key,
-          int defaultValue) {
-        
-        java.util.Map<java.lang.Long, java.lang.Integer> map =
-            internalGetItemGuidCountMap().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-      /**
-       * <code>map&lt;uint64, uint32&gt; item_guid_count_map = 15;</code>
-       */
-      @java.lang.Override
-
-      public int getItemGuidCountMapOrThrow(
-          long key) {
-        
-        java.util.Map<java.lang.Long, java.lang.Integer> map =
-            internalGetItemGuidCountMap().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
-        }
-        return map.get(key);
-      }
-
-      public Builder clearItemGuidCountMap() {
-        internalGetMutableItemGuidCountMap().getMutableMap()
-            .clear();
-        return this;
-      }
-      /**
-       * <code>map&lt;uint64, uint32&gt; item_guid_count_map = 15;</code>
-       */
-
-      public Builder removeItemGuidCountMap(
-          long key) {
-        
-        internalGetMutableItemGuidCountMap().getMutableMap()
-            .remove(key);
-        return this;
-      }
-      /**
-       * Use alternate mutation accessors instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.Long, java.lang.Integer>
-      getMutableItemGuidCountMap() {
-        return internalGetMutableItemGuidCountMap().getMutableMap();
-      }
-      /**
-       * <code>map&lt;uint64, uint32&gt; item_guid_count_map = 15;</code>
-       */
-      public Builder putItemGuidCountMap(
-          long key,
-          int value) {
-        
-        
-        internalGetMutableItemGuidCountMap().getMutableMap()
-            .put(key, value);
-        return this;
-      }
-      /**
-       * <code>map&lt;uint64, uint32&gt; item_guid_count_map = 15;</code>
-       */
-
-      public Builder putAllItemGuidCountMap(
-          java.util.Map<java.lang.Long, java.lang.Integer> values) {
-        internalGetMutableItemGuidCountMap().getMutableMap()
-            .putAll(values);
-        return this;
-      }
-
       private int givingId_ ;
       /**
-       * <code>uint32 giving_id = 13;</code>
+       * <code>uint32 giving_id = 6;</code>
        * @return The givingId.
        */
       @java.lang.Override
@@ -1056,23 +910,77 @@ public final class ItemGivingReqOuterClass {
         return givingId_;
       }
       /**
-       * <code>uint32 giving_id = 13;</code>
+       * <code>uint32 giving_id = 6;</code>
        * @param value The givingId to set.
        * @return This builder for chaining.
        */
       public Builder setGivingId(int value) {
         
         givingId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 giving_id = 13;</code>
+       * <code>uint32 giving_id = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearGivingId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         givingId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int itemGivingType_ = 0;
+      /**
+       * <code>.ItemGivingReq.ItemGivingType item_giving_type = 8;</code>
+       * @return The enum numeric value on the wire for itemGivingType.
+       */
+      @java.lang.Override public int getItemGivingTypeValue() {
+        return itemGivingType_;
+      }
+      /**
+       * <code>.ItemGivingReq.ItemGivingType item_giving_type = 8;</code>
+       * @param value The enum numeric value on the wire for itemGivingType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setItemGivingTypeValue(int value) {
+        itemGivingType_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.ItemGivingReq.ItemGivingType item_giving_type = 8;</code>
+       * @return The itemGivingType.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.ItemGivingReqOuterClass.ItemGivingReq.ItemGivingType getItemGivingType() {
+        emu.grasscutter.net.proto.ItemGivingReqOuterClass.ItemGivingReq.ItemGivingType result = emu.grasscutter.net.proto.ItemGivingReqOuterClass.ItemGivingReq.ItemGivingType.forNumber(itemGivingType_);
+        return result == null ? emu.grasscutter.net.proto.ItemGivingReqOuterClass.ItemGivingReq.ItemGivingType.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.ItemGivingReq.ItemGivingType item_giving_type = 8;</code>
+       * @param value The itemGivingType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setItemGivingType(emu.grasscutter.net.proto.ItemGivingReqOuterClass.ItemGivingReq.ItemGivingType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
+        itemGivingType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.ItemGivingReq.ItemGivingType item_giving_type = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearItemGivingType() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        itemGivingType_ = 0;
         onChanged();
         return this;
       }
@@ -1080,9 +988,9 @@ public final class ItemGivingReqOuterClass {
       private java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> itemParamList_ =
         java.util.Collections.emptyList();
       private void ensureItemParamListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           itemParamList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam>(itemParamList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -1090,7 +998,7 @@ public final class ItemGivingReqOuterClass {
           emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> itemParamListBuilder_;
 
       /**
-       * <code>repeated .ItemParam item_param_list = 4;</code>
+       * <code>repeated .ItemParam item_param_list = 12;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> getItemParamListList() {
         if (itemParamListBuilder_ == null) {
@@ -1100,7 +1008,7 @@ public final class ItemGivingReqOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam item_param_list = 4;</code>
+       * <code>repeated .ItemParam item_param_list = 12;</code>
        */
       public int getItemParamListCount() {
         if (itemParamListBuilder_ == null) {
@@ -1110,7 +1018,7 @@ public final class ItemGivingReqOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam item_param_list = 4;</code>
+       * <code>repeated .ItemParam item_param_list = 12;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getItemParamList(int index) {
         if (itemParamListBuilder_ == null) {
@@ -1120,7 +1028,7 @@ public final class ItemGivingReqOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam item_param_list = 4;</code>
+       * <code>repeated .ItemParam item_param_list = 12;</code>
        */
       public Builder setItemParamList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
@@ -1137,7 +1045,7 @@ public final class ItemGivingReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_param_list = 4;</code>
+       * <code>repeated .ItemParam item_param_list = 12;</code>
        */
       public Builder setItemParamList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
@@ -1151,7 +1059,7 @@ public final class ItemGivingReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_param_list = 4;</code>
+       * <code>repeated .ItemParam item_param_list = 12;</code>
        */
       public Builder addItemParamList(emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
         if (itemParamListBuilder_ == null) {
@@ -1167,7 +1075,7 @@ public final class ItemGivingReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_param_list = 4;</code>
+       * <code>repeated .ItemParam item_param_list = 12;</code>
        */
       public Builder addItemParamList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
@@ -1184,7 +1092,7 @@ public final class ItemGivingReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_param_list = 4;</code>
+       * <code>repeated .ItemParam item_param_list = 12;</code>
        */
       public Builder addItemParamList(
           emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
@@ -1198,7 +1106,7 @@ public final class ItemGivingReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_param_list = 4;</code>
+       * <code>repeated .ItemParam item_param_list = 12;</code>
        */
       public Builder addItemParamList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
@@ -1212,7 +1120,7 @@ public final class ItemGivingReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_param_list = 4;</code>
+       * <code>repeated .ItemParam item_param_list = 12;</code>
        */
       public Builder addAllItemParamList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> values) {
@@ -1227,12 +1135,12 @@ public final class ItemGivingReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_param_list = 4;</code>
+       * <code>repeated .ItemParam item_param_list = 12;</code>
        */
       public Builder clearItemParamList() {
         if (itemParamListBuilder_ == null) {
           itemParamList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           itemParamListBuilder_.clear();
@@ -1240,7 +1148,7 @@ public final class ItemGivingReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_param_list = 4;</code>
+       * <code>repeated .ItemParam item_param_list = 12;</code>
        */
       public Builder removeItemParamList(int index) {
         if (itemParamListBuilder_ == null) {
@@ -1253,14 +1161,14 @@ public final class ItemGivingReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_param_list = 4;</code>
+       * <code>repeated .ItemParam item_param_list = 12;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder getItemParamListBuilder(
           int index) {
         return getItemParamListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .ItemParam item_param_list = 4;</code>
+       * <code>repeated .ItemParam item_param_list = 12;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getItemParamListOrBuilder(
           int index) {
@@ -1270,7 +1178,7 @@ public final class ItemGivingReqOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam item_param_list = 4;</code>
+       * <code>repeated .ItemParam item_param_list = 12;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
            getItemParamListOrBuilderList() {
@@ -1281,14 +1189,14 @@ public final class ItemGivingReqOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam item_param_list = 4;</code>
+       * <code>repeated .ItemParam item_param_list = 12;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder addItemParamListBuilder() {
         return getItemParamListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.getDefaultInstance());
       }
       /**
-       * <code>repeated .ItemParam item_param_list = 4;</code>
+       * <code>repeated .ItemParam item_param_list = 12;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder addItemParamListBuilder(
           int index) {
@@ -1296,7 +1204,7 @@ public final class ItemGivingReqOuterClass {
             index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.getDefaultInstance());
       }
       /**
-       * <code>repeated .ItemParam item_param_list = 4;</code>
+       * <code>repeated .ItemParam item_param_list = 12;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder> 
            getItemParamListBuilderList() {
@@ -1309,7 +1217,7 @@ public final class ItemGivingReqOuterClass {
           itemParamListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder>(
                   itemParamList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           itemParamList_ = null;
@@ -1317,57 +1225,128 @@ public final class ItemGivingReqOuterClass {
         return itemParamListBuilder_;
       }
 
-      private int unk2800PHNIJJMECGN_ = 0;
-      /**
-       * <code>.ItemGivingReq.Unk2800_LENCDFJACFN Unk2800_PHNIJJMECGN = 2;</code>
-       * @return The enum numeric value on the wire for unk2800PHNIJJMECGN.
-       */
-      @java.lang.Override public int getUnk2800PHNIJJMECGNValue() {
-        return unk2800PHNIJJMECGN_;
+      private com.google.protobuf.MapField<
+          java.lang.Long, java.lang.Integer> itemGuidCountMap_;
+      private com.google.protobuf.MapField<java.lang.Long, java.lang.Integer>
+          internalGetItemGuidCountMap() {
+        if (itemGuidCountMap_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ItemGuidCountMapDefaultEntryHolder.defaultEntry);
+        }
+        return itemGuidCountMap_;
       }
-      /**
-       * <code>.ItemGivingReq.Unk2800_LENCDFJACFN Unk2800_PHNIJJMECGN = 2;</code>
-       * @param value The enum numeric value on the wire for unk2800PHNIJJMECGN to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUnk2800PHNIJJMECGNValue(int value) {
-        
-        unk2800PHNIJJMECGN_ = value;
+      private com.google.protobuf.MapField<java.lang.Long, java.lang.Integer>
+          internalGetMutableItemGuidCountMap() {
+        if (itemGuidCountMap_ == null) {
+          itemGuidCountMap_ = com.google.protobuf.MapField.newMapField(
+              ItemGuidCountMapDefaultEntryHolder.defaultEntry);
+        }
+        if (!itemGuidCountMap_.isMutable()) {
+          itemGuidCountMap_ = itemGuidCountMap_.copy();
+        }
+        bitField0_ |= 0x00000008;
         onChanged();
-        return this;
+        return itemGuidCountMap_;
+      }
+      public int getItemGuidCountMapCount() {
+        return internalGetItemGuidCountMap().getMap().size();
       }
       /**
-       * <code>.ItemGivingReq.Unk2800_LENCDFJACFN Unk2800_PHNIJJMECGN = 2;</code>
-       * @return The unk2800PHNIJJMECGN.
+       * <code>map&lt;uint64, uint32&gt; item_guid_count_map = 11;</code>
        */
       @java.lang.Override
-      public emu.grasscutter.net.proto.ItemGivingReqOuterClass.ItemGivingReq.Unk2800_LENCDFJACFN getUnk2800PHNIJJMECGN() {
-        @SuppressWarnings("deprecation")
-        emu.grasscutter.net.proto.ItemGivingReqOuterClass.ItemGivingReq.Unk2800_LENCDFJACFN result = emu.grasscutter.net.proto.ItemGivingReqOuterClass.ItemGivingReq.Unk2800_LENCDFJACFN.valueOf(unk2800PHNIJJMECGN_);
-        return result == null ? emu.grasscutter.net.proto.ItemGivingReqOuterClass.ItemGivingReq.Unk2800_LENCDFJACFN.UNRECOGNIZED : result;
+      public boolean containsItemGuidCountMap(
+          long key) {
+        
+        return internalGetItemGuidCountMap().getMap().containsKey(key);
       }
       /**
-       * <code>.ItemGivingReq.Unk2800_LENCDFJACFN Unk2800_PHNIJJMECGN = 2;</code>
-       * @param value The unk2800PHNIJJMECGN to set.
-       * @return This builder for chaining.
+       * Use {@link #getItemGuidCountMapMap()} instead.
        */
-      public Builder setUnk2800PHNIJJMECGN(emu.grasscutter.net.proto.ItemGivingReqOuterClass.ItemGivingReq.Unk2800_LENCDFJACFN value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.Long, java.lang.Integer> getItemGuidCountMap() {
+        return getItemGuidCountMapMap();
+      }
+      /**
+       * <code>map&lt;uint64, uint32&gt; item_guid_count_map = 11;</code>
+       */
+      @java.lang.Override
+      public java.util.Map<java.lang.Long, java.lang.Integer> getItemGuidCountMapMap() {
+        return internalGetItemGuidCountMap().getMap();
+      }
+      /**
+       * <code>map&lt;uint64, uint32&gt; item_guid_count_map = 11;</code>
+       */
+      @java.lang.Override
+      public int getItemGuidCountMapOrDefault(
+          long key,
+          int defaultValue) {
         
-        unk2800PHNIJJMECGN_ = value.getNumber();
-        onChanged();
+        java.util.Map<java.lang.Long, java.lang.Integer> map =
+            internalGetItemGuidCountMap().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;uint64, uint32&gt; item_guid_count_map = 11;</code>
+       */
+      @java.lang.Override
+      public int getItemGuidCountMapOrThrow(
+          long key) {
+        
+        java.util.Map<java.lang.Long, java.lang.Integer> map =
+            internalGetItemGuidCountMap().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+      public Builder clearItemGuidCountMap() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        internalGetMutableItemGuidCountMap().getMutableMap()
+            .clear();
         return this;
       }
       /**
-       * <code>.ItemGivingReq.Unk2800_LENCDFJACFN Unk2800_PHNIJJMECGN = 2;</code>
-       * @return This builder for chaining.
+       * <code>map&lt;uint64, uint32&gt; item_guid_count_map = 11;</code>
        */
-      public Builder clearUnk2800PHNIJJMECGN() {
+      public Builder removeItemGuidCountMap(
+          long key) {
         
-        unk2800PHNIJJMECGN_ = 0;
-        onChanged();
+        internalGetMutableItemGuidCountMap().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.Long, java.lang.Integer>
+          getMutableItemGuidCountMap() {
+        bitField0_ |= 0x00000008;
+        return internalGetMutableItemGuidCountMap().getMutableMap();
+      }
+      /**
+       * <code>map&lt;uint64, uint32&gt; item_guid_count_map = 11;</code>
+       */
+      public Builder putItemGuidCountMap(
+          long key,
+          int value) {
+        
+        
+        internalGetMutableItemGuidCountMap().getMutableMap()
+            .put(key, value);
+        bitField0_ |= 0x00000008;
+        return this;
+      }
+      /**
+       * <code>map&lt;uint64, uint32&gt; item_guid_count_map = 11;</code>
+       */
+      public Builder putAllItemGuidCountMap(
+          java.util.Map<java.lang.Long, java.lang.Integer> values) {
+        internalGetMutableItemGuidCountMap().getMutableMap()
+            .putAll(values);
+        bitField0_ |= 0x00000008;
         return this;
       }
       @java.lang.Override
@@ -1403,7 +1382,18 @@ public final class ItemGivingReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ItemGivingReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1442,17 +1432,17 @@ public final class ItemGivingReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\023ItemGivingReq.proto\032\017ItemParam.proto\"\347" +
-      "\002\n\rItemGivingReq\022A\n\023item_guid_count_map\030" +
-      "\017 \003(\0132$.ItemGivingReq.ItemGuidCountMapEn" +
-      "try\022\021\n\tgiving_id\030\r \001(\r\022#\n\017item_param_lis" +
-      "t\030\004 \003(\0132\n.ItemParam\022?\n\023Unk2800_PHNIJJMEC" +
-      "GN\030\002 \001(\0162\".ItemGivingReq.Unk2800_LENCDFJ" +
-      "ACFN\0327\n\025ItemGuidCountMapEntry\022\013\n\003key\030\001 \001" +
-      "(\004\022\r\n\005value\030\002 \001(\r:\0028\001\"a\n\023Unk2800_LENCDFJ" +
-      "ACFN\022\035\n\031Unk2800_LENCDFJACFN_QUEST\020\000\022+\n\'U" +
-      "nk2800_LENCDFJACFN_Unk2800_HHHOPEHIPFG\020\001" +
-      "B\033\n\031emu.grasscutter.net.protob\006proto3"
+      "\n\023ItemGivingReq.proto\032\017ItemParam.proto\"\307" +
+      "\002\n\rItemGivingReq\022\021\n\tgiving_id\030\006 \001(\r\0227\n\020i" +
+      "tem_giving_type\030\010 \001(\0162\035.ItemGivingReq.It" +
+      "emGivingType\022#\n\017item_param_list\030\014 \003(\0132\n." +
+      "ItemParam\022A\n\023item_guid_count_map\030\013 \003(\0132$" +
+      ".ItemGivingReq.ItemGuidCountMapEntry\0327\n\025" +
+      "ItemGuidCountMapEntry\022\013\n\003key\030\001 \001(\004\022\r\n\005va" +
+      "lue\030\002 \001(\r:\0028\001\"I\n\016ItemGivingType\022\032\n\026ITEM_" +
+      "GIVING_TYPE_QUEST\020\000\022\033\n\027ITEM_GIVING_TYPE_" +
+      "GADGET\020\001B\033\n\031emu.grasscutter.net.protob\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1464,7 +1454,7 @@ public final class ItemGivingReqOuterClass {
     internal_static_ItemGivingReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ItemGivingReq_descriptor,
-        new java.lang.String[] { "ItemGuidCountMap", "GivingId", "ItemParamList", "Unk2800PHNIJJMECGN", });
+        new java.lang.String[] { "GivingId", "ItemGivingType", "ItemParamList", "ItemGuidCountMap", });
     internal_static_ItemGivingReq_ItemGuidCountMapEntry_descriptor =
       internal_static_ItemGivingReq_descriptor.getNestedTypes().get(0);
     internal_static_ItemGivingReq_ItemGuidCountMapEntry_fieldAccessorTable = new

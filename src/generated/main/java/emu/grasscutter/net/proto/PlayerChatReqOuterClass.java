@@ -19,32 +19,36 @@ public final class PlayerChatReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 channel_id = 13;</code>
+     * <code>uint32 channel_id = 3;</code>
      * @return The channelId.
      */
     int getChannelId();
 
     /**
-     * <code>.ChatInfo chat_info = 15;</code>
+     * <code>.ChatInfo chat_info = 9;</code>
      * @return Whether the chatInfo field is set.
      */
     boolean hasChatInfo();
     /**
-     * <code>.ChatInfo chat_info = 15;</code>
+     * <code>.ChatInfo chat_info = 9;</code>
      * @return The chatInfo.
      */
     emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo getChatInfo();
     /**
-     * <code>.ChatInfo chat_info = 15;</code>
+     * <code>.ChatInfo chat_info = 9;</code>
      */
     emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfoOrBuilder getChatInfoOrBuilder();
   }
   /**
    * <pre>
-   * CmdId: 3185
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 3305;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   *   IS_ALLOW_CLIENT = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code PlayerChatReq}
@@ -73,61 +77,6 @@ public final class PlayerChatReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PlayerChatReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 104: {
-
-              channelId_ = input.readUInt32();
-              break;
-            }
-            case 122: {
-              emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo.Builder subBuilder = null;
-              if (chatInfo_ != null) {
-                subBuilder = chatInfo_.toBuilder();
-              }
-              chatInfo_ = input.readMessage(emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(chatInfo_);
-                chatInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.grasscutter.net.proto.PlayerChatReqOuterClass.internal_static_PlayerChatReq_descriptor;
@@ -141,10 +90,10 @@ public final class PlayerChatReqOuterClass {
               emu.grasscutter.net.proto.PlayerChatReqOuterClass.PlayerChatReq.class, emu.grasscutter.net.proto.PlayerChatReqOuterClass.PlayerChatReq.Builder.class);
     }
 
-    public static final int CHANNEL_ID_FIELD_NUMBER = 13;
-    private int channelId_;
+    public static final int CHANNEL_ID_FIELD_NUMBER = 3;
+    private int channelId_ = 0;
     /**
-     * <code>uint32 channel_id = 13;</code>
+     * <code>uint32 channel_id = 3;</code>
      * @return The channelId.
      */
     @java.lang.Override
@@ -152,10 +101,10 @@ public final class PlayerChatReqOuterClass {
       return channelId_;
     }
 
-    public static final int CHAT_INFO_FIELD_NUMBER = 15;
+    public static final int CHAT_INFO_FIELD_NUMBER = 9;
     private emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo chatInfo_;
     /**
-     * <code>.ChatInfo chat_info = 15;</code>
+     * <code>.ChatInfo chat_info = 9;</code>
      * @return Whether the chatInfo field is set.
      */
     @java.lang.Override
@@ -163,7 +112,7 @@ public final class PlayerChatReqOuterClass {
       return chatInfo_ != null;
     }
     /**
-     * <code>.ChatInfo chat_info = 15;</code>
+     * <code>.ChatInfo chat_info = 9;</code>
      * @return The chatInfo.
      */
     @java.lang.Override
@@ -171,11 +120,11 @@ public final class PlayerChatReqOuterClass {
       return chatInfo_ == null ? emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo.getDefaultInstance() : chatInfo_;
     }
     /**
-     * <code>.ChatInfo chat_info = 15;</code>
+     * <code>.ChatInfo chat_info = 9;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfoOrBuilder getChatInfoOrBuilder() {
-      return getChatInfo();
+      return chatInfo_ == null ? emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo.getDefaultInstance() : chatInfo_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -193,12 +142,12 @@ public final class PlayerChatReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (channelId_ != 0) {
-        output.writeUInt32(13, channelId_);
+        output.writeUInt32(3, channelId_);
       }
       if (chatInfo_ != null) {
-        output.writeMessage(15, getChatInfo());
+        output.writeMessage(9, getChatInfo());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -209,13 +158,13 @@ public final class PlayerChatReqOuterClass {
       size = 0;
       if (channelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, channelId_);
+          .computeUInt32Size(3, channelId_);
       }
       if (chatInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, getChatInfo());
+          .computeMessageSize(9, getChatInfo());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -237,7 +186,7 @@ public final class PlayerChatReqOuterClass {
         if (!getChatInfo()
             .equals(other.getChatInfo())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -254,7 +203,7 @@ public final class PlayerChatReqOuterClass {
         hash = (37 * hash) + CHAT_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getChatInfo().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -351,10 +300,14 @@ public final class PlayerChatReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 3185
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 3305;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     *   IS_ALLOW_CLIENT = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code PlayerChatReq}
@@ -378,28 +331,22 @@ public final class PlayerChatReqOuterClass {
 
       // Construct using emu.grasscutter.net.proto.PlayerChatReqOuterClass.PlayerChatReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         channelId_ = 0;
-
-        if (chatInfoBuilder_ == null) {
-          chatInfo_ = null;
-        } else {
-          chatInfo_ = null;
+        chatInfo_ = null;
+        if (chatInfoBuilder_ != null) {
+          chatInfoBuilder_.dispose();
           chatInfoBuilder_ = null;
         }
         return this;
@@ -428,14 +375,21 @@ public final class PlayerChatReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.PlayerChatReqOuterClass.PlayerChatReq buildPartial() {
         emu.grasscutter.net.proto.PlayerChatReqOuterClass.PlayerChatReq result = new emu.grasscutter.net.proto.PlayerChatReqOuterClass.PlayerChatReq(this);
-        result.channelId_ = channelId_;
-        if (chatInfoBuilder_ == null) {
-          result.chatInfo_ = chatInfo_;
-        } else {
-          result.chatInfo_ = chatInfoBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.grasscutter.net.proto.PlayerChatReqOuterClass.PlayerChatReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.channelId_ = channelId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.chatInfo_ = chatInfoBuilder_ == null
+              ? chatInfo_
+              : chatInfoBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -488,7 +442,7 @@ public final class PlayerChatReqOuterClass {
         if (other.hasChatInfo()) {
           mergeChatInfo(other.getChatInfo());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -503,23 +457,49 @@ public final class PlayerChatReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.PlayerChatReqOuterClass.PlayerChatReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24: {
+                channelId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 24
+              case 74: {
+                input.readMessage(
+                    getChatInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 74
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.PlayerChatReqOuterClass.PlayerChatReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int channelId_ ;
       /**
-       * <code>uint32 channel_id = 13;</code>
+       * <code>uint32 channel_id = 3;</code>
        * @return The channelId.
        */
       @java.lang.Override
@@ -527,22 +507,23 @@ public final class PlayerChatReqOuterClass {
         return channelId_;
       }
       /**
-       * <code>uint32 channel_id = 13;</code>
+       * <code>uint32 channel_id = 3;</code>
        * @param value The channelId to set.
        * @return This builder for chaining.
        */
       public Builder setChannelId(int value) {
         
         channelId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 channel_id = 13;</code>
+       * <code>uint32 channel_id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearChannelId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         channelId_ = 0;
         onChanged();
         return this;
@@ -552,14 +533,14 @@ public final class PlayerChatReqOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo, emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo.Builder, emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfoOrBuilder> chatInfoBuilder_;
       /**
-       * <code>.ChatInfo chat_info = 15;</code>
+       * <code>.ChatInfo chat_info = 9;</code>
        * @return Whether the chatInfo field is set.
        */
       public boolean hasChatInfo() {
-        return chatInfoBuilder_ != null || chatInfo_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
-       * <code>.ChatInfo chat_info = 15;</code>
+       * <code>.ChatInfo chat_info = 9;</code>
        * @return The chatInfo.
        */
       public emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo getChatInfo() {
@@ -570,7 +551,7 @@ public final class PlayerChatReqOuterClass {
         }
       }
       /**
-       * <code>.ChatInfo chat_info = 15;</code>
+       * <code>.ChatInfo chat_info = 9;</code>
        */
       public Builder setChatInfo(emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo value) {
         if (chatInfoBuilder_ == null) {
@@ -578,69 +559,69 @@ public final class PlayerChatReqOuterClass {
             throw new NullPointerException();
           }
           chatInfo_ = value;
-          onChanged();
         } else {
           chatInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
-       * <code>.ChatInfo chat_info = 15;</code>
+       * <code>.ChatInfo chat_info = 9;</code>
        */
       public Builder setChatInfo(
           emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo.Builder builderForValue) {
         if (chatInfoBuilder_ == null) {
           chatInfo_ = builderForValue.build();
-          onChanged();
         } else {
           chatInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
-       * <code>.ChatInfo chat_info = 15;</code>
+       * <code>.ChatInfo chat_info = 9;</code>
        */
       public Builder mergeChatInfo(emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo value) {
         if (chatInfoBuilder_ == null) {
-          if (chatInfo_ != null) {
-            chatInfo_ =
-              emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo.newBuilder(chatInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            chatInfo_ != null &&
+            chatInfo_ != emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo.getDefaultInstance()) {
+            getChatInfoBuilder().mergeFrom(value);
           } else {
             chatInfo_ = value;
           }
-          onChanged();
         } else {
           chatInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
-       * <code>.ChatInfo chat_info = 15;</code>
+       * <code>.ChatInfo chat_info = 9;</code>
        */
       public Builder clearChatInfo() {
-        if (chatInfoBuilder_ == null) {
-          chatInfo_ = null;
-          onChanged();
-        } else {
-          chatInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        chatInfo_ = null;
+        if (chatInfoBuilder_ != null) {
+          chatInfoBuilder_.dispose();
           chatInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
-       * <code>.ChatInfo chat_info = 15;</code>
+       * <code>.ChatInfo chat_info = 9;</code>
        */
       public emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo.Builder getChatInfoBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getChatInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ChatInfo chat_info = 15;</code>
+       * <code>.ChatInfo chat_info = 9;</code>
        */
       public emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfoOrBuilder getChatInfoOrBuilder() {
         if (chatInfoBuilder_ != null) {
@@ -651,7 +632,7 @@ public final class PlayerChatReqOuterClass {
         }
       }
       /**
-       * <code>.ChatInfo chat_info = 15;</code>
+       * <code>.ChatInfo chat_info = 9;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo, emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo.Builder, emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfoOrBuilder> 
@@ -699,7 +680,18 @@ public final class PlayerChatReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PlayerChatReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -734,8 +726,8 @@ public final class PlayerChatReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\023PlayerChatReq.proto\032\016ChatInfo.proto\"A\n" +
-      "\rPlayerChatReq\022\022\n\nchannel_id\030\r \001(\r\022\034\n\tch" +
-      "at_info\030\017 \001(\0132\t.ChatInfoB\033\n\031emu.grasscut" +
+      "\rPlayerChatReq\022\022\n\nchannel_id\030\003 \001(\r\022\034\n\tch" +
+      "at_info\030\t \001(\0132\t.ChatInfoB\033\n\031emu.grasscut" +
       "ter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
