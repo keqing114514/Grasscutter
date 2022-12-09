@@ -43,6 +43,7 @@ import emu.grasscutter.game.managers.mapmark.MapMarksManager;
 import emu.grasscutter.game.managers.stamina.StaminaManager;
 import emu.grasscutter.game.props.*;
 import emu.grasscutter.game.quest.QuestManager;
+import emu.grasscutter.game.quest.enums.QuestCond;
 import emu.grasscutter.game.quest.enums.QuestContent;
 import emu.grasscutter.game.shop.ShopLimit;
 import emu.grasscutter.game.tower.TowerData;
@@ -123,6 +124,7 @@ public class Player {
     @Getter private Set<Integer> nameCardList;
     @Getter private Set<Integer> flyCloakList;
     @Getter private Set<Integer> costumeList;
+    @Getter private Set<Integer> personalLineList;
     @Getter @Setter private Set<Integer> rewardedLevels;
     @Getter @Setter private Set<Integer> realmList;
     @Getter private Set<Integer> unlockedForgingBlueprints;
@@ -206,6 +208,10 @@ public class Player {
     @Getter @Setter private int nextResinRefresh;
     @Getter @Setter private int lastDailyReset;
     @Getter private transient MpSettingType mpSetting = MpSettingType.MP_SETTING_TYPE_ENTER_AFTER_APPLY;  // TODO
+    // keep track of EXEC_ADD_QUEST_PROGRESS count, will be used in CONTENT_ADD_QUEST_PROGRESS
+    // not sure where to put this, this should be saved to DB but not to individual quest, since
+    // it will be hard to loop and compare
+    @Getter private Map<Integer, Integer> questProgressCountMap;
 
     @Deprecated
     @SuppressWarnings({"rawtypes", "unchecked"}) // Morphia only!
@@ -235,6 +241,7 @@ public class Player {
         this.nameCardList = new HashSet<>();
         this.flyCloakList = new HashSet<>();
         this.costumeList = new HashSet<>();
+        this.personalLineList = new HashSet<>();
         this.towerData = new TowerData();
         this.collectionRecordStore = new PlayerCollectionRecords();
         this.unlockedForgingBlueprints = new HashSet<>();
@@ -276,6 +283,7 @@ public class Player {
         this.furnitureManager = new FurnitureManager(this);
         this.cookingManager = new CookingManager(this);
         this.cookingCompoundManager=new CookingCompoundManager(this);
+        this.questProgressCountMap = new HashMap<>();
     }
 
     // On player creation
@@ -439,6 +447,7 @@ public class Player {
             // Handle open state unlocks from level-up.
             this.getProgressManager().tryUnlockOpenStates();
             this.getQuestManager().queueEvent(QuestContent.QUEST_CONTENT_PLAYER_LEVEL_UP, level);
+            this.getQuestManager().queueEvent(QuestCond.QUEST_COND_PLAYER_LEVEL_EQUAL_GREATER, level);
 
             return true;
         }
@@ -862,6 +871,11 @@ public class Player {
         this.sendPacket(new PacketAvatarGainCostumeNotify(costumeId));
     }
 
+    public void addPersonalLine(int personalLineId) {
+        this.getPersonalLineList().add(personalLineId);
+        session.getPlayer().getQuestManager().queueEvent(QuestCond.QUEST_COND_PERSONAL_LINE_UNLOCK, personalLineId);
+    }
+
     public void addNameCard(int nameCardId) {
         this.getNameCardList().add(nameCardId);
         this.sendPacket(new PacketUnlockNameCardNotify(nameCardId));
@@ -1270,20 +1284,6 @@ public class Player {
     }
 
     public void onLogin() {
-        // Quest - Commented out because a problem is caused if you log out while this quest is active
-        /*
-        if (getQuestManager().getMainQuestById(351) == null) {
-            GameQuest quest = getQuestManager().addQuest(35104);
-            if (quest != null) {
-                quest.finish();
-            }
-            getQuestManager().addQuest(35101);
-
-            this.setSceneId(3);
-            this.getPos().set(GameConstants.START_POSITION);
-        }
-        */
-
         // Create world
         World world = new World(this);
         world.addPlayer(this);

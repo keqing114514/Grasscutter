@@ -1,8 +1,11 @@
 package emu.grasscutter.data.excels;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.google.gson.annotations.SerializedName;
+import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.game.quest.enums.*;
@@ -96,11 +99,35 @@ public class QuestData extends GameResource {
         this.beginExec = beginExec.stream().filter(p -> p.type != null).toList();
         this.finishExec = finishExec.stream().filter(p -> p.type != null).toList();
         this.failExec = failExec.stream().filter(p -> p.type != null).toList();
+
+        addToCache();
+    }
+
+    private void addToCache(){
+        if(getAcceptCond() == null){
+            Grasscutter.getLogger().warn("missing AcceptConditions for quest {}", getSubId());
+            return;
+        }
+        val cacheMap = GameData.getBeginCondQuestMap();
+        if(getAcceptCond().isEmpty()){
+            val list = cacheMap.computeIfAbsent(QuestData.questConditionKey(QuestCond.QUEST_COND_NONE, 0, null), e -> new ArrayList<>());
+            list.add(this);
+        } else {
+            getAcceptCond().forEach(questCondition -> {
+                if (questCondition.getType() == null) {
+                    Grasscutter.getLogger().warn("null accept type for quest {}", getSubId());
+                    return;
+                }
+                val key = questCondition.asKey();
+                val list = cacheMap.computeIfAbsent(key, e -> new ArrayList<>());
+                list.add(this);
+            });
+        }
     }
 
     @Data
     @FieldDefaults(level = AccessLevel.PRIVATE)
-    public class QuestExecParam {
+    public static class QuestExecParam {
         @SerializedName("_type")
         QuestExec type;
         @SerializedName("_param")

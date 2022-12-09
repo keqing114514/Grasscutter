@@ -20,7 +20,7 @@ public class HandlerQuestTransmitReq extends PacketHandler {
 	@Override
 	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
 		val req = QuestTransmitReq.parseFrom(payload);
-		GameMainQuest mainQuest = session.getPlayer().getQuestManager().getMainQuestById(req.getQuestId() / 100);
+		GameMainQuest mainQuest = session.getPlayer().getQuestManager().getMainQuestBySubQuestId(req.getQuestId());
 		List<Position> posAndRot = new ArrayList<>();
 		boolean result = false;
 		if(mainQuest.hasTeleportPostion(req.getQuestId(), posAndRot)){
